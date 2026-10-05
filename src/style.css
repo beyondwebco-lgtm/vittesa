@@ -1293,8 +1293,141 @@ h1, h2, h3, h4, .serif-title {
 }
 
 /* ==========================================================================
-   PRODUCT CATALOGUE SHOWROOM & LIVE FILTERING
+   HOMEPAGE SHOWROOM GATEWAY
    ========================================================================== */
+.showroom-gateway-section {
+  background-color: var(--bg-dark);
+  color: var(--ink-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.showroom-gateway-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.showroom-gateway-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.showroom-gateway-content p {
+  color: var(--ink-light-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.showroom-gateway-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gateway-feature-item strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--tone-gold);
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.gateway-feature-item span {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light-muted);
+}
+
+.showroom-gateway-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.showroom-gateway-media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.gateway-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.showroom-gateway-card:hover .gateway-img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .showroom-gateway-card {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   PRODUCT CATALOGUE SHOWROOM & LIVE FILTERING (SHOWROOM WEBPAGE)
+   ========================================================================== */
+.showroom-page-hero {
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  background-color: var(--bg-porcelain-alt);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.showroom-page-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.showroom-page-hero p {
+  font-size: clamp(0.95rem, 1.2vw, 1.125rem);
+  color: var(--ink-secondary);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.showroom-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.showroom-breadcrumb a {
+  color: var(--ink-secondary);
+  transition: color var(--transition-fast);
+}
+
+.showroom-breadcrumb a:hover {
+  color: var(--ink-primary);
+}
+
 .showroom-section {
   background-color: var(--bg-porcelain);
   position: relative;

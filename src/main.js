@@ -133,6 +133,35 @@ function initShowroom() {
   const categoryChips = document.querySelectorAll('.filter-chip[data-category]');
   const searchInput = document.getElementById('showroom-search');
 
+  // Check URL query parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const colParam = urlParams.get('collection');
+  const catParam = urlParams.get('category');
+  const searchParam = urlParams.get('search');
+
+  if (colParam) {
+    const matchedCol = document.querySelector(`.filter-chip[data-collection="${colParam}"]`);
+    if (matchedCol) {
+      collectionChips.forEach(c => c.classList.remove('active'));
+      matchedCol.classList.add('active');
+      state.activeCollectionFilter = colParam;
+    }
+  }
+
+  if (catParam) {
+    const matchedCat = document.querySelector(`.filter-chip[data-category="${catParam}"]`);
+    if (matchedCat) {
+      categoryChips.forEach(c => c.classList.remove('active'));
+      matchedCat.classList.add('active');
+      state.activeCategoryFilter = catParam;
+    }
+  }
+
+  if (searchParam && searchInput) {
+    searchInput.value = searchParam;
+    state.searchQuery = searchParam.trim().toLowerCase();
+  }
+
   collectionChips.forEach(chip => {
     chip.addEventListener('click', () => {
       collectionChips.forEach(c => c.classList.remove('active'));
@@ -383,7 +412,11 @@ function initTray() {
     }
 
     const contactSec = document.getElementById('contact');
-    contactSec?.scrollIntoView({ behavior: 'smooth' });
+    if (contactSec) {
+      contactSec.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/index.html#contact';
+    }
   });
 
   // Tray Enquire Button
@@ -397,7 +430,11 @@ function initTray() {
     }
 
     const contactSec = document.getElementById('contact');
-    contactSec?.scrollIntoView({ behavior: 'smooth' });
+    if (contactSec) {
+      contactSec.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/index.html#contact';
+    }
   });
 
   renderTrayItems();
