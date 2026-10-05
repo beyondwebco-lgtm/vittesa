@@ -13,6 +13,7 @@ const state = {
 // DOM Elements
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
+  initCollectionsCarousel();
   initLumeraColorSwitcher();
   initEssentialWhiteTabs();
   initShowroom();
@@ -71,6 +72,319 @@ function initMobileNav() {
       closeMobile();
     }
   });
+}
+
+/* ==========================================================================
+   3D COLLECTIONS ROUND CAROUSEL (EXHIBITION TURNTABLE)
+   ========================================================================== */
+const CAROUSEL_COLLECTIONS = [
+  {
+    id: "lumera",
+    name: "LUMÉRA",
+    layer: "01 SIGNATURE",
+    tagline: "Architectural Mediterranean",
+    image: "/assets/catalogue/hero-lumera-table.jpg",
+    link: "#lumera-section"
+  },
+  {
+    id: "olivera",
+    name: "OLIVERA",
+    layer: "02 CURATED",
+    tagline: "Natural Earth Series",
+    image: "/assets/catalogue/olivera-editorial-hero.jpg",
+    link: "#olivera"
+  },
+  {
+    id: "roke",
+    name: "ROKÉ",
+    layer: "02 CURATED",
+    tagline: "Sculpted Texture Series",
+    image: "/assets/catalogue/roke-editorial-hero.jpg",
+    link: "#roke"
+  },
+  {
+    id: "terra-speckle",
+    name: "TERRA SPECKLE",
+    layer: "02 CURATED",
+    tagline: "Artisan Earth Series",
+    image: "/assets/catalogue/terra-speckle-editorial-hero.png",
+    link: "#terra-speckle"
+  },
+  {
+    id: "essential-white",
+    name: "ESSENTIAL WHITE",
+    layer: "03 ESSENTIAL",
+    tagline: "Core Commercial Porcelain",
+    image: "/assets/catalogue/essential-white-platters-hero.jpg",
+    link: "#essential-white-section"
+  },
+  {
+    id: "urbane-grey",
+    name: "URBANE GREY",
+    layer: "02 CURATED",
+    tagline: "Contemporary Mineral Slate",
+    image: "/assets/catalogue/urbane-grey-editorial.jpg",
+    link: "/showroom.html?collection=curated-tones"
+  },
+  {
+    id: "paradise-pink",
+    name: "PARADISE PINK",
+    layer: "02 CURATED",
+    tagline: "Soft Rose Earth",
+    image: "/assets/catalogue/paradise-pink-editorial.jpg",
+    link: "/showroom.html?collection=curated-tones"
+  },
+  {
+    id: "aqua-blue",
+    name: "AQUA BLUE",
+    layer: "02 CURATED",
+    tagline: "Mediterranean Coastal",
+    image: "/assets/catalogue/aqua-blue-editorial.jpg",
+    link: "/showroom.html?collection=curated-tones"
+  }
+];
+
+function initCollectionsCarousel() {
+  const wrapper = document.getElementById('collections-carousel-wrapper');
+  const stage = document.getElementById('round-carousel-stage');
+  const prevBtn = document.getElementById('carousel-prev-btn');
+  const nextBtn = document.getElementById('carousel-next-btn');
+  if (!wrapper || !stage) return;
+
+  const items = CAROUSEL_COLLECTIONS;
+  const count = items.length;
+  const angle = 360 / count;
+
+  let currentSettings = getSettings();
+  let radius = calculateRadius(currentSettings);
+  let rotY = 0;
+  let velY = 0;
+  let isHovered = false;
+  let isVisible = false;
+  let rafId = null;
+  let lastTime = 0;
+
+  const drag = {
+    active: false,
+    startX: 0,
+    startY: 0,
+    lastX: 0,
+    lastTime: 0,
+    totalMoved: 0
+  };
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const baseSpeed = prefersReduced ? 0 : 3.8; // degrees per second idle
+
+  function getSettings() {
+    const w = window.innerWidth;
+    if (w >= 1280) {
+      return { width: 310, height: 350, spacing: 1.65, tilt: -4.5, perspective: 2400 };
+    } else if (w >= 992) {
+      return { width: 260, height: 300, spacing: 1.4, tilt: -4, perspective: 2000 };
+    } else if (w >= 768) {
+      return { width: 220, height: 260, spacing: 1.15, tilt: -3.5, perspective: 1800 };
+    } else if (w >= 480) {
+      return { width: 200, height: 245, spacing: 0.85, tilt: -3, perspective: 1500 };
+    } else {
+      return { width: 180, height: 225, spacing: 0.65, tilt: -2.5, perspective: 1300 };
+    }
+  }
+
+  function calculateRadius(s) {
+    const factor = 1 + s.spacing * 0.15;
+    return (s.width * factor) / (2 * Math.tan(Math.PI / count));
+  }
+
+  // Create Tilt Wrapper & Ring
+  const tiltWrapper = document.createElement('div');
+  tiltWrapper.className = 'carousel-tilt-wrapper';
+  tiltWrapper.style.transform = `rotateX(${currentSettings.tilt}deg)`;
+
+  const ring = document.createElement('div');
+  ring.className = 'carousel-ring';
+  ring.style.width = `${currentSettings.width}px`;
+  ring.style.height = `${currentSettings.height}px`;
+
+  items.forEach((item, i) => {
+    const cardItem = document.createElement('div');
+    cardItem.className = 'carousel-card-item';
+    cardItem.dataset.index = i;
+    cardItem.dataset.link = item.link;
+
+    cardItem.innerHTML = `
+      <div class="carousel-card-front" style="background-image: url('${item.image}')">
+        <div class="card-top-tag">
+          <span>${item.layer}</span>
+        </div>
+        <div class="card-bottom-info">
+          <h4 class="card-bottom-title">${item.name}</h4>
+          <span class="card-bottom-tagline">${item.tagline}</span>
+          <span class="card-explore-btn">Explore Collection →</span>
+        </div>
+      </div>
+      <div class="carousel-card-back">
+        <img src="/assets/catalogue/vittesa-emblem-gold.jpg" alt="VITTESA" class="back-emblem" />
+        <div class="back-brand">VITTESA</div>
+        <div class="back-text">Porcelain Maison</div>
+      </div>
+    `;
+
+    ring.appendChild(cardItem);
+  });
+
+  tiltWrapper.appendChild(ring);
+  stage.innerHTML = '';
+  stage.appendChild(tiltWrapper);
+
+  function layoutCards() {
+    stage.style.perspective = `${currentSettings.perspective}px`;
+    tiltWrapper.style.transform = `rotateX(${currentSettings.tilt}deg)`;
+    ring.style.width = `${currentSettings.width}px`;
+    ring.style.height = `${currentSettings.height}px`;
+
+    const cards = ring.querySelectorAll('.carousel-card-item');
+    cards.forEach((card, i) => {
+      card.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px)`;
+    });
+  }
+
+  layoutCards();
+
+  function applyTransform() {
+    ring.style.transform = `translateZ(${-radius}px) rotateY(${rotY}deg)`;
+  }
+
+  applyTransform();
+
+  // Resize handler
+  window.addEventListener('resize', () => {
+    currentSettings = getSettings();
+    radius = calculateRadius(currentSettings);
+    layoutCards();
+    applyTransform();
+  }, { passive: true });
+
+  // Hover detection to gently slow rotation
+  stage.addEventListener('mouseenter', () => { isHovered = true; });
+  stage.addEventListener('mouseleave', () => { isHovered = false; });
+
+  // Pointer Drag Interaction
+  const onPointerDown = (e) => {
+    drag.active = true;
+    drag.startX = e.clientX;
+    drag.startY = e.clientY;
+    drag.lastX = e.clientX;
+    drag.lastTime = performance.now();
+    drag.totalMoved = 0;
+    velY = 0;
+    stage.style.cursor = 'grabbing';
+    try {
+      stage.setPointerCapture(e.pointerId);
+    } catch (_) {}
+  };
+
+  const onPointerMove = (e) => {
+    if (!drag.active) return;
+    const now = performance.now();
+    const dx = e.clientX - drag.lastX;
+    const dt = Math.max((now - drag.lastTime) / 1000, 0.008);
+
+    drag.totalMoved += Math.abs(dx);
+    drag.lastX = e.clientX;
+    drag.lastTime = now;
+
+    const sensitivity = window.innerWidth < 768 ? 0.32 : 0.22;
+    rotY += dx * sensitivity;
+
+    // Track instant velocity with clamping
+    const instantVel = (dx * sensitivity) / dt;
+    velY = velY * 0.35 + instantVel * 0.65;
+    velY = Math.max(-160, Math.min(160, velY));
+
+    applyTransform();
+  };
+
+  const onPointerUp = (e) => {
+    if (!drag.active) return;
+    drag.active = false;
+    stage.style.cursor = 'grab';
+    try {
+      stage.releasePointerCapture(e.pointerId);
+    } catch (_) {}
+
+    // Check click vs drag
+    if (drag.totalMoved < 7) {
+      const targetCard = e.target.closest('.carousel-card-item');
+      if (targetCard && targetCard.dataset.link) {
+        const link = targetCard.dataset.link;
+        if (link.startsWith('#')) {
+          const el = document.querySelector(link);
+          el?.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.href = link;
+        }
+      }
+    }
+  };
+
+  stage.addEventListener('pointerdown', onPointerDown);
+  stage.addEventListener('pointermove', onPointerMove);
+  stage.addEventListener('pointerup', onPointerUp);
+  stage.addEventListener('pointercancel', onPointerUp);
+
+  // Prev / Next button step rotation
+  prevBtn?.addEventListener('click', () => {
+    velY += 45;
+  });
+  nextBtn?.addEventListener('click', () => {
+    velY -= 45;
+  });
+
+  // Physics animation loop
+  function loop(now) {
+    if (!lastTime) lastTime = now;
+    const dt = Math.min((now - lastTime) / 1000, 0.1);
+    lastTime = now;
+
+    if (!drag.active) {
+      if (Math.abs(velY) > 0.05) {
+        rotY += velY * dt;
+        velY *= 0.945; // Smooth realistic inertia decay
+      } else {
+        // Continuous slow turntable rotation
+        const currentTargetSpeed = isHovered ? (baseSpeed * 0.18) : baseSpeed;
+        rotY += currentTargetSpeed * dt;
+      }
+      applyTransform();
+    }
+
+    if (isVisible) {
+      rafId = requestAnimationFrame(loop);
+    }
+  }
+
+  // Intersection Observer for performance & entrance reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        wrapper.classList.add('visible');
+        if (!isVisible) {
+          isVisible = true;
+          lastTime = performance.now();
+          rafId = requestAnimationFrame(loop);
+        }
+      } else {
+        isVisible = false;
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      }
+    });
+  }, { threshold: 0.12 });
+
+  observer.observe(wrapper);
 }
 
 /* ==========================================================================

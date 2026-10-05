@@ -705,6 +705,354 @@ h1, h2, h3, h4, .serif-title {
 }
 
 /* ==========================================================================
+   3D ROUND CAROUSEL — EXHIBITION TURNTABLE
+   ========================================================================== */
+.collections-carousel-wrapper {
+  margin-top: 5rem;
+  padding-top: 4.5rem;
+  border-top: 1px solid var(--border-medium);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(28px) scale(0.975);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collections-carousel-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.carousel-section-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+}
+
+.carousel-eyebrow {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tone-gold);
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.carousel-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink-primary);
+  margin-bottom: 0.75rem;
+}
+
+.carousel-subtitle {
+  font-size: 0.9375rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+}
+
+.round-carousel-stage {
+  width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  perspective: 2400px;
+  background: radial-gradient(circle at center, rgba(243, 239, 234, 0.75) 0%, rgba(250, 248, 245, 0) 72%);
+}
+
+.round-carousel-stage:active {
+  cursor: grabbing;
+}
+
+.carousel-tilt-wrapper {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carousel-ring {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.carousel-card-item {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+  border-radius: 18px;
+}
+
+.carousel-card-front,
+.carousel-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.carousel-card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: var(--bg-dark);
+}
+
+.carousel-card-front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 17, 0.35) 0%,
+    rgba(18, 18, 17, 0.08) 40%,
+    rgba(18, 18, 17, 0.9) 100%
+  );
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-card-front:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 17, 0.22) 0%,
+    rgba(18, 18, 17, 0.04) 40%,
+    rgba(18, 18, 17, 0.82) 100%
+  );
+}
+
+.carousel-card-front:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.26), 0 8px 18px rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-card-front > * {
+  position: relative;
+  z-index: 2;
+}
+
+.card-top-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  background: rgba(18, 18, 17, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--tone-gold);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 12px;
+}
+
+.card-bottom-info {
+  color: #FFFFFF;
+}
+
+.card-bottom-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  line-height: 1.1;
+  color: #FFFFFF;
+}
+
+.card-bottom-tagline {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  color: #D6D2CC;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.card-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tone-gold);
+  font-weight: 600;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.carousel-card-front:hover .card-explore-btn {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+/* Card Backface (Physical porcelain ceramic exhibition look) */
+.carousel-card-back {
+  transform: rotateY(180deg);
+  background-color: #171615;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.75);
+}
+
+.carousel-card-back .back-emblem {
+  width: 42px;
+  height: auto;
+  opacity: 0.38;
+  margin-bottom: 1rem;
+  filter: grayscale(1) contrast(1.2);
+}
+
+.carousel-card-back .back-brand {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.42);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.carousel-card-back .back-text {
+  font-size: 0.5625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--tone-gold);
+  opacity: 0.6;
+}
+
+/* Controls & Hints */
+.carousel-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.carousel-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--ink-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: all var(--transition-fast);
+}
+
+.carousel-nav-btn:hover {
+  background-color: var(--ink-primary);
+  color: var(--bg-porcelain);
+  border-color: var(--ink-primary);
+  transform: scale(1.05);
+}
+
+.carousel-interaction-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.hint-icon {
+  font-size: 0.85rem;
+  color: var(--tone-gold);
+}
+
+.hint-dot {
+  color: var(--border-medium);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .collections-carousel-wrapper {
+    margin-top: 4rem;
+    padding-top: 3.5rem;
+  }
+  .round-carousel-stage {
+    height: 460px;
+    perspective: 1900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collections-carousel-wrapper {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+  }
+  .round-carousel-stage {
+    height: 400px;
+    perspective: 1600px;
+  }
+  .carousel-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+  }
+  .carousel-interaction-hint {
+    font-size: 0.625rem;
+    gap: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .round-carousel-stage {
+    height: 360px;
+    perspective: 1300px;
+  }
+  .carousel-card-front {
+    padding: 1.15rem;
+  }
+  .card-bottom-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collections-carousel-wrapper {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==========================================================================
    COLLECTIONS SHOWCASE — LUMÉRA SIGNATURE
    ========================================================================== */
 .lumera-showcase-section {
