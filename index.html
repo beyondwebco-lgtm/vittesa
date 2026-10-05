@@ -30,7 +30,7 @@
           </div>
         </a>
 
-        <nav>
+        <nav class="desktop-nav" aria-label="Main Navigation">
           <ul class="nav-links">
             <li><a href="#collections" class="nav-link">Collections</a></li>
             <li><a href="#lumera-section" class="nav-link">LUMÉRA</a></li>
@@ -45,10 +45,10 @@
 
         <div class="nav-actions">
           <button class="tray-btn open-tray-btn" title="View Project Specification Schedule">
-            Spec Tray <span class="tray-badge" style="display:none;">0</span>
+            <span class="tray-btn-text-full">Spec Tray</span><span class="tray-btn-text-short">Tray</span> <span class="tray-badge" style="display:none;">0</span>
           </button>
           <a href="#contact" class="btn-enquire">Enquire</a>
-          <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -59,19 +59,41 @@
   </header>
 
   <!-- Mobile Navigation Overlay -->
-  <div class="mobile-nav-overlay">
-    <button class="btn-close-mobile-nav" aria-label="Close Navigation">✕</button>
-    <ul class="mobile-nav-links">
-      <li><a href="#collections">01 Collections</a></li>
-      <li><a href="#lumera-section">02 LUMÉRA Signature</a></li>
-      <li><a href="#curated-section">03 Curated Series</a></li>
-      <li><a href="#essential-white-section">04 Essential White</a></li>
-      <li><a href="#showroom">05 Product Showroom</a></li>
-      <li><a href="#for-buyers">06 International Trade</a></li>
-      <li><a href="#private-label">07 Private Label</a></li>
-      <li><a href="#about">08 About VITTESA</a></li>
-      <li><a href="#contact">09 Request Specification</a></li>
-    </ul>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-dialog">
+      <div class="mobile-nav-header">
+        <a href="#" class="brand-logo-wrap mobile-logo-wrap" aria-label="VITTESA Home">
+          <img src="/assets/catalogue/vittesa-emblem-gold.jpg" alt="VITTESA Emblem" class="brand-logo-emblem" />
+          <div>
+            <div class="brand-logo-text">VITTESA</div>
+            <span class="brand-tagline-sub">Porcelain Maison</span>
+          </div>
+        </a>
+        <button class="btn-close-mobile-nav" aria-label="Close Navigation">✕</button>
+      </div>
+
+      <nav class="mobile-nav-body">
+        <ul class="mobile-nav-links">
+          <li><a href="#collections"><span class="nav-num">01</span> Collections</a></li>
+          <li><a href="#lumera-section"><span class="nav-num">02</span> LUMÉRA Signature</a></li>
+          <li><a href="#curated-section"><span class="nav-num">03</span> Curated Series</a></li>
+          <li><a href="#essential-white-section"><span class="nav-num">04</span> Essential White</a></li>
+          <li><a href="#showroom"><span class="nav-num">05</span> Product Showroom</a></li>
+          <li><a href="#for-buyers"><span class="nav-num">06</span> International Trade</a></li>
+          <li><a href="#private-label"><span class="nav-num">07</span> Private Label</a></li>
+          <li><a href="#about"><span class="nav-num">08</span> About VITTESA</a></li>
+          <li><a href="#contact"><span class="nav-num">09</span> Request Specification</a></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <button class="tray-btn open-tray-btn mobile-tray-btn" title="View Project Specification Schedule">
+          Spec Tray <span class="tray-badge" style="display:none;">0</span>
+        </button>
+        <a href="#contact" class="btn-enquire mobile-enquire-btn">Enquire</a>
+      </div>
+    </div>
   </div>
 
   <main>
