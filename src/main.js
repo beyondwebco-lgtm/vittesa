@@ -159,10 +159,14 @@ function initCollectionsCarousel() {
   let radius = calculateRadius(currentSettings);
   let rotY = 0;
   let velY = 0;
-  let isHovered = false;
   let isVisible = false;
   let rafId = null;
   let lastTime = 0;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const baseSpeed = prefersReduced ? 0 : 3.6; // Heavy, slow physical turntable: ~3.6 deg/sec
+  let currentIdleSpeed = 0; // Starts from rest, ramps up smoothly after entrance reveal
+  let desiredIdleSpeed = baseSpeed;
 
   const drag = {
     active: false,
@@ -173,8 +177,7 @@ function initCollectionsCarousel() {
     totalMoved: 0
   };
 
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const baseSpeed = prefersReduced ? 0 : 3.8; // degrees per second idle
+  let pointerHistory = [];
 
   function getSettings() {
     const w = window.innerWidth;
@@ -211,6 +214,8 @@ function initCollectionsCarousel() {
     cardItem.className = 'carousel-card-item';
     cardItem.dataset.index = i;
     cardItem.dataset.link = item.link;
+    cardItem.setAttribute('role', 'group');
+    cardItem.setAttribute('aria-label', `Collection: ${item.name}`);
 
     cardItem.innerHTML = `
       <div class="carousel-card-front" style="background-image: url('${item.image}')">
@@ -220,7 +225,7 @@ function initCollectionsCarousel() {
         <div class="card-bottom-info">
           <h4 class="card-bottom-title">${item.name}</h4>
           <span class="card-bottom-tagline">${item.tagline}</span>
-          <span class="card-explore-btn">Explore Collection →</span>
+          <span class="card-explore-btn" aria-label="Explore ${item.name} collection">Explore Collection →</span>
         </div>
       </div>
       <div class="carousel-card-back">
@@ -237,14 +242,15 @@ function initCollectionsCarousel() {
   stage.innerHTML = '';
   stage.appendChild(tiltWrapper);
 
+  const cardElements = Array.from(ring.children);
+
   function layoutCards() {
     stage.style.perspective = `${currentSettings.perspective}px`;
     tiltWrapper.style.transform = `rotateX(${currentSettings.tilt}deg)`;
     ring.style.width = `${currentSettings.width}px`;
     ring.style.height = `${currentSettings.height}px`;
 
-    const cards = ring.querySelectorAll('.carousel-card-item');
-    cards.forEach((card, i) => {
+    cardElements.forEach((card, i) => {
       card.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px)`;
     });
   }
@@ -253,6 +259,46 @@ function initCollectionsCarousel() {
 
   function applyTransform() {
     ring.style.transform = `translateZ(${-radius}px) rotateY(${rotY}deg)`;
+
+    // Physical depth, studio lighting & optical depth modulation per card
+    cardElements.forEach((card, i) => {
+      let cardAngle = (i * angle + rotY) % 360;
+      if (cardAngle > 180) cardAngle -= 360;
+      if (cardAngle < -180) cardAngle += 360;
+
+      const rad = cardAngle * (Math.PI / 180);
+      const cosVal = Math.cos(rad); // 1.0 at front, 0.0 at sides, -1.0 at rear
+      const depthFactor = (cosVal + 1) / 2; // [0, 1]
+
+      // Subtle scale for front card (1.00 at rear/sides to 1.035 at direct front)
+      const scale = 1.0 + Math.max(0, cosVal) * 0.035;
+
+      card.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px) scale(${scale.toFixed(3)})`;
+      card.style.zIndex = Math.round(depthFactor * 100);
+
+      // Subtle atmospheric opacity: front is 1.0, rear is 0.70 (never completely invisible)
+      card.style.opacity = (0.70 + 0.30 * depthFactor).toFixed(3);
+
+      // Studio lighting on card front: brightness, saturation, and soft diffuse ambient occlusion
+      const front = card.querySelector('.carousel-card-front');
+      if (front) {
+        const brightness = (0.76 + 0.26 * depthFactor).toFixed(3);
+        const saturation = (0.90 + 0.12 * depthFactor).toFixed(3);
+        front.style.filter = `brightness(${brightness}) saturate(${saturation})`;
+
+        const shadowY = Math.round(6 + 16 * depthFactor);
+        const shadowBlur = Math.round(14 + 28 * depthFactor);
+        const shadowSpread = Math.round(-3 * depthFactor);
+        const shadowAlpha = (0.05 + 0.14 * depthFactor).toFixed(3);
+        const ambientAlpha = (0.03 + 0.06 * depthFactor).toFixed(3);
+        const rimAlpha = (0.16 + 0.22 * depthFactor).toFixed(3);
+
+        front.style.boxShadow = `0 ${shadowY}px ${shadowBlur}px ${shadowSpread}px rgba(18, 18, 17, ${shadowAlpha}), 0 3px 8px rgba(18, 18, 17, ${ambientAlpha}), inset 0 1px 1px rgba(255, 255, 255, ${rimAlpha}), inset 0 0 24px rgba(0, 0, 0, 0.14)`;
+      }
+
+      // Pointer event control: rear cards do not intercept front card clicks
+      card.style.pointerEvents = cosVal > -0.22 ? 'auto' : 'none';
+    });
   }
 
   applyTransform();
@@ -265,9 +311,13 @@ function initCollectionsCarousel() {
     applyTransform();
   }, { passive: true });
 
-  // Hover detection to gently slow rotation
-  stage.addEventListener('mouseenter', () => { isHovered = true; });
-  stage.addEventListener('mouseleave', () => { isHovered = false; });
+  // Hover detection: gently slows rotation to comfortable product inspection speed
+  stage.addEventListener('mouseenter', () => {
+    desiredIdleSpeed = baseSpeed * 0.22;
+  });
+  stage.addEventListener('mouseleave', () => {
+    desiredIdleSpeed = baseSpeed;
+  });
 
   // Pointer Drag Interaction
   const onPointerDown = (e) => {
@@ -278,6 +328,7 @@ function initCollectionsCarousel() {
     drag.lastTime = performance.now();
     drag.totalMoved = 0;
     velY = 0;
+    pointerHistory = [{ x: e.clientX, t: performance.now() }];
     stage.style.cursor = 'grabbing';
     try {
       stage.setPointerCapture(e.pointerId);
@@ -288,21 +339,21 @@ function initCollectionsCarousel() {
     if (!drag.active) return;
     const now = performance.now();
     const dx = e.clientX - drag.lastX;
-    const dt = Math.max((now - drag.lastTime) / 1000, 0.008);
-
     drag.totalMoved += Math.abs(dx);
     drag.lastX = e.clientX;
     drag.lastTime = now;
 
-    const sensitivity = window.innerWidth < 768 ? 0.32 : 0.22;
+    const sensitivity = window.innerWidth < 768 ? 0.28 : 0.18;
     rotY += dx * sensitivity;
 
-    // Track instant velocity with clamping
-    const instantVel = (dx * sensitivity) / dt;
-    velY = velY * 0.35 + instantVel * 0.65;
-    velY = Math.max(-160, Math.min(160, velY));
-
+    // Follow pointer immediately with zero input lag
     applyTransform();
+
+    // Maintain recent 90ms pointer history for velocity calculation
+    pointerHistory.push({ x: e.clientX, t: now });
+    while (pointerHistory.length > 1 && (now - pointerHistory[0].t > 90)) {
+      pointerHistory.shift();
+    }
   };
 
   const onPointerUp = (e) => {
@@ -313,8 +364,26 @@ function initCollectionsCarousel() {
       stage.releasePointerCapture(e.pointerId);
     } catch (_) {}
 
+    // Calculate natural release velocity from pointer history
+    const sensitivity = window.innerWidth < 768 ? 0.28 : 0.18;
+    if (pointerHistory.length >= 2) {
+      const oldest = pointerHistory[0];
+      const latest = pointerHistory[pointerHistory.length - 1];
+      const dt = Math.max((latest.t - oldest.t) / 1000, 0.008);
+      if (dt > 0.012) {
+        const dx = latest.x - oldest.x;
+        const releaseVel = (dx * sensitivity) / dt;
+        // Clamp maximum angular velocity to prevent extreme spinning
+        velY = Math.max(-110, Math.min(110, releaseVel));
+      } else {
+        velY = 0;
+      }
+    } else {
+      velY = 0;
+    }
+
     // Check click vs drag
-    if (drag.totalMoved < 7) {
+    if (drag.totalMoved < 6) {
       const targetCard = e.target.closest('.carousel-card-item');
       if (targetCard && targetCard.dataset.link) {
         const link = targetCard.dataset.link;
@@ -335,10 +404,10 @@ function initCollectionsCarousel() {
 
   // Prev / Next button step rotation
   prevBtn?.addEventListener('click', () => {
-    velY += 45;
+    velY += 40;
   });
   nextBtn?.addEventListener('click', () => {
-    velY -= 45;
+    velY -= 40;
   });
 
   // Physics animation loop
@@ -348,31 +417,57 @@ function initCollectionsCarousel() {
     lastTime = now;
 
     if (!drag.active) {
-      if (Math.abs(velY) > 0.05) {
+      if (Math.abs(velY) > 0.15) {
+        // Frame-rate independent exponential damping for physical heavy turntable
         rotY += velY * dt;
-        velY *= 0.945; // Smooth realistic inertia decay
+        velY *= Math.pow(0.938, dt * 60);
       } else {
-        // Continuous slow turntable rotation
-        const currentTargetSpeed = isHovered ? (baseSpeed * 0.18) : baseSpeed;
-        rotY += currentTargetSpeed * dt;
+        velY = 0;
+        // Smoothly approach desired idle speed without abrupt speed changes
+        currentIdleSpeed += (desiredIdleSpeed - currentIdleSpeed) * Math.min(dt * 2.8, 1.0);
+        rotY += currentIdleSpeed * dt;
       }
       applyTransform();
     }
 
-    if (isVisible) {
+    if (isVisible && !document.hidden) {
       rafId = requestAnimationFrame(loop);
+    } else {
+      rafId = null;
     }
   }
 
-  // Intersection Observer for performance & entrance reveal
+  // Tab visibility handling: pause RAF when tab is hidden, resume when tab is active
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    } else if (isVisible && !rafId) {
+      lastTime = performance.now();
+      rafId = requestAnimationFrame(loop);
+    }
+  });
+
+  // Intersection Observer for performance & choreographed entrance reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         wrapper.classList.add('visible');
         if (!isVisible) {
           isVisible = true;
-          lastTime = performance.now();
-          rafId = requestAnimationFrame(loop);
+          applyTransform();
+          // Step 1: intro fades in
+          // Step 2: carousel stage gently appears
+          // Step 3: cards settle in 3D position
+          // Step 4: turntable rotation begins smoothly after ~700ms
+          setTimeout(() => {
+            if (isVisible && !rafId && !document.hidden) {
+              lastTime = performance.now();
+              rafId = requestAnimationFrame(loop);
+            }
+          }, prefersReduced ? 0 : 700);
         }
       } else {
         isVisible = false;

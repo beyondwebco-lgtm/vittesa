@@ -707,43 +707,61 @@ h1, h2, h3, h4, .serif-title {
 /* ==========================================================================
    3D ROUND CAROUSEL — EXHIBITION TURNTABLE
    ========================================================================== */
+/* Refined Choreographed Entrance Sequence (900-1400ms) */
 .collections-carousel-wrapper {
   margin-top: 5rem;
   padding-top: 4.5rem;
-  border-top: 1px solid var(--border-medium);
+  border-top: 1px solid var(--border-subtle);
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(28px) scale(0.975);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.collections-carousel-wrapper.visible {
+.collections-carousel-wrapper .carousel-section-intro {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.collections-carousel-wrapper .round-carousel-stage {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition: opacity 1.25s cubic-bezier(0.22, 1, 0.36, 1) 0.22s, transform 1.25s cubic-bezier(0.22, 1, 0.36, 1) 0.22s;
+}
+
+.collections-carousel-wrapper .carousel-nav-bar {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s, transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;
+}
+
+.collections-carousel-wrapper.visible .carousel-section-intro,
+.collections-carousel-wrapper.visible .round-carousel-stage,
+.collections-carousel-wrapper.visible .carousel-nav-bar {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
 .carousel-section-intro {
   text-align: center;
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto 3rem auto;
 }
 
 .carousel-eyebrow {
   display: block;
-  font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  font-size: 0.65625rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--tone-gold);
   font-weight: 600;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .carousel-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 3.5vw, 2.85rem);
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-size: clamp(2rem, 3.25vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
   color: var(--ink-primary);
   margin-bottom: 0.75rem;
 }
@@ -751,12 +769,13 @@ h1, h2, h3, h4, .serif-title {
 .carousel-subtitle {
   font-size: 0.9375rem;
   color: var(--ink-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
+  font-weight: 300;
 }
 
 .round-carousel-stage {
   width: 100%;
-  height: 520px;
+  height: 530px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -767,7 +786,7 @@ h1, h2, h3, h4, .serif-title {
   user-select: none;
   -webkit-user-select: none;
   perspective: 2400px;
-  background: radial-gradient(circle at center, rgba(243, 239, 234, 0.75) 0%, rgba(250, 248, 245, 0) 72%);
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(234, 229, 222, 0.45) 0%, rgba(250, 248, 245, 0) 75%);
 }
 
 .round-carousel-stage:active {
@@ -776,7 +795,7 @@ h1, h2, h3, h4, .serif-title {
 
 .carousel-tilt-wrapper {
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .carousel-ring {
@@ -789,8 +808,10 @@ h1, h2, h3, h4, .serif-title {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  will-change: transform;
+  will-change: transform, opacity;
   border-radius: 18px;
+  /* Instant fluid 60fps tracking without CSS transition fighting JS RAF */
+  transition: none;
 }
 
 .carousel-card-front,
@@ -803,46 +824,53 @@ h1, h2, h3, h4, .serif-title {
   -webkit-backface-visibility: hidden;
   background-size: cover;
   background-position: center;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  will-change: opacity, filter, box-shadow;
+  transition: border-color 0.35s ease;
 }
 
 .carousel-card-front {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem;
+  padding: 1.35rem;
   background-color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  /* Studio lighting default: layered soft diffuse ambient occlusion */
+  box-shadow: 
+    0 18px 36px -8px rgba(18, 18, 17, 0.16),
+    0 4px 12px rgba(18, 18, 17, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.32),
+    inset 0 0 20px rgba(0, 0, 0, 0.12);
 }
 
+/* Subtle porcelain glaze specular vignette */
 .carousel-card-front::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(18, 18, 17, 0.35) 0%,
-    rgba(18, 18, 17, 0.08) 40%,
-    rgba(18, 18, 17, 0.9) 100%
+    rgba(18, 18, 17, 0.18) 0%,
+    rgba(18, 18, 17, 0.02) 36%,
+    rgba(18, 18, 17, 0.06) 60%,
+    rgba(18, 18, 17, 0.74) 100%
   );
   z-index: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
 }
 
 .carousel-card-front:hover::before {
   background: linear-gradient(
     180deg,
-    rgba(18, 18, 17, 0.22) 0%,
-    rgba(18, 18, 17, 0.04) 40%,
-    rgba(18, 18, 17, 0.82) 100%
+    rgba(18, 18, 17, 0.12) 0%,
+    rgba(18, 18, 17, 0.02) 36%,
+    rgba(18, 18, 17, 0.04) 60%,
+    rgba(18, 18, 17, 0.68) 100%
   );
 }
 
 .carousel-card-front:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.26), 0 8px 18px rgba(0, 0, 0, 0.12);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.44);
 }
 
 .carousel-card-front > * {
@@ -850,21 +878,22 @@ h1, h2, h3, h4, .serif-title {
   z-index: 2;
 }
 
+/* Quiet, refined typography & tags that let photography lead */
 .card-top-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   align-self: flex-start;
-  background: rgba(18, 18, 17, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--tone-gold);
-  font-size: 0.5625rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  background: rgba(18, 18, 17, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 0.35rem 0.65rem;
+  padding: 0.3rem 0.6rem;
   border-radius: 12px;
 }
 
@@ -874,78 +903,79 @@ h1, h2, h3, h4, .serif-title {
 
 .card-bottom-title {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   line-height: 1.1;
   color: #FFFFFF;
 }
 
 .card-bottom-tagline {
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  color: #D6D2CC;
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  color: rgba(214, 210, 204, 0.72);
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
   display: block;
 }
 
 .card-explore-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.625rem;
-  letter-spacing: 0.16em;
+  gap: 0.35rem;
+  font-size: 0.5625rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--tone-gold);
   font-weight: 600;
-  transition: transform var(--transition-fast), color var(--transition-fast);
+  opacity: 0.85;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .carousel-card-front:hover .card-explore-btn {
-  color: #FFFFFF;
-  transform: translateX(4px);
+  opacity: 1;
+  transform: translateX(3px);
 }
 
-/* Card Backface (Physical porcelain ceramic exhibition look) */
+/* Card Backface (Physical porcelain ceramic exhibition turntable feel) */
 .carousel-card-back {
   transform: rotateY(180deg);
-  background-color: #171615;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #161514;
+  border: 1px solid rgba(255, 255, 255, 0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   text-align: center;
-  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.8);
 }
 
 .carousel-card-back .back-emblem {
-  width: 42px;
+  width: 40px;
   height: auto;
-  opacity: 0.38;
-  margin-bottom: 1rem;
+  opacity: 0.34;
+  margin-bottom: 0.85rem;
   filter: grayscale(1) contrast(1.2);
 }
 
 .carousel-card-back .back-brand {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   letter-spacing: 0.16em;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.38);
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .carousel-card-back .back-text {
   font-size: 0.5625rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--tone-gold);
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 /* Controls & Hints */
@@ -958,16 +988,17 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .carousel-nav-btn {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid var(--border-medium);
-  color: var(--ink-primary);
+  border: 1px solid rgba(24, 23, 22, 0.14);
+  color: var(--ink-secondary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 300;
   cursor: pointer;
   line-height: 1;
   transition: all var(--transition-fast);
@@ -984,19 +1015,19 @@ h1, h2, h3, h4, .serif-title {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
 
 .hint-icon {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--tone-gold);
 }
 
 .hint-dot {
-  color: var(--border-medium);
+  color: var(--border-subtle);
 }
 
 /* Responsive Breakpoints */
@@ -1006,7 +1037,7 @@ h1, h2, h3, h4, .serif-title {
     padding-top: 3.5rem;
   }
   .round-carousel-stage {
-    height: 460px;
+    height: 470px;
     perspective: 1900px;
   }
 }
@@ -1017,17 +1048,17 @@ h1, h2, h3, h4, .serif-title {
     padding-top: 2.5rem;
   }
   .round-carousel-stage {
-    height: 400px;
+    height: 410px;
     perspective: 1600px;
   }
   .carousel-nav-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 1.25rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.15rem;
   }
   .carousel-interaction-hint {
-    font-size: 0.625rem;
-    gap: 0.4rem;
+    font-size: 0.58rem;
+    gap: 0.35rem;
   }
 }
 
@@ -1037,18 +1068,21 @@ h1, h2, h3, h4, .serif-title {
     perspective: 1300px;
   }
   .carousel-card-front {
-    padding: 1.15rem;
+    padding: 1rem;
   }
   .card-bottom-title {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .collections-carousel-wrapper {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  .collections-carousel-wrapper,
+  .collections-carousel-wrapper .carousel-section-intro,
+  .collections-carousel-wrapper .round-carousel-stage,
+  .collections-carousel-wrapper .carousel-nav-bar {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 
