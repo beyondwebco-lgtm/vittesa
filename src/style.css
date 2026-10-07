@@ -392,21 +392,21 @@ h1, h2, h3, h4, .serif-title {
 }
 
 /* ==========================================================================
-   HERO SECTION — EDITORIAL SPLIT SHOWCASE
+   HERO SECTION — EDITORIAL SPLIT SHOWCASE (WHITE)
    ========================================================================== */
 .hero-section {
   position: relative;
   min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
-  background-color: var(--bg-dark);
+  background-color: #FFFFFF;
   background-image: 
-    radial-gradient(ellipse 70% 60% at 85% 35%, rgba(194, 166, 118, 0.09) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 15% 80%, rgba(35, 69, 91, 0.12) 0%, transparent 60%);
-  color: var(--ink-light);
+    radial-gradient(ellipse 70% 60% at 85% 35%, rgba(194, 166, 118, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 15% 80%, rgba(243, 239, 234, 0.6) 0%, transparent 60%);
+  color: var(--ink-primary);
   overflow: hidden;
   padding: clamp(3rem, 5vw, 4.5rem) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .hero-split-grid {
@@ -438,9 +438,9 @@ h1, h2, h3, h4, .serif-title {
   align-items: center;
   gap: 0.35rem;
   padding: 0.35rem 0.8rem;
-  background: rgba(194, 166, 118, 0.12);
-  border: 1px solid rgba(194, 166, 118, 0.35);
-  color: var(--tone-gold);
+  background: rgba(194, 166, 118, 0.15);
+  border: 1px solid rgba(194, 166, 118, 0.45);
+  color: #8C6D37;
   font-size: 0.625rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -452,7 +452,7 @@ h1, h2, h3, h4, .serif-title {
   font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-light-muted);
+  color: var(--ink-muted);
 }
 
 .hero-title {
@@ -460,7 +460,7 @@ h1, h2, h3, h4, .serif-title {
   font-size: clamp(2.75rem, 5vw, 4.75rem);
   line-height: 1.05;
   font-weight: 300;
-  color: #FFFFFF;
+  color: var(--ink-primary);
   margin-bottom: 1.5rem;
   letter-spacing: -0.015em;
 }
@@ -468,13 +468,13 @@ h1, h2, h3, h4, .serif-title {
 .hero-title em {
   font-style: italic;
   font-weight: 400;
-  color: var(--tone-gold);
+  color: var(--tone-sienna);
 }
 
 .hero-description {
   font-size: clamp(0.95rem, 1.2vw, 1.15rem);
   font-weight: 300;
-  color: #D6D2CC;
+  color: var(--ink-secondary);
   max-width: 580px;
   line-height: 1.7;
   margin-bottom: 2.25rem;
@@ -510,6 +510,18 @@ h1, h2, h3, h4, .serif-title {
   border-color: var(--tone-gold);
 }
 
+.hero-section .btn-primary {
+  background-color: var(--ink-primary);
+  color: #FFFFFF;
+  border-color: var(--ink-primary);
+}
+
+.hero-section .btn-primary:hover {
+  background-color: #33312E;
+  border-color: #33312E;
+  color: #FFFFFF;
+}
+
 .btn-secondary-light {
   display: inline-flex;
   align-items: center;
@@ -531,11 +543,23 @@ h1, h2, h3, h4, .serif-title {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
+.hero-section .btn-secondary-light {
+  background: transparent;
+  color: var(--ink-primary);
+  border: 1px solid var(--border-medium);
+}
+
+.hero-section .btn-secondary-light:hover {
+  border-color: var(--ink-primary);
+  background-color: rgba(24, 23, 22, 0.05);
+  color: var(--ink-primary);
+}
+
 .hero-meta-bar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid var(--border-subtle);
   padding-top: 1.5rem;
   max-width: 640px;
 }
@@ -545,7 +569,7 @@ h1, h2, h3, h4, .serif-title {
   font-size: 0.625rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--tone-gold);
+  color: #8C6D37;
   margin-bottom: 0.25rem;
 }
 
@@ -553,7 +577,7 @@ h1, h2, h3, h4, .serif-title {
   display: block;
   font-family: var(--font-serif);
   font-size: 1.125rem;
-  color: #FFFFFF;
+  color: var(--ink-primary);
   font-weight: 400;
 }
 
@@ -571,18 +595,18 @@ h1, h2, h3, h4, .serif-title {
 
 .hero-image-card {
   position: relative;
-  background-color: #191817;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 16px 36px -12px rgba(24, 23, 22, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
   transition: transform 0.4s var(--ease-luxury), border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hero-image-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(194, 166, 118, 0.4);
-  box-shadow: 0 24px 44px -10px rgba(0, 0, 0, 0.75), 0 0 25px rgba(194, 166, 118, 0.08);
+  border-color: rgba(194, 166, 118, 0.6);
+  box-shadow: 0 24px 48px -12px rgba(24, 23, 22, 0.14), 0 0 20px rgba(194, 166, 118, 0.12);
 }
 
 .hero-card-img-wrap {
@@ -590,7 +614,7 @@ h1, h2, h3, h4, .serif-title {
   width: 100%;
   height: clamp(210px, 22vw, 265px);
   overflow: hidden;
-  background-color: #0d0d0c;
+  background-color: #F5F2EC;
 }
 
 .hero-card-img {
@@ -610,9 +634,9 @@ h1, h2, h3, h4, .serif-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 1.25rem;
-  background: linear-gradient(180deg, rgba(24, 23, 22, 0.95) 0%, rgba(18, 18, 17, 0.98) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 0.85rem 1.25rem;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-subtle);
 }
 
 .hero-caption-left {
@@ -625,14 +649,14 @@ h1, h2, h3, h4, .serif-title {
   font-size: 0.5625rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--tone-gold);
+  color: #8C6D37;
   font-weight: 600;
 }
 
 .hero-caption-title {
   font-family: var(--font-serif);
   font-size: 1.15rem;
-  color: #FFFFFF;
+  color: var(--ink-primary);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.2;
@@ -642,11 +666,11 @@ h1, h2, h3, h4, .serif-title {
   font-size: 0.625rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-light-muted);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-medium);
   padding: 0.25rem 0.65rem;
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-porcelain);
   white-space: nowrap;
 }
 
