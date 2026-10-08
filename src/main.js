@@ -1,6 +1,6 @@
 import { BRAND_INFO, COLLECTIONS, PRODUCTS, HOSPITALITY_APPLICATIONS, PRIVATE_LABEL_PILLARS } from './data/catalogue-data.js';
 
-// Application State
+// Global Application State
 const state = {
   activeLumeraColor: 'azure',
   activeCollectionFilter: 'all',
@@ -10,22 +10,26 @@ const state = {
   currentModalProduct: null
 };
 
-// DOM Elements
+// Expose global methods for inline HTML triggers
+window.vittesaOpenModal = openProductModal;
+window.vittesaAddToTray = addToTray;
+window.vittesaRemoveFromTray = removeFromTray;
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
-  initCollectionsCarousel();
-  initLumeraColorSwitcher();
-  initEssentialWhiteTabs();
-  initShowroom();
+  initMobileNav();
   initModal();
   initTray();
   initEnquiryForm();
-  initMobileNav();
+  initLumeraColorSwitcher();
+  initCollectionSubpageFilter();
+  initShowroom();
   renderDynamicSections();
+  parseUrlParams();
 });
 
 /* ==========================================================================
-   HEADER & NAVIGATION
+   HEADER & MOBILE NAVIGATION
    ========================================================================== */
 function initHeader() {
   const header = document.querySelector('.site-header');
@@ -37,7 +41,6 @@ function initHeader() {
     }
   }, { passive: true });
 
-  // Update tray badge
   updateTrayBadge();
 }
 
@@ -75,502 +78,96 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   3D COLLECTIONS ROUND CAROUSEL (EXHIBITION TURNTABLE)
-   ========================================================================== */
-const CAROUSEL_COLLECTIONS = [
-  {
-    id: "lumera",
-    name: "LUMÉRA",
-    layer: "01 SIGNATURE",
-    tagline: "Architectural Mediterranean",
-    image: "/assets/catalogue/hero-lumera-table.jpg",
-    link: "#lumera-section"
-  },
-  {
-    id: "olivera",
-    name: "OLIVERA",
-    layer: "02 CURATED",
-    tagline: "Natural Earth Series",
-    image: "/assets/catalogue/olivera-editorial-hero.jpg",
-    link: "#olivera"
-  },
-  {
-    id: "roke",
-    name: "ROKÉ",
-    layer: "02 CURATED",
-    tagline: "Sculpted Texture Series",
-    image: "/assets/catalogue/roke-editorial-hero.jpg",
-    link: "#roke"
-  },
-  {
-    id: "terra-speckle",
-    name: "TERRA SPECKLE",
-    layer: "02 CURATED",
-    tagline: "Artisan Earth Series",
-    image: "/assets/catalogue/terra-speckle-editorial-hero.png",
-    link: "#terra-speckle"
-  },
-  {
-    id: "essential-white",
-    name: "ESSENTIAL WHITE",
-    layer: "03 ESSENTIAL",
-    tagline: "Core Commercial Porcelain",
-    image: "/assets/catalogue/essential-white-platters-hero.jpg",
-    link: "#essential-white-section"
-  },
-  {
-    id: "urbane-grey",
-    name: "URBANE GREY",
-    layer: "02 CURATED",
-    tagline: "Contemporary Mineral Slate",
-    image: "/assets/catalogue/urbane-grey-editorial.jpg",
-    link: "/showroom.html?collection=curated-tones"
-  },
-  {
-    id: "paradise-pink",
-    name: "PARADISE PINK",
-    layer: "02 CURATED",
-    tagline: "Soft Rose Earth",
-    image: "/assets/catalogue/paradise-pink-editorial.jpg",
-    link: "/showroom.html?collection=curated-tones"
-  },
-  {
-    id: "aqua-blue",
-    name: "AQUA BLUE",
-    layer: "02 CURATED",
-    tagline: "Mediterranean Coastal",
-    image: "/assets/catalogue/aqua-blue-editorial.jpg",
-    link: "/showroom.html?collection=curated-tones"
-  }
-];
-
-function initCollectionsCarousel() {
-  const wrapper = document.getElementById('collections-carousel-wrapper');
-  const stage = document.getElementById('round-carousel-stage');
-  const prevBtn = document.getElementById('carousel-prev-btn');
-  const nextBtn = document.getElementById('carousel-next-btn');
-  if (!wrapper || !stage) return;
-
-  const items = CAROUSEL_COLLECTIONS;
-  const count = items.length;
-  const angle = 360 / count;
-
-  let currentSettings = getSettings();
-  let radius = calculateRadius(currentSettings);
-  let rotY = 0;
-  let velY = 0;
-  let isVisible = false;
-  let rafId = null;
-  let lastTime = 0;
-
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const baseSpeed = prefersReduced ? 0 : 3.6; // Heavy, slow physical turntable: ~3.6 deg/sec
-  let currentIdleSpeed = 0; // Starts from rest, ramps up smoothly after entrance reveal
-  let desiredIdleSpeed = baseSpeed;
-
-  const drag = {
-    active: false,
-    startX: 0,
-    startY: 0,
-    lastX: 0,
-    lastTime: 0,
-    totalMoved: 0
-  };
-
-  let pointerHistory = [];
-
-  function getSettings() {
-    const w = window.innerWidth;
-    if (w >= 1280) {
-      return { width: 310, height: 350, spacing: 1.65, tilt: -4.5, perspective: 2400 };
-    } else if (w >= 992) {
-      return { width: 260, height: 300, spacing: 1.4, tilt: -4, perspective: 2000 };
-    } else if (w >= 768) {
-      return { width: 220, height: 260, spacing: 1.15, tilt: -3.5, perspective: 1800 };
-    } else if (w >= 480) {
-      return { width: 200, height: 245, spacing: 0.85, tilt: -3, perspective: 1500 };
-    } else {
-      return { width: 180, height: 225, spacing: 0.65, tilt: -2.5, perspective: 1300 };
-    }
-  }
-
-  function calculateRadius(s) {
-    const factor = 1 + s.spacing * 0.15;
-    return (s.width * factor) / (2 * Math.tan(Math.PI / count));
-  }
-
-  // Create Tilt Wrapper & Ring
-  const tiltWrapper = document.createElement('div');
-  tiltWrapper.className = 'carousel-tilt-wrapper';
-  tiltWrapper.style.transform = `rotateX(${currentSettings.tilt}deg)`;
-
-  const ring = document.createElement('div');
-  ring.className = 'carousel-ring';
-  ring.style.width = `${currentSettings.width}px`;
-  ring.style.height = `${currentSettings.height}px`;
-
-  items.forEach((item, i) => {
-    const cardItem = document.createElement('div');
-    cardItem.className = 'carousel-card-item';
-    cardItem.dataset.index = i;
-    cardItem.dataset.link = item.link;
-    cardItem.setAttribute('role', 'group');
-    cardItem.setAttribute('aria-label', `Collection: ${item.name}`);
-
-    cardItem.innerHTML = `
-      <div class="carousel-card-front" style="background-image: url('${item.image}')">
-        <div class="card-top-tag">
-          <span>${item.layer}</span>
-        </div>
-        <div class="card-bottom-info">
-          <h4 class="card-bottom-title">${item.name}</h4>
-          <span class="card-bottom-tagline">${item.tagline}</span>
-          <span class="card-explore-btn" aria-label="Explore ${item.name} collection">Explore Collection →</span>
-        </div>
-      </div>
-      <div class="carousel-card-back">
-        <img src="/assets/catalogue/vittesa-emblem-gold.jpg" alt="VITTESA" class="back-emblem" />
-        <div class="back-brand">VITTESA</div>
-        <div class="back-text">Porcelain Maison</div>
-      </div>
-    `;
-
-    ring.appendChild(cardItem);
-  });
-
-  tiltWrapper.appendChild(ring);
-  stage.innerHTML = '';
-  stage.appendChild(tiltWrapper);
-
-  const cardElements = Array.from(ring.children);
-
-  function layoutCards() {
-    stage.style.perspective = `${currentSettings.perspective}px`;
-    tiltWrapper.style.transform = `rotateX(${currentSettings.tilt}deg)`;
-    ring.style.width = `${currentSettings.width}px`;
-    ring.style.height = `${currentSettings.height}px`;
-
-    cardElements.forEach((card, i) => {
-      card.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px)`;
-    });
-  }
-
-  layoutCards();
-
-  function applyTransform() {
-    ring.style.transform = `translateZ(${-radius}px) rotateY(${rotY}deg)`;
-
-    // Physical depth, studio lighting & optical depth modulation per card
-    cardElements.forEach((card, i) => {
-      let cardAngle = (i * angle + rotY) % 360;
-      if (cardAngle > 180) cardAngle -= 360;
-      if (cardAngle < -180) cardAngle += 360;
-
-      const rad = cardAngle * (Math.PI / 180);
-      const cosVal = Math.cos(rad); // 1.0 at front, 0.0 at sides, -1.0 at rear
-      const depthFactor = (cosVal + 1) / 2; // [0, 1]
-
-      // Subtle scale for front card (1.00 at rear/sides to 1.035 at direct front)
-      const scale = 1.0 + Math.max(0, cosVal) * 0.035;
-
-      card.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px) scale(${scale.toFixed(3)})`;
-      card.style.zIndex = Math.round(depthFactor * 100);
-
-      // Subtle atmospheric opacity: front is 1.0, rear is 0.70 (never completely invisible)
-      card.style.opacity = (0.70 + 0.30 * depthFactor).toFixed(3);
-
-      // Studio lighting on card front: brightness, saturation, and soft diffuse ambient occlusion
-      const front = card.querySelector('.carousel-card-front');
-      if (front) {
-        const brightness = (0.76 + 0.26 * depthFactor).toFixed(3);
-        const saturation = (0.90 + 0.12 * depthFactor).toFixed(3);
-        front.style.filter = `brightness(${brightness}) saturate(${saturation})`;
-
-        const shadowY = Math.round(6 + 16 * depthFactor);
-        const shadowBlur = Math.round(14 + 28 * depthFactor);
-        const shadowSpread = Math.round(-3 * depthFactor);
-        const shadowAlpha = (0.05 + 0.14 * depthFactor).toFixed(3);
-        const ambientAlpha = (0.03 + 0.06 * depthFactor).toFixed(3);
-        const rimAlpha = (0.16 + 0.22 * depthFactor).toFixed(3);
-
-        front.style.boxShadow = `0 ${shadowY}px ${shadowBlur}px ${shadowSpread}px rgba(18, 18, 17, ${shadowAlpha}), 0 3px 8px rgba(18, 18, 17, ${ambientAlpha}), inset 0 1px 1px rgba(255, 255, 255, ${rimAlpha}), inset 0 0 24px rgba(0, 0, 0, 0.14)`;
-      }
-
-      // Pointer event control: rear cards do not intercept front card clicks
-      card.style.pointerEvents = cosVal > -0.22 ? 'auto' : 'none';
-    });
-  }
-
-  applyTransform();
-
-  // Resize handler
-  window.addEventListener('resize', () => {
-    currentSettings = getSettings();
-    radius = calculateRadius(currentSettings);
-    layoutCards();
-    applyTransform();
-  }, { passive: true });
-
-  // Hover detection: gently slows rotation to comfortable product inspection speed
-  stage.addEventListener('mouseenter', () => {
-    desiredIdleSpeed = baseSpeed * 0.22;
-  });
-  stage.addEventListener('mouseleave', () => {
-    desiredIdleSpeed = baseSpeed;
-  });
-
-  // Pointer Drag Interaction
-  const onPointerDown = (e) => {
-    drag.active = true;
-    drag.startX = e.clientX;
-    drag.startY = e.clientY;
-    drag.lastX = e.clientX;
-    drag.lastTime = performance.now();
-    drag.totalMoved = 0;
-    velY = 0;
-    pointerHistory = [{ x: e.clientX, t: performance.now() }];
-    stage.style.cursor = 'grabbing';
-    try {
-      stage.setPointerCapture(e.pointerId);
-    } catch (_) {}
-  };
-
-  const onPointerMove = (e) => {
-    if (!drag.active) return;
-    const now = performance.now();
-    const dx = e.clientX - drag.lastX;
-    drag.totalMoved += Math.abs(dx);
-    drag.lastX = e.clientX;
-    drag.lastTime = now;
-
-    const sensitivity = window.innerWidth < 768 ? 0.28 : 0.18;
-    rotY += dx * sensitivity;
-
-    // Follow pointer immediately with zero input lag
-    applyTransform();
-
-    // Maintain recent 90ms pointer history for velocity calculation
-    pointerHistory.push({ x: e.clientX, t: now });
-    while (pointerHistory.length > 1 && (now - pointerHistory[0].t > 90)) {
-      pointerHistory.shift();
-    }
-  };
-
-  const onPointerUp = (e) => {
-    if (!drag.active) return;
-    drag.active = false;
-    stage.style.cursor = 'grab';
-    try {
-      stage.releasePointerCapture(e.pointerId);
-    } catch (_) {}
-
-    // Calculate natural release velocity from pointer history
-    const sensitivity = window.innerWidth < 768 ? 0.28 : 0.18;
-    if (pointerHistory.length >= 2) {
-      const oldest = pointerHistory[0];
-      const latest = pointerHistory[pointerHistory.length - 1];
-      const dt = Math.max((latest.t - oldest.t) / 1000, 0.008);
-      if (dt > 0.012) {
-        const dx = latest.x - oldest.x;
-        const releaseVel = (dx * sensitivity) / dt;
-        // Clamp maximum angular velocity to prevent extreme spinning
-        velY = Math.max(-110, Math.min(110, releaseVel));
-      } else {
-        velY = 0;
-      }
-    } else {
-      velY = 0;
-    }
-
-    // Check click vs drag
-    if (drag.totalMoved < 6) {
-      const targetCard = e.target.closest('.carousel-card-item');
-      if (targetCard && targetCard.dataset.link) {
-        const link = targetCard.dataset.link;
-        if (link.startsWith('#')) {
-          const el = document.querySelector(link);
-          el?.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.location.href = link;
-        }
-      }
-    }
-  };
-
-  stage.addEventListener('pointerdown', onPointerDown);
-  stage.addEventListener('pointermove', onPointerMove);
-  stage.addEventListener('pointerup', onPointerUp);
-  stage.addEventListener('pointercancel', onPointerUp);
-
-  // Prev / Next button step rotation
-  prevBtn?.addEventListener('click', () => {
-    velY += 40;
-  });
-  nextBtn?.addEventListener('click', () => {
-    velY -= 40;
-  });
-
-  // Physics animation loop
-  function loop(now) {
-    if (!lastTime) lastTime = now;
-    const dt = Math.min((now - lastTime) / 1000, 0.1);
-    lastTime = now;
-
-    if (!drag.active) {
-      if (Math.abs(velY) > 0.15) {
-        // Frame-rate independent exponential damping for physical heavy turntable
-        rotY += velY * dt;
-        velY *= Math.pow(0.938, dt * 60);
-      } else {
-        velY = 0;
-        // Smoothly approach desired idle speed without abrupt speed changes
-        currentIdleSpeed += (desiredIdleSpeed - currentIdleSpeed) * Math.min(dt * 2.8, 1.0);
-        rotY += currentIdleSpeed * dt;
-      }
-      applyTransform();
-    }
-
-    if (isVisible && !document.hidden) {
-      rafId = requestAnimationFrame(loop);
-    } else {
-      rafId = null;
-    }
-  }
-
-  // Tab visibility handling: pause RAF when tab is hidden, resume when tab is active
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
-    } else if (isVisible && !rafId) {
-      lastTime = performance.now();
-      rafId = requestAnimationFrame(loop);
-    }
-  });
-
-  // Intersection Observer for performance & choreographed entrance reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        wrapper.classList.add('visible');
-        if (!isVisible) {
-          isVisible = true;
-          applyTransform();
-          // Step 1: intro fades in
-          // Step 2: carousel stage gently appears
-          // Step 3: cards settle in 3D position
-          // Step 4: turntable rotation begins smoothly after ~700ms
-          setTimeout(() => {
-            if (isVisible && !rafId && !document.hidden) {
-              lastTime = performance.now();
-              rafId = requestAnimationFrame(loop);
-            }
-          }, prefersReduced ? 0 : 700);
-        }
-      } else {
-        isVisible = false;
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-          rafId = null;
-        }
-      }
-    });
-  }, { threshold: 0.12 });
-
-  observer.observe(wrapper);
-}
-
-/* ==========================================================================
-   LUMÉRA COLOR EXPLORATION
+   LUMÉRA COLOR SWITCHER (SUBPAGE & SECTION)
    ========================================================================== */
 function initLumeraColorSwitcher() {
-  const section = document.getElementById('lumera-section');
-  const swatchBtns = document.querySelectorAll('.swatch-btn');
-  const metaDesc = document.querySelector('.color-active-meta');
+  const buttons = document.querySelectorAll('.swatch-btn');
+  const metaBox = document.querySelector('.color-active-meta');
+  const heroSection = document.querySelector('.lumera-showcase-section, body.tone-azure');
 
-  const lumeraData = COLLECTIONS.find(c => c.id === 'lumera');
-  if (!lumeraData) return;
+  const metaData = {
+    azure: {
+      title: "AZURE",
+      descriptor: "Calm. Refined. Timeless.",
+      desc: "Deep Mediterranean oceanic blue capturing twilight light on coastal water.",
+      toneClass: "tone-azure"
+    },
+    olive: {
+      title: "OLIVE",
+      descriptor: "Earthy. Sophisticated. Versatile.",
+      desc: "Muted botanical earth tone evocative of ancient Mediterranean groves.",
+      toneClass: "tone-olive"
+    },
+    sienna: {
+      title: "SIENNA",
+      descriptor: "Warm. Modern. Distinctive.",
+      desc: "Sun-baked terracotta mineral warmth designed to frame contemporary culinary creations.",
+      toneClass: "tone-sienna"
+    }
+  };
 
-  swatchBtns.forEach(btn => {
+  buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const colorId = btn.dataset.color;
-      state.activeLumeraColor = colorId;
+      const color = btn.dataset.color;
+      if (!color || !metaData[color]) return;
 
-      swatchBtns.forEach(b => b.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Update Section Tone Theme
-      section.classList.remove('tone-azure', 'tone-olive', 'tone-sienna');
-      section.classList.add(`tone-${colorId}`);
+      state.activeLumeraColor = color;
+      const data = metaData[color];
 
-      const matchedColor = lumeraData.colorDirections.find(c => c.id === colorId);
-      if (matchedColor && metaDesc) {
-        metaDesc.innerHTML = `<strong>${matchedColor.name}</strong> — ${matchedColor.descriptor} <em>${matchedColor.description}</em>`;
+      if (metaBox) {
+        metaBox.innerHTML = `<strong>${data.title}</strong> — ${data.descriptor} <em>${data.desc}</em>`;
+      }
+
+      // Update background tone theme
+      if (heroSection) {
+        heroSection.classList.remove('tone-azure', 'tone-olive', 'tone-sienna');
+        heroSection.classList.add(data.toneClass);
       }
     });
   });
 }
 
 /* ==========================================================================
-   ESSENTIAL WHITE TABS
+   COLLECTION SUBPAGE IN-PAGE FILTER
    ========================================================================== */
-function initEssentialWhiteTabs() {
-  const tabBtns = document.querySelectorAll('.white-tab-btn');
-  const tabPanes = document.querySelectorAll('.white-tab-content');
+function initCollectionSubpageFilter() {
+  const filterChips = document.querySelectorAll('.products-filter-bar .filter-chip');
+  const cards = document.querySelectorAll('#collection-products-grid .product-item-card');
 
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetCategory = btn.dataset.tab;
+  if (!filterChips.length || !cards.length) return;
 
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabPanes.forEach(p => p.classList.remove('active'));
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
 
-      btn.classList.add('active');
-      const activePane = document.getElementById(`white-tab-${targetCategory}`);
-      activePane?.classList.add('active');
+      const filter = chip.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   });
 }
 
 /* ==========================================================================
-   SHOWROOM FILTERING & SEARCH
+   SHOWROOM EXPLORER
    ========================================================================== */
 function initShowroom() {
-  const collectionChips = document.querySelectorAll('.filter-chip[data-collection]');
-  const categoryChips = document.querySelectorAll('.filter-chip[data-category]');
+  const showroomGrid = document.getElementById('showroom-grid');
+  if (!showroomGrid) return;
+
+  const collectionChips = document.querySelectorAll('[data-collection]');
+  const categoryChips = document.querySelectorAll('[data-category]');
   const searchInput = document.getElementById('showroom-search');
 
-  // Check URL query parameters
-  const urlParams = new URLSearchParams(window.location.search);
-  const colParam = urlParams.get('collection');
-  const catParam = urlParams.get('category');
-  const searchParam = urlParams.get('search');
-
-  if (colParam) {
-    const matchedCol = document.querySelector(`.filter-chip[data-collection="${colParam}"]`);
-    if (matchedCol) {
-      collectionChips.forEach(c => c.classList.remove('active'));
-      matchedCol.classList.add('active');
-      state.activeCollectionFilter = colParam;
-    }
-  }
-
-  if (catParam) {
-    const matchedCat = document.querySelector(`.filter-chip[data-category="${catParam}"]`);
-    if (matchedCat) {
-      categoryChips.forEach(c => c.classList.remove('active'));
-      matchedCat.classList.add('active');
-      state.activeCategoryFilter = catParam;
-    }
-  }
-
-  if (searchParam && searchInput) {
-    searchInput.value = searchParam;
-    state.searchQuery = searchParam.trim().toLowerCase();
-  }
-
+  // Collection filter buttons
   collectionChips.forEach(chip => {
     chip.addEventListener('click', () => {
       collectionChips.forEach(c => c.classList.remove('active'));
@@ -580,6 +177,7 @@ function initShowroom() {
     });
   });
 
+  // Category filter buttons
   categoryChips.forEach(chip => {
     chip.addEventListener('click', () => {
       categoryChips.forEach(c => c.classList.remove('active'));
@@ -589,6 +187,7 @@ function initShowroom() {
     });
   });
 
+  // Search input
   searchInput?.addEventListener('input', (e) => {
     state.searchQuery = e.target.value.trim().toLowerCase();
     renderShowroomGrid();
@@ -598,351 +197,359 @@ function initShowroom() {
 }
 
 function renderShowroomGrid() {
-  const grid = document.getElementById('showroom-grid');
-  const countEl = document.getElementById('results-count');
-  if (!grid) return;
+  const showroomGrid = document.getElementById('showroom-grid');
+  const counter = document.getElementById('results-count');
+  if (!showroomGrid) return;
 
-  const filtered = PRODUCTS.filter(p => {
-    const matchCollection = state.activeCollectionFilter === 'all' || 
-      (state.activeCollectionFilter === 'curated-tones' 
-        ? ['urbane-grey', 'paradise-pink', 'aqua-blue'].includes(p.collectionId)
-        : p.collectionId === state.activeCollectionFilter);
+  const filtered = PRODUCTS.filter(product => {
+    // Collection match
+    let matchesCollection = false;
+    if (state.activeCollectionFilter === 'all') {
+      matchesCollection = true;
+    } else {
+      matchesCollection = (product.collectionId === state.activeCollectionFilter);
+    }
 
-    const matchCategory = state.activeCategoryFilter === 'all' || p.category === state.activeCategoryFilter;
+    // Category match
+    const matchesCategory = (state.activeCategoryFilter === 'all') || (product.category === state.activeCategoryFilter);
 
-    const matchSearch = !state.searchQuery || 
-      p.name.toLowerCase().includes(state.searchQuery) ||
-      p.code.toLowerCase().includes(state.searchQuery) ||
-      p.collection.toLowerCase().includes(state.searchQuery) ||
-      (p.dimensions && p.dimensions.toLowerCase().includes(state.searchQuery));
+    // Search match (code, name, collection, specs)
+    let matchesSearch = true;
+    if (state.searchQuery) {
+      const q = state.searchQuery;
+      const codeMatch = product.code?.toLowerCase().includes(q);
+      const nameMatch = product.name?.toLowerCase().includes(q);
+      const colMatch = product.collection?.toLowerCase().includes(q);
+      const dimMatch = product.dimensions?.toLowerCase().includes(q);
+      matchesSearch = codeMatch || nameMatch || colMatch || dimMatch;
+    }
 
-    return matchCollection && matchCategory && matchSearch;
+    return matchesCollection && matchesCategory && matchesSearch;
   });
 
-  if (countEl) {
-    countEl.textContent = `Showing ${filtered.length} of ${PRODUCTS.length} curated references`;
+  if (counter) {
+    counter.textContent = `Displaying ${filtered.length} of ${PRODUCTS.length} catalogue references`;
   }
 
   if (filtered.length === 0) {
-    grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--ink-secondary);">
-        <p style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">No exact reference found.</p>
-        <p style="font-size: 0.875rem;">Try adjusting your collection or category filter, or contact our team for bespoke project sourcing.</p>
+    showroomGrid.innerHTML = `
+      <div class="showroom-empty" style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--ink-muted);">
+        <p style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--ink-secondary);">No references match your current filters</p>
+        <p style="font-size: 0.875rem;">Try clearing the search or switching collection categories.</p>
+        <button class="btn-primary" style="margin-top: 1.5rem;" onclick="resetShowroomFilters()">Reset All Filters</button>
       </div>
     `;
     return;
   }
 
-  grid.innerHTML = filtered.map(prod => {
-    const inTray = state.specTray.some(item => item.id === prod.id);
-    const colorDots = prod.colorHexes 
-      ? prod.colorHexes.map(hex => `<span class="card-color-dot" style="background-color: ${hex}"></span>`).join('')
-      : '';
-
-    return `
-      <div class="showroom-card" data-id="${prod.id}">
+  showroomGrid.innerHTML = filtered.map(p => `
+    <div class="product-item-card" data-category="${p.category}" data-id="${p.id}">
+      <span class="product-item-badge">${p.code}</span>
+      <div class="product-item-media" onclick="window.vittesaOpenModal('${p.id}')">
+        <img src="${p.image}" alt="${p.name} - ${p.code}" loading="lazy" />
+      </div>
+      <div class="product-item-body">
         <div>
-          <div class="showroom-card-top">
-            <span class="card-collection-badge">${prod.collection}</span>
-            <span class="card-code">${prod.code}</span>
-          </div>
-
-          <div class="showroom-card-img" onclick="window.vittesaOpenModal('${prod.id}')">
-            <img src="${prod.image}" alt="${prod.name}" loading="lazy" />
-          </div>
-
-          <div class="showroom-card-info" onclick="window.vittesaOpenModal('${prod.id}')">
-            <h4>${prod.name}</h4>
-            <div class="showroom-card-dims">${prod.dimensions || 'Specifications on request'}</div>
-            ${colorDots ? `<div class="card-colors-row">${colorDots}</div>` : ''}
-          </div>
+          <div class="product-item-code">${p.code} • ${p.collection}</div>
+          <h3 class="product-item-title">${p.name}</h3>
+          <div class="product-item-dimensions">${p.dimensions || p.specs?.diameter || p.specs?.size || ''}</div>
+          <p class="product-item-specs-preview">${p.editorialCaption || p.specs?.finish || ''}</p>
         </div>
-
-        <div class="card-footer">
-          <button class="btn-card-spec" onclick="window.vittesaOpenModal('${prod.id}')">
-            Details <span>→</span>
-          </button>
-          <button class="btn-card-add" onclick="window.vittesaToggleTray('${prod.id}')">
-            ${inTray ? 'In Tray ✓' : '+ Add Spec'}
-          </button>
+        <div class="product-item-actions">
+          <button class="btn-item-action" onclick="window.vittesaOpenModal('${p.id}')">Specifications</button>
+          <button class="btn-item-action primary" onclick="window.vittesaAddToTray('${p.id}')">+ Spec Tray</button>
         </div>
       </div>
-    `;
-  }).join('');
+    </div>
+  `).join('');
 }
+
+window.resetShowroomFilters = () => {
+  state.activeCollectionFilter = 'all';
+  state.activeCategoryFilter = 'all';
+  state.searchQuery = '';
+  document.querySelectorAll('[data-collection]').forEach(c => c.classList.toggle('active', c.dataset.collection === 'all'));
+  document.querySelectorAll('[data-category]').forEach(c => c.classList.toggle('active', c.dataset.category === 'all'));
+  const searchInput = document.getElementById('showroom-search');
+  if (searchInput) searchInput.value = '';
+  renderShowroomGrid();
+};
 
 /* ==========================================================================
    PRODUCT DETAIL MODAL
    ========================================================================== */
 function initModal() {
-  const backdrop = document.getElementById('product-modal');
-  const closeBtn = document.querySelector('.btn-close-modal');
+  const modal = document.getElementById('product-modal');
+  const closeBtn = modal?.querySelector('.btn-close-modal');
+  const addBtn = document.getElementById('modal-add-btn');
+  const enquireBtn = document.getElementById('modal-enquire-btn');
 
   const closeModal = () => {
-    backdrop?.classList.remove('open');
+    modal?.classList.remove('open');
     document.body.style.overflow = '';
   };
 
   closeBtn?.addEventListener('click', closeModal);
-  backdrop?.addEventListener('click', (e) => {
-    if (e.target === backdrop) closeModal();
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
   });
 
-  window.vittesaOpenModal = (productId) => {
-    const prod = PRODUCTS.find(p => p.id === productId);
-    if (!prod) return;
-    state.currentModalProduct = prod;
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('open')) {
+      closeModal();
+    }
+  });
 
-    const modalImg = document.getElementById('modal-img');
-    const modalCode = document.getElementById('modal-code');
-    const modalTitle = document.getElementById('modal-title');
-    const modalCollection = document.getElementById('modal-collection');
-    const modalSpecsTable = document.getElementById('modal-specs-table');
-    const modalAddBtn = document.getElementById('modal-add-btn');
+  addBtn?.addEventListener('click', () => {
+    if (state.currentModalProduct) {
+      addToTray(state.currentModalProduct.id);
+      addBtn.textContent = '✓ Added to Spec Tray';
+      setTimeout(() => {
+        addBtn.textContent = 'Add to Specification Tray';
+      }, 1500);
+    }
+  });
 
-    if (modalImg) modalImg.src = prod.image;
-    if (modalCode) modalCode.textContent = prod.code;
-    if (modalTitle) modalTitle.textContent = prod.name;
-    if (modalCollection) modalCollection.textContent = `${prod.collection} • ${prod.categoryLabel}`;
+  enquireBtn?.addEventListener('click', () => {
+    if (!state.currentModalProduct) return;
+    const p = state.currentModalProduct;
+    closeModal();
 
-    // Build specs table
-    let tableHtml = `
-      <tr>
-        <th>Reference Code</th>
-        <td>${prod.code}</td>
-      </tr>
-      <tr>
-        <th>Collection</th>
-        <td>${prod.collection}</td>
-      </tr>
-      <tr>
-        <th>Product Type</th>
-        <td>${prod.categoryLabel}</td>
-      </tr>
-      <tr>
-        <th>Dimensions / Spec</th>
-        <td>${prod.dimensions || 'Specifications available on request'}</td>
-      </tr>
+    const enquirySection = document.getElementById('contact') || document.getElementById('enquire-section');
+    const notesInput = document.getElementById('enquiry-notes');
+    const colSelect = document.getElementById('enq-collection');
+
+    if (enquirySection && notesInput) {
+      enquirySection.scrollIntoView({ behavior: 'smooth' });
+      if (colSelect && p.collectionId) {
+        colSelect.value = p.collectionId;
+      }
+      const existingText = notesInput.value.trim();
+      const itemText = `[Inquiry for ${p.code} — ${p.name} (${p.collection})]`;
+      if (!existingText.includes(p.code)) {
+        notesInput.value = existingText ? `${existingText}\n${itemText}` : itemText;
+      }
+      setTimeout(() => notesInput.focus(), 600);
+    } else {
+      // On subpage without form or external link
+      window.location.href = `/#contact?item=${encodeURIComponent(p.code + ' ' + p.name)}`;
+    }
+  });
+}
+
+function openProductModal(productId) {
+  const product = PRODUCTS.find(p => p.id === productId);
+  if (!product) return;
+
+  state.currentModalProduct = product;
+  const modal = document.getElementById('product-modal');
+  if (!modal) return;
+
+  const imgEl = document.getElementById('modal-img');
+  const codeEl = document.getElementById('modal-code');
+  const titleEl = document.getElementById('modal-title');
+  const colEl = document.getElementById('modal-collection');
+  const specsTable = document.getElementById('modal-specs-table');
+
+  if (imgEl) imgEl.src = product.image;
+  if (codeEl) codeEl.textContent = product.code;
+  if (titleEl) titleEl.textContent = product.name;
+  if (colEl) colEl.textContent = `${product.collection} • ${product.categoryLabel || 'Porcelain'}`;
+
+  if (specsTable) {
+    let rows = `
+      <tr><th>Product Code</th><td><strong>${product.code}</strong></td></tr>
+      <tr><th>Collection</th><td>${product.collection}</td></tr>
+      <tr><th>Dimensions</th><td>${product.dimensions || 'Standard Tableware Specification'}</td></tr>
     `;
 
-    if (prod.colors && prod.colors.length) {
-      tableHtml += `
-        <tr>
-          <th>Available Directions</th>
-          <td>${prod.colors.join(' • ')}</td>
-        </tr>
-      `;
-    }
-
-    if (prod.specs) {
-      for (const [key, val] of Object.entries(prod.specs)) {
-        if (!['diameter', 'height', 'capacity', 'size', 'length', 'width'].includes(key)) {
-          tableHtml += `
-            <tr>
-              <th>${key.replace(/([A-Z])/g, ' $1').toUpperCase()}</th>
-              <td>${val}</td>
-            </tr>
-          `;
-        }
+    if (product.specs) {
+      for (const [key, val] of Object.entries(product.specs)) {
+        const label = key.charAt(0).toUpperCase() + key.slice(1);
+        rows += `<tr><th>${label}</th><td>${val}</td></tr>`;
       }
     }
 
-    if (modalSpecsTable) modalSpecsTable.innerHTML = tableHtml;
-
-    const inTray = state.specTray.some(item => item.id === prod.id);
-    if (modalAddBtn) {
-      modalAddBtn.textContent = inTray ? 'Remove from Specification Tray' : 'Add to Specification Tray';
+    if (product.colors && product.colors.length) {
+      rows += `<tr><th>Color Directions</th><td>${product.colors.join(' • ')}</td></tr>`;
     }
 
-    backdrop?.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
+    specsTable.innerHTML = rows;
+  }
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 /* ==========================================================================
-   SPECIFICATION TRAY (B2B PROGRAM BUILDER)
+   SPECIFICATION TRAY (PROJECT SCHEDULE)
    ========================================================================== */
 function initTray() {
-  const trayDrawer = document.getElementById('spec-tray');
-  const openBtns = document.querySelectorAll('.open-tray-btn');
+  const tray = document.getElementById('spec-tray');
+  const openButtons = document.querySelectorAll('.open-tray-btn');
   const closeBtn = document.querySelector('.btn-close-tray');
+  const proceedBtn = document.getElementById('tray-proceed-btn');
 
-  openBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      trayDrawer?.classList.add('open');
-    });
-  });
-
-  closeBtn?.addEventListener('click', () => {
-    trayDrawer?.classList.remove('open');
-  });
-
-  window.vittesaToggleTray = (productId) => {
-    const prod = PRODUCTS.find(p => p.id === productId);
-    if (!prod) return;
-
-    const index = state.specTray.findIndex(item => item.id === prod.id);
-    if (index > -1) {
-      state.specTray.splice(index, 1);
-    } else {
-      state.specTray.push(prod);
-    }
-
-    localStorage.setItem('vittesa_spec_tray', JSON.stringify(state.specTray));
-    updateTrayBadge();
-    renderTrayItems();
-    renderShowroomGrid();
-
-    // Update modal button if currently open
-    const modalAddBtn = document.getElementById('modal-add-btn');
-    if (modalAddBtn && state.currentModalProduct && state.currentModalProduct.id === prod.id) {
-      const inTray = state.specTray.some(item => item.id === prod.id);
-      modalAddBtn.textContent = inTray ? 'Remove from Specification Tray' : 'Add to Specification Tray';
-    }
+  const openTray = () => {
+    renderTray();
+    tray?.classList.add('open');
   };
 
-  const modalAddBtn = document.getElementById('modal-add-btn');
-  modalAddBtn?.addEventListener('click', () => {
-    if (state.currentModalProduct) {
-      window.vittesaToggleTray(state.currentModalProduct.id);
+  const closeTray = () => {
+    tray?.classList.remove('open');
+  };
+
+  openButtons.forEach(b => b.addEventListener('click', openTray));
+  closeBtn?.addEventListener('click', closeTray);
+
+  proceedBtn?.addEventListener('click', () => {
+    closeTray();
+    const enquirySection = document.getElementById('contact') || document.getElementById('enquire-section');
+    const notesInput = document.getElementById('enquiry-notes');
+
+    if (enquirySection && notesInput && state.specTray.length > 0) {
+      enquirySection.scrollIntoView({ behavior: 'smooth' });
+      const specList = state.specTray.map(it => `${it.code} (${it.name}, ${it.collection})`).join(', ');
+      notesInput.value = `Specification Tray Items (${state.specTray.length}):\n${specList}`;
+      setTimeout(() => notesInput.focus(), 600);
+    } else if (!enquirySection && state.specTray.length > 0) {
+      window.location.href = '/#contact';
     }
   });
 
-  const modalEnquireBtn = document.getElementById('modal-enquire-btn');
-  modalEnquireBtn?.addEventListener('click', () => {
-    // Close modal and scroll to enquiry form, prefilling with product code
-    const backdrop = document.getElementById('product-modal');
-    backdrop?.classList.remove('open');
-    document.body.style.overflow = '';
+  renderTray();
+}
 
-    const notesField = document.getElementById('enquiry-notes');
-    if (notesField && state.currentModalProduct) {
-      notesField.value = `Enquiring for technical specifications and trade sample of: ${state.currentModalProduct.collection} ${state.currentModalProduct.code} (${state.currentModalProduct.name}).\n`;
-    }
+function addToTray(productId) {
+  const product = PRODUCTS.find(p => p.id === productId);
+  if (!product) return;
 
-    const contactSec = document.getElementById('contact');
-    if (contactSec) {
-      contactSec.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/index.html#contact';
-    }
-  });
+  const exists = state.specTray.some(it => it.id === productId);
+  if (!exists) {
+    state.specTray.push({
+      id: product.id,
+      code: product.code,
+      name: product.name,
+      collection: product.collection,
+      dimensions: product.dimensions || '',
+      image: product.image
+    });
+    localStorage.setItem('vittesa_spec_tray', JSON.stringify(state.specTray));
+    updateTrayBadge();
+    renderTray();
+  }
+}
 
-  // Tray Enquire Button
-  const trayProceedBtn = document.getElementById('tray-proceed-btn');
-  trayProceedBtn?.addEventListener('click', () => {
-    trayDrawer?.classList.remove('open');
-    const notesField = document.getElementById('enquiry-notes');
-    if (notesField && state.specTray.length > 0) {
-      const codesList = state.specTray.map(p => `• [${p.code}] ${p.collection} ${p.name} (${p.dimensions})`).join('\n');
-      notesField.value = `Please provide a commercial trade quotation and project sample kit for the following specified tableware references:\n\n${codesList}\n\nEstimated Table Setting Count: `;
-    }
-
-    const contactSec = document.getElementById('contact');
-    if (contactSec) {
-      contactSec.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/index.html#contact';
-    }
-  });
-
-  renderTrayItems();
+function removeFromTray(productId) {
+  state.specTray = state.specTray.filter(it => it.id !== productId);
+  localStorage.setItem('vittesa_spec_tray', JSON.stringify(state.specTray));
+  updateTrayBadge();
+  renderTray();
 }
 
 function updateTrayBadge() {
   const badges = document.querySelectorAll('.tray-badge');
+  const count = state.specTray.length;
   badges.forEach(b => {
-    b.textContent = state.specTray.length;
-    b.style.display = state.specTray.length > 0 ? 'inline-block' : 'none';
+    b.textContent = count;
+    b.style.display = count > 0 ? 'inline-block' : 'none';
   });
 }
 
-function renderTrayItems() {
-  const container = document.getElementById('tray-items');
+function renderTray() {
   const emptyState = document.getElementById('tray-empty');
-  const proceedBtn = document.getElementById('tray-proceed-btn');
-  if (!container) return;
+  const itemsContainer = document.getElementById('tray-items');
+  if (!itemsContainer || !emptyState) return;
 
   if (state.specTray.length === 0) {
-    container.innerHTML = '';
-    if (emptyState) emptyState.style.display = 'block';
-    if (proceedBtn) proceedBtn.disabled = true;
-    return;
-  }
-
-  if (emptyState) emptyState.style.display = 'none';
-  if (proceedBtn) proceedBtn.disabled = false;
-
-  container.innerHTML = state.specTray.map(item => `
-    <div class="tray-item-card">
-      <img src="${item.image}" alt="${item.name}" class="tray-item-img" />
-      <div class="tray-item-info">
-        <div class="tray-item-code">${item.code}</div>
-        <div class="tray-item-title">${item.name}</div>
-        <div class="tray-item-dim">${item.dimensions}</div>
+    emptyState.style.display = 'block';
+    itemsContainer.innerHTML = '';
+  } else {
+    emptyState.style.display = 'none';
+    itemsContainer.innerHTML = state.specTray.map(item => `
+      <div class="tray-item-row" style="display:flex; gap:0.75rem; align-items:center; padding:0.75rem 0; border-bottom:1px solid var(--border-subtle);">
+        <img src="${item.image}" alt="${item.name}" style="width:48px; height:48px; object-fit:cover; border-radius:2px; background:var(--bg-porcelain);" />
+        <div style="flex:1;">
+          <div style="font-size:0.6875rem; font-weight:700; color:var(--tone-sienna);">${item.code}</div>
+          <div style="font-size:0.875rem; font-weight:600; color:var(--ink-primary); line-height:1.2;">${item.name}</div>
+          <div style="font-size:0.75rem; color:var(--ink-muted);">${item.collection}</div>
+        </div>
+        <button onclick="window.vittesaRemoveFromTray('${item.id}')" style="background:none; border:none; color:var(--ink-muted); cursor:pointer; font-size:1rem; padding:0.25rem;" title="Remove">✕</button>
       </div>
-      <button class="btn-remove-tray-item" onclick="window.vittesaToggleTray('${item.id}')" title="Remove">✕</button>
-    </div>
-  `).join('');
+    `).join('');
+  }
 }
 
 /* ==========================================================================
-   DYNAMIC SECTIONS (HOSPITALITY APPLICATIONS & PRIVATE LABEL)
+   TRADE ENQUIRY FORM HANDLER
+   ========================================================================== */
+function initEnquiryForm() {
+  const form = document.getElementById('b2b-enquiry-form');
+  const statusEl = document.getElementById('form-status');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.textContent = 'Transmitting Specification Request...';
+
+    setTimeout(() => {
+      if (btn) btn.textContent = '✓ Request Transmitted to Desk';
+      if (statusEl) {
+        statusEl.innerHTML = `
+          <div style="margin-top: 1rem; padding: 1rem; background: #EAF2EB; border: 1px solid #7FA884; color: #2C5E33; font-size: 0.875rem; border-radius: 2px;">
+            Thank you. Your specification request has been registered. Our international hospitality desk will contact you with portfolio pricing and technical datasheets.
+          </div>
+        `;
+      }
+      form.reset();
+    }, 1000);
+  });
+}
+
+/* ==========================================================================
+   DYNAMIC SECTIONS (HOMEPAGE)
    ========================================================================== */
 function renderDynamicSections() {
-  // Hospitality Applications Grid
+  // Private label grid
+  const plGrid = document.getElementById('private-label-grid');
+  if (plGrid) {
+    plGrid.innerHTML = PRIVATE_LABEL_PILLARS.map(p => `
+      <div class="pl-card">
+        <div class="pl-num">${p.number}</div>
+        <h4>${p.title}</h4>
+        <p>${p.description}</p>
+      </div>
+    `).join('');
+  }
+
+  // Hospitality applications grid
   const appsGrid = document.getElementById('apps-grid');
   if (appsGrid) {
     appsGrid.innerHTML = HOSPITALITY_APPLICATIONS.map(app => `
       <div class="app-card">
         <h4>${app.title}</h4>
-        <p>${app.subtitle}</p>
-        <span class="app-curation-tag">${app.curation}</span>
-      </div>
-    `).join('');
-  }
-
-  // Private Label Grid
-  const plGrid = document.getElementById('private-label-grid');
-  if (plGrid) {
-    plGrid.innerHTML = PRIVATE_LABEL_PILLARS.map(pl => `
-      <div class="pl-card">
-        <div class="pl-num">${pl.number}</div>
-        <h4>${pl.title}</h4>
-        <p>${pl.description}</p>
+        <p class="app-sub">${app.subtitle}</p>
+        <div class="app-curation-tag">
+          <span>Recommended Layer:</span>
+          <strong>${app.curation}</strong>
+        </div>
       </div>
     `).join('');
   }
 }
 
 /* ==========================================================================
-   ENQUIRY FORM
+   URL PARAMETER ROUTING
    ========================================================================== */
-function initEnquiryForm() {
-  const form = document.getElementById('b2b-enquiry-form');
-  const formStatus = document.getElementById('form-status');
-
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    // Generate reference number
-    const refNumber = 'VIT-' + Math.floor(100000 + Math.random() * 900000);
-
-    if (formStatus) {
-      formStatus.innerHTML = `
-        <div style="background-color: #E8EFE6; border: 1px solid #758D6E; padding: 1.5rem; color: #2B3D26; margin-top: 1.5rem;">
-          <h4 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.5rem;">Trade Specification Request Received</h4>
-          <p style="font-size: 0.875rem; margin-bottom: 0.75rem;">
-            Thank you, <strong>${data.name || 'Valued Partner'}</strong> (${data.company || 'Hospitality Group'}). Your reference number is <strong>${refNumber}</strong>.
-          </p>
-          <p style="font-size: 0.8125rem; color: #3E5437;">
-            Our international hospitality specification desk will review your tableware program requirements and issue official product datasheets and sample availability within 1 business day.
-          </p>
-        </div>
-      `;
-      form.reset();
-    }
-  });
+function parseUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  const colParam = params.get('collection');
+  if (colParam && document.getElementById('showroom-grid')) {
+    state.activeCollectionFilter = colParam;
+    document.querySelectorAll('[data-collection]').forEach(c => {
+      c.classList.toggle('active', c.dataset.collection === colParam);
+    });
+    renderShowroomGrid();
+  }
 }
