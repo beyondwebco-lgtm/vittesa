@@ -35,7 +35,6 @@ const cardsHtml = OLIVERA_PRODUCTS.map(p => {
           </div>
           <div class="product-item-body">
             <div>
-              <div class="product-item-code">${p.code}</div>
               <h3 class="product-item-title">${p.name}</h3>
               <div class="product-item-dimensions">${specDimension}</div>
             </div>
