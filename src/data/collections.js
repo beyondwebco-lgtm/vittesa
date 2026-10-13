@@ -46,7 +46,7 @@ export const COLLECTIONS = [
     "shortDescriptor": "Softly muted olive earth & rounded organic silhouettes.",
     "badge": "Natural Earth Series",
     "category": "Curated Layer",
-    "piecesCount": 18,
+    "piecesCount": 17,
     "heroImage": "/assets/catalogue/olivera-editorial-hero.jpg",
     "rangeImage": "/assets/catalogue/olivera-product-range.png",
     "galleryImages": [

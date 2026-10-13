@@ -1,5 +1,5 @@
 /**
- * VITTESA — OLIVERA Product Specifications (18 Pieces)
+ * VITTESA — OLIVERA Product Specifications (17 Pieces)
  * Each product entry unifies all photographic views into an `images` array.
  */
 
@@ -471,32 +471,5 @@ export const OLIVERA_PRODUCTS = [
     ],
     "image": "/assets/catalogue/olivera/platters.jpg",
     "editorialCaption": "Muted earth platter for canapés, charcuterie, and artisanal table drops."
-  },
-  {
-    "id": "ase07155",
-    "code": "ASEO7155",
-    "productCode": "ASEO7155",
-    "name": "Platter Large",
-    "collection": "OLIVERA",
-    "collectionId": "olivera",
-    "category": "platters",
-    "categoryLabel": "Platters & Serving",
-    "colors": [
-      "Earth Olive"
-    ],
-    "colorHexes": [
-      "#7A816E"
-    ],
-    "dimensions": "33.5 cm x 22 cm",
-    "specs": {
-      "dimensions": "33.5 cm x 22 cm",
-      "series": "Natural Earth Series"
-    },
-    "images": [
-      "/assets/catalogue/olivera/platters 2.jpg",
-      "/assets/catalogue/olivera/platters.jpg"
-    ],
-    "image": "/assets/catalogue/olivera/platters 2.jpg",
-    "editorialCaption": "Expansive sharing platter for roasted whole cuts and seafood service."
   }
 ];

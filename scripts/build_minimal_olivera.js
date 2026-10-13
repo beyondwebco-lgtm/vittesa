@@ -50,7 +50,7 @@ const htmlContent = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OLIVERA — Natural Earth Series | VITTESA European Porcelain</title>
-  <meta name="description" content="Softly muted olive-grey porcelain with rounded, organic silhouettes. Official 18-piece catalogue for luxury hospitality." />
+  <meta name="description" content="Softly muted olive-grey porcelain with rounded, organic silhouettes. Official 17-piece catalogue for luxury hospitality." />
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="icon" type="image/jpeg" href="/assets/catalogue/vittesa-emblem-gold.jpg" />
 </head>
@@ -144,20 +144,20 @@ const htmlContent = `<!DOCTYPE html>
       </div>
     </section>
 
-    <!-- 4. PRODUCT CATALOGUE — MAIN FOCUS (18 PIECES) -->
+    <!-- 4. PRODUCT CATALOGUE — MAIN FOCUS (17 PIECES) -->
     <section class="olivera-catalogue-section" id="products">
       <div class="container">
         
         <!-- Filter Bar -->
         <div class="products-filter-bar">
-          <button class="filter-chip active" data-filter="all">All (18)</button>
+          <button class="filter-chip active" data-filter="all">All (17)</button>
           <button class="filter-chip" data-filter="plates">Plates (6)</button>
           <button class="filter-chip" data-filter="bowls">Bowls (7)</button>
           <button class="filter-chip" data-filter="accessories">Accessories (2)</button>
-          <button class="filter-chip" data-filter="platters">Platters (3)</button>
+          <button class="filter-chip" data-filter="platters">Platters (2)</button>
         </div>
 
-        <!-- 18 Product Cards Grid -->
+        <!-- 17 Product Cards Grid -->
         <div class="products-grid-catalog olivera-cards-grid" id="collection-products-grid">
 ${cardsHtml}
         </div>
