@@ -8,7 +8,7 @@ import { initTray, addToTray, removeFromTray } from './components/tray.js';
 import { initShowroom } from './components/showroom.js';
 import { initCollectionSubpageFilter } from './components/collection-filter.js';
 import { initProductCarousels } from './components/carousel.js';
-import { initEnquiryForm } from './components/enquiry.js';
+import { initEnquiryForm, openEnquiryModal, closeEnquiryModal } from './components/enquiry.js';
 import { renderDynamicSections } from './components/dynamic-sections.js';
 import { parseUrlParams } from './components/router.js';
 
@@ -16,6 +16,8 @@ import { parseUrlParams } from './components/router.js';
 window.vittesaOpenModal = openProductModal;
 window.vittesaAddToTray = addToTray;
 window.vittesaRemoveFromTray = removeFromTray;
+window.vittesaOpenEnquiryModal = openEnquiryModal;
+window.vittesaCloseEnquiryModal = closeEnquiryModal;
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();

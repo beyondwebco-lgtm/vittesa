@@ -1,29 +1,70 @@
 /**
- * VITTESA — Trade Enquiry Form Handler
+ * VITTESA — Trade Enquiry Form & Minimal Modal Handler
  */
+
 export function initEnquiryForm() {
-  const form = document.getElementById('enquiry-form');
-  if (!form) return;
+  const modal = document.getElementById('enquiry-modal');
+  const closeBtn = document.getElementById('enquiry-modal-close');
+  const forms = document.querySelectorAll('.vittesa-enquiry-form, #enquiry-form');
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    if (btn) {
-      btn.disabled = true;
-      btn.textContent = 'Transmitting Specification Request...';
-    }
-
-    setTimeout(() => {
-      if (btn) {
-        btn.textContent = 'Specification Request Submitted';
-        btn.style.backgroundColor = '#565D46';
-        form.innerHTML = `
-          <div style="margin-top: 1rem; padding: 1.25rem; background: #EAF2EB; border: 1px solid #7FA884; color: #2C5E33; font-size: 0.875rem; border-radius: 2px;">
-            <strong>Thank you.</strong> Your hospitality specification schedule has been registered. Our international procurement desk will contact you with volume pricing and technical datasheets.
-          </div>
-        `;
-      }
-      form.reset();
-    }, 900);
+  closeBtn?.addEventListener('click', closeEnquiryModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeEnquiryModal();
   });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('open')) {
+      closeEnquiryModal();
+    }
+  });
+
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Transmitting Specification Request...';
+      }
+
+      setTimeout(() => {
+        if (btn) {
+          form.innerHTML = `
+            <div style="padding: 2rem 1.5rem; text-align: center;">
+              <div style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--ink-primary);">Request Received</div>
+              <p style="font-size: 0.875rem; color: var(--ink-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+                Thank you. Your specification schedule has been registered. Our international procurement team will contact you with wholesale pricing and sample details.
+              </p>
+              <button type="button" class="btn-primary" onclick="window.vittesaCloseEnquiryModal()" style="font-size: 0.75rem; padding: 0.6rem 1.5rem;">Close</button>
+            </div>
+          `;
+        }
+      }, 700);
+    });
+  });
+}
+
+export function openEnquiryModal(collectionName = '') {
+  const modal = document.getElementById('enquiry-modal');
+  if (!modal) return;
+
+  const colInput = document.getElementById('enquiry-collection-input');
+  const colBadge = document.getElementById('enquiry-collection-badge');
+
+  if (colInput && collectionName) colInput.value = collectionName;
+  if (colBadge) {
+    colBadge.textContent = collectionName ? `Collection: ${collectionName}` : 'Hospitality Specification';
+  }
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+export function closeEnquiryModal() {
+  const modal = document.getElementById('enquiry-modal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
 }
