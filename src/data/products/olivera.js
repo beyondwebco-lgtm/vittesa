@@ -247,7 +247,7 @@ export const OLIVERA_PRODUCTS = [
     },
     "images": [
       "/assets/catalogue/olivera/edge bowl main.jpg",
-      "/assets/catalogue/olivera/edge bowl 750ml main.jpg"
+      "/assets/catalogue/olivera/edge bowl.jpg"
     ],
     "image": "/assets/catalogue/olivera/edge bowl main.jpg",
     "editorialCaption": "Clean perpendicular rim wall with understated tone."
@@ -274,10 +274,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/edge bowl 570 ml.jpg",
-      "/assets/catalogue/olivera/edge bowl.jpg"
+      "/assets/catalogue/olivera/edge bowl 750ml main.jpg",
+      "/assets/catalogue/olivera/edge bowl 570 ml.jpg"
     ],
-    "image": "/assets/catalogue/olivera/edge bowl 570 ml.jpg",
+    "image": "/assets/catalogue/olivera/edge bowl 750ml main.jpg",
     "editorialCaption": "Deep straight-sided hospitality bowl."
   },
   {
