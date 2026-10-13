@@ -123,12 +123,8 @@ export const COLLECTIONS = [
     badge: "Sculpted Texture Series",
     category: "Curated Layer",
     heroImage: "/assets/catalogue/roke-editorial-hero.jpg",
-    showcase1: "/assets/catalogue/roke-showcase-1.jpg",
-    showcase2: "/assets/catalogue/roke-showcase-2.jpg",
     galleryImages: [
       "/assets/catalogue/roke-editorial-hero.jpg",
-      "/assets/catalogue/roke-showcase-1.jpg",
-      "/assets/catalogue/roke-showcase-2.jpg",
       "/assets/catalogue/asmr/asmrpl118.jpeg"
     ],
     description: "A tactile, sculptural collection defined by expressive texture and presentation-led forms.",
