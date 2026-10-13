@@ -26,11 +26,11 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
+      "/assets/catalogue/olivera/dinner plate main.jpg",
       "/assets/catalogue/olivera/dinner plate 1.jpg",
-      "/assets/catalogue/olivera/dinner plate 2.jpg",
       "/assets/catalogue/olivera/dinner plate 3.jpg"
     ],
-    "image": "/assets/catalogue/olivera/dinner plate 1.jpg",
+    "image": "/assets/catalogue/olivera/dinner plate main.jpg",
     "editorialCaption": "Rounded silhouettes and calm contemporary hospitality character."
   },
   {
@@ -54,10 +54,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/salad plate.jpg",
-      "/assets/catalogue/olivera/salad plate 2.jpg"
+      "/assets/catalogue/olivera/salad plate main.jpg",
+      "/assets/catalogue/olivera/salad plate.jpg"
     ],
-    "image": "/assets/catalogue/olivera/salad plate.jpg",
+    "image": "/assets/catalogue/olivera/salad plate main.jpg",
     "editorialCaption": "Medium course plate with soft organic lip."
   },
   {
@@ -81,10 +81,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/deep coupe 1.jpg",
-      "/assets/catalogue/olivera/deep coupe 2.jpg"
+      "/assets/catalogue/olivera/deep coupe main.jpg",
+      "/assets/catalogue/olivera/deep coupe 1.jpg"
     ],
-    "image": "/assets/catalogue/olivera/deep coupe 1.jpg",
+    "image": "/assets/catalogue/olivera/deep coupe main.jpg",
     "editorialCaption": "Deep coupe with elevated curving rim for sauced mains."
   },
   {
@@ -108,10 +108,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/edge plate big.jpg",
-      "/assets/catalogue/olivera/edge plate big 2.jpg"
+      "/assets/catalogue/olivera/edge plate big main.jpg",
+      "/assets/catalogue/olivera/edge plate big.jpg"
     ],
-    "image": "/assets/catalogue/olivera/edge plate big.jpg",
+    "image": "/assets/catalogue/olivera/edge plate big main.jpg",
     "editorialCaption": "Perpendicular rim plate creating clean architectural presentation."
   },
   {
@@ -135,10 +135,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/edge plate small.jpg",
-      "/assets/catalogue/olivera/edge plate small 2.jpg"
+      "/assets/catalogue/olivera/edge plate small main.jpg",
+      "/assets/catalogue/olivera/edge plate small.jpg"
     ],
-    "image": "/assets/catalogue/olivera/edge plate small.jpg",
+    "image": "/assets/catalogue/olivera/edge plate small main.jpg",
     "editorialCaption": "Compact vertical rim side plate."
   },
   {
@@ -162,10 +162,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/hi wall appetizer plate.jpg",
-      "/assets/catalogue/olivera/hi wall appetizer plate 2.jpg"
+      "/assets/catalogue/olivera/hi wall appetizer plate main.jpg",
+      "/assets/catalogue/olivera/hi wall appetizer plate.jpg"
     ],
-    "image": "/assets/catalogue/olivera/hi wall appetizer plate.jpg",
+    "image": "/assets/catalogue/olivera/hi wall appetizer plate main.jpg",
     "editorialCaption": "Miniature high-walled plate for amuse-bouche and butter service."
   },
   {
@@ -190,10 +190,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/serving bowl 1.jpg",
-      "/assets/catalogue/olivera/serving bowl 2.jpg"
+      "/assets/catalogue/olivera/serving bowl main.jpg",
+      "/assets/catalogue/olivera/serving bowl 1.jpg"
     ],
-    "image": "/assets/catalogue/olivera/serving bowl 1.jpg",
+    "image": "/assets/catalogue/olivera/serving bowl main.jpg",
     "editorialCaption": "Large volume hospitality serving bowl."
   },
   {
@@ -218,10 +218,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/serving bowl 15 cm.jpg",
-      "/assets/catalogue/olivera/serving bowl 15cm 2.jpg"
+      "/assets/catalogue/olivera/serving bowl 15cm main.jpg",
+      "/assets/catalogue/olivera/serving bowl 15 cm.jpg"
     ],
-    "image": "/assets/catalogue/olivera/serving bowl 15 cm.jpg",
+    "image": "/assets/catalogue/olivera/serving bowl 15cm main.jpg",
     "editorialCaption": "Versatile side and salad serving bowl."
   },
   {
@@ -246,10 +246,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/edge bowl 2.jpg",
-      "/assets/catalogue/olivera/edge bowl 750ml 2.jpg"
+      "/assets/catalogue/olivera/edge bowl main.jpg",
+      "/assets/catalogue/olivera/edge bowl 750ml main.jpg"
     ],
-    "image": "/assets/catalogue/olivera/edge bowl 2.jpg",
+    "image": "/assets/catalogue/olivera/edge bowl main.jpg",
     "editorialCaption": "Clean perpendicular rim wall with understated tone."
   },
   {
@@ -302,10 +302,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/soup bowl.jpg",
-      "/assets/catalogue/olivera/soup bowl 2.jpg"
+      "/assets/catalogue/olivera/soup bowl main.jpg",
+      "/assets/catalogue/olivera/soup bowl.jpg"
     ],
-    "image": "/assets/catalogue/olivera/soup bowl.jpg",
+    "image": "/assets/catalogue/olivera/soup bowl main.jpg",
     "editorialCaption": "Classic soup and broth service bowl."
   },
   {
@@ -330,10 +330,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/katori.jpg",
-      "/assets/catalogue/olivera/katori 2.jpg"
+      "/assets/catalogue/olivera/katori main.jpg",
+      "/assets/catalogue/olivera/katori.jpg"
     ],
-    "image": "/assets/catalogue/olivera/katori.jpg",
+    "image": "/assets/catalogue/olivera/katori main.jpg",
     "editorialCaption": "Individual accompaniment and condiment katori."
   },
   {
@@ -358,10 +358,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/dip bowl.jpg",
-      "/assets/catalogue/olivera/dip bowl 2.jpg"
+      "/assets/catalogue/olivera/dip bowl main.jpg",
+      "/assets/catalogue/olivera/dip bowl.jpg"
     ],
-    "image": "/assets/catalogue/olivera/dip bowl.jpg",
+    "image": "/assets/catalogue/olivera/dip bowl main.jpg",
     "editorialCaption": "Petite sauce, jus and dipping vessel."
   },
   {
@@ -385,10 +385,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/chip pot.jpg",
-      "/assets/catalogue/olivera/chip pot 2.jpg"
+      "/assets/catalogue/olivera/chip pot main.jpg",
+      "/assets/catalogue/olivera/chip pot.jpg"
     ],
-    "image": "/assets/catalogue/olivera/chip pot.jpg",
+    "image": "/assets/catalogue/olivera/chip pot main.jpg",
     "editorialCaption": "Versatile side container for frites, snacks, and tabletop cutlery."
   },
   {
@@ -412,10 +412,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/creamer.jpg",
-      "/assets/catalogue/olivera/creamer 2.jpg"
+      "/assets/catalogue/olivera/creamer main.jpg",
+      "/assets/catalogue/olivera/creamer.jpg"
     ],
-    "image": "/assets/catalogue/olivera/creamer.jpg",
+    "image": "/assets/catalogue/olivera/creamer main.jpg",
     "editorialCaption": "Ergonomic milk and pouring creamer."
   },
   {
@@ -439,10 +439,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/platters.jpg",
-      "/assets/catalogue/olivera/platters 2.jpg"
+      "/assets/catalogue/olivera/platters main.jpg",
+      "/assets/catalogue/olivera/platters.jpg"
     ],
-    "image": "/assets/catalogue/olivera/platters.jpg",
+    "image": "/assets/catalogue/olivera/platters main.jpg",
     "editorialCaption": "Organic oval platter for appetizers and passed hors d'oeuvres."
   },
   {
@@ -466,10 +466,10 @@ export const OLIVERA_PRODUCTS = [
       "series": "Natural Earth Series"
     },
     "images": [
-      "/assets/catalogue/olivera/platters.jpg",
-      "/assets/catalogue/olivera/platters 2.jpg"
+      "/assets/catalogue/olivera/platters main.jpg",
+      "/assets/catalogue/olivera/platters.jpg"
     ],
-    "image": "/assets/catalogue/olivera/platters.jpg",
+    "image": "/assets/catalogue/olivera/platters main.jpg",
     "editorialCaption": "Muted earth platter for canapés, charcuterie, and artisanal table drops."
   }
 ];
