@@ -24,7 +24,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "Timeless hospitality essential for hotel, restaurant, and banquet service."
+    "editorialCaption": "Timeless hospitality essential for hotel, restaurant, and banquet service.",
+    "productCode": "SN1109",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1106",
@@ -46,7 +51,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "Standard banquet dinner plate."
+    "editorialCaption": "Standard banquet dinner plate.",
+    "productCode": "SN1106",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1102",
@@ -68,7 +78,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "Lunch and salad coupe plate."
+    "editorialCaption": "Lunch and salad coupe plate.",
+    "productCode": "SN1102",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1101",
@@ -90,7 +105,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "Side and bread coupe plate."
+    "editorialCaption": "Side and bread coupe plate.",
+    "productCode": "SN1101",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1219",
@@ -112,7 +132,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "Classic wide rim profile for traditional and formal dining service."
+    "editorialCaption": "Classic wide rim profile for traditional and formal dining service.",
+    "productCode": "SN1219",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1218",
@@ -134,7 +159,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "Traditional hotel banquet plate with Georgian rim."
+    "editorialCaption": "Traditional hotel banquet plate with Georgian rim.",
+    "productCode": "SN1218",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1326",
@@ -156,7 +186,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "Modern vertical edge plate in vitrified white porcelain."
+    "editorialCaption": "Modern vertical edge plate in vitrified white porcelain.",
+    "productCode": "SN1326",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1325",
@@ -178,7 +213,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Core Tableware"
     },
     "image": "/assets/catalogue/essential-white-plates-range.png",
-    "editorialCaption": "19 cm vertical rim edge side plate."
+    "editorialCaption": "19 cm vertical rim edge side plate.",
+    "productCode": "SN1325",
+    "images": [
+      "/assets/catalogue/essential-white-plates-range.png",
+      "/assets/catalogue/essential-white-platters-hero.jpg"
+    ]
   },
   {
     "id": "sn1558",
@@ -200,7 +240,11 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Bowls & Accessories"
     },
     "image": "/assets/catalogue/essential-white-bowls-hero.jpg",
-    "editorialCaption": "Vitrified hotel porcelain soup plate for commercial dinner service."
+    "editorialCaption": "Vitrified hotel porcelain soup plate for commercial dinner service.",
+    "productCode": "SN1558",
+    "images": [
+      "/assets/catalogue/essential-white-bowls-hero.jpg"
+    ]
   },
   {
     "id": "sn1553",
@@ -223,7 +267,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Bowls & Accessories"
     },
     "image": "/assets/catalogue/essential-white-bowls-range.png",
-    "editorialCaption": "Sturdy footed base engineered for professional stacking and durability."
+    "editorialCaption": "Sturdy footed base engineered for professional stacking and durability.",
+    "productCode": "SN1553",
+    "images": [
+      "/assets/catalogue/essential-white-bowls-range.png",
+      "/assets/catalogue/essential-white-bowls-hero.jpg"
+    ]
   },
   {
     "id": "sn1551",
@@ -246,7 +295,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Bowls & Accessories"
     },
     "image": "/assets/catalogue/essential-white-bowls-range.png",
-    "editorialCaption": "High-capacity commercial nappy bowl."
+    "editorialCaption": "High-capacity commercial nappy bowl.",
+    "productCode": "SN1551",
+    "images": [
+      "/assets/catalogue/essential-white-bowls-range.png",
+      "/assets/catalogue/essential-white-bowls-hero.jpg"
+    ]
   },
   {
     "id": "sn1731",
@@ -268,7 +322,11 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Cups & Beverage"
     },
     "image": "/assets/catalogue/essential-white-cups-hero.jpg",
-    "editorialCaption": "Ergonomic rim thickness retaining thermal heat for espresso & cappuccino."
+    "editorialCaption": "Ergonomic rim thickness retaining thermal heat for espresso & cappuccino.",
+    "productCode": "SN1731",
+    "images": [
+      "/assets/catalogue/essential-white-cups-hero.jpg"
+    ]
   },
   {
     "id": "sn1715",
@@ -291,7 +349,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Cups & Beverage"
     },
     "image": "/assets/catalogue/essential-white-cups-range.png",
-    "editorialCaption": "High-density stackable tea cup optimized for high-capacity banqueting."
+    "editorialCaption": "High-density stackable tea cup optimized for high-capacity banqueting.",
+    "productCode": "SN1715",
+    "images": [
+      "/assets/catalogue/essential-white-cups-range.png",
+      "/assets/catalogue/essential-white-cups-hero.jpg"
+    ]
   },
   {
     "id": "sn1837",
@@ -313,7 +376,12 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Platters — Product Range"
     },
     "image": "/assets/catalogue/essential-white-platters-hero.jpg",
-    "editorialCaption": "Sharp architectural rectangular platter for passed hors d'oeuvres and sashimi."
+    "editorialCaption": "Sharp architectural rectangular platter for passed hors d'oeuvres and sashimi.",
+    "productCode": "SN1837",
+    "images": [
+      "/assets/catalogue/essential-white-platters-hero.jpg",
+      "/assets/catalogue/essential-white-platter-hero.jpg"
+    ]
   },
   {
     "id": "sn1825",
@@ -335,6 +403,11 @@ export const ESSENTIAL_WHITE_PRODUCTS = [
       "range": "Platters — Product Range"
     },
     "image": "/assets/catalogue/essential-white-platters-range.png",
-    "editorialCaption": "Curved flare rim design bringing soft elegance to hotel buffet settings."
+    "editorialCaption": "Curved flare rim design bringing soft elegance to hotel buffet settings.",
+    "productCode": "SN1825",
+    "images": [
+      "/assets/catalogue/essential-white-platters-range.png",
+      "/assets/catalogue/essential-white-platter-hero.jpg"
+    ]
   }
 ];

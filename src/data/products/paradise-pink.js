@@ -24,7 +24,13 @@ export const PARADISE_PINK_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/paradise-pink-editorial.jpg",
-    "editorialCaption": "Soft blush glaze with rim character, designed for modern dining venues."
+    "editorialCaption": "Soft blush glaze with rim character, designed for modern dining venues.",
+    "productCode": "ASPP5103",
+    "images": [
+      "/assets/catalogue/paradise-pink-editorial.jpg",
+      "/assets/catalogue/paradise-pink-range-1.jpg",
+      "/assets/catalogue/paradise-pink-lifestyle.jpg"
+    ]
   },
   {
     "id": "aspp5101",
@@ -46,7 +52,13 @@ export const PARADISE_PINK_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/paradise-pink-range-1.jpg",
-    "editorialCaption": "20 cm side plate in soft rose blush."
+    "editorialCaption": "20 cm side plate in soft rose blush.",
+    "productCode": "ASPP5101",
+    "images": [
+      "/assets/catalogue/paradise-pink-range-1.jpg",
+      "/assets/catalogue/paradise-pink-range-2.jpg",
+      "/assets/catalogue/paradise-pink-lifestyle.jpg"
+    ]
   },
   {
     "id": "aspp5105",
@@ -68,7 +80,12 @@ export const PARADISE_PINK_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/paradise-pink-lifestyle.jpg",
-    "editorialCaption": "Pastel rose pasta plate with organic border."
+    "editorialCaption": "Pastel rose pasta plate with organic border.",
+    "productCode": "ASPP5105",
+    "images": [
+      "/assets/catalogue/paradise-pink-lifestyle.jpg",
+      "/assets/catalogue/paradise-pink-range-1.jpg"
+    ]
   },
   {
     "id": "aspp5151",
@@ -90,6 +107,11 @@ export const PARADISE_PINK_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/paradise-pink-range-2.jpg",
-    "editorialCaption": "Blush platter for pastries, canapés and sharing drops."
+    "editorialCaption": "Blush platter for pastries, canapés and sharing drops.",
+    "productCode": "ASPP5151",
+    "images": [
+      "/assets/catalogue/paradise-pink-range-2.jpg",
+      "/assets/catalogue/paradise-pink-lifestyle.jpg"
+    ]
   }
 ];

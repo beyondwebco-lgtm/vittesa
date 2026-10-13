@@ -24,7 +24,13 @@ export const AQUA_BLUE_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/aqua-blue-editorial.jpg",
-    "editorialCaption": "Luminous coastal aqua tone bringing seaside vibrancy to the table."
+    "editorialCaption": "Luminous coastal aqua tone bringing seaside vibrancy to the table.",
+    "productCode": "ASAB5103",
+    "images": [
+      "/assets/catalogue/aqua-blue-editorial.jpg",
+      "/assets/catalogue/aqua-blue-range-1.jpg",
+      "/assets/catalogue/aqua-blue-lifestyle.jpg"
+    ]
   },
   {
     "id": "asab5101",
@@ -46,7 +52,13 @@ export const AQUA_BLUE_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/aqua-blue-range-1.jpg",
-    "editorialCaption": "20 cm appetizer plate in Mediterranean aqua."
+    "editorialCaption": "20 cm appetizer plate in Mediterranean aqua.",
+    "productCode": "ASAB5101",
+    "images": [
+      "/assets/catalogue/aqua-blue-range-1.jpg",
+      "/assets/catalogue/aqua-blue-range-2.jpg",
+      "/assets/catalogue/aqua-blue-lifestyle.jpg"
+    ]
   },
   {
     "id": "asab5105",
@@ -68,7 +80,12 @@ export const AQUA_BLUE_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/aqua-blue-lifestyle.jpg",
-    "editorialCaption": "Turquoise pasta plate illuminating fresh seafood and crudo."
+    "editorialCaption": "Turquoise pasta plate illuminating fresh seafood and crudo.",
+    "productCode": "ASAB5105",
+    "images": [
+      "/assets/catalogue/aqua-blue-lifestyle.jpg",
+      "/assets/catalogue/aqua-blue-range-1.jpg"
+    ]
   },
   {
     "id": "asab5151",
@@ -90,6 +107,11 @@ export const AQUA_BLUE_PRODUCTS = [
       "collection": "Curated Hospitality Collection"
     },
     "image": "/assets/catalogue/aqua-blue-range-2.jpg",
-    "editorialCaption": "Vibrant aqua serving platter for crudo, sashimi, and poolside dining."
+    "editorialCaption": "Vibrant aqua serving platter for crudo, sashimi, and poolside dining.",
+    "productCode": "ASAB5151",
+    "images": [
+      "/assets/catalogue/aqua-blue-range-2.jpg",
+      "/assets/catalogue/aqua-blue-lifestyle.jpg"
+    ]
   }
 ];

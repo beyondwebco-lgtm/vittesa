@@ -3,6 +3,7 @@
  */
 import { PRODUCTS } from '../data/catalogue-data.js';
 import { state } from './state.js';
+import { renderProductMedia, attachCarouselHandlers } from './carousel.js';
 
 export function initShowroom() {
   const showroomGrid = document.getElementById('showroom-grid');
@@ -67,24 +68,29 @@ export function renderShowroomGrid() {
     return;
   }
 
-  showroomGrid.innerHTML = filtered.map(p => `
-    <div class="product-item-card" data-category="${p.category}">
-      <span class="product-item-badge">${p.code}</span>
-      <div class="product-item-media" onclick="window.vittesaOpenModal('${p.id}')">
-        <img src="${p.image}" alt="${p.name} - ${p.code}" loading="lazy" />
-      </div>
-      <div class="product-item-body">
-        <div>
-          <div class="product-item-code">${p.code} • ${p.collection}</div>
-          <h3 class="product-item-title">${p.name}</h3>
-          <div class="product-item-dimensions">${p.dimensions || ''}</div>
-          <p class="product-item-specs-preview">${p.editorialCaption || ''}</p>
+  showroomGrid.innerHTML = filtered.map(p => {
+    const hasMultiple = p.images && p.images.length > 1;
+    return `
+      <div class="product-item-card" data-category="${p.category}" data-product-id="${p.id}">
+        <span class="product-item-badge">${p.code}</span>
+        <div class="product-item-media ${hasMultiple ? 'has-carousel' : ''}" onclick="if(!this.getAttribute('data-swiped')) window.vittesaOpenModal('${p.id}')">
+          ${renderProductMedia(p)}
         </div>
-        <div class="product-item-actions">
-          <button class="btn-item-action" onclick="window.vittesaOpenModal('${p.id}')">Quick View</button>
-          <button class="btn-item-action primary" onclick="window.vittesaAddToTray('${p.id}')">+ Spec Tray</button>
+        <div class="product-item-body">
+          <div>
+            <div class="product-item-code">${p.code} • ${p.collection}</div>
+            <h3 class="product-item-title">${p.name}</h3>
+            <div class="product-item-dimensions">${p.dimensions || ''}</div>
+            <p class="product-item-specs-preview">${p.editorialCaption || ''}</p>
+          </div>
+          <div class="product-item-actions">
+            <button class="btn-item-action" onclick="window.vittesaOpenModal('${p.id}')">Quick View</button>
+            <button class="btn-item-action primary" onclick="window.vittesaAddToTray('${p.id}')">+ Spec Tray</button>
+          </div>
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
+
+  attachCarouselHandlers(showroomGrid);
 }

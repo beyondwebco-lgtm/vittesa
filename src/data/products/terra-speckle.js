@@ -23,7 +23,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Side and starter plate with organic mineral speckles."
+    "editorialCaption": "Side and starter plate with organic mineral speckles.",
+    "productCode": "ASSB5101",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5103",
@@ -46,7 +51,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-editorial-hero.png",
-    "editorialCaption": "A warm neutral direction with organic speckling and understated artisanal character."
+    "editorialCaption": "A warm neutral direction with organic speckling and understated artisanal character.",
+    "productCode": "ASSB5103",
+    "images": [
+      "/assets/catalogue/terra-speckle-editorial-hero.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png"
+    ]
   },
   {
     "id": "assb5105",
@@ -68,7 +78,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Artisanal plate for rustic dining, farm-to-table salads and handmade pastas."
+    "editorialCaption": "Artisanal plate for rustic dining, farm-to-table salads and handmade pastas.",
+    "productCode": "ASSB5105",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5112",
@@ -90,7 +105,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Vertical rim edge plate with warm contrast lip."
+    "editorialCaption": "Vertical rim edge plate with warm contrast lip.",
+    "productCode": "ASSB5112",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5114",
@@ -112,7 +133,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Architectural 25.5 cm straight-sided dining plate."
+    "editorialCaption": "Architectural 25.5 cm straight-sided dining plate.",
+    "productCode": "ASSB5114",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5141",
@@ -134,7 +160,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Soft elliptical silhouette side plate."
+    "editorialCaption": "Soft elliptical silhouette side plate.",
+    "productCode": "ASSB5141",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5142",
@@ -156,7 +188,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "23 cm organic elliptical plate."
+    "editorialCaption": "23 cm organic elliptical plate.",
+    "productCode": "ASSB5142",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5143",
@@ -178,7 +215,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "28 cm statement elliptical main dinner plate."
+    "editorialCaption": "28 cm statement elliptical main dinner plate.",
+    "productCode": "ASSB5143",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5121",
@@ -201,7 +244,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "550 ml footed artisanal bowl."
+    "editorialCaption": "550 ml footed artisanal bowl.",
+    "productCode": "ASSB5121",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5122",
@@ -224,7 +272,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "850 ml large footed soup and noodle bowl."
+    "editorialCaption": "850 ml large footed soup and noodle bowl.",
+    "productCode": "ASSB5122",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5123",
@@ -246,7 +300,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Tapered conical V-profile hospitality bowl."
+    "editorialCaption": "Tapered conical V-profile hospitality bowl.",
+    "productCode": "ASSB5123",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5109",
@@ -268,7 +327,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Deep coupe with elevated curving rim."
+    "editorialCaption": "Deep coupe with elevated curving rim.",
+    "productCode": "ASSB5109",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5171",
@@ -290,7 +355,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-2.png",
-    "editorialCaption": "Generous organic banquet bowl with contrast rim."
+    "editorialCaption": "Generous organic banquet bowl with contrast rim.",
+    "productCode": "ASSB5171",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5172",
@@ -312,7 +383,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-2.png",
-    "editorialCaption": "Expansive 29.5 cm centerpiece sharing bowl."
+    "editorialCaption": "Expansive 29.5 cm centerpiece sharing bowl.",
+    "productCode": "ASSB5172",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5132",
@@ -335,7 +411,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Artisanal specialty coffee cup with warm tactile glaze."
+    "editorialCaption": "Artisanal specialty coffee cup with warm tactile glaze.",
+    "productCode": "ASSB5132",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5136",
@@ -358,7 +439,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "110 ml espresso cup with organic speckled finish."
+    "editorialCaption": "110 ml espresso cup with organic speckled finish.",
+    "productCode": "ASSB5136",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5131",
@@ -380,7 +467,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "350 ml comfort barrel mug."
+    "editorialCaption": "350 ml comfort barrel mug.",
+    "productCode": "ASSB5131",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5135",
@@ -402,7 +494,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-1.png",
-    "editorialCaption": "Artisanal ceramic teapot with precision spout."
+    "editorialCaption": "Artisanal ceramic teapot with precision spout.",
+    "productCode": "ASSB5135",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5151",
@@ -424,7 +522,13 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-2.png",
-    "editorialCaption": "Artisan earth rectangular platter with gentle curving lip."
+    "editorialCaption": "Artisan earth rectangular platter with gentle curving lip.",
+    "productCode": "ASSB5151",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5152",
@@ -446,7 +550,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-2.png",
-    "editorialCaption": "39 cm large sharing platter."
+    "editorialCaption": "39 cm large sharing platter.",
+    "productCode": "ASSB5152",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   },
   {
     "id": "assb5155",
@@ -468,6 +577,12 @@ export const TERRA_SPECKLE_PRODUCTS = [
       "series": "Artisan Earth Series"
     },
     "image": "/assets/catalogue/terra-speckle-product-range-2.png",
-    "editorialCaption": "Narrow fluid platter for sushi, canapés and tasting courses."
+    "editorialCaption": "Narrow fluid platter for sushi, canapés and tasting courses.",
+    "productCode": "ASSB5155",
+    "images": [
+      "/assets/catalogue/terra-speckle-product-range-2.png",
+      "/assets/catalogue/terra-speckle-product-range-1.png",
+      "/assets/catalogue/terra-speckle-editorial-hero.png"
+    ]
   }
 ];

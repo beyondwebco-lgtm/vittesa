@@ -25,7 +25,11 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrpl102.jpeg",
-    "editorialCaption": "20 cm sculpted plate for bread, side courses, and delicate appetizers."
+    "editorialCaption": "20 cm sculpted plate for bread, side courses, and delicate appetizers.",
+    "productCode": "ASRWM6101",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl102.jpeg"
+    ]
   },
   {
     "id": "asrwm6103",
@@ -49,7 +53,12 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrpl118.jpeg",
-    "editorialCaption": "Signature 28 cm dinner presentation canvas with tactile border."
+    "editorialCaption": "Signature 28 cm dinner presentation canvas with tactile border.",
+    "productCode": "ASRWM6103",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl118.jpeg",
+      "/assets/catalogue/asmr/asmrpl118 (2).jpeg"
+    ]
   },
   {
     "id": "asrwm6105",
@@ -74,7 +83,11 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrbl241.jpeg",
-    "editorialCaption": "26 cm wide-rim soup plate designed for velvety soups and emulsion courses."
+    "editorialCaption": "26 cm wide-rim soup plate designed for velvety soups and emulsion courses.",
+    "productCode": "ASRWM6105",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl241.jpeg"
+    ]
   },
   {
     "id": "asrwm6125",
@@ -99,7 +112,11 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrbl202.jpeg",
-    "editorialCaption": "Compact individual soup bowl with tactile ribbed exterior."
+    "editorialCaption": "Compact individual soup bowl with tactile ribbed exterior.",
+    "productCode": "ASRWM6125",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl202.jpeg"
+    ]
   },
   {
     "id": "asrwm6117",
@@ -123,7 +140,11 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrpl118.jpeg",
-    "editorialCaption": "31 cm wide flat canvas plate engineered for avant-garde chef plating."
+    "editorialCaption": "31 cm wide flat canvas plate engineered for avant-garde chef plating.",
+    "productCode": "ASRWM6117",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl118.jpeg"
+    ]
   },
   {
     "id": "asrwm6118",
@@ -147,7 +168,11 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrpl124.jpeg",
-    "editorialCaption": "31 cm magnum presentation plate with prominent sculptural border."
+    "editorialCaption": "31 cm magnum presentation plate with prominent sculptural border.",
+    "productCode": "ASRWM6118",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl124.jpeg"
+    ]
   },
   {
     "id": "asrwm6151",
@@ -171,7 +196,11 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrpl151.jpeg",
-    "editorialCaption": "Linear presentation canvas for crudo, sashimi, and tasting drops."
+    "editorialCaption": "Linear presentation canvas for crudo, sashimi, and tasting drops.",
+    "productCode": "ASRWM6151",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl151.jpeg"
+    ]
   },
   {
     "id": "asrwm6152",
@@ -195,7 +224,11 @@ export const AVERON_PRODUCTS = [
       "origin": "VITTESA Curated AVÉRON"
     },
     "image": "/assets/catalogue/asmr/asmrpl152.jpeg",
-    "editorialCaption": "Narrow podium platter providing dramatic vertical table elevation."
+    "editorialCaption": "Narrow podium platter providing dramatic vertical table elevation.",
+    "productCode": "ASRWM6152",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl152.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-101",
@@ -218,7 +251,12 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl118.jpeg",
-    "editorialCaption": "Presentation-led form featuring highly tactile sculpted surface."
+    "editorialCaption": "Presentation-led form featuring highly tactile sculpted surface.",
+    "productCode": "ASMR-PL-101",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl118.jpeg",
+      "/assets/catalogue/asmr/asmrpl118 (2).jpeg"
+    ]
   },
   {
     "id": "asmr-pl-102",
@@ -241,7 +279,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl102.jpeg",
-    "editorialCaption": "Medium course coupe plate with organic chiseled perimeter."
+    "editorialCaption": "Medium course coupe plate with organic chiseled perimeter.",
+    "productCode": "ASMR-PL-102",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl102.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-107",
@@ -264,7 +306,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl107.jpeg",
-    "editorialCaption": "Versatile starter and dessert plate with chiseled relief."
+    "editorialCaption": "Versatile starter and dessert plate with chiseled relief.",
+    "productCode": "ASMR-PL-107",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl107.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-103",
@@ -287,7 +333,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl119.jpeg",
-    "editorialCaption": "Elevated pedestaled foot plate for dramatic fine dining presentation."
+    "editorialCaption": "Elevated pedestaled foot plate for dramatic fine dining presentation.",
+    "productCode": "ASMR-PL-103",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl119.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-104",
@@ -310,7 +360,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl119.jpeg",
-    "editorialCaption": "Medium pedestaled plate elevating signature tasting courses."
+    "editorialCaption": "Medium pedestaled plate elevating signature tasting courses.",
+    "productCode": "ASMR-PL-104",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl119.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-105",
@@ -333,7 +387,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl119.jpeg",
-    "editorialCaption": "Compact pedestal plate for intricate pastry and appetizer drops."
+    "editorialCaption": "Compact pedestal plate for intricate pastry and appetizer drops.",
+    "productCode": "ASMR-PL-105",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl119.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-121",
@@ -356,7 +414,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl124.jpeg",
-    "editorialCaption": "Broad chiseled rim framing an exquisite central well."
+    "editorialCaption": "Broad chiseled rim framing an exquisite central well.",
+    "productCode": "ASMR-PL-121",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl124.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-122",
@@ -378,7 +440,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl124.jpeg",
-    "editorialCaption": "20 cm rim soup plate for delicate tasting portions."
+    "editorialCaption": "20 cm rim soup plate for delicate tasting portions.",
+    "productCode": "ASMR-PL-122",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl124.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-123",
@@ -401,7 +467,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl123.jpeg",
-    "editorialCaption": "Expansive 31 cm plate for artisan flatbreads, whole fish, and sharing dishes."
+    "editorialCaption": "Expansive 31 cm plate for artisan flatbreads, whole fish, and sharing dishes.",
+    "productCode": "ASMR-PL-123",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl123.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-124",
@@ -424,7 +494,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl124.jpeg",
-    "editorialCaption": "Deep dining plate designed to keep aromatic sauces and broths centered."
+    "editorialCaption": "Deep dining plate designed to keep aromatic sauces and broths centered.",
+    "productCode": "ASMR-PL-124",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl124.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-132",
@@ -446,7 +520,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl132.jpeg",
-    "editorialCaption": "Clean flat canvas with tactile relief rim."
+    "editorialCaption": "Clean flat canvas with tactile relief rim.",
+    "productCode": "ASMR-PL-132",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl132.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-133",
@@ -468,7 +546,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl133.jpeg",
-    "editorialCaption": "Medium course flat plate for modern presentations."
+    "editorialCaption": "Medium course flat plate for modern presentations.",
+    "productCode": "ASMR-PL-133",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl133.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-134",
@@ -490,7 +572,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl134.jpeg",
-    "editorialCaption": "Bread and side plate with tactile border."
+    "editorialCaption": "Bread and side plate with tactile border.",
+    "productCode": "ASMR-PL-134",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl134.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-201",
@@ -513,7 +599,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl118.jpeg",
-    "editorialCaption": "Commanding 30 cm charger plate establishing table architecture."
+    "editorialCaption": "Commanding 30 cm charger plate establishing table architecture.",
+    "productCode": "ASMR-PL-201",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl118.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-202",
@@ -535,7 +625,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl102.jpeg",
-    "editorialCaption": "Primary main dinner plate with organic tactile surface."
+    "editorialCaption": "Primary main dinner plate with organic tactile surface.",
+    "productCode": "ASMR-PL-202",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl102.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-203",
@@ -557,7 +651,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl107.jpeg",
-    "editorialCaption": "Medium course plate for intermediate courses."
+    "editorialCaption": "Medium course plate for intermediate courses.",
+    "productCode": "ASMR-PL-203",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl107.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-204",
@@ -579,7 +677,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl134.jpeg",
-    "editorialCaption": "Petite side and butter plate."
+    "editorialCaption": "Petite side and butter plate.",
+    "productCode": "ASMR-PL-204",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl134.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-211",
@@ -601,7 +703,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl107.jpeg",
-    "editorialCaption": "19 cm coupe plate with textured lip."
+    "editorialCaption": "19 cm coupe plate with textured lip.",
+    "productCode": "ASMR-PL-211",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl107.jpeg"
+    ]
   },
   {
     "id": "asmr-pl-214",
@@ -623,7 +729,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrpl214.jpeg",
-    "editorialCaption": "Graceful 24 cm coupe plate for salads and light courses."
+    "editorialCaption": "Graceful 24 cm coupe plate for salads and light courses.",
+    "productCode": "ASMR-PL-214",
+    "images": [
+      "/assets/catalogue/asmr/asmrpl214.jpeg"
+    ]
   },
   {
     "id": "asmr-bl-201",
@@ -646,7 +756,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl201.jpeg",
-    "editorialCaption": "450 ml soup bowl with chiseled exterior wall."
+    "editorialCaption": "450 ml soup bowl with chiseled exterior wall.",
+    "productCode": "ASMR-BL-201",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl201.jpeg"
+    ]
   },
   {
     "id": "asmr-bl-202",
@@ -669,7 +783,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl202.jpeg",
-    "editorialCaption": "Compact 300 ml soup and broth bowl."
+    "editorialCaption": "Compact 300 ml soup and broth bowl.",
+    "productCode": "ASMR-BL-202",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl202.jpeg"
+    ]
   },
   {
     "id": "asmr-bl-203",
@@ -693,7 +811,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl203.jpeg",
-    "editorialCaption": "Generous 700 ml pasta bowl with textured exterior."
+    "editorialCaption": "Generous 700 ml pasta bowl with textured exterior.",
+    "productCode": "ASMR-BL-203",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl203.jpeg"
+    ]
   },
   {
     "id": "asmr-bl-204",
@@ -716,7 +838,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl204.jpeg",
-    "editorialCaption": "500 ml all-purpose soup and ramen bowl."
+    "editorialCaption": "500 ml all-purpose soup and ramen bowl.",
+    "productCode": "ASMR-BL-204",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl204.jpeg"
+    ]
   },
   {
     "id": "asmr-bl-221",
@@ -739,7 +865,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl221.jpeg",
-    "editorialCaption": "High-capacity 800 ml coupe bowl for hearty mains and sharing dishes."
+    "editorialCaption": "High-capacity 800 ml coupe bowl for hearty mains and sharing dishes.",
+    "productCode": "ASMR-BL-221",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl221.jpeg"
+    ]
   },
   {
     "id": "asmr-bl-223",
@@ -762,7 +892,13 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl223.jpeg",
-    "editorialCaption": "Individual salad and cereal bowl with tactile textured rim."
+    "editorialCaption": "Individual salad and cereal bowl with tactile textured rim.",
+    "productCode": "ASMR-BL-223",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl223.jpeg",
+      "/assets/catalogue/asmr/asmrbl223 (2).jpeg",
+      "/assets/catalogue/asmr/asmrbl223 (3).jpeg"
+    ]
   },
   {
     "id": "asmr-bl-241",
@@ -785,7 +921,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl241.jpeg",
-    "editorialCaption": "Expansive wide-rim pasta plate designed for risotto and pasta courses."
+    "editorialCaption": "Expansive wide-rim pasta plate designed for risotto and pasta courses.",
+    "productCode": "ASMR-BL-241",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl241.jpeg"
+    ]
   },
   {
     "id": "asmr-bl-242",
@@ -808,7 +948,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrbl242.jpeg",
-    "editorialCaption": "450 ml shallow coupe bowl framing delicate broth and noodle dishes."
+    "editorialCaption": "450 ml shallow coupe bowl framing delicate broth and noodle dishes.",
+    "productCode": "ASMR-BL-242",
+    "images": [
+      "/assets/catalogue/asmr/asmrbl242.jpeg"
+    ]
   },
   {
     "id": "asmr-cu-271",
@@ -831,7 +975,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrcu271.jpeg",
-    "editorialCaption": "Tactile relief textured tea cup with matching saucer."
+    "editorialCaption": "Tactile relief textured tea cup with matching saucer.",
+    "productCode": "ASMR-CU-271",
+    "images": [
+      "/assets/catalogue/asmr/asmrcu271.jpeg"
+    ]
   },
   {
     "id": "asmr-cu-272",
@@ -854,7 +1002,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrcu272.jpeg",
-    "editorialCaption": "Intricate 90 ml espresso cup with ergonomic handle and chiseled saucer."
+    "editorialCaption": "Intricate 90 ml espresso cup with ergonomic handle and chiseled saucer.",
+    "productCode": "ASMR-CU-272",
+    "images": [
+      "/assets/catalogue/asmr/asmrcu272.jpeg"
+    ]
   },
   {
     "id": "asmr-ac-301",
@@ -876,7 +1028,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrac301.jpeg",
-    "editorialCaption": "10 cm tactile sauce dish for olive oil and dipping reductions."
+    "editorialCaption": "10 cm tactile sauce dish for olive oil and dipping reductions.",
+    "productCode": "ASMR-AC-301",
+    "images": [
+      "/assets/catalogue/asmr/asmrac301.jpeg"
+    ]
   },
   {
     "id": "asmr-ac-302",
@@ -898,7 +1054,12 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrac302.jpeg",
-    "editorialCaption": "12 cm oval condiment dish with textured rim."
+    "editorialCaption": "12 cm oval condiment dish with textured rim.",
+    "productCode": "ASMR-AC-302",
+    "images": [
+      "/assets/catalogue/asmr/asmrac302.jpeg",
+      "/assets/catalogue/asmr/asmrac302 (2).jpeg"
+    ]
   },
   {
     "id": "asmr-ac-303",
@@ -920,7 +1081,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrac303.jpeg",
-    "editorialCaption": "Linear sculpted ramekin for warm tapas, sides, and canapés."
+    "editorialCaption": "Linear sculpted ramekin for warm tapas, sides, and canapés.",
+    "productCode": "ASMR-AC-303",
+    "images": [
+      "/assets/catalogue/asmr/asmrac303.jpeg"
+    ]
   },
   {
     "id": "asmr-ac-304",
@@ -943,7 +1108,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrac304.jpeg",
-    "editorialCaption": "Dual-compartment divided dish for salt, butter and accompaniments."
+    "editorialCaption": "Dual-compartment divided dish for salt, butter and accompaniments.",
+    "productCode": "ASMR-AC-304",
+    "images": [
+      "/assets/catalogue/asmr/asmrac304.jpeg"
+    ]
   },
   {
     "id": "asmr-ac-305",
@@ -966,7 +1135,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/asmrac305.jpeg",
-    "editorialCaption": "Three-compartment condiment tray with sculpted texture base."
+    "editorialCaption": "Three-compartment condiment tray with sculpted texture base.",
+    "productCode": "ASMR-AC-305",
+    "images": [
+      "/assets/catalogue/asmr/asmrac305.jpeg"
+    ]
   },
   {
     "id": "eov-107",
@@ -989,7 +1162,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/eov107.jpeg",
-    "editorialCaption": "Large 35 cm oval presentation platter for whole fish and roasts."
+    "editorialCaption": "Large 35 cm oval presentation platter for whole fish and roasts.",
+    "productCode": "EOV-107",
+    "images": [
+      "/assets/catalogue/asmr/eov107.jpeg"
+    ]
   },
   {
     "id": "eov-112",
@@ -1011,7 +1188,11 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/eov112.jpeg",
-    "editorialCaption": "Medium 30 cm oval platter for sharing appetizers and tableside service."
+    "editorialCaption": "Medium 30 cm oval platter for sharing appetizers and tableside service.",
+    "productCode": "EOV-112",
+    "images": [
+      "/assets/catalogue/asmr/eov112.jpeg"
+    ]
   },
   {
     "id": "eov-113",
@@ -1033,6 +1214,10 @@ export const AVERON_PRODUCTS = [
       "series": "Sculpted Texture Series"
     },
     "image": "/assets/catalogue/asmr/eov113.jpeg",
-    "editorialCaption": "25 cm oval platter ideal for single-portion entrees and sashimi."
+    "editorialCaption": "25 cm oval platter ideal for single-portion entrees and sashimi.",
+    "productCode": "EOV-113",
+    "images": [
+      "/assets/catalogue/asmr/eov113.jpeg"
+    ]
   }
 ];

@@ -1,11 +1,13 @@
 /**
  * VITTESA — OLIVERA Product Specifications (18 Pieces)
+ * Each product entry unifies all photographic views into an `images` array.
  */
 
 export const OLIVERA_PRODUCTS = [
   {
     "id": "ase07103",
     "code": "ASEO7103",
+    "productCode": "ASEO7103",
     "name": "Dinner Plate",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -23,12 +25,18 @@ export const OLIVERA_PRODUCTS = [
       "finish": "Softly Muted Olive-Grey Matted Glaze",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera-editorial-hero.jpg",
+    "images": [
+      "/assets/catalogue/olivera/dinner plate 1.jpg",
+      "/assets/catalogue/olivera/dinner plate 2.jpg",
+      "/assets/catalogue/olivera/dinner plate 3.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/dinner plate 1.jpg",
     "editorialCaption": "Rounded silhouettes and calm contemporary hospitality character."
   },
   {
     "id": "ase07101",
     "code": "ASEO7101",
+    "productCode": "ASEO7101",
     "name": "Salad Plate",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -45,12 +53,17 @@ export const OLIVERA_PRODUCTS = [
       "diameter": "21 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-dinner-plate-aseo7103.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/salad plate.jpg",
+      "/assets/catalogue/olivera/salad plate 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/salad plate.jpg",
     "editorialCaption": "Medium course plate with soft organic lip."
   },
   {
     "id": "ase07109",
     "code": "ASEO7109",
+    "productCode": "ASEO7109",
     "name": "Deep Coupe",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -67,12 +80,17 @@ export const OLIVERA_PRODUCTS = [
       "diameter": "23 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-salad-plate-aseo7101.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/deep coupe 1.jpg",
+      "/assets/catalogue/olivera/deep coupe 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/deep coupe 1.jpg",
     "editorialCaption": "Deep coupe with elevated curving rim for sauced mains."
   },
   {
     "id": "ase07114",
     "code": "ASEO7114",
+    "productCode": "ASEO7114",
     "name": "Edge Plate Big",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -89,12 +107,17 @@ export const OLIVERA_PRODUCTS = [
       "diameter": "26 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-deep-coupe-aseo7109.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/edge plate big.jpg",
+      "/assets/catalogue/olivera/edge plate big 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/edge plate big.jpg",
     "editorialCaption": "Perpendicular rim plate creating clean architectural presentation."
   },
   {
     "id": "ase07112",
     "code": "ASEO7112",
+    "productCode": "ASEO7112",
     "name": "Edge Plate Small",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -111,12 +134,17 @@ export const OLIVERA_PRODUCTS = [
       "diameter": "20 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-edge-plate-big-aseo7114.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/edge plate small.jpg",
+      "/assets/catalogue/olivera/edge plate small 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/edge plate small.jpg",
     "editorialCaption": "Compact vertical rim side plate."
   },
   {
     "id": "ase07111",
     "code": "ASEO7111",
+    "productCode": "ASEO7111",
     "name": "Hi-Wall Appetizer Plate",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -133,12 +161,17 @@ export const OLIVERA_PRODUCTS = [
       "diameter": "13 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-edge-plate-small-aseo7112.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/hi wall appetizer plate.jpg",
+      "/assets/catalogue/olivera/hi wall appetizer plate 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/hi wall appetizer plate.jpg",
     "editorialCaption": "Miniature high-walled plate for amuse-bouche and butter service."
   },
   {
     "id": "ase07122",
     "code": "ASEO7122",
+    "productCode": "ASEO7122",
     "name": "Serving Bowl 19 cm",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -156,12 +189,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "950 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-hi-wall-plate-aseo7111.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/serving bowl 1.jpg",
+      "/assets/catalogue/olivera/serving bowl 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/serving bowl 1.jpg",
     "editorialCaption": "Large volume hospitality serving bowl."
   },
   {
     "id": "ase07121",
     "code": "ASEO7121",
+    "productCode": "ASEO7121",
     "name": "Serving Bowl 15 cm",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -179,12 +217,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "590 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-serving-bowl-19cm-aseo7122.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/serving bowl 15 cm.jpg",
+      "/assets/catalogue/olivera/serving bowl 15cm 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/serving bowl 15 cm.jpg",
     "editorialCaption": "Versatile side and salad serving bowl."
   },
   {
     "id": "ase07124",
     "code": "ASEO7124",
+    "productCode": "ASEO7124",
     "name": "Edge Bowl 20 cm",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -202,12 +245,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "620 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-serving-bowl-15cm-aseo7121.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/edge bowl 2.jpg",
+      "/assets/catalogue/olivera/edge bowl 750ml 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/edge bowl 2.jpg",
     "editorialCaption": "Clean perpendicular rim wall with understated tone."
   },
   {
     "id": "ase07123",
     "code": "ASEO7123",
+    "productCode": "ASEO7123",
     "name": "Edge Bowl 13 cm",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -225,12 +273,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "570 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-edge-bowl-20cm-aseo7124.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/edge bowl 570 ml.jpg",
+      "/assets/catalogue/olivera/edge bowl.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/edge bowl 570 ml.jpg",
     "editorialCaption": "Deep straight-sided hospitality bowl."
   },
   {
     "id": "ase07164",
     "code": "ASEO7164",
+    "productCode": "ASEO7164",
     "name": "Soup Bowl",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -248,12 +301,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "287 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-edge-bowl-13cm-aseo7123.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/soup bowl.jpg",
+      "/assets/catalogue/olivera/soup bowl 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/soup bowl.jpg",
     "editorialCaption": "Classic soup and broth service bowl."
   },
   {
     "id": "ase07163",
     "code": "ASEO7163",
+    "productCode": "ASEO7163",
     "name": "Katori Bowl",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -271,12 +329,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "190 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-soup-bowl-aseo7164.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/katori.jpg",
+      "/assets/catalogue/olivera/katori 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/katori.jpg",
     "editorialCaption": "Individual accompaniment and condiment katori."
   },
   {
     "id": "ase07161",
     "code": "ASEO7161",
+    "productCode": "ASEO7161",
     "name": "Dip Bowl",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -294,12 +357,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "42 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-katori-bowl-aseo7163.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/dip bowl.jpg",
+      "/assets/catalogue/olivera/dip bowl 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/dip bowl.jpg",
     "editorialCaption": "Petite sauce, jus and dipping vessel."
   },
   {
     "id": "ase07115",
     "code": "ASEO7115",
+    "productCode": "ASEO7115",
     "name": "Chip Pot",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -316,12 +384,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "400 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-dip-bowl-aseo7161.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/chip pot.jpg",
+      "/assets/catalogue/olivera/chip pot 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/chip pot.jpg",
     "editorialCaption": "Versatile side container for frites, snacks, and tabletop cutlery."
   },
   {
     "id": "ase07134",
     "code": "ASEO7134",
+    "productCode": "ASEO7134",
     "name": "Creamer",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -338,12 +411,17 @@ export const OLIVERA_PRODUCTS = [
       "capacity": "220 ml",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-chip-pot-aseo7115.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/creamer.jpg",
+      "/assets/catalogue/olivera/creamer 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/creamer.jpg",
     "editorialCaption": "Ergonomic milk and pouring creamer."
   },
   {
     "id": "ase07153",
     "code": "ASEO7153",
+    "productCode": "ASEO7153",
     "name": "Platter Small",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -360,12 +438,17 @@ export const OLIVERA_PRODUCTS = [
       "dimensions": "22 cm x 15 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-creamer-aseo7134.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/platters.jpg",
+      "/assets/catalogue/olivera/platters 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/platters.jpg",
     "editorialCaption": "Organic oval platter for appetizers and passed hors d'oeuvres."
   },
   {
     "id": "ase07154",
     "code": "ASEO7154",
+    "productCode": "ASEO7154",
     "name": "Platter Medium",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -382,12 +465,17 @@ export const OLIVERA_PRODUCTS = [
       "dimensions": "27.5 cm x 18 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-platter-small-aseo7153.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/platters.jpg",
+      "/assets/catalogue/olivera/platters 2.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/platters.jpg",
     "editorialCaption": "Muted earth platter for canapés, charcuterie, and artisanal table drops."
   },
   {
     "id": "ase07155",
     "code": "ASEO7155",
+    "productCode": "ASEO7155",
     "name": "Platter Large",
     "collection": "OLIVERA",
     "collectionId": "olivera",
@@ -404,7 +492,11 @@ export const OLIVERA_PRODUCTS = [
       "dimensions": "33.5 cm x 22 cm",
       "series": "Natural Earth Series"
     },
-    "image": "/assets/catalogue/olivera/olivera-platter-large-aseo7155.jpeg",
+    "images": [
+      "/assets/catalogue/olivera/platters 2.jpg",
+      "/assets/catalogue/olivera/platters.jpg"
+    ],
+    "image": "/assets/catalogue/olivera/platters 2.jpg",
     "editorialCaption": "Expansive sharing platter for roasted whole cuts and seafood service."
   }
 ];

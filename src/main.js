@@ -7,6 +7,7 @@ import { initModal, openProductModal } from './components/modal.js';
 import { initTray, addToTray, removeFromTray } from './components/tray.js';
 import { initShowroom } from './components/showroom.js';
 import { initCollectionSubpageFilter } from './components/collection-filter.js';
+import { initProductCarousels } from './components/carousel.js';
 import { initEnquiryForm } from './components/enquiry.js';
 import { renderDynamicSections } from './components/dynamic-sections.js';
 import { parseUrlParams } from './components/router.js';
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEnquiryForm();
   initCollectionSubpageFilter();
   initShowroom();
+  initProductCarousels();
   renderDynamicSections();
   parseUrlParams();
 });
