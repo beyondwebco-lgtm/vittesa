@@ -589,3 +589,4 @@ public/assets/
 | Date | Summary of Changes | Affected Files & Routes | Verification / Tests |
 | :--- | :--- | :--- | :--- |
 | **2026-10-14** | Initialized and populated complete `CONTEXT.md` project memory file. Documented complete architecture, all 8 collections, all 121 verified products, PDP routing, asset registries, design tokens, and technical debt. | `CONTEXT.md` (Root) | Verified all 121 product records against `src/data/products/`, checked Vite build configuration, verified file paths. |
+| **2026-10-14** | Updated `olivera-editorial-hero.jpg` with user-edited clean horizontal tabletop photograph (removing catalogue page text/header/thumbnails). | `public/assets/catalogue/olivera-editorial-hero.jpg` | Verified visual composition and resolution. Used in `/collections/` and `/collections/olivera/`. |
