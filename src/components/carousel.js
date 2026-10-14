@@ -107,6 +107,7 @@ export function attachCarouselHandlers(container = document) {
       prevBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        e.stopImmediatePropagation();
         updateSlide(currentIndex - 1);
       });
     }
@@ -115,6 +116,7 @@ export function attachCarouselHandlers(container = document) {
       nextBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        e.stopImmediatePropagation();
         updateSlide(currentIndex + 1);
       });
     }
@@ -123,6 +125,7 @@ export function attachCarouselHandlers(container = document) {
       dot.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        e.stopImmediatePropagation();
         const targetIdx = parseInt(dot.dataset.index, 10);
         if (!isNaN(targetIdx)) {
           updateSlide(targetIdx);
@@ -192,7 +195,7 @@ export function initProductCarousels(root = document) {
     let prodId = card.dataset.productId || mediaEl.dataset.productId;
     if (!prodId) {
       const onclickAttr = mediaEl.getAttribute('onclick') || '';
-      const match = onclickAttr.match(/vittesaOpenModal\(['"]([^'"]+)['"]\)/);
+      const match = onclickAttr.match(/vittesaOpenModal\(['"]([^'"]+)['"]\)/) || onclickAttr.match(/product\.html\?id=([^'"]+)/);
       if (match) {
         prodId = match[1];
       }
@@ -204,7 +207,9 @@ export function initProductCarousels(root = document) {
     if (!product || !product.images || product.images.length <= 1) return;
 
     mediaEl.classList.add('has-carousel');
-    mediaEl.innerHTML = renderProductMedia(product);
+    if (!mediaEl.querySelector('.carousel-track')) {
+      mediaEl.innerHTML = renderProductMedia(product);
+    }
   });
 
   attachCarouselHandlers(root);

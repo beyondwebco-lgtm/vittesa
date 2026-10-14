@@ -9,6 +9,7 @@ export default defineConfig({
         showroom: resolve(import.meta.dirname, 'showroom.html'),
         collections: resolve(import.meta.dirname, 'collections/index.html'),
         olivera: resolve(import.meta.dirname, 'collections/olivera/index.html'),
+        olivera_product: resolve(import.meta.dirname, 'collections/olivera/product.html'),
         averon: resolve(import.meta.dirname, 'collections/averon/index.html'),
         terra_speckle: resolve(import.meta.dirname, 'collections/terra-speckle/index.html'),
         urbane_grey: resolve(import.meta.dirname, 'collections/urbane-grey/index.html'),

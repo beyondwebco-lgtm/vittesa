@@ -4,10 +4,10 @@ import { OLIVERA_PRODUCTS } from '../src/data/products/olivera.js';
 function renderProductMedia(product) {
   const images = (product.images && product.images.length > 0) ? product.images : [product.image];
   if (images.length <= 1) {
-    return `<img src="${images[0]}" alt="${product.name} - ${product.code}" loading="lazy" />`;
+    return `<img src="${images[0]}" alt="${product.name}" loading="lazy" />`;
   }
   const slidesHtml = images.map((imgSrc, idx) => 
-    `<img src="${imgSrc}" alt="${product.name} - ${product.code} (View ${idx + 1})" class="carousel-slide ${idx === 0 ? 'active' : ''}" loading="${idx === 0 ? 'eager' : 'lazy'}" />`
+    `<img src="${imgSrc}" alt="${product.name} (View ${idx + 1})" class="carousel-slide ${idx === 0 ? 'active' : ''}" loading="${idx === 0 ? 'eager' : 'lazy'}" />`
   ).join('\n            ');
   
   const dotsHtml = images.map((_, idx) => 
@@ -30,15 +30,17 @@ const cardsHtml = OLIVERA_PRODUCTS.map(p => {
   const specDimension = p.dimensions || (p.specs && (p.specs.diameter || p.specs.dimensions || p.specs.capacity)) || '';
 
   return `        <div class="product-item-card" data-category="${p.category}" data-product-id="${p.id}">
-          <div class="product-item-media ${hasMultiple ? 'has-carousel' : ''}" onclick="if(!this.getAttribute('data-swiped')) window.vittesaOpenModal('${p.id}')">
+          <div class="product-item-media ${hasMultiple ? 'has-carousel' : ''}" onclick="if(!event.target.closest('.carousel-nav-btn') && !event.target.closest('.carousel-dots-container') && !this.getAttribute('data-swiped')) window.location.href='/collections/olivera/product.html?id=${p.id}'" style="cursor: pointer;">
           ${renderProductMedia(p)}
           </div>
           <div class="product-item-body">
             <div>
-              <h3 class="product-item-title">${p.name}</h3>
+              <h3 class="product-item-title">
+                <a href="/collections/olivera/product.html?id=${p.id}" class="product-title-link">${p.name}</a>
+              </h3>
               <div class="product-item-dimensions">${specDimension}</div>
             </div>
-            <button class="btn-card-quickview" type="button" onclick="window.vittesaOpenModal('${p.id}')">View Details</button>
+            <a href="/collections/olivera/product.html?id=${p.id}" class="btn-card-quickview" role="button">View Details</a>
           </div>
         </div>`;
 }).join('\n\n');
@@ -170,10 +172,13 @@ ${cardsHtml}
   </main>
 
   <!-- 6. SPECIFICATION TRAY DRAWER -->
-  <aside class="spec-tray-drawer" id="spec-tray" aria-label="Project Specification Tray">
+  <aside class="spec-tray-drawer" id="spec-tray-drawer" aria-label="Project Specification Tray">
     <div class="tray-header">
-      <h3>Specification Tray</h3>
-      <button class="btn-close-tray" aria-label="Close Tray">✕</button>
+      <div>
+        <h3>Project Specification</h3>
+        <p style="font-size:0.75rem; color:var(--ink-muted); margin-top:2px;">Curated Hospitality Portfolio Schedule</p>
+      </div>
+      <button class="btn-close-tray" id="close-tray-btn" aria-label="Close Tray">✕</button>
     </div>
     <div class="tray-body">
       <div id="tray-empty" class="tray-empty-state">
@@ -183,7 +188,7 @@ ${cardsHtml}
       <div id="tray-items" class="tray-items-list"></div>
     </div>
     <div class="tray-footer">
-      <button id="tray-proceed-btn" class="btn-primary" onclick="window.vittesaOpenEnquiryModal('OLIVERA')" style="background-color:var(--ink-primary); color:#FFF; width:100%; text-align:center;">
+      <button id="tray-proceed-btn" class="btn-primary" style="background-color:var(--ink-primary); color:#FFF; width:100%; text-align:center;">
         Request Specifications & Quote →
       </button>
     </div>
@@ -199,7 +204,7 @@ ${cardsHtml}
         </div>
         <div class="modal-info-col">
           <div>
-            <div id="modal-code" class="modal-code-badge">CODE</div>
+            <div id="modal-code" class="modal-code-badge" style="display:none;"></div>
             <h3 id="modal-title" class="modal-title">Product Name</h3>
             <div id="modal-collection" class="modal-collection-name">Collection</div>
             <table class="modal-specs-table" id="modal-specs-table"></table>
@@ -278,5 +283,5 @@ ${cardsHtml}
 </html>
 `;
 
-fs.writeFileSync('collections/olivera/index.html', htmlContent);
-console.log('Successfully generated minimal luxury Olivera collection page!');
+fs.writeFileSync('collections/olivera/index.html', htmlContent, 'utf8');
+console.log('✓ Successfully rebuilt collections/olivera/index.html');
