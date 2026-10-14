@@ -1317,13 +1317,7 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .card-code-badge {
-  font-size: 0.625rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--tone-sienna);
-  font-weight: 600;
-  margin-bottom: 1rem;
-  display: block;
+  display: none !important;
 }
 
 .card-img-wrap {
@@ -1991,11 +1985,7 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .card-code {
-  font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--ink-muted);
+  display: none !important;
 }
 
 .showroom-card-img {
@@ -2674,12 +2664,7 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .modal-code-badge {
-  font-size: 0.6875rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--tone-sienna);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  display: none !important;
 }
 
 .modal-title {
@@ -3760,17 +3745,11 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .product-item-badge {
-  position: absolute;
-  top: 0.85rem;
-  left: 0.85rem;
-  padding: 0.25rem 0.55rem;
-  background-color: rgba(24, 23, 22, 0.88);
-  color: var(--tone-gold);
-  font-size: 0.5625rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  z-index: 2;
+  display: none !important;
+}
+
+.tray-item-code {
+  display: none !important;
 }
 
 .product-item-media {
@@ -4536,5 +4515,140 @@ h1, h2, h3, h4, .serif-title {
   color: var(--ink-muted);
   letter-spacing: 0.08em;
 }
+
+/* ==========================================================================
+   COLLECTIONS INDEX — OLIVERA FEATURE (AIRAVATA REFERENCE SPLIT LAYOUT)
+   ========================================================================== */
+
+.olivera-feature-section {
+  width: 100%;
+}
+
+.olivera-split-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2.5rem, 5.5vw, 5.5rem);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.olivera-feature-media {
+  flex: 0 0 54%;
+  max-width: 54%;
+  width: 54%;
+}
+
+.olivera-feature-media a {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.olivera-feature-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10.5;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition: opacity var(--transition-fast);
+}
+
+.olivera-feature-media a:hover .olivera-feature-img {
+  opacity: 0.94;
+}
+
+.olivera-feature-info {
+  flex: 1 1 46%;
+  max-width: 46%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1rem, 2vw, 2.5rem) 0;
+}
+
+.olivera-feature-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+  line-height: 1.1;
+  margin: 0 0 clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.olivera-feature-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  line-height: 1.7;
+  color: var(--ink-secondary);
+  font-weight: 400;
+  max-width: 440px;
+  margin: 0 0 clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.olivera-feature-cta-wrap {
+  display: inline-block;
+}
+
+.olivera-feature-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ink-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--ink-primary);
+  padding: 0.9rem 2.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.olivera-feature-btn:hover,
+.olivera-feature-btn:focus-visible {
+  background-color: transparent;
+  color: var(--ink-primary);
+  border-color: var(--ink-primary);
+}
+
+@media (max-width: 960px) {
+  .olivera-split-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.25rem;
+  }
+
+  .olivera-feature-media {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .olivera-feature-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .olivera-feature-desc {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
 
 

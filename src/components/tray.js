@@ -38,10 +38,10 @@ export function initTray() {
 
   proceedBtn?.addEventListener('click', () => {
     closeTray();
-    const codes = state.specTray.map(t => `${t.code} (${t.name})`).join(', ');
+    const items = state.specTray.map(t => t.name).join(', ');
     const noteField = document.getElementById('enq-notes');
     if (noteField) {
-      noteField.value = `Specification Schedule Request for: ${codes}`;
+      noteField.value = `Specification Schedule Request for: ${items}`;
     }
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -114,7 +114,6 @@ export function renderTrayItems() {
     <div class="tray-item-row">
       <img src="${p.image}" alt="${p.name}" class="tray-item-thumb" />
       <div class="tray-item-info">
-        <div class="tray-item-code">${p.code}</div>
         <div class="tray-item-title">${p.name}</div>
         <div class="tray-item-collection">${p.collection} • ${p.dimensions || ''}</div>
       </div>

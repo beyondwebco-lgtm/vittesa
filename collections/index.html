@@ -109,36 +109,33 @@
       </div>
     </header>
 
-    <!-- COLLECTIONS GRID SECTION (OLIVERA FEATURED — OTHERS HIDDEN) -->
-    <section class="section-padding" style="background-color:var(--bg-porcelain);">
+    <!-- OLIVERA FEATURED COLLECTION (SPLIT REFERENCE LAYOUT) -->
+    <section class="olivera-feature-section" style="background-color: var(--bg-porcelain); padding: clamp(3rem, 6vw, 5.5rem) 0;">
       <div class="container">
 
-        <div class="collections-grid-8" style="grid-template-columns: 1fr; max-width: 980px; margin: 0 auto;">
+        <div class="olivera-split-layout">
+          <!-- Left: Large Collection Image (52–55% width) -->
+          <div class="olivera-feature-media">
+            <a href="/collections/olivera/" aria-label="Explore OLIVERA Collection">
+              <img 
+                src="/assets/catalogue/olivera-editorial-hero.jpg" 
+                alt="OLIVERA Porcelain Collection" 
+                class="olivera-feature-img" 
+              />
+            </a>
+          </div>
 
-          <!-- OLIVERA (FEATURED COLLECTION) -->
-          <a href="/collections/olivera/" class="collection-card" style="grid-column: 1 / -1;">
-            <div class="collection-card-media" style="aspect-ratio: 16 / 10;">
-              <img src="/assets/catalogue/olivera-editorial-hero.jpg" alt="OLIVERA Earth Olive" class="collection-card-img" />
-              <span class="collection-card-badge">01 — Curated</span>
+          <!-- Right: Collection Information -->
+          <div class="olivera-feature-info">
+            <h2 class="olivera-feature-title">OLIVERA</h2>
+            <p class="olivera-feature-desc">Softly muted olive-grey porcelain with rounded, organic silhouettes.</p>
+            <div class="olivera-feature-cta-wrap">
+              <a href="/collections/olivera/" class="olivera-feature-btn" role="button">SHOP NOW</a>
             </div>
-            <div class="collection-card-body" style="padding: 2.5rem;">
-              <div>
-                <div class="collection-card-meta">
-                  <span class="collection-card-layer">Natural Earth Series</span>
-                  <span class="collection-card-num">01</span>
-                </div>
-                <h2 class="collection-card-title" style="font-size: clamp(2rem, 4vw, 3rem);">OLIVERA</h2>
-                <div class="collection-card-tagline" style="font-size: 1.125rem; font-style: italic; color: var(--ink-secondary); margin-bottom: 0.75rem;">Soft olive tones. Organic forms. Effortless elegance.</div>
-                <p class="collection-card-desc" style="max-width: 650px; font-size: 0.9375rem; line-height: 1.6;">
-                  A softly muted olive-grey direction with rounded organic contours and calm contemporary hospitality character. 17 dedicated catalogue pieces engineered for tasting menus, boutique bistros, and farm-to-table dining.
-                </p>
-              </div>
-              <div class="collection-card-footer" style="margin-top: 2rem;">
-                <span class="collection-card-cta" style="font-size: 0.8125rem; letter-spacing: 0.16em;">Explore Dedicated Catalogue →</span>
-                <span class="collection-card-subcta">17 Items • Earth Olive</span>
-              </div>
-            </div>
-          </a>
+          </div>
+        </div>
+
+        <div class="collections-grid-8" style="display: none !important;">
 
           <!-- ALL OTHER COLLECTIONS HIDDEN AS REQUESTED -->
           <div style="display: none !important;" aria-hidden="true">
@@ -302,7 +299,7 @@
             <span class="eyebrow" style="color:var(--tone-gold);">Technical Explorer</span>
             <h3>Looking for cross-collection product specifications?</h3>
             <p>
-              Use the Interactive Showroom to search reference codes, compare dimensions across collections, and build your complete project specification schedule.
+              Use the Interactive Showroom to search pieces, compare dimensions across collections, and build your complete project specification schedule.
             </p>
             <div style="margin-top:1.5rem;">
               <a href="/showroom.html" class="btn-primary">Enter Showroom Explorer →</a>

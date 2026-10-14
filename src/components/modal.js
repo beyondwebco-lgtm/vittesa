@@ -99,17 +99,19 @@ export function openProductModal(productId) {
       attachCarouselHandlers(photoCol);
     } else {
       photoCol.classList.remove('has-carousel');
-      photoCol.innerHTML = `<img id="modal-img" src="${images[0]}" alt="${product.name} - ${product.code}" />`;
+      photoCol.innerHTML = `<img id="modal-img" src="${images[0]}" alt="${product.name}" />`;
     }
   }
 
-  if (code) code.textContent = product.code;
+  if (code) {
+    code.textContent = '';
+    code.style.display = 'none';
+  }
   if (title) title.textContent = product.name;
   if (col) col.textContent = `${product.collection} COLLECTION`;
 
   if (specsTable) {
     const specs = [
-      { label: "Reference Code", val: product.code },
       { label: "Collection", val: product.collection },
       { label: "Category", val: product.categoryLabel },
       { label: "Dimensions", val: product.dimensions || (product.specs && (product.specs.diameter || product.specs.dimensions)) || "Standard" },

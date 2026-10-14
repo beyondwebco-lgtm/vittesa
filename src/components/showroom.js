@@ -72,13 +72,12 @@ export function renderShowroomGrid() {
     const hasMultiple = p.images && p.images.length > 1;
     return `
       <div class="product-item-card" data-category="${p.category}" data-product-id="${p.id}">
-        <span class="product-item-badge">${p.code}</span>
         <div class="product-item-media ${hasMultiple ? 'has-carousel' : ''}" onclick="if(!this.getAttribute('data-swiped')) window.vittesaOpenModal('${p.id}')">
           ${renderProductMedia(p)}
         </div>
         <div class="product-item-body">
           <div>
-            <div class="product-item-code">${p.code} • ${p.collection}</div>
+            <div class="product-item-code">${p.collection}</div>
             <h3 class="product-item-title">${p.name}</h3>
             <div class="product-item-dimensions">${p.dimensions || ''}</div>
             <p class="product-item-specs-preview">${p.editorialCaption || ''}</p>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hospitality Showroom — Complete Catalogue Explorer | VITTESA Porcelain</title>
-  <meta name="description" content="Explore the full VITTESA hospitality porcelain catalogue. Filter across all 7 collections, tableware categories, or search reference codes to compile your specification schedule." />
+  <meta name="description" content="Explore the full VITTESA hospitality porcelain catalogue. Filter across all 7 collections, tableware categories, or search pieces to compile your specification schedule." />
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="icon" type="image/jpeg" href="/assets/catalogue/vittesa-emblem-gold.jpg" />
 </head>
@@ -102,7 +102,7 @@
           <span class="eyebrow" style="color:var(--tone-gold);">Technical Catalogue Explorer</span>
           <h1>EXPLORE ALL PRODUCTS</h1>
           <p>
-            Filter across all 7 collections, search directly by reference code or shape name, and examine genuine technical specifications to compile your project schedule.
+            Filter across all 7 collections, search directly by piece name or shape, and examine genuine technical specifications to compile your project schedule.
           </p>
         </div>
       </div>
@@ -145,10 +145,10 @@
           <div class="showroom-search-row">
             <div class="search-input-wrap">
               <span class="search-icon">🔍</span>
-              <input type="text" id="showroom-search" class="search-input" placeholder="Search by code (e.g. LP-01, ASMR, SN1109), shape or collection..." />
+              <input type="text" id="showroom-search" class="search-input" placeholder="Search by piece name, shape or collection..." />
             </div>
             <div id="results-count" class="results-counter">
-              Showing catalogue references
+              Showing catalogue pieces
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@
         <div class="b2b-cta-banner" style="margin-top:0;">
           <div class="b2b-cta-text">
             <h3>PROJECT SPECIFICATION & TRADE SAMPLING</h3>
-            <p>Ready to compile your tableware program? Export your selected references using the Spec Tray or request official factory datasheets.</p>
+            <p>Ready to compile your tableware program? Export your selected pieces using the Spec Tray or request official factory datasheets.</p>
           </div>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
             <button class="tray-btn open-tray-btn" style="background:#FFF; padding:0.9rem 1.6rem;">
@@ -218,7 +218,7 @@
 
         <div class="modal-info-col">
           <div>
-            <div id="modal-code" class="modal-code-badge">CODE</div>
+            <div id="modal-code" class="modal-code-badge" style="display:none;"></div>
             <h3 id="modal-title" class="modal-title">Product Name</h3>
             <div id="modal-collection" class="modal-collection-name">Collection</div>
 

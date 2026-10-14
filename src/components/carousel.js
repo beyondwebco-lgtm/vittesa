@@ -15,13 +15,13 @@ export function renderProductMedia(product) {
     : [product.image || '/assets/catalogue/olivera-editorial-hero.jpg'];
 
   if (images.length <= 1) {
-    return `<img src="${images[0]}" alt="${product.name} - ${product.code}" loading="lazy" />`;
+    return `<img src="${images[0]}" alt="${product.name}" loading="lazy" />`;
   }
 
   const slidesHtml = images.map((imgSrc, idx) => `
     <img 
       src="${imgSrc}" 
-      alt="${product.name} - ${product.code} (View ${idx + 1})" 
+      alt="${product.name} (View ${idx + 1})" 
       class="carousel-slide ${idx === 0 ? 'active' : ''}" 
       loading="${idx === 0 ? 'eager' : 'lazy'}" 
     />
