@@ -275,11 +275,43 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .brand-logo-wrap {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
   text-decoration: none;
   flex-shrink: 0;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.brand-logo-wrap:hover {
+  opacity: 0.85;
+}
+
+.brand-logo-wordmark {
+  height: clamp(24px, 2.2vw, 29px);
+  width: auto;
+  max-width: 195px;
+  display: block;
+  object-fit: contain;
+}
+
+.footer-brand-logo-wrap {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-brand-logo-wrap:hover {
+  opacity: 0.85;
+}
+
+.footer-brand-wordmark {
+  height: 26px;
+  width: auto;
+  max-width: 180px;
+  display: block;
+  object-fit: contain;
 }
 
 .brand-logo-emblem {
@@ -2869,6 +2901,9 @@ h1, h2, h3, h4, .serif-title {
     font-size: 0.7rem;
     letter-spacing: 0.11em;
   }
+  .brand-logo-wordmark {
+    height: 26px;
+  }
   .brand-logo-text {
     font-size: 1.55rem;
   }
@@ -2894,6 +2929,11 @@ h1, h2, h3, h4, .serif-title {
 
   .mobile-menu-toggle {
     display: flex;
+  }
+
+  .brand-logo-wordmark {
+    height: 24px;
+    max-width: 160px;
   }
 
   .brand-logo-text {
@@ -3078,6 +3118,11 @@ h1, h2, h3, h4, .serif-title {
     gap: 0.45rem;
   }
 
+  .brand-logo-wordmark {
+    height: 21px;
+    max-width: 140px;
+  }
+
   .brand-logo-text {
     font-size: 1.25rem;
     letter-spacing: 0.11em;
@@ -3131,6 +3176,11 @@ h1, h2, h3, h4, .serif-title {
   .site-header .container {
     padding-left: 0.65rem;
     padding-right: 0.65rem;
+  }
+
+  .brand-logo-wordmark {
+    height: 18px;
+    max-width: 120px;
   }
 
   .brand-logo-text {
@@ -3232,6 +3282,11 @@ h1, h2, h3, h4, .serif-title {
 
 .mobile-nav-header .brand-logo-wrap {
   text-decoration: none;
+}
+
+.mobile-nav-header .brand-logo-wordmark {
+  height: 24px;
+  max-width: 160px;
 }
 
 .mobile-nav-header .brand-logo-text {

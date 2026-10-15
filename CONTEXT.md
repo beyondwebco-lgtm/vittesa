@@ -437,7 +437,8 @@ public/assets/
 - **Accessibility & Responsiveness:** Fully readable on desktop and mobile. Pauses rotation on mouse hover and keyboard focus (`focusin`/`focusout`). Respects user `prefers-reduced-motion` settings. Implements `<aside role="region" aria-label="Announcements">` and `aria-live="polite"`.
 
 ### 2. Site Header (`.site-header`)
-- **Left:** Brand emblem and typography (`VITTESA — Porcelain Maison`).
+- **Brand Logo:** Features the official `VITTESA Luxury Serif Wordmark` (`/assets/logo/vittesa-wordmark-dark.png`), replacing the placeholder emblem and font lockup. Scaled with responsive bounds (`clamp(24px, 2.2vw, 29px)`) across all desktop headers, mobile navigation drawers, and footers.
+- **Left:** Brand luxury wordmark (`.brand-logo-wrap`).
 - **Center:** Desktop navigation links:
   - `Home` (`/`)
   - `Collections` (`/collections/`)
@@ -606,3 +607,4 @@ public/assets/
 | **2026-10-15** | Featured OLIVERA and hid all other collection cards on homepage (`index.html`) under `#collections`. Added centered single-card styling in `src/style.css` and updated gateway CTA to explore OLIVERA. | `index.html`, `src/style.css`, `CONTEXT.md` | Verified production build with `npm run build`. |
 | **2026-10-15** | Removed "THE HOSPITALITY SHOWROOM" / Technical Catalogue Explorer gateway section from `index.html`. | `index.html`, `CONTEXT.md` | Verified production build with `npm run build`. |
 | **2026-10-15** | Replaced static header announcement text with a rotating 6-message announcement slideshow (`src/components/announcement.js`, `.top-announcement-bar`) with hover/focus pause and reduced-motion support. Replaced unverified free shipping with bulk enquiry copy. Removed Spec Tray and Enquire buttons from header and mobile nav; added unified `CONTACT US` CTA linking to `/#contact`. Preserved tray engine elsewhere. | `src/components/announcement.js`, `src/main.js`, `src/style.css`, all 11 HTML pages, `CONTEXT.md` | Verified production build (`npm run build`), tested script execution, confirmed zero layout shifts. |
+| **2026-10-15** | Replaced placeholder circular emblem + font lockup with official `VITTESA Luxury Serif Wordmark.png` across all 11 HTML pages (desktop header, mobile drawer header, and luxury footer). Cropped transparent margins and rendered high-resolution brand ink asset (`public/assets/logo/vittesa-wordmark-dark.png`) with responsive scaling and hover feedback. | All 11 HTML pages, `src/style.css`, `public/assets/logo/`, `CONTEXT.md` | Built successfully with `npm run build` (zero errors, 1.13s). Verified responsive sizing across breakpoints. |

@@ -62,11 +62,7 @@ const htmlContent = `<!DOCTYPE html>
     <div class="container">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo-wrap" aria-label="VITTESA Home">
-          <img src="/assets/catalogue/vittesa-emblem-gold.jpg" alt="VITTESA Emblem" class="brand-logo-emblem" />
-          <div>
-            <div class="brand-logo-text">VITTESA</div>
-            <span class="brand-tagline-sub">Porcelain Maison</span>
-          </div>
+          <img src="/assets/logo/vittesa-wordmark-dark.png" alt="VITTESA" class="brand-logo-wordmark" />
         </a>
 
         <nav class="desktop-nav" aria-label="Main Navigation">
@@ -100,11 +96,7 @@ const htmlContent = `<!DOCTYPE html>
     <div class="mobile-nav-dialog">
       <div class="mobile-nav-header">
         <a href="/" class="brand-logo-wrap mobile-logo-wrap" aria-label="VITTESA Home">
-          <img src="/assets/catalogue/vittesa-emblem-gold.jpg" alt="VITTESA Emblem" class="brand-logo-emblem" />
-          <div>
-            <div class="brand-logo-text">VITTESA</div>
-            <span class="brand-tagline-sub">Porcelain Maison</span>
-          </div>
+          <img src="/assets/logo/vittesa-wordmark-dark.png" alt="VITTESA" class="brand-logo-wordmark" />
         </a>
         <button class="btn-close-mobile-nav" aria-label="Close Navigation">✕</button>
       </div>
