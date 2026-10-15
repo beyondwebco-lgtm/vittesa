@@ -53,7 +53,7 @@ const htmlContent = `<!DOCTYPE html>
   <title>OLIVERA — Natural Earth Series | VITTESA European Porcelain</title>
   <meta name="description" content="Softly muted olive-grey porcelain with rounded, organic silhouettes. Official 17-piece catalogue for luxury hospitality." />
   <link rel="stylesheet" href="/src/style.css" />
-  <link rel="icon" type="image/jpeg" href="/assets/catalogue/vittesa-emblem-gold.jpg" />
+  <link rel="icon" type="image/png" href="/assets/logo/vittesa-monogram-emblem.png" />
 </head>
 <body class="collection-detail-page olivera-minimal-page" data-collection-id="olivera">
 
@@ -62,7 +62,7 @@ const htmlContent = `<!DOCTYPE html>
     <div class="container">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo-wrap" aria-label="VITTESA Home">
-          <img src="/assets/logo/vittesa-wordmark-dark.png" alt="VITTESA" class="brand-logo-wordmark" />
+          <img src="/assets/logo/vittesa-monogram-gold.png" alt="VITTESA" class="brand-logo-wordmark" />
         </a>
 
         <nav class="desktop-nav" aria-label="Main Navigation">
@@ -96,7 +96,7 @@ const htmlContent = `<!DOCTYPE html>
     <div class="mobile-nav-dialog">
       <div class="mobile-nav-header">
         <a href="/" class="brand-logo-wrap mobile-logo-wrap" aria-label="VITTESA Home">
-          <img src="/assets/logo/vittesa-wordmark-dark.png" alt="VITTESA" class="brand-logo-wordmark" />
+          <img src="/assets/logo/vittesa-monogram-gold.png" alt="VITTESA" class="brand-logo-wordmark" />
         </a>
         <button class="btn-close-mobile-nav" aria-label="Close Navigation">✕</button>
       </div>
