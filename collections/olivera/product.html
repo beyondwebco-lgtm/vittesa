@@ -10,17 +10,12 @@
 </head>
 <body class="collection-detail-page olivera-pdp-page" data-collection-id="olivera">
 
-  <!-- Top Rotating Announcement Bar -->
-  <aside class="top-announcement-bar" role="region" aria-label="Announcements">
-    <div class="container announcement-container">
-      <div class="announcement-slider" id="announcement-slider" aria-live="polite" aria-atomic="true">
-        <span class="announcement-slide active" data-index="0">PREMIUM HOSPITALITY PORCELAIN FOR EVERY SETTING</span>
-        <span class="announcement-slide" data-index="1">EXPLORE OUR EUROPEAN-STYLE COLLECTIONS</span>
-        <span class="announcement-slide" data-index="2">BULK & WHOLESALE ENQUIRIES WELCOME</span>
-        <span class="announcement-slide" data-index="3">OUTFITTING HOTELS, RESTAURANTS & CAFÉS</span>
-        <span class="announcement-slide" data-index="4">CONNECT WITH US FOR INTERNATIONAL TRADE ENQUIRIES</span>
-        <span class="announcement-slide" data-index="5">ENQUIRE ABOUT BULK ORDERS & SHIPPING OPTIONS</span>
-      </div>
+  <!-- Understated Top Announcement Bar -->
+  <aside class="top-announcement-bar" role="region" aria-label="Announcement">
+    <div class="container announcement-container" style="justify-content: center; text-align: center;">
+      <span class="announcement-text" style="font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-secondary);">
+        European-Style Premium Hospitality Porcelain — OLIVERA Showroom
+      </span>
     </div>
   </aside>
 
@@ -35,15 +30,14 @@
         <nav class="desktop-nav" aria-label="Main Navigation">
           <ul class="nav-links">
             <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/collections/" class="nav-link active">Collections</a></li>
-            <li><a href="/collections/olivera/" class="nav-link">OLIVERA</a></li>
-            <li><a href="/showroom.html" class="nav-link">Showroom</a></li>
+            <li><a href="/collections/olivera/" class="nav-link active">Collection</a></li>
+            <li><a href="/#about" class="nav-link">About</a></li>
             <li><a href="/#contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
 
         <div class="nav-actions">
-          <a href="/#contact" class="btn-contact-header">Contact Us</a>
+          <a href="/collections/olivera/#products" class="btn-contact-header">Shop OLIVERA</a>
           <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
             <span></span>
             <span></span>
@@ -68,15 +62,14 @@
       <nav class="mobile-nav-body">
         <ul class="mobile-nav-links">
           <li><a href="/"><span class="nav-num">01</span> Home</a></li>
-          <li><a href="/collections/"><span class="nav-num">02</span> Collections</a></li>
-          <li><a href="/collections/olivera/"><span class="nav-num">03</span> OLIVERA Collection</a></li>
-          <li><a href="/showroom.html"><span class="nav-num">04</span> Showroom</a></li>
-          <li><a href="/#contact"><span class="nav-num">05</span> Contact</a></li>
+          <li><a href="/collections/olivera/"><span class="nav-num">02</span> Collection</a></li>
+          <li><a href="/#about" onclick="document.querySelector('.btn-close-mobile-nav')?.click();"><span class="nav-num">03</span> About</a></li>
+          <li><a href="/#contact" onclick="document.querySelector('.btn-close-mobile-nav')?.click();"><span class="nav-num">04</span> Contact</a></li>
         </ul>
       </nav>
 
       <div class="mobile-nav-footer">
-        <a href="/#contact" class="btn-contact-header mobile-contact-btn">Contact Us</a>
+        <a href="/collections/olivera/#products" class="btn-contact-header mobile-contact-btn" onclick="document.querySelector('.btn-close-mobile-nav')?.click();">Shop OLIVERA</a>
       </div>
     </div>
   </div>
@@ -95,8 +88,6 @@
           </a>
           <div class="pdp-breadcrumbs">
             <a href="/">Home</a>
-            <span class="sep">/</span>
-            <a href="/collections/">Collections</a>
             <span class="sep">/</span>
             <a href="/collections/olivera/">OLIVERA</a>
             <span class="sep">/</span>
@@ -140,11 +131,11 @@
 
             <!-- Action Buttons Group -->
             <div class="pdp-actions-group">
-              <button type="button" class="btn-primary pdp-btn-tray" id="pdp-add-tray-btn">
-                + Add to Specification Tray
+              <button type="button" class="btn-primary pdp-btn-enquire" id="pdp-enquire-btn">
+                ENQUIRE NOW
               </button>
-              <button type="button" class="btn-secondary pdp-btn-enquire" id="pdp-enquire-btn">
-                Enquire for Trade & Samples
+              <button type="button" class="btn-secondary pdp-btn-tray" id="pdp-add-tray-btn">
+                + Add to Specification Tray
               </button>
             </div>
 
@@ -202,7 +193,7 @@
       <button type="button" class="enquiry-modal-close" id="enquiry-modal-close" aria-label="Close modal">✕</button>
       <div style="margin-bottom: 1.5rem;">
         <span class="collection-intro-label" id="enquiry-collection-badge">Collection: OLIVERA</span>
-        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin-top: 0.25rem;">Trade Specification & Samples</h3>
+        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin-top: 0.25rem;">Product & Trade Enquiry</h3>
         <p style="font-size: 0.8125rem; color: var(--ink-muted); margin-top: 0.25rem;">
           Direct procurement pricing, lead times, and physical sample boxes for hospitality projects.
         </p>
@@ -212,45 +203,58 @@
         <input type="hidden" id="enquiry-collection-input" name="collection" value="OLIVERA" />
         
         <div style="margin-bottom: 1rem;">
-          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-name">Your Name *</label>
-          <input type="text" id="enq-name" name="name" class="form-input" placeholder="e.g. Jean-Luc Laurent" required style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-name">Full Name *</label>
+          <input type="text" id="enq-name" name="name" class="form-input" placeholder="Your full name" required style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
         </div>
 
         <div style="margin-bottom: 1rem;">
-          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-email">Business Email *</label>
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-email">Email Address *</label>
           <input type="email" id="enq-email" name="email" class="form-input" placeholder="name@company.com" required style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
         </div>
 
         <div style="margin-bottom: 1rem;">
-          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-property">Property / Venue Name</label>
-          <input type="text" id="enq-property" name="property" class="form-input" placeholder="e.g. The Grand Hotel, Dubai" style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-property">Company / Property Name (Optional)</label>
+          <input type="text" id="enq-property" name="property" class="form-input" placeholder="e.g. Grand Horizon Hotel" style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
         </div>
 
         <div style="margin-bottom: 1.5rem;">
-          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-notes">Project Requirements / Notes</label>
-          <textarea id="enq-notes" name="notes" class="form-textarea" rows="3" placeholder="Cover count, required pieces, sample request..." style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;"></textarea>
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-notes">Message *</label>
+          <textarea id="enq-notes" name="notes" class="form-textarea" rows="3" placeholder="Tell us about your requirements, required pieces, or sample request..." required style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;"></textarea>
         </div>
 
         <button type="submit" class="btn-primary" style="width:100%; background:var(--ink-primary); color:#FFF; padding:0.85rem; font-size:0.8125rem;">
-          Submit Specification Request
+          SEND ENQUIRY
         </button>
       </form>
     </div>
   </div>
 
   <!-- MINIMAL FOOTER -->
-  <footer class="olivera-minimal-footer">
+  <footer class="site-footer olivera-minimal-footer">
     <div class="container text-center">
-      <a href="/" aria-label="VITTESA Home" style="display:inline-block; text-decoration:none; margin-bottom:0.5rem;">
+      <a href="/" aria-label="VITTESA Home" style="display:inline-block; text-decoration:none; margin-bottom:0.75rem;">
         <img src="/assets/logo/vittesa-monogram-gold.png" alt="VITTESA" class="footer-brand-wordmark" style="margin:0 auto;" />
       </a>
       <div class="footer-minimal-sub">European-Style Premium Hospitality Porcelain</div>
-      <div class="footer-minimal-links">
-        <a href="/collections/olivera/">OLIVERA Collection</a>
-        <span style="color:var(--border-medium); margin:0 0.5rem;">•</span>
-        <a href="javascript:void(0)" onclick="window.vittesaOpenEnquiryModal('OLIVERA')">Trade Enquiry</a>
+      <p style="font-size:0.8125rem; color:var(--ink-muted); max-width:540px; margin:0 auto 1.5rem; line-height:1.6;">
+        European-Style Premium Hospitality Porcelain. Dedicated exclusively to the OLIVERA collection for refined tabletop presentations.
+      </p>
+
+      <div class="footer-minimal-links" style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.5rem; font-size:0.8125rem;">
+        <a href="/" style="color:var(--ink-primary); text-decoration:none;">Home</a>
+        <span style="color:var(--border-medium);">•</span>
+        <a href="/collections/olivera/" style="color:var(--ink-primary); text-decoration:none;">OLIVERA Collection</a>
+        <span style="color:var(--border-medium);">•</span>
+        <a href="/#about" style="color:var(--ink-primary); text-decoration:none;">About</a>
+        <span style="color:var(--border-medium);">•</span>
+        <a href="/#contact" style="color:var(--ink-primary); text-decoration:none;">Contact</a>
       </div>
-      <div class="footer-minimal-copy">
+
+      <div style="font-size:0.75rem; color:var(--ink-secondary); margin-bottom:1.25rem;">
+        <span>enquiries@vittesa.com</span> • <span>+44 20 7946 0892</span>
+      </div>
+
+      <div class="footer-minimal-copy" style="font-size:0.6875rem; color:var(--ink-muted);">
         © 2026 VITTESA. All rights reserved.
       </div>
     </div>
@@ -425,7 +429,7 @@
                   </h3>
                   <div class="product-item-dimensions">${pDim}</div>
                 </div>
-                <a href="/collections/olivera/product.html?id=${p.id}" class="btn-card-quickview" role="button">View Details</a>
+                <a href="/collections/olivera/product.html?id=${p.id}" class="btn-card-quickview" role="button">VIEW PRODUCT</a>
               </div>
             </div>
           `;

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Collections — VITTESA European-Style Porcelain Tableware</title>
-  <meta name="description" content="Seven expressions of European-style hospitality porcelain. Discover the complete VITTESA portfolio across Signature, Curated, and Essential tableware layers." />
+  <title>The Collection — VITTESA Porcelain Maison</title>
+  <meta name="description" content="Softly muted olive-grey porcelain with rounded, organic silhouettes. Discover the exclusive OLIVERA porcelain collection." />
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="icon" type="image/png" href="/assets/logo/vittesa-monogram-emblem.png" />
 </head>
@@ -14,12 +14,11 @@
   <aside class="top-announcement-bar" role="region" aria-label="Announcements">
     <div class="container announcement-container">
       <div class="announcement-slider" id="announcement-slider" aria-live="polite" aria-atomic="true">
-        <span class="announcement-slide active" data-index="0">PREMIUM HOSPITALITY PORCELAIN FOR EVERY SETTING</span>
-        <span class="announcement-slide" data-index="1">EXPLORE OUR EUROPEAN-STYLE COLLECTIONS</span>
-        <span class="announcement-slide" data-index="2">BULK & WHOLESALE ENQUIRIES WELCOME</span>
-        <span class="announcement-slide" data-index="3">OUTFITTING HOTELS, RESTAURANTS & CAFÉS</span>
-        <span class="announcement-slide" data-index="4">CONNECT WITH US FOR INTERNATIONAL TRADE ENQUIRIES</span>
-        <span class="announcement-slide" data-index="5">ENQUIRE ABOUT BULK ORDERS & SHIPPING OPTIONS</span>
+        <span class="announcement-slide active" data-index="0">PREMIUM HOSPITALITY PORCELAIN — OLIVERA SHOWROOM</span>
+        <span class="announcement-slide" data-index="1">ORGANIC ROUNDED SILHOUETTES & MUTED OLIVE-GREY GLAZE</span>
+        <span class="announcement-slide" data-index="2">DIRECT TRADE & WHOLESALE ENQUIRIES WELCOME</span>
+        <span class="announcement-slide" data-index="3">ENGINEERED FOR FINE DINING, LUXURY HOTELS & BISTROS</span>
+        <span class="announcement-slide" data-index="4">REQUEST PHYSICAL SAMPLE BOXES & TECHNICAL SPECIFICATIONS</span>
       </div>
     </div>
   </aside>
@@ -35,15 +34,14 @@
         <nav class="desktop-nav" aria-label="Main Navigation">
           <ul class="nav-links">
             <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/collections/" class="nav-link active">Collections</a></li>
-            <li><a href="/showroom.html" class="nav-link">Products</a></li>
+            <li><a href="/collections/olivera/" class="nav-link active">Collection</a></li>
             <li><a href="/#about" class="nav-link">About Us</a></li>
             <li><a href="/#contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
 
         <div class="nav-actions">
-          <a href="/#contact" class="btn-contact-header">Contact Us</a>
+          <a href="/collections/olivera/#products" class="btn-contact-header">Shop OLIVERA</a>
           <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
             <span></span>
             <span></span>
@@ -68,15 +66,14 @@
       <nav class="mobile-nav-body">
         <ul class="mobile-nav-links">
           <li><a href="/"><span class="nav-num">01</span> Home</a></li>
-          <li><a href="/collections/"><span class="nav-num">02</span> Collections</a></li>
-          <li><a href="/showroom.html"><span class="nav-num">03</span> Products</a></li>
-          <li><a href="/#about"><span class="nav-num">04</span> About Us</a></li>
-          <li><a href="/#contact"><span class="nav-num">05</span> Contact</a></li>
+          <li><a href="/collections/olivera/"><span class="nav-num">02</span> Collection</a></li>
+          <li><a href="/#about" onclick="document.querySelector('.btn-close-mobile-nav')?.click();"><span class="nav-num">03</span> About Us</a></li>
+          <li><a href="/#contact" onclick="document.querySelector('.btn-close-mobile-nav')?.click();"><span class="nav-num">04</span> Contact</a></li>
         </ul>
       </nav>
 
       <div class="mobile-nav-footer">
-        <a href="/#contact" class="btn-contact-header mobile-contact-btn">Contact Us</a>
+        <a href="/collections/olivera/#products" class="btn-contact-header mobile-contact-btn" onclick="document.querySelector('.btn-close-mobile-nav')?.click();">Shop OLIVERA</a>
       </div>
     </div>
   </div>
@@ -88,11 +85,11 @@
         <div class="breadcrumb-bar">
           <a href="/">Home</a>
           <span class="sep">/</span>
-          <span class="current">Collections</span>
+          <span class="current">Collection</span>
         </div>
 
         <div class="editorial-header-block" style="margin-bottom:0; max-width:860px;">
-          <span class="eyebrow" style="color:var(--tone-gold);">Curated Portfolio</span>
+          <span class="eyebrow" style="color:var(--tone-gold);">Curated Hospitality Porcelain</span>
           <h1 style="font-size:clamp(2.75rem, 5vw, 4.25rem); margin-bottom:1rem;">THE COLLECTION</h1>
           <p style="font-size:clamp(1.0625rem, 1.6vw, 1.25rem); color:var(--ink-secondary); line-height:1.6;">
             European-style hospitality porcelain crafted for fine dining and luxury hospitality.
@@ -106,7 +103,7 @@
       <div class="container">
 
         <div class="olivera-split-layout">
-          <!-- Left: Large Collection Image (52–55% width) -->
+          <!-- Left: Large Collection Image -->
           <div class="olivera-feature-media">
             <a href="/collections/olivera/" aria-label="Explore OLIVERA Collection">
               <img 
@@ -119,185 +116,18 @@
 
           <!-- Right: Collection Information -->
           <div class="olivera-feature-info">
-            <h2 class="olivera-feature-title">OLIVERA</h2>
-            <p class="olivera-feature-desc">Softly muted olive-grey porcelain with rounded, organic silhouettes.</p>
-            <div class="olivera-feature-cta-wrap">
-              <a href="/collections/olivera/" class="olivera-feature-btn" role="button">SHOP NOW</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="collections-grid-8" style="display: none !important;">
-
-          <!-- ALL OTHER COLLECTIONS HIDDEN AS REQUESTED -->
-          <div style="display: none !important;" aria-hidden="true">
-
-            <!-- 03. AVÉRON -->
-            <a href="/collections/averon/" class="collection-card">
-              <div class="collection-card-media">
-                <img src="/assets/catalogue/roke-editorial-hero.jpg" alt="AVÉRON Sculpted Texture" class="collection-card-img" />
-                <span class="collection-card-badge">02 — Curated</span>
-              </div>
-              <div class="collection-card-body">
-                <div>
-                  <div class="collection-card-meta">
-                    <span class="collection-card-layer">Sculpted Texture Series</span>
-                    <span class="collection-card-num">03</span>
-                  </div>
-                  <h2 class="collection-card-title">AVÉRON</h2>
-                  <div class="collection-card-tagline">Tactile Expression & Sculptural Form</div>
-                  <p class="collection-card-desc">
-                    Tactile, sculptural collection defined by expressive chiseled texture and presentation-led forms engineered for Michelin-style course plating.
-                  </p>
-                </div>
-                <div class="collection-card-footer">
-                  <span class="collection-card-cta">Explore Dedicated Catalogue →</span>
-                  <span class="collection-card-subcta">35+ Items • Sculpted Relief</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- 04. TERRA SPECKLE -->
-            <a href="/collections/terra-speckle/" class="collection-card">
-              <div class="collection-card-media">
-                <img src="/assets/catalogue/terra-speckle-editorial-hero.png" alt="TERRA SPECKLE Artisan Earth" class="collection-card-img" />
-                <span class="collection-card-badge">02 — Curated</span>
-              </div>
-              <div class="collection-card-body">
-                <div>
-                  <div class="collection-card-meta">
-                    <span class="collection-card-layer">Artisan Earth Series</span>
-                    <span class="collection-card-num">03</span>
-                  </div>
-                  <h2 class="collection-card-title">TERRA SPECKLE</h2>
-                  <div class="collection-card-tagline">Organic Mineral Speckled Brown & Artisan Character</div>
-                  <p class="collection-card-desc">
-                    Warm neutral vitrified porcelain with natural mineral speckling and hand-wiped brown contrast rims for farm-to-table dining and coffee programs.
-                  </p>
-                </div>
-                <div class="collection-card-footer">
-                  <span class="collection-card-cta">Explore Dedicated Catalogue →</span>
-                  <span class="collection-card-subcta">38 Items • Speckled Brown</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- 05. URBANE GREY -->
-            <a href="/collections/urbane-grey/" class="collection-card">
-              <div class="collection-card-media">
-                <img src="/assets/catalogue/urbane-grey-editorial.jpg" alt="URBANE GREY Slate" class="collection-card-img" />
-                <span class="collection-card-badge">02 — Curated</span>
-              </div>
-              <div class="collection-card-body">
-                <div>
-                  <div class="collection-card-meta">
-                    <span class="collection-card-layer">Curated Hospitality</span>
-                    <span class="collection-card-num">04</span>
-                  </div>
-                  <h2 class="collection-card-title">URBANE GREY</h2>
-                  <div class="collection-card-tagline">Contemporary Mineral Slate & Plating Contrast</div>
-                  <p class="collection-card-desc">
-                    Cool mineral slate grey series designed for sleek metropolitan hospitality spaces, steak & grill rooms, and high-contrast food presentation.
-                  </p>
-                </div>
-                <div class="collection-card-footer">
-                  <span class="collection-card-cta">Explore Dedicated Catalogue →</span>
-                  <span class="collection-card-subcta">38 Items • Mineral Slate</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- 06. PARADISE PINK -->
-            <a href="/collections/paradise-pink/" class="collection-card">
-              <div class="collection-card-media">
-                <img src="/assets/catalogue/paradise-pink-editorial.jpg" alt="PARADISE PINK Blush" class="collection-card-img" />
-                <span class="collection-card-badge">02 — Curated</span>
-              </div>
-              <div class="collection-card-body">
-                <div>
-                  <div class="collection-card-meta">
-                    <span class="collection-card-layer">Curated Hospitality</span>
-                    <span class="collection-card-num">05</span>
-                  </div>
-                  <h2 class="collection-card-title">PARADISE PINK</h2>
-                  <div class="collection-card-tagline">Soft Rose Earth & Pastel Terracotta Blush</div>
-                  <p class="collection-card-desc">
-                    Warm pastel blush terracotta with gentle rim contrast, ideal for vibrant plating, brunch concepts, modern pastry service, and luxury resort dining.
-                  </p>
-                </div>
-                <div class="collection-card-footer">
-                  <span class="collection-card-cta">Explore Dedicated Catalogue →</span>
-                  <span class="collection-card-subcta">38 Items • Soft Rose Earth</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- 07. AQUA BLUE -->
-            <a href="/collections/aqua-blue/" class="collection-card">
-              <div class="collection-card-media">
-                <img src="/assets/catalogue/aqua-blue-editorial.jpg" alt="AQUA BLUE Coastal" class="collection-card-img" />
-                <span class="collection-card-badge">02 — Curated</span>
-              </div>
-              <div class="collection-card-body">
-                <div>
-                  <div class="collection-card-meta">
-                    <span class="collection-card-layer">Curated Hospitality</span>
-                    <span class="collection-card-num">06</span>
-                  </div>
-                  <h2 class="collection-card-title">AQUA BLUE</h2>
-                  <div class="collection-card-tagline">Mediterranean Coastal Turquoise & Seaside Energy</div>
-                  <p class="collection-card-desc">
-                    Lively Mediterranean azure-aqua direction that illuminates fresh seafood, raw crudo, sharing plates, and poolside luxury hospitality dining.
-                  </p>
-                </div>
-                <div class="collection-card-footer">
-                  <span class="collection-card-cta">Explore Dedicated Catalogue →</span>
-                  <span class="collection-card-subcta">38 Items • Coastal Aqua</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- 08. ESSENTIAL WHITE -->
-            <a href="/collections/essential-white/" class="collection-card">
-              <div class="collection-card-media">
-                <img src="/assets/catalogue/essential-white-platters-hero.jpg" alt="ESSENTIAL WHITE Vitrified Porcelain" class="collection-card-img" />
-                <span class="collection-card-badge essential">03 — Essential</span>
-              </div>
-              <div class="collection-card-body">
-                <div>
-                  <div class="collection-card-meta">
-                    <span class="collection-card-layer">Core Commercial Layer</span>
-                    <span class="collection-card-num">07</span>
-                  </div>
-                  <h2 class="collection-card-title">ESSENTIAL WHITE</h2>
-                  <div class="collection-card-tagline">Core Commercial Porcelain • Everyday Proof</div>
-                  <p class="collection-card-desc">
-                    Classic white vitrified porcelain for timeless commercial service. Dependable, high-density hotel tableware designed for banqueting and volume rigor.
-                  </p>
-                </div>
-                <div class="collection-card-footer">
-                  <span class="collection-card-cta">Explore Dedicated Catalogue →</span>
-                  <span class="collection-card-subcta">48 Items • Pure White</span>
-                </div>
-              </div>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- Showroom Bridge Banner -->
-        <div class="showroom-gateway-card" style="margin-top:2rem;">
-          <div class="showroom-gateway-content">
-            <span class="eyebrow" style="color:var(--tone-gold);">Technical Explorer</span>
-            <h3>Looking for cross-collection product specifications?</h3>
-            <p>
-              Use the Interactive Showroom to search pieces, compare dimensions across collections, and build your complete project specification schedule.
+            <span class="eyebrow" style="color:var(--tone-gold);">Exclusive Collection</span>
+            <h2 class="olivera-feature-title" style="margin-top:0.5rem;">OLIVERA</h2>
+            <p class="olivera-feature-desc">
+              Softly muted olive-grey porcelain with rounded, organic silhouettes. Engineered with tactile warmth and high commercial durability for contemporary fine dining, boutique hotels, and artisanal bistros.
             </p>
-            <div style="margin-top:1.5rem;">
-              <a href="/showroom.html" class="btn-primary">Enter Showroom Explorer →</a>
+            <div class="olivera-feature-cta-wrap" style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+              <a href="/collections/olivera/" class="btn-primary" role="button" style="padding:0.85rem 2.25rem;">EXPLORE ALL 17 PIECES →</a>
+              <button type="button" class="btn-secondary-light" onclick="window.vittesaOpenEnquiryModal('OLIVERA Collection')" style="padding:0.85rem 2rem;">ENQUIRE NOW</button>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -311,7 +141,7 @@
     <div class="tray-body">
       <div id="tray-empty" class="tray-empty-state">
         <p style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.5rem;">Your Tray is Empty</p>
-        <p style="font-size:0.8125rem;">Explore our collections and add plates, bowls, and platters to your commercial project schedule.</p>
+        <p style="font-size:0.8125rem;">Select items from OLIVERA to compile your project specification schedule.</p>
       </div>
       <div id="tray-items" class="tray-items-list"></div>
     </div>
@@ -322,59 +152,75 @@
     </div>
   </aside>
 
-  <!-- MINIMAL LUXURY FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top-grid">
-        <div class="footer-brand-col">
-          <a href="/" class="footer-brand-logo-wrap" aria-label="VITTESA Home">
-            <img src="/assets/logo/vittesa-monogram-gold.png" alt="VITTESA" class="footer-brand-wordmark" />
-          </a>
-          <div style="font-size:0.625rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--tone-gold); margin-top:0.25rem;">
-            A European Hospitality Maison
-          </div>
-          <p>
-            European-Style Premium Hospitality Porcelain.<br />
-            Designed for international hotels, fine dining destinations, and curated tabletop programs.
-          </p>
-        </div>
-
-        <div class="footer-nav-col">
-          <h5>Portfolio Layers</h5>
-          <ul class="footer-links">
-            <li><a href="/collections/averon/">01 — AVÉRON Sculpted</a></li>
-            <li><a href="/collections/">02 — Curated Series</a></li>
-            <li><a href="/collections/essential-white/">03 — Essential White</a></li>
-            <li><a href="/showroom.html">Showroom Explorer</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-nav-col">
-          <h5>Dedicated Collections</h5>
-          <ul class="footer-links">
-            <li><a href="/collections/olivera/">OLIVERA Earth</a></li>
-            <li><a href="/collections/averon/">AVÉRON Sculpted</a></li>
-            <li><a href="/collections/terra-speckle/">TERRA SPECKLE</a></li>
-            <li><a href="/collections/urbane-grey/">URBANE GREY</a></li>
-            <li><a href="/collections/paradise-pink/">PARADISE PINK</a></li>
-            <li><a href="/collections/aqua-blue/">AQUA BLUE</a></li>
-            <li><a href="/collections/essential-white/">ESSENTIAL WHITE</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-nav-col">
-          <h5>B2B Specification</h5>
-          <ul class="footer-links">
-            <li><a href="/#for-buyers">For The International Buyer</a></li>
-            <li><a href="/#private-label">Private Label & Custom Molds</a></li>
-            <li><a href="/#hospitality">Hospitality Applications</a></li>
-            <li><a href="/#contact">Trade Enquiry Desk</a></li>
-          </ul>
-        </div>
+  <!-- MINIMAL ENQUIRY MODAL -->
+  <div class="enquiry-modal-backdrop" id="enquiry-modal" role="dialog" aria-modal="true">
+    <div class="enquiry-modal-window">
+      <button type="button" class="enquiry-modal-close" id="enquiry-modal-close" aria-label="Close modal">✕</button>
+      <div style="margin-bottom: 1.5rem;">
+        <span class="collection-intro-label" id="enquiry-collection-badge">Collection: OLIVERA</span>
+        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin-top: 0.25rem;">Enquire & Purchase</h3>
+        <p style="font-size: 0.8125rem; color: var(--ink-muted); margin-top: 0.25rem;">
+          Direct procurement pricing, lead times, and physical sample boxes for hospitality projects.
+        </p>
       </div>
 
-      <div class="footer-bottom-bar">
-        <div>© 2026 VITTESA. European-Style Premium Hospitality Porcelain. All rights reserved.</div>
+      <form class="vittesa-enquiry-form" id="enquiry-form">
+        <input type="hidden" id="enquiry-collection-input" name="collection" value="OLIVERA" />
+        
+        <div style="margin-bottom: 1rem;">
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-name">Your Name *</label>
+          <input type="text" id="enq-name" name="name" class="form-input" placeholder="e.g. Jean-Luc Laurent" required style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-email">Business Email *</label>
+          <input type="email" id="enq-email" name="email" class="form-input" placeholder="name@company.com" required style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-property">Property / Venue Name</label>
+          <input type="text" id="enq-property" name="property" class="form-input" placeholder="e.g. The Grand Hotel, Dubai" style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;" />
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display:block; font-size:0.6875rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; margin-bottom:0.35rem;" for="enq-notes">Project Requirements / Notes</label>
+          <textarea id="enq-notes" name="notes" class="form-textarea" rows="3" placeholder="Cover count, required pieces, sample request..." style="width:100%; padding:0.75rem; border:1px solid var(--border-medium); font-size:0.875rem;"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%; background:var(--ink-primary); color:#FFF; padding:0.85rem; font-size:0.8125rem;">
+          Submit Enquiry
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MINIMAL LUXURY FOOTER -->
+  <footer class="site-footer olivera-minimal-footer">
+    <div class="container text-center">
+      <a href="/" aria-label="VITTESA Home" style="display:inline-block; text-decoration:none; margin-bottom:0.75rem;">
+        <img src="/assets/logo/vittesa-monogram-gold.png" alt="VITTESA" class="footer-brand-wordmark" style="margin:0 auto;" />
+      </a>
+      <div class="footer-minimal-sub">European-Style Premium Hospitality Porcelain</div>
+      <p style="font-size:0.8125rem; color:var(--ink-muted); max-width:540px; margin:0 auto 1.5rem; line-height:1.6;">
+        European-Style Premium Hospitality Porcelain. Dedicated exclusively to the OLIVERA collection for refined tabletop presentations.
+      </p>
+
+      <div class="footer-minimal-links" style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.5rem; font-size:0.8125rem;">
+        <a href="/" style="color:var(--ink-primary); text-decoration:none;">Home</a>
+        <span style="color:var(--border-medium);">•</span>
+        <a href="/collections/olivera/" style="color:var(--ink-primary); text-decoration:none;">OLIVERA Collection</a>
+        <span style="color:var(--border-medium);">•</span>
+        <a href="/#about" style="color:var(--ink-primary); text-decoration:none;">About Us</a>
+        <span style="color:var(--border-medium);">•</span>
+        <a href="/#contact" style="color:var(--ink-primary); text-decoration:none;">Contact</a>
+      </div>
+
+      <div style="font-size:0.75rem; color:var(--ink-secondary); margin-bottom:1.25rem;">
+        <span>enquiries@vittesa.com</span> • <span>+44 20 7946 0892</span>
+      </div>
+
+      <div class="footer-minimal-copy" style="font-size:0.6875rem; color:var(--ink-muted);">
+        © 2026 VITTESA. All rights reserved.
       </div>
     </div>
   </footer>

@@ -6,7 +6,8 @@
 > **Positioning:** European-style premium hospitality porcelain  
 > **Live Production URL:** [https://vittesa.vercel.app/](https://vittesa.vercel.app/)  
 > **Repository:** `beyondwebco-lgtm/vittesa`  
-> **Last Verified & Documented:** October 14, 2026  
+> **Active Focus:** OLIVERA Exclusive Showroom (17 Pieces)  
+> **Last Verified & Documented:** October 15, 2026  
 
 ---
 
@@ -15,15 +16,7 @@
 2. [B. Technology Stack & Development Workflow](#b-technology-stack--development-workflow)
 3. [C. Full Route Inventory](#c-full-route-inventory)
 4. [D. Complete Collection Inventory](#d-complete-collection-inventory)
-5. [E. Complete Product Inventory](#e-complete-product-inventory)
-   - [01. LUMÉRA (10 Pieces)](#01-luméra-10-pieces)
-   - [02. OLIVERA (17 Pieces)](#02-olivera-17-pieces)
-   - [03. AVÉRON (45 Pieces)](#03-avéron-45-pieces)
-   - [04. TERRA SPECKLE (21 Pieces)](#04-terra-speckle-21-pieces)
-   - [05. URBANE GREY (5 Pieces)](#05-urbane-grey-5-pieces)
-   - [06. PARADISE PINK (4 Pieces)](#06-paradise-pink-4-pieces)
-   - [07. AQUA BLUE (4 Pieces)](#07-aqua-blue-4-pieces)
-   - [08. ESSENTIAL WHITE (15 Pieces)](#08-essential-white-15-pieces)
+5. [E. Complete Product Inventory (OLIVERA 17 Pieces)](#e-complete-product-inventory)
 6. [F. Product Detail Pages (PDP) & Subpages](#f-product-detail-pages-pdp--subpages)
 7. [G. Image & Asset Registry](#g-image--asset-registry)
 8. [H. Design System & Visual Guidelines](#h-design-system--visual-guidelines)
@@ -44,19 +37,20 @@
 - **Brand Name:** VITTESA
 - **Brand Descriptor:** Porcelain Maison
 - **Market Positioning:** European-style premium hospitality porcelain engineered for fine-dining restaurants, boutique luxury hotels, banqueting facilities, and culinary professionals.
-- **Visual Aesthetic:** Minimalist luxury, architectural Mediterranean warmth, tactile textures, muted mineral glazes, generous plating canvases, editorial photography, and understated luxury typography.
+- **Visual Aesthetic:** Minimalist luxury, architectural warmth, tactile organic contours, muted olive-grey mineral glaze, generous plating canvases, editorial photography, and understated luxury typography.
 
-### Purpose of the Website
-VITTESA operates as an interactive digital portfolio, catalogue, and B2B trade specification platform. Rather than a conventional consumer checkout cart, the platform facilitates:
-1. **Curated Portfolio Discovery:** Exploring 8 distinct porcelain collections structured across Signature, Curated, Accent, and Foundation tiers.
-2. **Technical Specification Inspection:** Inspecting item dimensions (cm/inches), rim profiles, fluid capacities (ml), and finish attributes.
-3. **Specification Tray Curation:** Enabling hospitality procurement managers, chefs, and interior architects to curate custom tableware schedules into a persistent tray.
-4. **Trade Quotation & Procurement Inquiries:** Submitting tailored sample and wholesale volume price requests directly to the commercial team.
+### Purpose of the Website & Simplified Customer Journey
+VITTESA operates as an elegant, minimal digital showroom and catalogue dedicated **exclusively to the OLIVERA porcelain collection**. The website is structured around an immediately clear, product-focused customer journey:
+1. **Understand Brand Offering:** Immediate recognition that VITTESA is a porcelain maison offering refined European-style porcelain tableware.
+2. **Explore OLIVERA:** Seamless navigation into the flagship 17-piece OLIVERA collection via clear `SHOP OLIVERA` and `EXPLORE COLLECTION` CTAs.
+3. **Browse Individual Products:** Discovering curated pieces directly on the homepage and the full 17-piece catalog on the collection page, each with clear dimensions, capacities, and a single `VIEW PRODUCT` action.
+4. **Inspect Specifications & Imagery:** Multi-angle photography and complete technical specifications on dedicated Product Detail Pages (`collections/olivera/product.html?id=[id]`).
+5. **Direct Product Enquiry & Bulk Ordering:** Genuine online checkout is not currently implemented; all purchase and procurement intent routes cleanly via `ENQUIRE NOW` into pre-filled enquiry forms (with product name automatically attached) or bulk hospitality schedules.
 
-### Primary Audiences
-- Executive Chefs & Restaurateurs selecting plating canvases.
-- Hospitality Procurement Directors specifying high-volume vitrified chinaware.
-- Hotel Interior Designers & Tabletop Stylists sourcing tactile, contemporary tableware.
+### Status of Legacy Collections
+- **Active Website Scope:** OLIVERA is the **sole collection active** across the entire website.
+- **Removed Collections:** LUMÉRA, AVÉRON, TERRA SPECKLE, URBANE GREY, PARADISE PINK, AQUA BLUE, and ESSENTIAL WHITE have been cleanly removed from active navigation, homepage sections, collection landing pages, showroom filters, footers, search, and trade enquiry options.
+- **Data Safety:** Source files (`src/data/products/`) and underlying image assets in `public/assets/catalogue/` are strictly preserved on disk to prevent accidental data loss.
 
 ---
 
@@ -65,15 +59,12 @@ VITTESA operates as an interactive digital portfolio, catalogue, and B2B trade s
 ### Core Stack
 - **Framework:** Vanilla JavaScript (ES Modules, modern browser APIs), HTML5 semantic markup.
 - **Build Tool:** Vite `^8.3.2` configured for multi-page static generation via Rollup options in `vite.config.js`.
-- **CSS Architecture:** Vanilla CSS (`src/style.css`, ~4,960 lines) with CSS Custom Properties (design tokens), flexbox, grid, clamp-based responsive typography, and luxury transition curves. No Tailwind or third-party CSS frameworks.
+- **CSS Architecture:** Vanilla CSS (`src/style.css`) with CSS Custom Properties (design tokens), flexbox, grid, clamp-based responsive typography, and luxury transition curves. No Tailwind or third-party CSS frameworks.
 - **Client State Management:** Lightweight reactive in-memory state (`src/components/state.js`) synchronized with browser `localStorage` under `vittesa_spec_tray`.
 - **Package Manager:** npm (with `package-lock.json`).
 - **Dependencies (`package.json`):**
-  - `dependencies`:
-    - `pdf-lib`: `^1.17.1` (Specification PDF generation engine)
-    - `pngjs`: `^7.0.0`
-  - `devDependencies`:
-    - `vite`: `^8.3.2`
+  - `dependencies`: `pdf-lib` `^1.17.1`, `pngjs` `^7.0.0`
+  - `devDependencies`: `vite` `^8.3.2`
 - **Hosting & Deployment:** Vercel Static Hosting (`https://vittesa.vercel.app/`). Automatically deployed from GitHub `main` branch.
 
 ### npm Scripts
@@ -83,49 +74,30 @@ VITTESA operates as an interactive digital portfolio, catalogue, and B2B trade s
 | `npm run build` | `vite build` | Compiles multi-page distribution bundle into `dist/` |
 | `npm run preview` | `vite preview` | Previews local production build |
 
-### Implementation Constraints
-- Strictly avoid unnecessary dependencies or frameworks (React/Vue/Next.js) unless explicitly requested.
-- Maintain pure ES module imports across all `.js` files.
-- Preserve relative root asset links (`/assets/...`) which map directly to `public/assets/...` in Vite.
-- Never store secrets or sensitive credentials in git.
-
 ---
 
 ## C. Full Route Inventory
 
 | Route | File Path | Page Type | Status | Data Source | Key Components / Features |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `/` | `index.html` | Homepage | Verified Active | `src/data/catalogue-data.js` | Brand hero, Collections slider, Curation tiers, Showroom tease, Trade enquiry form, Spec Tray |
-| `/showroom.html` | `showroom.html` | Brand Experience / Showroom | Verified Active | `src/components/showroom.js` | Atmospheric photography, Tabletop pairings, Material narrative |
-| `/collections/` | `collections/index.html` | Collections Master Index | Verified Active | `src/data/collections.js` | Editorial 2-column OLIVERA hero feature (~54% image, ~46% info), complete grid of all 8 collections |
-| `/collections/olivera/` | `collections/olivera/index.html` | Collection Detail Page | Verified Active | `src/data/products/olivera.js` | Refined compact header, full-width editorial hero image, category filters (Plates, Bowls, Platters, Accessories), 17 product cards with multi-image slideshows, direct links to PDP |
-| `/collections/olivera/product.html?id=[id]` | `collections/olivera/product.html` | Product Detail Page (PDP) | Verified Active | `src/data/products/olivera.js` | Dynamic URL param resolution, multi-image carousel + thumbnail strip, technical spec table, "+ Add to Specification Tray", enquiry trigger, "More pieces from OLIVERA" grid |
-| `/collections/averon/` | `collections/averon/index.html` | Collection Detail Page | Verified Active | `src/data/products/averon.js` | 45-piece tactile relief catalog, category filters, quick-view modal triggers |
-| `/collections/terra-speckle/` | `collections/terra-speckle/index.html` | Collection Detail Page | Verified Active | `src/data/products/terra-speckle.js` | 21-piece warm earth speckled catalog, filters, quick-view modal triggers |
-| `/collections/urbane-grey/` | `collections/urbane-grey/index.html` | Collection Detail Page | Verified Active | `src/data/products/urbane-grey.js` | 5-piece mineral slate catalog, filters, quick-view modal triggers |
-| `/collections/paradise-pink/` | `collections/paradise-pink/index.html` | Collection Detail Page | Verified Active | `src/data/products/paradise-pink.js` | 4-piece soft blush catalog, filters, quick-view modal triggers |
-| `/collections/aqua-blue/` | `collections/aqua-blue/index.html` | Collection Detail Page | Verified Active | `src/data/products/aqua-blue.js` | 4-piece coastal turquoise catalog, filters, quick-view modal triggers |
-| `/collections/essential-white/` | `collections/essential-white/index.html` | Collection Detail Page | Verified Active | `src/data/products/essential-white.js` | 15-piece vitrified white hotel foundation catalog, filters, quick-view modal triggers |
-| `/collections/lumera/` | *Missing File* | Collection Detail Page | **Unresolved Gap** | `src/data/products/lumera.js` | Documented in `COLLECTIONS` data registry (`/collections/lumera/`), but physical directory/HTML does not yet exist |
+| `/` | `index.html` | Homepage Showroom | Verified Active | `src/data/products/olivera.js` | Focused 6-section shopping experience: (A) Editorial Hero with `SHOP OLIVERA` / `CONTACT US` CTAs, (B) Featured OLIVERA collection with `EXPLORE COLLECTION`, (C) Curated 8-piece selection with single `VIEW PRODUCT` action + `VIEW ALL PRODUCTS (17 PIECES)`, (D) Short brand story with `about-us.png`, (E) Business contact section with streamlined enquiry form, (F) Minimal footer |
+| `/collections/olivera/` | `collections/olivera/index.html` | Dedicated Collection Page | Verified Active | `src/data/products/olivera.js` | Compact heading, full-width editorial hero, category filters (All 17, Plates 6, Bowls 7, Platters 2, Accessories 2), responsive product grid with multi-image slideshows and single `VIEW PRODUCT` action, bottom enquiry banner |
+| `/collections/olivera/product.html?id=[id]` | `collections/olivera/product.html` | Product Detail Page (PDP) | Verified Active | `src/data/products/olivera.js` | Dedicated PDP for all 17 items, multi-image carousel + thumbnail strip, technical spec table, "+ Add to Specification Tray", primary `ENQUIRE NOW` CTA opening pre-filled modal, coordinating OLIVERA pieces grid |
+| `/collections/` | `collections/index.html` | Collection Gateway | Verified Active | `src/data/collections.js` | Minimal luxury landing page dedicated to OLIVERA, editorial split layout, direct CTA to explore all 17 pieces |
+| `/showroom.html` | `showroom.html` | Catalogue Showroom Explorer | Verified Active | `src/components/showroom.js` | Technical explorer for all 17 OLIVERA pieces, category filters (Plates, Bowls, Platters, Accessories), real-time search, quick view and enquiry integration |
 
 ---
 
 ## D. Complete Collection Inventory
 
-Verified from `src/data/collections.js`. All 8 collections represent distinct culinary design expressions:
+Verified from `src/data/collections.js`. OLIVERA is the sole active collection:
 
 | # | Collection Name | Layer / Series | Category | Pieces | Hero Asset Path | URL Route | Description |
 | :- | :--- | :--- | :--- | :-: | :--- | :--- | :--- |
-| **01** | **LUMÉRA** | 01 — SIGNATURE / Architectural Mediterranean | Signature Layer | 10 | `/assets/catalogue/hero-lumera-table.jpg` | `/collections/lumera/` | Architectural Mediterranean porcelain with sculpted contours and a generous plating field. |
-| **02** | **OLIVERA** | 02 — CURATED / Natural Earth Series | Curated Layer | 17 | `/assets/catalogue/olivera-editorial-hero.jpg` | `/collections/olivera/` | Soft olive tones and organic forms crafted for contemporary dining. |
-| **03** | **AVÉRON** | 03 — CURATED / Sculpted Texture Series | Curated Layer | 45 | `/assets/catalogue/roke-editorial-hero.jpg` | `/collections/averon/` | Tactile relief rims and sculptural porcelain designed for signature culinary presentation. |
-| **04** | **TERRA SPECKLE** | 04 — CURATED / Warm Earth Series | Curated Layer | 21 | `/assets/catalogue/terra-speckle-editorial-hero.png` | `/collections/terra-speckle/` | Warm earth speckled glaze bringing relaxed artisanal soul to modern bistros. |
-| **05** | **URBANE GREY** | 05 — CURATED / Mineral Slate Series | Curated Layer | 5 | `/assets/catalogue/urbane-grey-editorial.jpg` | `/collections/urbane-grey/` | Mineral slate matte finish offering bold architectural contrast. |
-| **06** | **PARADISE PINK** | 06 — ACCENT / Vibrant Accent Series | Accent Layer | 4 | `/assets/catalogue/paradise-pink-editorial.jpg` | `/collections/paradise-pink/` | Soft blush warmth creating gentle dining moments. |
-| **07** | **AQUA BLUE** | 07 — ACCENT / Coastal Mineral Series | Accent Layer | 4 | `/assets/catalogue/aqua-blue-editorial.jpg` | `/collections/aqua-blue/` | Coastal azure mineral glaze inspired by the Mediterranean sea. |
-| **08** | **ESSENTIAL WHITE** | 08 — FOUNDATION / Core Tableware Series | Foundation Layer | 15 | `/assets/catalogue/essential-white-platters-hero.jpg` | `/collections/essential-white/` | High-density hotel vitrified white porcelain engineered for heavy commercial service. |
+| **01** | **OLIVERA** | Natural Earth Series | Curated Layer | 17 | `/assets/catalogue/olivera-editorial-hero.jpg` | `/collections/olivera/` | Softly muted olive-grey porcelain with rounded, organic silhouettes crafted for contemporary dining. |
 
-**Total Products Across Collections:** Exactly 121 pieces verified.
+**Total Active Products:** Exactly 17 verified OLIVERA pieces.
+
 
 ---
 
@@ -461,9 +433,25 @@ public/assets/
 - 3-column responsive grid for remaining collections.
 
 ### 4. Product Cards (`.product-item-card`)
-- Clean rectangular presentation.
+- Clean rectangular presentation with consistent aspect ratio.
 - Media block with progressive multi-image carousel or direct link.
-- Product title, dimension tag, and action button ("View Details" linking to dedicated PDP or quick-view modal).
+- Product title, dimension / capacity tag.
+- Single primary action button: `.btn-card-quickview` (`VIEW PRODUCT`) linking directly to the product's dedicated PDP (`/collections/olivera/product.html?id=[id]`).
+- Clean 100% card width button styling with 44px mobile touch target and no competing duplicate buttons.
+
+### 5. CTA Hierarchy & Conversion Map
+Every page enforces a single clear, intentional primary action without competing button clutter:
+
+| Location | Primary CTA | Destination / Behavior |
+| :--- | :--- | :--- |
+| **Header** | `SHOP OLIVERA` | `/collections/olivera/` |
+| **Homepage Hero** | `SHOP OLIVERA` | `/collections/olivera/` (Secondary: `CONTACT US` -> `#contact`) |
+| **Featured Collection** | `EXPLORE COLLECTION` | `/collections/olivera/` |
+| **Homepage Product Cards** | `VIEW PRODUCT` | `/collections/olivera/product.html?id=[id]` |
+| **Collection Product Cards** | `VIEW PRODUCT` | `/collections/olivera/product.html?id=[id]` |
+| **Product Detail Page (PDP)** | `ENQUIRE NOW` | Opens enquiry modal pre-filled with product name (Secondary: `+ Add to Spec Tray`) |
+| **Contact Section** | `SEND ENQUIRY` | Direct submission of streamlined enquiry form |
+| **Footer** | `OLIVERA Collection` | `/collections/olivera/` |
 
 ---
 
@@ -582,6 +570,9 @@ public/assets/
 3. **Simulated Form Submission:**
    - *Status:* **Client-Side Prototype**
    - *Detail:* Trade inquiry forms and Specification Tray submissions currently simulate transmission with a timeout and confirmation UI; they are not yet wired to a live backend API or webhook.
+4. **Direct Online Checkout / Payment Gateway Status:**
+   - *Status:* **Architectural Model (B2B Procurement)**
+   - *Detail:* Genuine direct online checkout, payment gateways, and shopping carts are not currently configured. In accordance with conversion design principles, the website avoids misleading or non-functional `BUY NOW` checkout traps; all purchasing interest routes cleanly via `ENQUIRE NOW` with pre-filled product details.
 
 ---
 
@@ -610,3 +601,6 @@ public/assets/
 | **2026-10-15** | Replaced placeholder circular emblem + font lockup with official `VITTESA Luxury Serif Wordmark.png` across all 11 HTML pages (desktop header, mobile drawer header, and luxury footer). Cropped transparent margins and rendered high-resolution brand ink asset (`public/assets/logo/vittesa-wordmark-dark.png`) with responsive scaling and hover feedback. | All 11 HTML pages, `src/style.css`, `public/assets/logo/`, `CONTEXT.md` | Built successfully with `npm run build` (zero errors, 1.13s). Verified responsive sizing across breakpoints. |
 | **2026-10-15** | Renamed `Serene Earth-Toned Ceramic Table Setting.png` to `about-us.png` (`public/assets/catalogue/about-us.png`) and updated homepage (`index.html`) About Us editorial photo. | `index.html`, `src/style.css`, `public/assets/catalogue/about-us.png`, `CONTEXT.md` | Verified production build (`npm run build`). |
 | **2026-10-15** | Integrated official `Elegant Gold VITTESA Monogram Logo.png` as site logo across all 11 HTML pages (desktop headers, mobile drawers, and footers). Extracted clean transparent antique gold asset (`/assets/logo/vittesa-monogram-gold.png`) and circular monogram favicon (`/assets/logo/vittesa-monogram-emblem.png`). Proportioned responsive CSS scaling rules in `src/style.css`. | All 11 HTML pages, `src/style.css`, `public/assets/logo/`, `CONTEXT.md` | Verified production build (`npm run build`, 468ms). |
+| **2026-10-15** | **OLIVERA Exclusive Showroom Transformation:** Simplified the active website experience to focus exclusively on the 17-piece OLIVERA porcelain collection. Excluded all other collections (LUMÉRA, AVÉRON, TERRA SPECKLE, URBANE GREY, PARADISE PINK, AQUA BLUE, ESSENTIAL WHITE) from active navigation, data aggregators, filters, footers, search, and enquiry dropdowns while preserving underlying image files on disk. Rebuilt homepage (`index.html`) with minimal header, OLIVERA editorial hero, featured collection banner, 17-piece responsive product showcase with multi-image slideshow carousels, refined About Us with `about-us.png`, dedicated trade enquiry form, and minimal luxury footer. Updated dedicated collection page (`collections/olivera/index.html`), product detail page (`collections/olivera/product.html`), collections gateway (`collections/index.html`), and showroom (`showroom.html`). Added working "Buy Now" enquiry pre-fill actions and responsive 2-column mobile layout. | `index.html`, `collections/olivera/index.html`, `collections/olivera/product.html`, `collections/index.html`, `showroom.html`, `src/data/products/index.js`, `src/data/collections.js`, `src/components/collection-filter.js`, `src/components/enquiry.js`, `src/components/showroom.js`, `src/style.css`, `CONTEXT.md` | Clean `npm run build` (424ms); `node scripts/check_purity.js` confirmed 0 legacy collection references; `node scripts/verify_olivera_products.js` confirmed all 17 items, images, and PDP links intact. |
+| **2026-10-15** | **Premium Shopping UX & Conversion Optimisation:** Re-architected homepage (`index.html`) into a strict, focused 6-section shopping experience: (A) Editorial Hero with `Porcelain for Refined Living.` and `SHOP OLIVERA` / `CONTACT US` CTAs, (B) Featured OLIVERA collection with single `EXPLORE COLLECTION` CTA, (C) Shop the Products with 8 curated OLIVERA cards featuring single `VIEW PRODUCT` action leading to PDPs + `VIEW ALL PRODUCTS (17 PIECES)` button, (D) Refined brand introduction (`Designed for Exceptional Tables.`) with `about-us.png`, (E) Business contact section with streamlined enquiry form (Full Name, Email, Message required; Company, Phone, Enquiry Type optional; `SEND ENQUIRY`), and (F) Minimal luxury footer. Streamlined dedicated collection page (`collections/olivera/index.html`) with category filters and single `VIEW PRODUCT` card actions. Optimised Product Detail Pages (`collections/olivera/product.html`) with verified `ENQUIRE NOW` primary CTA, pre-filling product details into enquiry modal, secondary `+ Add to Spec Tray`, understated announcement bar, and clean coordinating pieces grid. Updated button typography, 100% card action widths, and 44px mobile touch targets in `src/style.css`. | `index.html`, `collections/olivera/index.html`, `collections/olivera/product.html`, `src/style.css`, `src/components/enquiry.js`, `src/components/router.js`, `src/components/tray.js`, `scripts/`, `CONTEXT.md` | Built cleanly with `npm run build` (671ms); verified 0 legacy collection references across active HTML; verified all 17 OLIVERA items, images, and PDP links via test scripts. |
+

@@ -39,7 +39,7 @@ export function initTray() {
   proceedBtn?.addEventListener('click', () => {
     closeTray();
     const items = state.specTray.map(t => t.name).join(', ');
-    const noteField = document.getElementById('enq-notes');
+    const noteField = document.getElementById('enquiry-notes') || document.getElementById('enq-notes');
     if (noteField) {
       noteField.value = `Specification Schedule Request for: ${items}`;
     }

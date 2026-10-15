@@ -4513,27 +4513,44 @@ h1, h2, h3, h4, .serif-title {
   padding: clamp(3rem, 5vw, 5rem) 0 clamp(4rem, 6vw, 6rem);
 }
 
-.olivera-minimal-page .products-grid-catalog {
+.olivera-cards-grid,
+.olivera-minimal-page .products-grid-catalog,
+.olivera-showroom-home .products-grid-catalog {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(0.5rem, 1vw, 0.875rem);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 @media (max-width: 1080px) {
-  .olivera-minimal-page .products-grid-catalog {
+  .olivera-cards-grid,
+  .olivera-minimal-page .products-grid-catalog,
+  .olivera-showroom-home .products-grid-catalog {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.625rem;
+    gap: 0.875rem;
   }
 }
 
 @media (max-width: 680px) {
-  .olivera-minimal-page .products-grid-catalog {
+  .olivera-cards-grid,
+  .olivera-minimal-page .products-grid-catalog,
+  .olivera-showroom-home .products-grid-catalog {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 0.625rem;
   }
 }
 
-.olivera-minimal-page .product-item-card {
+@media (max-width: 360px) {
+  .olivera-cards-grid,
+  .olivera-minimal-page .products-grid-catalog,
+  .olivera-showroom-home .products-grid-catalog {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.olivera-cards-grid .product-item-card,
+.olivera-minimal-page .product-item-card,
+.olivera-showroom-home .product-item-card {
   border: 1px solid var(--border-subtle);
   background: var(--bg-surface);
   border-radius: 2px;
@@ -4543,19 +4560,27 @@ h1, h2, h3, h4, .serif-title {
   flex-direction: column;
 }
 
-.olivera-minimal-page .product-item-card:hover {
+.olivera-cards-grid .product-item-card:hover,
+.olivera-minimal-page .product-item-card:hover,
+.olivera-showroom-home .product-item-card:hover {
   transform: translateY(-2px);
   border-color: var(--tone-gold);
   box-shadow: 0 8px 20px rgba(24, 23, 22, 0.05);
 }
 
+.olivera-cards-grid .product-item-media .carousel-slide,
+.olivera-cards-grid .product-item-media > img,
 .olivera-minimal-page .product-item-media .carousel-slide,
-.olivera-minimal-page .product-item-media > img {
+.olivera-minimal-page .product-item-media > img,
+.olivera-showroom-home .product-item-media .carousel-slide,
+.olivera-showroom-home .product-item-media > img {
   padding: 0.85rem;
 }
 
-.olivera-minimal-page .product-item-body {
-  padding: 0.75rem 0.75rem 0.65rem;
+.olivera-cards-grid .product-item-body,
+.olivera-minimal-page .product-item-body,
+.olivera-showroom-home .product-item-body {
+  padding: 0.85rem 0.85rem 0.75rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -4563,30 +4588,40 @@ h1, h2, h3, h4, .serif-title {
 }
 
 @media (max-width: 640px) {
-  .olivera-minimal-page .product-item-body {
-    padding: 0.5rem 0.5rem 0.5rem;
+  .olivera-cards-grid .product-item-body,
+  .olivera-minimal-page .product-item-body,
+  .olivera-showroom-home .product-item-body {
+    padding: 0.6rem 0.5rem 0.6rem;
   }
 }
 
-.olivera-minimal-page .product-item-code {
+.olivera-cards-grid .product-item-code,
+.olivera-minimal-page .product-item-code,
+.olivera-showroom-home .product-item-code {
   display: none !important;
 }
 
-.olivera-minimal-page .product-item-title {
+.olivera-cards-grid .product-item-title,
+.olivera-minimal-page .product-item-title,
+.olivera-showroom-home .product-item-title {
   font-size: 0.9375rem;
   line-height: 1.25;
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.25rem;
   color: var(--ink-primary);
   font-weight: 500;
 }
 
 @media (max-width: 640px) {
-  .olivera-minimal-page .product-item-title {
+  .olivera-cards-grid .product-item-title,
+  .olivera-minimal-page .product-item-title,
+  .olivera-showroom-home .product-item-title {
     font-size: 0.8125rem;
   }
 }
 
-.olivera-minimal-page .product-item-dimensions {
+.olivera-cards-grid .product-item-dimensions,
+.olivera-minimal-page .product-item-dimensions,
+.olivera-showroom-home .product-item-dimensions {
   font-size: 0.75rem;
   color: var(--ink-muted);
   font-weight: 400;
@@ -4594,29 +4629,40 @@ h1, h2, h3, h4, .serif-title {
 }
 
 @media (max-width: 640px) {
-  .olivera-minimal-page .product-item-dimensions {
+  .olivera-cards-grid .product-item-dimensions,
+  .olivera-minimal-page .product-item-dimensions,
+  .olivera-showroom-home .product-item-dimensions {
     font-size: 0.6875rem;
     margin-bottom: 0.35rem;
   }
 }
 
-.olivera-minimal-page .btn-card-quickview {
-  padding: 0.3rem 0.65rem;
-  font-size: 0.625rem;
-  letter-spacing: 0.1em;
+/* Product Card Actions Container */
+.product-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .btn-card-quickview {
+  width: 100%;
   background: transparent;
   border: 1px solid var(--border-medium);
-  padding: 0.4rem 0.85rem;
+  padding: 0.55rem 0.85rem;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.6875rem;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-primary);
+  text-decoration: none;
   cursor: pointer;
-  align-self: flex-start;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 1px;
 }
 
@@ -4624,6 +4670,50 @@ h1, h2, h3, h4, .serif-title {
   background: var(--ink-primary);
   color: #FFFFFF;
   border-color: var(--ink-primary);
+  transform: translateY(-1px);
+}
+
+.btn-card-buynow {
+  background: var(--ink-primary);
+  border: 1px solid var(--ink-primary);
+  padding: 0.4rem 0.75rem;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 1px;
+}
+
+.btn-card-buynow:hover {
+  background: var(--tone-gold);
+  border-color: var(--tone-gold);
+  color: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .product-card-actions {
+    margin-top: 0.5rem;
+  }
+  .btn-card-quickview {
+    padding: 0.55rem 0.5rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    min-height: 44px; /* Accessible touch target */
+  }
+  .btn-card-buynow {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.5625rem;
+    letter-spacing: 0.06em;
+    min-height: 36px;
+    flex: 1 1 auto;
+    text-align: center;
+  }
 }
 
 /* Minimal Footer for Olivera */
@@ -5113,6 +5203,211 @@ h1, h2, h3, h4, .serif-title {
 
   .pdp-info-col {
     padding-left: 0;
+  }
+}
+
+/* ==========================================================================
+   SECTION D — SHORT BRAND INTRODUCTION (ABOUT)
+   ========================================================================== */
+.about-section {
+  background-color: var(--bg-porcelain-alt, #F9F8F5);
+  border-top: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+  border-bottom: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+}
+
+.about-editorial-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.about-text-col {
+  max-width: 540px;
+}
+
+.about-text-col .eyebrow {
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.about-media-col {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(24, 23, 22, 0.07);
+}
+
+.about-media-col img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-luxury, ease);
+}
+
+.about-media-col:hover img {
+  transform: scale(1.02);
+}
+
+@media (max-width: 860px) {
+  .about-editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .about-text-col {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   SECTION E — CONTACT AND BULK ENQUIRIES
+   ========================================================================== */
+.contact-section {
+  background-color: var(--bg-surface, #FFFFFF);
+  border-top: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.contact-sidebar {
+  padding-right: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.contact-sidebar h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  color: var(--ink-primary);
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.contact-detail-block span {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tone-gold, #9E7B3B);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.contact-detail-block strong {
+  font-size: 0.9375rem;
+  color: var(--ink-primary);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.enquiry-form-card {
+  background: var(--bg-porcelain, #FBFBF9);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  box-shadow: 0 4px 20px rgba(24, 23, 22, 0.03);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium, #D5D1CB);
+  border-radius: 1px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--ink-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 44px; /* Mobile touch friendly */
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--tone-gold, #9E7B3B);
+  box-shadow: 0 0 0 1px var(--tone-gold, #9E7B3B);
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.form-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.form-submit-row {
+  margin-top: 1.5rem;
+}
+
+.form-submit-row .btn-primary {
+  min-height: 48px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.form-submit-row .btn-primary:hover {
+  background-color: var(--tone-gold, #9E7B3B) !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 860px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .contact-sidebar {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .enquiry-form-card {
+    padding: 1.5rem 1.15rem;
   }
 }
 

@@ -72,19 +72,19 @@ export function renderShowroomGrid() {
     const hasMultiple = p.images && p.images.length > 1;
     return `
       <div class="product-item-card" data-category="${p.category}" data-product-id="${p.id}">
-        <div class="product-item-media ${hasMultiple ? 'has-carousel' : ''}" onclick="if(!this.getAttribute('data-swiped')) window.vittesaOpenModal('${p.id}')">
+        <div class="product-item-media ${hasMultiple ? 'has-carousel' : ''}" onclick="if(!event.target.closest('.carousel-nav-btn') && !event.target.closest('.carousel-dots-container') && !this.getAttribute('data-swiped')) window.location.href='/collections/olivera/product.html?id=${p.id}'" style="cursor: pointer;">
           ${renderProductMedia(p)}
         </div>
         <div class="product-item-body">
           <div>
-            <div class="product-item-code">${p.collection}</div>
-            <h3 class="product-item-title">${p.name}</h3>
+            <h3 class="product-item-title">
+              <a href="/collections/olivera/product.html?id=${p.id}" class="product-title-link">${p.name}</a>
+            </h3>
             <div class="product-item-dimensions">${p.dimensions || ''}</div>
-            <p class="product-item-specs-preview">${p.editorialCaption || ''}</p>
           </div>
-          <div class="product-item-actions">
-            <button class="btn-item-action" onclick="window.vittesaOpenModal('${p.id}')">Quick View</button>
-            <button class="btn-item-action primary" onclick="window.vittesaAddToTray('${p.id}')">+ Spec Tray</button>
+          <div class="product-card-actions">
+            <a href="/collections/olivera/product.html?id=${p.id}" class="btn-card-quickview" role="button">View Details</a>
+            <button type="button" class="btn-card-buynow" onclick="window.vittesaOpenEnquiryModal('OLIVERA — ${p.name}')">Buy Now</button>
           </div>
         </div>
       </div>

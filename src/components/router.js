@@ -14,4 +14,11 @@ export function parseUrlParams() {
     });
     renderShowroomGrid();
   }
+
+  const enquireParam = params.get('enquire') || params.get('product');
+  if (enquireParam && window.vittesaOpenEnquiryModal) {
+    setTimeout(() => {
+      window.vittesaOpenEnquiryModal(enquireParam);
+    }, 200);
+  }
 }
