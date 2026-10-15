@@ -3,6 +3,7 @@
  * Orchestrates navigation, modals, showroom explorer, specification tray, and forms.
  */
 import { initHeader, initMobileNav } from './components/navigation.js';
+import { initAnnouncementSlider } from './components/announcement.js';
 import { initModal, openProductModal } from './components/modal.js';
 import { initTray, addToTray, removeFromTray } from './components/tray.js';
 import { initShowroom } from './components/showroom.js';
@@ -20,6 +21,7 @@ window.vittesaOpenEnquiryModal = openEnquiryModal;
 window.vittesaCloseEnquiryModal = closeEnquiryModal;
 
 document.addEventListener('DOMContentLoaded', () => {
+  initAnnouncementSlider();
   initHeader();
   initMobileNav();
   initModal();

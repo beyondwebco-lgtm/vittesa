@@ -423,22 +423,35 @@ public/assets/
 
 ## I. Navigation & Shared Components
 
-### 1. Site Header (`.site-header`)
+### 1. Top Rotating Announcement Bar (`.top-announcement-bar`)
+*Component File:* `src/components/announcement.js`
+- **Location:** Slim, full-width announcement bar placed directly above the main navigation header across all pages.
+- **Message Rotation:** Automatically cycles through 6 curated brand & trade messages every 3.5 seconds:
+  1. `PREMIUM HOSPITALITY PORCELAIN FOR EVERY SETTING`
+  2. `EXPLORE OUR EUROPEAN-STYLE COLLECTIONS`
+  3. `BULK & WHOLESALE ENQUIRIES WELCOME`
+  4. `OUTFITTING HOTELS, RESTAURANTS & CAFÉS`
+  5. `CONNECT WITH US FOR INTERNATIONAL TRADE ENQUIRIES`
+  6. `ENQUIRE ABOUT BULK ORDERS & SHIPPING OPTIONS` *(Note: Complimentary shipping offer was unverified in business policies and was intentionally replaced with verified bulk/shipping inquiry copy per specification).*
+- **Aesthetics & Performance:** Styled in muted parchment `#E8E1D4` with refined uppercase typography, letter spacing (`0.16em`), and ultra-smooth fade/settle transitions. Fixed container minimum heights prevent any layout shifts during transitions.
+- **Accessibility & Responsiveness:** Fully readable on desktop and mobile. Pauses rotation on mouse hover and keyboard focus (`focusin`/`focusout`). Respects user `prefers-reduced-motion` settings. Implements `<aside role="region" aria-label="Announcements">` and `aria-live="polite"`.
+
+### 2. Site Header (`.site-header`)
 - **Left:** Brand emblem and typography (`VITTESA — Porcelain Maison`).
 - **Center:** Desktop navigation links:
   - `Home` (`/`)
   - `Collections` (`/collections/`)
-  - `Showroom` (`/showroom.html`)
+  - `Products` (`/showroom.html`)
+  - `About Us` (`/#about`)
   - `Contact` (`/#contact`)
 - **Right:**
-  - **Spec Tray Button:** Displays live badge counter for added pieces. Opens slide-out specification drawer.
-  - **Enquire Button:** Triggers modal trade procurement form.
-  - **Mobile Menu Hamburger:** Expands full-screen mobile drawer.
+  - **Header CTA:** Replaced old Spec Tray counter and Enquire link with a clean, luxury `CONTACT US` button (`.btn-contact-header`) linking directly to `/#contact` (smooth-scrolls to the trade inquiry desk).
+  - **Mobile Menu Toggle:** Accessible hamburger toggle button.
 - **Scroll Behavior:** Transitions to semi-opaque blurred glass (`rgba(245, 240, 230, 0.98)`) with subtle drop shadow on scroll past 40px.
 
-### 2. Mobile Navigation Drawer (`.mobile-nav-overlay`)
+### 3. Mobile Navigation Drawer (`.mobile-nav-overlay`)
 - Accessible slide-out navigation with numbered index links (`01 Home`, `02 Collections`, etc.).
-- Includes mobile-specific Spec Tray button and Trade Inquiry action.
+- Footer includes primary `CONTACT US` button (`.mobile-contact-btn`) navigating directly to the contact desk.
 - Supports `Escape` key and backdrop click dismissal.
 
 ### 3. Collection Cards (`.collection-card-editorial`)
@@ -592,3 +605,4 @@ public/assets/
 | **2026-10-14** | Updated `olivera-editorial-hero.jpg` with user-edited clean horizontal tabletop photograph (removing catalogue page text/header/thumbnails). | `public/assets/catalogue/olivera-editorial-hero.jpg` | Verified visual composition and resolution. Used in `/collections/` and `/collections/olivera/`. |
 | **2026-10-15** | Featured OLIVERA and hid all other collection cards on homepage (`index.html`) under `#collections`. Added centered single-card styling in `src/style.css` and updated gateway CTA to explore OLIVERA. | `index.html`, `src/style.css`, `CONTEXT.md` | Verified production build with `npm run build`. |
 | **2026-10-15** | Removed "THE HOSPITALITY SHOWROOM" / Technical Catalogue Explorer gateway section from `index.html`. | `index.html`, `CONTEXT.md` | Verified production build with `npm run build`. |
+| **2026-10-15** | Replaced static header announcement text with a rotating 6-message announcement slideshow (`src/components/announcement.js`, `.top-announcement-bar`) with hover/focus pause and reduced-motion support. Replaced unverified free shipping with bulk enquiry copy. Removed Spec Tray and Enquire buttons from header and mobile nav; added unified `CONTACT US` CTA linking to `/#contact`. Preserved tray engine elsewhere. | `src/components/announcement.js`, `src/main.js`, `src/style.css`, all 11 HTML pages, `CONTEXT.md` | Verified production build (`npm run build`), tested script execution, confirmed zero layout shifts. |
