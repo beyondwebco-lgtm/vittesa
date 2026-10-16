@@ -16,9 +16,32 @@ export function parseUrlParams() {
   }
 
   const enquireParam = params.get('enquire') || params.get('product');
-  if (enquireParam && window.vittesaOpenEnquiryModal) {
-    setTimeout(() => {
-      window.vittesaOpenEnquiryModal(enquireParam);
-    }, 200);
+  if (enquireParam) {
+    const notes = document.getElementById('enquiry-notes') || document.getElementById('enq-notes');
+    if (notes && !notes.value) {
+      notes.value = `Enquiry regarding: ${enquireParam}\n`;
+    }
+    const enqType = document.getElementById('enq-type');
+    if (enqType) {
+      enqType.value = 'product';
+    }
+    if (window.vittesaOpenEnquiryModal) {
+      setTimeout(() => {
+        window.vittesaOpenEnquiryModal(enquireParam);
+      }, 200);
+    }
   }
+
+  // Handle Bulk & Wholesale CTA button click on the page
+  document.addEventListener('click', (e) => {
+    const bulkBtn = e.target.closest('#bulk-banner-cta-btn, .bulk-banner-btn');
+    if (bulkBtn) {
+      const enqType = document.getElementById('enq-type');
+      if (enqType) enqType.value = 'bulk';
+      const notes = document.getElementById('enquiry-notes');
+      if (notes && !notes.value) {
+        notes.value = 'Enquiry regarding bulk / wholesale order requirements.\n';
+      }
+    }
+  });
 }

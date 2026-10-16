@@ -38,8 +38,9 @@ for (const file of htmlFiles) {
       continue;
     }
 
-    let [filePath, hash] = val.split('#');
-    let target = filePath;
+    let withoutQuery = val.split('?')[0].split('#')[0];
+    if (withoutQuery.includes('${')) continue; // Skip template literals in inline templates
+    let target = withoutQuery;
 
     if (target === '/' || target === '') {
       target = '/index.html';
