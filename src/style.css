@@ -501,99 +501,188 @@ h1, h2, h3, h4, .serif-title {
 /* ==========================================================================
    HERO SECTION — EDITORIAL SPLIT SHOWCASE (WHITE)
    ========================================================================== */
-.hero-section {
+.hero-section.hero-fullscreen {
   position: relative;
-  min-height: calc(100vh - var(--header-height));
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  background-color: var(--bg-porcelain);
+  background-color: #1a1918;
   background-image: 
-    radial-gradient(ellipse 70% 60% at 85% 35%, rgba(184, 147, 85, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 15% 80%, rgba(235, 229, 216, 0.6) 0%, transparent 60%);
-  color: var(--ink-primary);
+    linear-gradient(
+      90deg,
+      rgba(15, 14, 13, 0.52) 0%,
+      rgba(15, 14, 13, 0.35) 45%,
+      rgba(15, 14, 13, 0.14) 75%,
+      rgba(15, 14, 13, 0.04) 100%
+    ),
+    url('/assets/hero/sunlit-artisan-stoneware-table-setting.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
   overflow: hidden;
-  padding: clamp(3rem, 5vw, 4.5rem) 0;
   border-bottom: 1px solid var(--border-subtle);
+  padding: 0;
 }
 
-.hero-split-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: clamp(2.5rem, 4.5vw, 4.75rem);
-  align-items: center;
+.hero-container {
   width: 100%;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
-/* Left: Editorial Content */
-.hero-text-col {
+.hero-fullscreen .hero-content {
+  max-width: 580px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  max-width: 640px;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 2;
+  position: relative;
 }
 
-.hero-eyebrow-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+.hero-fullscreen .hero-eyebrow-wrap {
+  margin-bottom: 1.25rem;
 }
 
-.hero-eyebrow-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.8rem;
-  background: rgba(194, 166, 118, 0.15);
-  border: 1px solid rgba(194, 166, 118, 0.45);
-  color: #8C6D37;
-  font-size: 0.625rem;
+.hero-fullscreen .hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: clamp(0.6875rem, 0.95vw, 0.75rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  color: var(--tone-gold, #C5A059);
   font-weight: 600;
-  border-radius: 2px;
 }
 
-.hero-eyebrow-caption {
-  font-size: 0.6875rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-
-.hero-title {
+.hero-fullscreen .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.75rem, 5vw, 4.75rem);
-  line-height: 1.05;
+  font-size: clamp(2.75rem, 5.5vw, 4.75rem);
+  line-height: 1.08;
   font-weight: 300;
-  color: var(--ink-primary);
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.015em;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
 }
 
-.hero-title em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--tone-sienna);
-}
-
-.hero-description {
-  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+.hero-fullscreen .hero-description {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
   font-weight: 300;
-  color: var(--ink-secondary);
-  max-width: 580px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 520px;
   line-height: 1.7;
   margin-bottom: 2.25rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
-.hero-cta-group {
+.hero-fullscreen .hero-cta-group {
   display: flex;
   align-items: center;
   gap: 1.15rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
 }
+
+/* Primary Hero Button: Warm Gold/Bronze with Dark Contrast Text */
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tone-gold, #9E7B3B);
+  color: #181716;
+  border: 1px solid var(--tone-gold, #9E7B3B);
+  padding: 0.95rem 2.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 1px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: all var(--transition-fast, 0.25s ease);
+  min-height: 44px;
+}
+
+.btn-hero-primary:hover {
+  background-color: #B58F49;
+  border-color: #B58F49;
+  color: #0F0E0D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+}
+
+/* Secondary Hero Button: Transparent with Subtle White Border */
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  padding: 0.95rem 2.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 1px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all var(--transition-fast, 0.25s ease);
+  min-height: 44px;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 860px) {
+  .hero-section.hero-fullscreen {
+    min-height: clamp(520px, 85vh, 680px);
+    background-image: 
+      linear-gradient(
+        180deg,
+        rgba(15, 14, 13, 0.64) 0%,
+        rgba(15, 14, 13, 0.42) 55%,
+        rgba(15, 14, 13, 0.22) 100%
+      ),
+      url('/assets/hero/sunlit-artisan-stoneware-table-setting.png');
+    background-position: center;
+  }
+
+  .hero-fullscreen .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-fullscreen .hero-title {
+    font-size: clamp(2.35rem, 7.5vw, 3.25rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-fullscreen .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 .btn-primary {
   display: inline-flex;
@@ -663,69 +752,7 @@ h1, h2, h3, h4, .serif-title {
   color: var(--ink-primary);
 }
 
-.hero-meta-bar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 1.5rem;
-  max-width: 640px;
-}
 
-.hero-meta-col span {
-  display: block;
-  font-size: 0.625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #8C6D37;
-  margin-bottom: 0.25rem;
-}
-
-.hero-meta-col strong {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  color: var(--ink-primary);
-  font-weight: 400;
-}
-
-/* Right: Single Image Presentation */
-.hero-media-col {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-single-image-wrap {
-  position: relative;
-  width: 100%;
-  height: clamp(380px, 38vw, 530px);
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #F5F2EC;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 20px 48px -12px rgba(24, 23, 22, 0.1), 0 4px 16px rgba(0, 0, 0, 0.03);
-  transition: transform 0.5s var(--ease-luxury), box-shadow 0.5s ease, border-color 0.5s ease;
-}
-
-.hero-single-image-wrap:hover {
-  transform: translateY(-4px);
-  border-color: rgba(194, 166, 118, 0.5);
-  box-shadow: 0 28px 56px -12px rgba(24, 23, 22, 0.15), 0 0 24px rgba(194, 166, 118, 0.1);
-}
-
-.hero-single-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 1s var(--ease-luxury);
-}
-
-.hero-single-image-wrap:hover .hero-single-img {
-  transform: scale(1.035);
-}
 
 /* ==========================================================================
    BRAND STATEMENT & 3-LAYER ARCHITECTURE
