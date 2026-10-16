@@ -510,10 +510,10 @@ h1, h2, h3, h4, .serif-title {
   background-image: 
     linear-gradient(
       90deg,
-      rgba(15, 14, 13, 0.52) 0%,
-      rgba(15, 14, 13, 0.35) 45%,
-      rgba(15, 14, 13, 0.14) 75%,
-      rgba(15, 14, 13, 0.04) 100%
+      rgba(15, 14, 13, 0.68) 0%,
+      rgba(15, 14, 13, 0.50) 42%,
+      rgba(15, 14, 13, 0.25) 70%,
+      rgba(15, 14, 13, 0.08) 100%
     ),
     url('/assets/hero/sunlit-artisan-stoneware-table-setting.png');
   background-size: cover;
@@ -651,9 +651,9 @@ h1, h2, h3, h4, .serif-title {
     background-image: 
       linear-gradient(
         180deg,
-        rgba(15, 14, 13, 0.64) 0%,
-        rgba(15, 14, 13, 0.42) 55%,
-        rgba(15, 14, 13, 0.22) 100%
+        rgba(15, 14, 13, 0.74) 0%,
+        rgba(15, 14, 13, 0.52) 55%,
+        rgba(15, 14, 13, 0.28) 100%
       ),
       url('/assets/hero/sunlit-artisan-stoneware-table-setting.png');
     background-position: center;
