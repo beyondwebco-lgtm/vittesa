@@ -552,8 +552,9 @@ h1, h2, h3, h4, .serif-title {
   font-size: clamp(0.6875rem, 0.95vw, 0.75rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--tone-gold, #C5A059);
+  color: #FFFFFF;
   font-weight: 600;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
 .hero-fullscreen .hero-title {
