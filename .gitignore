@@ -4,6 +4,9 @@ node_modules/
 # Production build
 dist/
 dist-ssr/
+.next/
+out/
+tsconfig.tsbuildinfo
 
 # Logs
 *.log
