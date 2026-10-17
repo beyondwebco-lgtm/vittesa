@@ -80,24 +80,27 @@ VITTESA operates as an elegant, minimal digital showroom and catalogue dedicated
 
 | Route | File Path | Page Type | Status | Data Source | Key Components / Features |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `/` | `index.html` | Homepage Showroom | Verified Active | `src/data/products/olivera.js` | Focused, elegant 10-section shopping experience: (1) Announcement bar rotating 3 verified messages, (2) Minimal navigation with gold monogram and `SHOP OLIVERA` CTA, (3) Full-Screen Cinematic Hero (`Exquisite Porcelain. Refined Dining.`) using `Sunlit Artisan Stoneware Table Setting.png` background with `EXPLORE COLLECTION` / `CONTACT US` CTAs, (4) Featured OLIVERA collection with `EXPLORE COLLECTION`, (5) Curated 8-piece selection (`Selected for Your Table`) with single `VIEW PRODUCT` action + `VIEW ALL OLIVERA PRODUCTS`, (6) Brand introduction (`Thoughtfully Chosen Porcelain.`) with `about-us.png`, (7) Factual Trust Section (`Chosen with Care.`), (8) Compact Bulk & Wholesale enquiry banner with auto-preselection CTA, (9) Simplified contact desk (`How Can We Help?`), (10) Minimal footer |
-| `/collections/olivera/` | `collections/olivera/index.html` | Dedicated Collection Page | Verified Active | `src/data/products/olivera.js` | Compact heading, full-width editorial hero, category filters (All 17, Plates 6, Bowls 7, Platters 2, Accessories 2), responsive product grid with multi-image slideshows and single `VIEW PRODUCT` action, bottom enquiry banner |
-| `/collections/olivera/product.html?id=[id]` | `collections/olivera/product.html` | Product Detail Page (PDP) | Verified Active | `src/data/products/olivera.js` | Dedicated PDP for all 17 items, multi-image carousel + thumbnail strip, technical spec table, "+ Add to Specification Tray", primary `ENQUIRE NOW` CTA opening pre-filled modal, coordinating OLIVERA pieces grid |
-| `/collections/` | `collections/index.html` | Collection Gateway | Verified Active | `src/data/collections.js` | Minimal luxury landing page dedicated to OLIVERA, editorial split layout, direct CTA to explore all 17 pieces |
-| `/showroom.html` | `showroom.html` | Catalogue Showroom Explorer | Verified Active | `src/components/showroom.js` | Technical explorer for all 17 OLIVERA pieces, category filters (Plates, Bowls, Platters, Accessories), real-time search, quick view and enquiry integration |
+| `/` | `app/page.tsx` | Homepage Showroom | Verified Active | `data/products/index.ts` | Two-collection showcase (OLIVERA & IVORY), `EXPLORE COLLECTIONS` primary CTA, full-screen hero, 8 curated tableware cards, About section, Bulk banner, Direct desk enquiry |
+| `/collections` | `app/collections/page.tsx` | Collections Gateway | Verified Active | `data/collections.ts` | Dual-collection showcase featuring OLIVERA (17 pieces) and IVORY (17 pieces) with direct exploration CTAs |
+| `/collections/olivera` | `app/collections/olivera/page.tsx` | Dedicated OLIVERA Page | Verified Active | `data/products/olivera.ts` | Compact heading, editorial hero, category filters (All 17, Plates 6, Bowls 7, Platters 2, Accessories 2), product grid |
+| `/collections/olivera/product?id=[id]` | `app/collections/olivera/product/page.tsx` | OLIVERA Product Detail | Verified Active | `data/products/olivera.ts` | Multi-image thumbnail gallery, specifications table, `ENQUIRE NOW` and Specification Tray integrations |
+| `/collections/ivory` | `app/collections/ivory/page.tsx` | Dedicated IVORY Page | Verified Active | `data/products/ivory.ts` | Editorial hero, category filters (All 17, Plates 6, Bowls 7, Platters 2, Accessories 2), responsive product grid |
+| `/collections/ivory/[slug]` | `app/collections/ivory/[slug]/page.tsx` | IVORY Product Detail (Slug) | Verified Active | `data/products/ivory.ts` | Dynamic slug-based PDP with full keyboard, mouse & touch slideshow gallery, specs, tray & enquiry integration |
+| `/collections/ivory/product?id=[id]` | `app/collections/ivory/product/page.tsx` | IVORY Product Detail (Query) | Verified Active | `data/products/ivory.ts` | Query-param compatible PDP route supporting legacy and direct ID lookups |
+| `/showroom` | `app/showroom/page.tsx` | Showroom Explorer | Verified Active | `data/products/index.ts` | Technical explorer for all 34 pieces across OLIVERA & IVORY, collection filters, category filters, live search |
 
 ---
 
 ## D. Complete Collection Inventory
 
-Verified from `src/data/collections.js`. OLIVERA is the sole active collection:
+Verified from `data/collections.ts`. VITTESA active portfolio comprises two collections:
 
 | # | Collection Name | Layer / Series | Category | Pieces | Hero Asset Path | URL Route | Description |
 | :- | :--- | :--- | :--- | :-: | :--- | :--- | :--- |
 | **01** | **OLIVERA** | Natural Earth Series | Curated Layer | 17 | `/assets/catalogue/olivera-editorial-hero.jpg` | `/collections/olivera/` | Softly muted olive-grey porcelain with rounded, organic silhouettes crafted for contemporary dining. |
+| **02** | **IVORY** | Timeless Ivory Series | Curated Layer | 17 | `/assets/catalogue/ivory-editorial-hero.png` | `/collections/ivory/` | Timeless ivory-toned porcelain with refined silhouettes, designed for elegant dining and contemporary hospitality. |
 
-**Total Active Products:** Exactly 17 verified OLIVERA pieces.
-
+**Total Active Products:** Exactly 34 verified pieces (17 OLIVERA + 17 IVORY).
 
 ---
 
@@ -145,6 +148,31 @@ Every product below is extracted directly from the verified source files in `src
 | `ase07134` | `ASEO7134` | Creamer | Accessories | 220 ml | 220 ml | `/assets/catalogue/olivera/creamer main.jpg` | `creamer.jpg` (2 views) | Yes | `/collections/olivera/product.html?id=ase07134` |
 | `ase07153` | `ASEO7153` | Platter Small | Platters & Serving | 22 cm x 15 cm | Not specified | `/assets/catalogue/olivera/platters main.jpg` | `platters.jpg` (2 views) | Yes | `/collections/olivera/product.html?id=ase07153` |
 | `ase07154` | `ASEO7154` | Platter Medium | Platters & Serving | 27.5 cm x 18 cm | Not specified | `/assets/catalogue/olivera/platters main.jpg` | `platters.jpg` (2 views) | Yes | `/collections/olivera/product.html?id=ase07154` |
+
+---
+
+### 02b. IVORY (17 Pieces)
+*Source:* `data/products/ivory.ts` | *Layer:* 02 — CURATED | *Finish:* Warm Ivory Matte Mineral Glaze with Sand Textured Rim (`#F7F4EE`)
+
+| ID | Slug | Code | Product Name | Category | Dimensions | Capacity | Primary Image | Additional Images | Tray | Dedicated PDP |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :---: | :---: |
+| `asei7103` | `dinner-plate` | `ASEI7103` | Dinner Plate | Plates | 27 cm | Not specified | `/assets/catalogue/ivory/dinner plate main.png` | `dinner plate.png` (2 views) | Yes | `/collections/ivory/dinner-plate` |
+| `asei7101` | `salad-plate` | `ASEI7101` | Salad Plate | Plates | 21 cm | Not specified | `/assets/catalogue/ivory/saladplate 21 cm main.png` | `salad plate.png` (2 views) | Yes | `/collections/ivory/salad-plate` |
+| `asei7109` | `deep-coupe` | `ASEI7109` | Deep Coupe | Plates | 23 cm | Not specified | `/assets/catalogue/ivory/deep coupe main.png` | `deep coupe.png` (2 views) | Yes | `/collections/ivory/deep-coupe` |
+| `asei7114` | `edge-plate-big` | `ASEI7114` | Edge Plate Big | Plates | 26 cm | Not specified | `/assets/catalogue/ivory/edge plate big main.png` | `edge plate big.png` (2 views) | Yes | `/collections/ivory/edge-plate-big` |
+| `asei7112` | `edge-plate-small` | `ASEI7112` | Edge Plate Small | Plates | 20 cm | Not specified | `/assets/catalogue/ivory/edge plate small main.png` | `edge plate small.png` (2 views) | Yes | `/collections/ivory/edge-plate-small` |
+| `asei7111` | `hi-wall-appetizer-plate` | `ASEI7111` | Hi-Wall Appetizer Plate | Plates | 13 cm | Not specified | `/assets/catalogue/ivory/hi wall appetizer plate main.png` | `hi wall appetizer plate.png` (2 views) | Yes | `/collections/ivory/hi-wall-appetizer-plate` |
+| `asei7122` | `serving-bowl-19cm` | `ASEI7122` | Serving Bowl 19 cm | Bowls | 19 cm \| 950 ml | 950 ml | `/assets/catalogue/ivory/serving bowl 19cm main.png` | `serving bowl 19cm.png` (2 views) | Yes | `/collections/ivory/serving-bowl-19cm` |
+| `asei7121` | `serving-bowl-15cm` | `ASEI7121` | Serving Bowl 15 cm | Bowls | 15 cm \| 590 ml | 590 ml | `/assets/catalogue/ivory/serving bowl 15cm main.png` | `serving bowl 15cm.png` (2 views) | Yes | `/collections/ivory/serving-bowl-15cm` |
+| `asei7124` | `edge-bowl-20cm` | `ASEI7124` | Edge Bowl 20 cm | Bowls | 20 cm x 4.2 cm \| 620 ml | 620 ml | `/assets/catalogue/ivory/edge bowl 620 mlmain.png` | `edgebowl 620ml.png` (2 views) | Yes | `/collections/ivory/edge-bowl-20cm` |
+| `asei7123` | `edge-bowl-13cm` | `ASEI7123` | Edge Bowl 13 cm | Bowls | 13 cm x 6.5 cm \| 570 ml | 570 ml | `/assets/catalogue/ivory/edge bowl main 570ml.png` | `edge bowl 570 ml.png` (2 views) | Yes | `/collections/ivory/edge-bowl-13cm` |
+| `asei7164` | `soup-bowl` | `ASEI7164` | Soup Bowl | Bowls | 11.5 cm \| 287 ml | 287 ml | `/assets/catalogue/ivory/soup bowl main.png` | `soup bowl.png` (2 views) | Yes | `/collections/ivory/soup-bowl` |
+| `asei7163` | `katori-bowl` | `ASEI7163` | Katori Bowl | Bowls | 9.5 cm \| 190 ml | 190 ml | `/assets/catalogue/ivory/katori main.png` | `katori.png` (2 views) | Yes | `/collections/ivory/katori-bowl` |
+| `asei7161` | `dip-bowl` | `ASEI7161` | Dip Bowl | Bowls | 7.5 cm \| 42 ml | 42 ml | `/assets/catalogue/ivory/dip bowl main.png` | `dip bowl.png` (2 views) | Yes | `/collections/ivory/dip-bowl` |
+| `asei7115` | `chip-pot` | `ASEI7115` | Chip Pot | Accessories | 400 ml | 400 ml | `/assets/catalogue/ivory/chip pot main.png` | `chip pot.png` (2 views) | Yes | `/collections/ivory/chip-pot` |
+| `asei7134` | `creamer` | `ASEI7134` | Creamer | Accessories | 220 ml | 220 ml | `/assets/catalogue/ivory/creamer main.png` | `creamer.png` (2 views) | Yes | `/collections/ivory/creamer` |
+| `asei7153` | `platter-small` | `ASEI7153` | Platter Small | Platters & Serving | 22 cm x 15 cm | Not specified | `/assets/catalogue/ivory/platters main.png` | `platters.png` (2 views) | Yes | `/collections/ivory/platter-small` |
+| `asei7154` | `platter-medium` | `ASEI7154` | Platter Medium | Platters & Serving | 27.5 cm x 18 cm | Not specified | `/assets/catalogue/ivory/platters main.png` | `platters.png` (2 views) | Yes | `/collections/ivory/platter-medium` |
 
 ---
 
@@ -610,6 +638,8 @@ Every page enforces a single clear, intentional primary action without competing
 | **2026-10-16** | **Next.js App Router Migration:** Implemented complete Next.js 16 + React 19 App Router architecture on branch `migration/nextjs-app-router`. Built root layout (`app/layout.tsx`) with Google Fonts (`Cormorant Garamond` & `Plus Jakarta Sans`), modular header, rotating announcement bar, specification tray drawer, and quick enquiry modal. Implemented all core routes: Homepage (`app/page.tsx`), Collections Gateway (`app/collections/page.tsx`), Dedicated Olivera Collection (`app/collections/olivera/page.tsx`), Product Detail Page (`app/collections/olivera/product/page.tsx`), and Showroom Explorer (`app/showroom/page.tsx`). Converted state management to Zustand (`store/trayStore.ts`, `store/modalStore.ts`) with localStorage persistence for the Specification Tray and dynamic PDF generation (`lib/pdf-generator.ts`). Configured rewrites for legacy routes in `next.config.mjs`. | `app/`, `components/`, `data/`, `lib/`, `store/`, `types/`, `next.config.mjs`, `tsconfig.json`, `package.json`, `CONTEXT.md` | `npx tsc --noEmit` and `npm run build` compiled with 0 errors; all routes prerendered cleanly. |
 | **2026-10-17** | **Next.js Migration Finalization & Verification:** Completed end-to-end verification and hardening of the Next.js App Router setup. (1) Added hydration mounting guards to `SpecificationTrayDrawer.tsx`, `Header.tsx`, and `MobileNav.tsx` to eliminate SSR/localStorage hydration mismatch warnings. (2) Integrated Specification Tray direct transfer with `useModalStore` to immediately present a prefilled enquiry dialog with formatted tableware schedule. (3) Added responsive specification tray button into `MobileNav` when items exist in the schedule. (4) Extended `next.config.mjs` legacy HTML rewrites (`/index.html`, `/collections/index.html`, `/collections/olivera/index.html`, `/collections/olivera/product.html`, `/showroom.html`). (5) Verified clean static generation (all 7 routes 200 OK), zero TypeScript errors (`tsc --noEmit`), and verified all HTTP endpoints. | `components/tray/SpecificationTrayDrawer.tsx`, `components/layout/Header.tsx`, `components/layout/MobileNav.tsx`, `app/page.tsx`, `next.config.mjs`, `CONTEXT.md` | `npx tsc --noEmit` passed with 0 errors; `npm run build` passed in 714ms; all 8 HTTP routes returned 200 OK. |
 | **2026-10-17** | **Vercel Next.js Deployment Configuration:** Added `vercel.json` with `"framework": "nextjs"` preset override to ensure Vercel automatically deploys with the Next.js build runtime. Triggered production redeployment. | `vercel.json`, `CONTEXT.md` | Pushed to GitHub `main` branch to trigger Vercel redeployment. |
+| **2026-10-17** | **IVORY Porcelain Collection Integration:** Integrated new premium porcelain collection **IVORY** (17 pieces, 32 verified images) alongside OLIVERA. (1) Ingested all 32 authentic image assets from `Ivora Collection/` into `public/assets/catalogue/ivory/` and established `ivory-editorial-hero.png`. (2) Modeled full 17-piece catalog in `data/products/ivory.ts` with dimensions, capacities, and unique slugs; combined into unified 34-piece dataset in `data/products/index.ts`. (3) Registered collection in `data/collections.ts`. (4) Built dedicated collection page (`/collections/ivory/`) with category filters (Plates, Bowls, Platters, Accessories). (5) Built dynamic slug-based PDP (`/collections/ivory/[slug]/`) and query PDP (`/collections/ivory/product?id=...`) with accessible multi-view image gallery (mouse, keyboard Arrow keys, touch swipe), specification table, and direct enquiry modal prefill. (6) Updated homepage (`app/page.tsx`) with two-collection showcase (OLIVERA & IVORY), `EXPLORE COLLECTIONS` hero CTA, and dual-collection featured product explorer. (7) Updated collections gateway (`app/collections/page.tsx`) to showcase both lines and showroom explorer (`app/showroom/page.tsx`) with collection filter pills (`All Products`, `OLIVERA`, `IVORY`). (8) Updated header navigation (`Home | Collections | Products | About Us | Contact`) and footer links. | `data/products/ivory.ts`, `data/products/index.ts`, `data/collections.ts`, `app/collections/ivory/`, `app/collections/page.tsx`, `app/showroom/page.tsx`, `app/page.tsx`, `components/product/ProductDetailView.tsx`, `components/layout/Header.tsx`, `components/layout/Footer.tsx`, `CONTEXT.md` | `npx tsc --noEmit` passed (0 errors); `npm run build` static export succeeded (43 static pages); verified all routes 200 OK via HTTP endpoint tests. |
+
 
 
 

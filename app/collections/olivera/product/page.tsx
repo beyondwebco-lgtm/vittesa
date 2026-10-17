@@ -41,7 +41,7 @@ function ProductDetailContent() {
 
   const images = product.images && product.images.length > 0 ? product.images : [product.image];
   const isInTray = hasItem(product.id);
-  const relatedProducts = allProducts.filter((p) => p.id !== product.id).slice(0, 4);
+  const relatedProducts = allProducts.filter((p) => p.collectionId === 'olivera' && p.id !== product.id).slice(0, 4);
 
   const handleEnquire = () => {
     openEnquiryModal(

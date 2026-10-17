@@ -34,8 +34,8 @@ export default function HomePage() {
             </h1>
 
             <div className="hero-cta-group">
-              <Link href="/collections/olivera" className="btn-hero-primary">
-                EXPLORE COLLECTION
+              <Link href="/collections" className="btn-hero-primary">
+                EXPLORE COLLECTIONS
               </Link>
               <a href="#contact" className="btn-hero-secondary">
                 CONTACT US
@@ -45,7 +45,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. FEATURED OLIVERA COLLECTION */}
+      {/* 4. FEATURED COLLECTIONS SHOWCASE (OLIVERA & IVORY) */}
       <section
         className="featured-collection-section section-padding"
         id="featured-collection"
@@ -56,33 +56,113 @@ export default function HomePage() {
         }}
       >
         <div className="container">
-          <div className="olivera-split-layout">
-            {/* Left: Collection Image */}
-            <div className="olivera-feature-media">
-              <Link href="/collections/olivera" aria-label="Explore OLIVERA Collection">
+          <div
+            className="editorial-header-block"
+            style={{
+              textAlign: 'center',
+              maxWidth: 640,
+              margin: '0 auto clamp(2rem, 4vw, 3rem)',
+            }}
+          >
+            <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
+              Curated Lines
+            </span>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.6vw, 2.75rem)', margin: '0.5rem 0 0.75rem' }}>
+              The Collections
+            </h2>
+            <p style={{ color: 'var(--ink-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+              Considered porcelain tableware designed for exceptional dining tables.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
+              gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+            }}
+          >
+            {/* Collection 1: OLIVERA */}
+            <div
+              style={{
+                background: 'var(--bg-porcelain)',
+                border: '1px solid var(--border-subtle)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Link href="/collections/olivera" style={{ display: 'block', overflow: 'hidden' }} aria-label="Explore OLIVERA Collection">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/assets/catalogue/olivera-editorial-hero.jpg"
-                  alt="OLIVERA Porcelain Collection Editorial"
-                  className="olivera-feature-img"
+                  alt="OLIVERA Porcelain Collection"
+                  style={{
+                    width: '100%',
+                    aspectRatio: '16/10',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
                   loading="lazy"
                 />
               </Link>
+              <div style={{ padding: 'clamp(1.5rem, 2.5vw, 2rem)', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <span className="eyebrow" style={{ color: 'var(--tone-gold)', marginBottom: '0.35rem' }}>
+                  Natural Earth Series • 17 Pieces
+                </span>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 2.5vw, 2.2rem)', margin: '0 0 0.75rem' }}>
+                  OLIVERA
+                </h3>
+                <p style={{ fontSize: '0.9375rem', lineHeight: 1.6, color: 'var(--ink-secondary)', marginBottom: '1.5rem', flex: 1 }}>
+                  Softly muted olive-grey porcelain with rounded, organic silhouettes.
+                </p>
+                <div>
+                  <Link href="/collections/olivera" className="btn-primary" style={{ width: '100%', textAlign: 'center' }}>
+                    EXPLORE OLIVERA
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* Right: Collection Information */}
-            <div className="olivera-feature-info">
-              <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
-                Featured Collection
-              </span>
-              <h2 className="olivera-feature-title">Discover OLIVERA</h2>
-              <p className="olivera-feature-desc">
-                Softly muted olive-grey porcelain with rounded, organic silhouettes.
-              </p>
-              <div className="olivera-feature-cta-wrap">
-                <Link href="/collections/olivera" className="btn-primary olivera-feature-btn">
-                  EXPLORE COLLECTION
-                </Link>
+            {/* Collection 2: IVORY */}
+            <div
+              style={{
+                background: 'var(--bg-porcelain)',
+                border: '1px solid var(--border-subtle)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Link href="/collections/ivory" style={{ display: 'block', overflow: 'hidden' }} aria-label="Explore IVORY Collection">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/assets/catalogue/ivory-editorial-hero.png"
+                  alt="IVORY Porcelain Collection"
+                  style={{
+                    width: '100%',
+                    aspectRatio: '16/10',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                  loading="lazy"
+                />
+              </Link>
+              <div style={{ padding: 'clamp(1.5rem, 2.5vw, 2rem)', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <span className="eyebrow" style={{ color: 'var(--tone-gold)', marginBottom: '0.35rem' }}>
+                  Timeless Porcelain • 17 Pieces
+                </span>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 2.5vw, 2.2rem)', margin: '0 0 0.75rem' }}>
+                  IVORY
+                </h3>
+                <p style={{ fontSize: '0.9375rem', lineHeight: 1.6, color: 'var(--ink-secondary)', marginBottom: '1.5rem', flex: 1 }}>
+                  Timeless ivory-toned porcelain for refined dining experiences.
+                </p>
+                <div>
+                  <Link href="/collections/ivory" className="btn-primary" style={{ width: '100%', textAlign: 'center' }}>
+                    EXPLORE IVORY
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -107,11 +187,11 @@ export default function HomePage() {
               Selected for Your Table
             </h2>
             <p style={{ color: 'var(--ink-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-              Explore the OLIVERA porcelain collection.
+              Curated porcelain tableware from the OLIVERA and IVORY collections.
             </p>
           </div>
 
-          {/* Curated 8-Piece OLIVERA Grid */}
+          {/* Curated Products Grid */}
           <div className="products-grid-catalog olivera-cards-grid" id="collection-products-grid">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -121,11 +201,11 @@ export default function HomePage() {
           {/* View All Products CTA */}
           <div style={{ textAlign: 'center', marginTop: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
             <Link
-              href="/collections/olivera"
+              href="/showroom"
               className="btn-primary"
               style={{ padding: '0.95rem 2.5rem', fontSize: '0.8125rem' }}
             >
-              VIEW ALL OLIVERA PRODUCTS →
+              EXPLORE ALL PIECES (34 PIECES) →
             </Link>
           </div>
         </div>

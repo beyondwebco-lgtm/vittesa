@@ -70,18 +70,23 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               </Link>
             </li>
             <li>
-              <Link href="/collections/olivera" onClick={onClose}>
-                <span className="nav-num">02</span> Collection
+              <Link href="/collections" onClick={onClose}>
+                <span className="nav-num">02</span> Collections
+              </Link>
+            </li>
+            <li>
+              <Link href="/showroom" onClick={onClose}>
+                <span className="nav-num">03</span> Products
               </Link>
             </li>
             <li>
               <Link href="/#about" onClick={onClose}>
-                <span className="nav-num">03</span> About
+                <span className="nav-num">04</span> About Us
               </Link>
             </li>
             <li>
               <Link href="/#contact" onClick={onClose}>
-                <span className="nav-num">04</span> Contact
+                <span className="nav-num">05</span> Contact
               </Link>
             </li>
           </ul>
@@ -132,8 +137,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               </span>
             </button>
           )}
-          <Link href="/collections/olivera" className="btn-contact-header mobile-contact-btn" onClick={onClose}>
-            SHOP OLIVERA
+          <Link href="/collections" className="btn-contact-header mobile-contact-btn" onClick={onClose}>
+            EXPLORE COLLECTIONS
           </Link>
         </div>
       </div>

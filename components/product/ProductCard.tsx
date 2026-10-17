@@ -17,7 +17,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     product.images && product.images.length > 0 ? product.images : [product.image];
   const hasMultipleImages = images.length > 1;
 
-  const productUrl = `/collections/${product.collection.toLowerCase()}/product?id=${product.id}`;
+  const productUrl =
+    product.collection.toLowerCase() === 'ivory' && product.slug
+      ? `/collections/ivory/${product.slug}`
+      : `/collections/${product.collection.toLowerCase()}/product?id=${product.id}`;
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();

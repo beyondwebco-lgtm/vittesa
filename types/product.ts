@@ -17,6 +17,7 @@ export type ProductCategory = 'all' | 'plates' | 'bowls' | 'platters' | 'accesso
 
 export interface Product {
   id: string;
+  slug?: string;
   code: string;
   productCode: string;
   name: string;

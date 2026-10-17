@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { getAllProducts } from '@/data/products';
+import { getProductsByCollection } from '@/data/products';
 import { ProductCard } from '@/components/product/ProductCard';
 
 const CATEGORIES = [
@@ -15,7 +15,7 @@ const CATEGORIES = [
 
 export default function OliveraCollectionPage() {
   const [activeCategory, setActiveCategory] = useState('all');
-  const allProducts = getAllProducts();
+  const allProducts = getProductsByCollection('olivera');
 
   const filteredProducts =
     activeCategory === 'all'

@@ -6,22 +6,34 @@ import { getAllProducts } from '@/data/products';
 import { ProductCard } from '@/components/product/ProductCard';
 import { useModalStore } from '@/store/modalStore';
 
+const COLLECTIONS = [
+  { id: 'all', label: 'All Products (34)' },
+  { id: 'olivera', label: 'OLIVERA (17)' },
+  { id: 'ivory', label: 'IVORY (17)' },
+];
+
 const CATEGORIES = [
   { id: 'all', label: 'All Types' },
-  { id: 'plates', label: 'Plates (6)' },
-  { id: 'bowls', label: 'Bowls (7)' },
-  { id: 'platters', label: 'Platters (2)' },
-  { id: 'accessories', label: 'Accessories (2)' },
+  { id: 'plates', label: 'Plates' },
+  { id: 'bowls', label: 'Bowls' },
+  { id: 'platters', label: 'Platters' },
+  { id: 'accessories', label: 'Accessories' },
 ];
 
 export default function ShowroomPage() {
   const allProducts = getAllProducts();
+  const [activeCollection, setActiveCollection] = useState('all');
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const openEnquiryModal = useModalStore((state) => state.openEnquiryModal);
 
   const filteredProducts = useMemo(() => {
     return allProducts.filter((product) => {
+      const matchesCollection =
+        activeCollection === 'all' ||
+        product.collectionId.toLowerCase() === activeCollection ||
+        product.collection.toLowerCase() === activeCollection;
+
       const matchesCategory =
         activeCategory === 'all' || product.category.toLowerCase() === activeCategory;
 
@@ -29,13 +41,14 @@ export default function ShowroomPage() {
       const matchesSearch =
         !q ||
         product.name.toLowerCase().includes(q) ||
+        product.collection.toLowerCase().includes(q) ||
         product.dimensions.toLowerCase().includes(q) ||
         product.code.toLowerCase().includes(q) ||
         product.categoryLabel.toLowerCase().includes(q);
 
-      return matchesCategory && matchesSearch;
+      return matchesCollection && matchesCategory && matchesSearch;
     });
-  }, [allProducts, activeCategory, searchQuery]);
+  }, [allProducts, activeCollection, activeCategory, searchQuery]);
 
   return (
     <>
@@ -47,15 +60,15 @@ export default function ShowroomPage() {
               Home
             </Link>
             <span style={{ margin: '0 0.5rem', color: 'var(--border-medium)' }}>/</span>
-            <span style={{ color: 'var(--ink-primary)' }}>OLIVERA Showroom</span>
+            <span style={{ color: 'var(--ink-primary)' }}>Products &amp; Showroom</span>
           </div>
 
-          <div className="editorial-header-block" style={{ marginBottom: 0, maxWidth: 800 }}>
+          <div className="editorial-header-block" style={{ marginBottom: 0, maxWidth: 840 }}>
             <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
               Technical Catalogue Explorer
             </span>
             <h1 style={{ fontSize: 'clamp(2.5rem, 4.5vw, 3.5rem)', margin: '0.5rem 0 1rem' }}>
-              OLIVERA SHOWROOM
+              PORCELAIN SHOWROOM
             </h1>
             <p
               style={{
@@ -64,7 +77,7 @@ export default function ShowroomPage() {
                 lineHeight: 1.6,
               }}
             >
-              Filter across tableware categories, search by piece name or dimensions, and examine specifications for all 17 OLIVERA porcelain pieces.
+              Filter across collections (OLIVERA &amp; IVORY) and tableware categories, search by piece name or dimensions, and examine specifications for our premium European porcelain.
             </p>
           </div>
         </div>
@@ -75,6 +88,37 @@ export default function ShowroomPage() {
         <div className="container">
           {/* Showroom Filter Controls */}
           <div className="showroom-controls" style={{ marginBottom: '2.5rem' }}>
+            {/* Collection Filter */}
+            <div className="filter-row" style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              <span className="filter-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--ink-secondary)', fontWeight: 600 }}>
+                Collection:
+              </span>
+              <div className="filter-buttons-group" style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {COLLECTIONS.map((col) => (
+                  <button
+                    key={col.id}
+                    type="button"
+                    onClick={() => setActiveCollection(col.id)}
+                    className={`filter-chip ${activeCollection === col.id ? 'active' : ''}`}
+                    style={{
+                      padding: '0.45rem 1rem',
+                      fontSize: '0.75rem',
+                      letterSpacing: '0.08em',
+                      border: '1px solid var(--border-medium)',
+                      background: activeCollection === col.id ? 'var(--ink-primary)' : 'transparent',
+                      color: activeCollection === col.id ? '#FFF' : 'var(--ink-primary)',
+                      cursor: 'pointer',
+                      borderRadius: 2,
+                      transition: 'all 0.2s ease',
+                      fontWeight: activeCollection === col.id ? 600 : 400,
+                    }}
+                  >
+                    {col.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Category Filter */}
             <div className="filter-row" style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               <span className="filter-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--ink-secondary)', fontWeight: 600 }}>
@@ -121,7 +165,7 @@ export default function ShowroomPage() {
                   type="text"
                   id="showroom-search"
                   className="search-input"
-                  placeholder="Search OLIVERA pieces by name or dimension..."
+                  placeholder="Search pieces by name, collection, code, or dimension..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   style={{
@@ -147,6 +191,7 @@ export default function ShowroomPage() {
               <button
                 type="button"
                 onClick={() => {
+                  setActiveCollection('all');
                   setActiveCategory('all');
                   setSearchQuery('');
                 }}
@@ -190,14 +235,14 @@ export default function ShowroomPage() {
                 PROJECT SPECIFICATION &amp; SAMPLES
               </h3>
               <p style={{ color: 'var(--ink-secondary)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                Ready to compile your tableware program? Request official factory datasheets, trade pricing, or physical sample boxes.
+                Ready to compile your tableware program? Request official factory datasheets, trade pricing, or physical sample boxes across OLIVERA and IVORY.
               </p>
             </div>
             <div>
               <button
                 type="button"
                 className="btn-primary"
-                onClick={() => openEnquiryModal('OLIVERA Showroom Specification Request')}
+                onClick={() => openEnquiryModal('Showroom Tableware Specification Request')}
                 style={{ padding: '0.9rem 2rem' }}
               >
                 Enquire for Specifications / Samples →

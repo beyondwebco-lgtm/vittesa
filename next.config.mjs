@@ -23,6 +23,14 @@ const nextConfig = {
         destination: '/collections/olivera/product',
       },
       {
+        source: '/collections/ivory/index.html',
+        destination: '/collections/ivory',
+      },
+      {
+        source: '/collections/ivory/product.html',
+        destination: '/collections/ivory/product',
+      },
+      {
         source: '/showroom.html',
         destination: '/showroom',
       },

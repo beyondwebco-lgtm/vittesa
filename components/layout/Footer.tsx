@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '1.5rem',
+            gap: '1.25rem',
             flexWrap: 'wrap',
             marginBottom: '1.5rem',
             fontSize: '0.8125rem',
@@ -49,7 +49,21 @@ export const Footer: React.FC = () => {
             href="/collections/olivera"
             style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
           >
-            OLIVERA Collection
+            OLIVERA
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/collections/ivory"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            IVORY
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/showroom"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            Products
           </Link>
           <span style={{ color: 'var(--border-medium)' }}>•</span>
           <Link href="/#about" style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}>

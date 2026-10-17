@@ -59,15 +59,23 @@ export const Header: React.FC = () => {
                 </li>
                 <li>
                   <Link
-                    href="/collections/olivera"
+                    href="/collections"
                     className={`nav-link ${isCollection ? 'active' : ''}`}
                   >
-                    Collection
+                    Collections
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/showroom"
+                    className={`nav-link ${pathname === '/showroom' ? 'active' : ''}`}
+                  >
+                    Products
                   </Link>
                 </li>
                 <li>
                   <Link href="/#about" className="nav-link">
-                    About
+                    About Us
                   </Link>
                 </li>
                 <li>
@@ -121,8 +129,8 @@ export const Header: React.FC = () => {
                 </button>
               )}
 
-              <Link href="/collections/olivera" className="btn-contact-header">
-                SHOP OLIVERA
+              <Link href="/collections" className="btn-contact-header">
+                EXPLORE COLLECTIONS
               </Link>
 
               <button
