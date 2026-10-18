@@ -66,18 +66,12 @@ export default function CollectionsGatewayPage() {
                 </Link>
               </div>
 
-              <div className="olivera-feature-info">
-                <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
-                  Series 02 • Natural Earth
-                </span>
+              <div className="olivera-feature-info" style={{ padding: 'clamp(1rem, 2.5vw, 2.5rem)' }}>
                 <h2 className="olivera-feature-title">{col.name}</h2>
                 <p className="olivera-feature-desc">{col.description}</p>
-                <div style={{ margin: '1rem 0 1.5rem', fontSize: '0.8125rem', color: 'var(--ink-secondary)' }}>
-                  <strong>{col.itemCount || col.piecesCount} Verified Pieces</strong> • Vitrified Porcelain • Dishwasher &amp; Microwave Safe
-                </div>
                 <div className="olivera-feature-cta-wrap">
-                  <Link href={`/collections/${col.slug || col.id}`} className="btn-primary olivera-feature-btn">
-                    EXPLORE {col.name.toUpperCase()} COLLECTION
+                  <Link href={`/collections/${col.slug || col.id}`} className="olivera-feature-btn">
+                    SHOP NOW
                   </Link>
                 </div>
               </div>
