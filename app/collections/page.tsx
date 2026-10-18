@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getCollections } from '@/data/collections';
 import { BulkBannerSection } from '@/components/home/BulkBannerSection';
+import { CollectionFadeImage } from '@/components/collection/CollectionFadeImage';
 
 export const metadata: Metadata = {
   title: 'Collections | VITTESA Porcelain Maison',
@@ -15,32 +16,12 @@ export default function CollectionsGatewayPage() {
 
   return (
     <>
-      <section className="olivera-intro-section" style={{ padding: 'clamp(2.5rem, 5vw, 4rem) 0 2rem' }}>
-        <div className="container text-center">
-          <span className="collection-intro-label">VITTESA · PORCELAIN MAISON</span>
-          <h1
-            className="collection-intro-title"
-            style={{ margin: '0.25rem 0 0.5rem', letterSpacing: '0.08em' }}
-          >
-            TABLEWARE COLLECTIONS
-          </h1>
-          <p
-            className="collection-intro-desc"
-            style={{
-              maxWidth: '620px',
-              margin: '0 auto clamp(2rem, 3vw, 3rem)',
-              fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
-              lineHeight: 1.6,
-              color: 'var(--ink-secondary)',
-            }}
-          >
-            Each VITTESA collection represents a distinct material philosophy, balancing tactile
-            artistry with commercial vitrified porcelain resilience.
-          </p>
-        </div>
-      </section>
+      <h1 className="sr-only">VITTESA Tableware Collections</h1>
 
-      <section className="featured-collection-section section-padding" style={{ paddingTop: 0 }}>
+      <section
+        className="featured-collection-section section-padding"
+        style={{ paddingTop: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+      >
         <div className="container">
           {collections.map((col) => (
             <div
@@ -56,12 +37,9 @@ export default function CollectionsGatewayPage() {
             >
               <div className="olivera-feature-media">
                 <Link href={`/collections/${col.slug || col.id}`} aria-label={`Explore ${col.name}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <CollectionFadeImage
                     src={col.editorialImage || col.heroImage}
                     alt={`${col.name} Porcelain Collection`}
-                    className="olivera-feature-img"
-                    loading="lazy"
                   />
                 </Link>
               </div>

@@ -4838,6 +4838,27 @@ h1, h2, h3, h4, .serif-title {
   opacity: 0.94;
 }
 
+/* Collections Gateway (/collections) — Smooth Slow Fade-in & Scale Loading */
+.collection-fade-img {
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+  will-change: opacity, transform;
+}
+
+.collection-fade-img.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-fade-img {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 .olivera-feature-info {
   flex: 1 1 46%;
   max-width: 46%;
