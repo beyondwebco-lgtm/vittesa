@@ -3,33 +3,37 @@
 import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { getProductById } from '@/data/products';
+import { getProductById, getProductsByCollection } from '@/data/products';
 import { ProductDetailView } from '@/components/product/ProductDetailView';
 
-function IvoryProductContent() {
+function IvoraProductContent() {
   const searchParams = useSearchParams();
   const productId = searchParams.get('id') || searchParams.get('slug') || 'asei7103';
 
-  const product = getProductById(productId, 'ivory') || getProductById('asei7103', 'ivory');
+  const product = getProductById(productId, 'ivora') || getProductById('asei7103', 'ivora');
 
   if (!product) {
     return (
       <div className="container" style={{ padding: '6rem 0', textAlign: 'center' }}>
         <h2>Product Not Found</h2>
         <p style={{ marginTop: '1rem', color: 'var(--ink-secondary)' }}>
-          The requested product could not be located in the IVORY collection.
+          The requested product could not be located in the IVORA collection.
         </p>
-        <Link href="/collections/ivory" className="btn-primary" style={{ marginTop: '2rem' }}>
-          Back to IVORY Collection
+        <Link href="/collections/ivora" className="btn-primary" style={{ marginTop: '2rem' }}>
+          Back to IVORA Collection
         </Link>
       </div>
     );
   }
 
-  return <ProductDetailView product={product} />;
+  const relatedProducts = getProductsByCollection('ivora')
+    .filter((p) => p.id !== product.id)
+    .slice(0, 4);
+
+  return <ProductDetailView product={product} relatedProducts={relatedProducts} />;
 }
 
-export default function IvoryProductDetailPage() {
+export default function IvoraProductDetailPage() {
   return (
     <Suspense
       fallback={
@@ -38,7 +42,7 @@ export default function IvoryProductDetailPage() {
         </div>
       }
     >
-      <IvoryProductContent />
+      <IvoraProductContent />
     </Suspense>
   );
 }

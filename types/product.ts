@@ -36,6 +36,7 @@ export interface Product {
 
 export interface Collection {
   id: string;
+  slug?: string;
   number: string;
   layer: string;
   layerNumber: string;
@@ -46,7 +47,9 @@ export interface Collection {
   badge: string;
   category: string;
   piecesCount: number;
+  itemCount?: number;
   heroImage: string;
+  editorialImage?: string;
   rangeImage: string;
   galleryImages: string[];
   description: string;

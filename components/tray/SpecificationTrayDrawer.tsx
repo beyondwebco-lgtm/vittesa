@@ -99,7 +99,7 @@ export const SpecificationTrayDrawer: React.FC = () => {
                 Your Tray is Empty
               </p>
               <p style={{ fontSize: '0.8125rem' }}>
-                Select items from OLIVERA or IVORY to compile your project specification schedule.
+                Select items from OLIVERA or IVORA to compile your project specification schedule.
               </p>
             </div>
           ) : (

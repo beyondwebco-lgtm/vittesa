@@ -23,12 +23,28 @@ const nextConfig = {
         destination: '/collections/olivera/product',
       },
       {
+        source: '/collections/ivory',
+        destination: '/collections/ivora',
+      },
+      {
         source: '/collections/ivory/index.html',
-        destination: '/collections/ivory',
+        destination: '/collections/ivora',
       },
       {
         source: '/collections/ivory/product.html',
-        destination: '/collections/ivory/product',
+        destination: '/collections/ivora/product',
+      },
+      {
+        source: '/collections/ivory/:slug',
+        destination: '/collections/ivora/:slug',
+      },
+      {
+        source: '/collections/ivora/index.html',
+        destination: '/collections/ivora',
+      },
+      {
+        source: '/collections/ivora/product.html',
+        destination: '/collections/ivora/product',
       },
       {
         source: '/showroom.html',

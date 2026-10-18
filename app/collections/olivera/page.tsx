@@ -1,26 +1,17 @@
-'use client';
-
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React from 'react';
+import type { Metadata } from 'next';
 import { getProductsByCollection } from '@/data/products';
-import { ProductCard } from '@/components/product/ProductCard';
+import { CollectionProductGrid } from '@/components/collection/CollectionProductGrid';
+import { BulkBannerSection } from '@/components/home/BulkBannerSection';
 
-const CATEGORIES = [
-  { id: 'all', label: 'All Pieces', count: 17 },
-  { id: 'plates', label: 'Plates', count: 6 },
-  { id: 'bowls', label: 'Bowls', count: 7 },
-  { id: 'platters', label: 'Platters', count: 2 },
-  { id: 'accessories', label: 'Accessories', count: 2 },
-];
+export const metadata: Metadata = {
+  title: 'OLIVERA Collection | VITTESA Porcelain Maison',
+  description:
+    'Softly muted olive-grey porcelain with rounded, organic silhouettes. Official 17-piece catalogue for luxury hospitality and refined dining.',
+};
 
 export default function OliveraCollectionPage() {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const allProducts = getProductsByCollection('olivera');
-
-  const filteredProducts =
-    activeCategory === 'all'
-      ? allProducts
-      : allProducts.filter((p) => p.category.toLowerCase() === activeCategory);
+  const products = getProductsByCollection('olivera');
 
   return (
     <>
@@ -67,73 +58,10 @@ export default function OliveraCollectionPage() {
       </section>
 
       {/* 3. PRODUCT CATALOGUE — MAIN FOCUS (17 PIECES) */}
-      <section className="olivera-catalogue-section section-padding" id="products">
-        <div className="container">
-          {/* Category Filter Pills */}
-          <div
-            className="collection-filter-bar"
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: '0.5rem',
-              marginBottom: 'clamp(2rem, 4vw, 3rem)',
-            }}
-          >
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id)}
-                className={`filter-pill-btn ${activeCategory === cat.id ? 'active' : ''}`}
-                style={{
-                  padding: '0.5rem 1.25rem',
-                  fontSize: '0.75rem',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  border: '1px solid var(--border-medium)',
-                  background: activeCategory === cat.id ? 'var(--ink-primary)' : 'transparent',
-                  color: activeCategory === cat.id ? '#FFF' : 'var(--ink-primary)',
-                  cursor: 'pointer',
-                  transition: 'all 0.25s ease',
-                  borderRadius: 2,
-                }}
-              >
-                {cat.label} ({cat.count})
-              </button>
-            ))}
-          </div>
-
-          {/* Product Grid */}
-          <div className="products-grid-catalog olivera-cards-grid" id="collection-products-grid">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <CollectionProductGrid products={products} />
 
       {/* 4. BULK AND WHOLESALE ENQUIRY BANNER */}
-      <section className="bulk-banner-section" id="bulk-banner">
-        <div className="container">
-          <div className="bulk-banner-card">
-            <div className="bulk-banner-content">
-              <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
-                Trade &amp; Hospitality
-              </span>
-              <h2 className="bulk-banner-title">Looking for Bulk or Wholesale Orders?</h2>
-              <p className="bulk-banner-desc">
-                Contact VITTESA to discuss product requirements, quantities, and available shipping options.
-              </p>
-            </div>
-            <div className="bulk-banner-cta">
-              <Link href="/#contact" className="btn-primary bulk-banner-btn">
-                ENQUIRE ABOUT BULK ORDERS
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BulkBannerSection />
     </>
   );
 }

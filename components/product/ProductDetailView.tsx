@@ -3,54 +3,39 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Product } from '@/types/product';
-import { getAllProducts } from '@/data/products';
-import { ProductCard } from '@/components/product/ProductCard';
-import { useModalStore } from '@/store/modalStore';
 import { useTrayStore } from '@/store/trayStore';
+import { useModalStore } from '@/store/modalStore';
+import { ProductCard } from './ProductCard';
 
 interface ProductDetailViewProps {
   product: Product;
+  relatedProducts?: Product[];
 }
 
-export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product }) => {
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const touchStartX = useRef<number | null>(null);
+export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
+  product,
+  relatedProducts = [],
+}) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [addedToTray, setAddedToTray] = useState(false);
+  const touchStartXRef = useRef<number | null>(null);
 
-  const allProducts = getAllProducts();
+  const addToTray = useTrayStore((state) => state.addToTray);
   const openEnquiryModal = useModalStore((state) => state.openEnquiryModal);
-  const { addToTray, hasItem, openTray } = useTrayStore();
 
-  const isIvory = product.collection.toLowerCase() === 'ivory';
-  const collectionName = isIvory ? 'IVORY' : 'OLIVERA';
-  const collectionUrl = isIvory ? '/collections/ivory' : '/collections/olivera';
-  const seriesName = isIvory ? 'Timeless Ivory Series' : 'Natural Earth Series';
-  const seriesTag = isIvory ? '02 — TIMELESS PORCELAIN SERIES • IVORY' : '01 — NATURAL EARTH SERIES • OLIVERA';
-  const defaultFinish = isIvory ? 'Warm Ivory Matte Glaze with Sand Rim' : 'Softly Muted Olive-Grey Matted Glaze';
-
-  // Sync image index when product changes
-  useEffect(() => {
-    setActiveImageIndex(0);
-  }, [product.id]);
-
-  const images = product.images && product.images.length > 0 ? product.images : [product.image];
+  const images =
+    product.images && product.images.length > 0 ? product.images : [product.image];
   const hasMultipleImages = images.length > 1;
 
-  const handlePrevImage = () => {
-    setActiveImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const handleNextImage = () => {
-    setActiveImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  // Keyboard navigation for image gallery
+  // Keyboard Navigation for Gallery
   useEffect(() => {
+    if (!hasMultipleImages) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!hasMultipleImages) return;
       if (e.key === 'ArrowLeft') {
-        handlePrevImage();
+        setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
       } else if (e.key === 'ArrowRight') {
-        handleNextImage();
+        setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
       }
     };
 
@@ -58,46 +43,85 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [hasMultipleImages, images.length]);
 
-  // Touch swipe handling
+  // Touch Swipe Handlers
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    touchStartXRef.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
+    if (touchStartXRef.current === null || !hasMultipleImages) return;
     const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
+    const diff = touchStartXRef.current - touchEndX;
 
     if (Math.abs(diff) > 40) {
       if (diff > 0) {
-        handleNextImage();
+        // Swiped Left -> Next
+        setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
       } else {
-        handlePrevImage();
+        // Swiped Right -> Prev
+        setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
       }
     }
-    touchStartX.current = null;
+    touchStartXRef.current = null;
   };
 
-  const isInTray = hasItem(product.id);
-  const relatedProducts = allProducts
-    .filter((p) => p.collectionId === product.collectionId && p.id !== product.id)
-    .slice(0, 4);
+  const handleAddToTray = () => {
+    addToTray(product.id);
+    setAddedToTray(true);
+    setTimeout(() => {
+      setAddedToTray(false);
+    }, 1800);
+  };
 
   const handleEnquire = () => {
     openEnquiryModal(
-      `${collectionName} — ${product.name} (${product.code})`,
-      `I am interested in acquiring specifications and pricing for ${collectionName} ${product.name} (Code: ${product.code}, Dimensions: ${product.dimensions}).\n\nProject / Quantity details:`
+      `${product.collection} — ${product.name}`,
+      `I am interested in acquiring specifications and pricing for ${product.collection} ${product.name} (Code: ${product.code || product.id}, Dimensions: ${product.dimensions}).\n\nProject / Quantity details:`
     );
   };
 
-  const handleTrayToggle = () => {
-    if (isInTray) {
-      openTray();
-    } else {
-      addToTray(product.id);
-      openTray();
-    }
-  };
+  const isIvora =
+    product.collection.toUpperCase() === 'IVORA' ||
+    product.collection.toUpperCase() === 'IVORY';
+  const collectionTag = isIvora
+    ? '01 — TIMELESS IVORA SERIES • IVORA'
+    : '02 — NATURAL EARTH SERIES • OLIVERA';
+
+  const specDim =
+    product.dimensions ||
+    (product.specs &&
+      (product.specs.diameter || product.specs.dimensions || product.specs.capacity)) ||
+    '';
+
+  const specsList = [
+    {
+      label: 'Collection',
+      val: isIvora
+        ? 'IVORA (Timeless Ivora Series)'
+        : `${product.collection} (Natural Earth Series)`,
+    },
+    { label: 'Category', val: product.categoryLabel || 'Tableware' },
+    {
+      label: 'Dimensions',
+      val:
+        product.dimensions ||
+        (product.specs && (product.specs.diameter || product.specs.dimensions)) ||
+        'Standard',
+    },
+    {
+      label: 'Capacity / Spec',
+      val: (product.specs && product.specs.capacity) || specDim || 'Commercial Standard',
+    },
+    {
+      label: 'Surface Finish',
+      val:
+        (product.specs && product.specs.finish) ||
+        (isIvora ? 'Warm Ivora Matte Glaze' : 'Softly Muted Olive-Grey Glaze'),
+    },
+    { label: 'Body Composition', val: 'High-Density European Vitrified Porcelain' },
+    { label: 'Commercial Suitability', val: 'Heavy Hospitality & Industrial Dishwasher Safe' },
+    { label: 'Thermal Resistance', val: 'Microwave & Commercial Warming Oven Safe' },
+  ];
 
   return (
     <>
@@ -105,7 +129,10 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
       <section className="pdp-nav-bar">
         <div className="container">
           <div className="pdp-breadcrumbs-wrap">
-            <Link href={collectionUrl} className="pdp-back-link">
+            <Link
+              href={`/collections/${product.collection.toLowerCase()}`}
+              className="pdp-back-link"
+            >
               <svg
                 width="14"
                 height="14"
@@ -119,14 +146,18 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
                 <line x1="19" y1="12" x2="5" y2="12" />
                 <polyline points="12 19 5 12 12 5" />
               </svg>
-              Back to {collectionName} Collection
+              Back to {product.collection} Collection
             </Link>
             <div className="pdp-breadcrumbs">
               <Link href="/">Home</Link>
               <span className="sep">/</span>
-              <Link href={collectionUrl}>{collectionName}</Link>
+              <Link href={`/collections/${product.collection.toLowerCase()}`}>
+                {product.collection}
+              </Link>
               <span className="sep">/</span>
-              <span className="current">{product.name}</span>
+              <span className="current" id="crumb-product-name">
+                {product.name}
+              </span>
             </div>
           </div>
         </div>
@@ -139,125 +170,101 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
             {/* LEFT COLUMN: PHOTO GALLERY & SLIDESHOW */}
             <div className="pdp-gallery-col">
               <div
-                className="pdp-gallery-main-wrap"
-                style={{ position: 'relative', overflow: 'hidden', borderRadius: 2 }}
+                className={`product-item-media pdp-carousel-media ${hasMultipleImages ? 'has-carousel' : ''}`}
+                id="pdp-main-media"
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={images[activeImageIndex] || images[0]}
-                  alt={`${product.name} — View ${activeImageIndex + 1}`}
-                  className="pdp-main-img"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                />
+                <div className="carousel-track">
+                  {images.map((src, idx) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      key={idx}
+                      src={src}
+                      alt={`${product.name} (View ${idx + 1})`}
+                      className={`carousel-slide ${idx === currentSlide ? 'active' : ''}`}
+                      loading={idx === 0 ? 'eager' : 'lazy'}
+                    />
+                  ))}
+                </div>
 
                 {hasMultipleImages && (
                   <>
+                    <span className="carousel-counter">
+                      {currentSlide + 1} / {images.length}
+                    </span>
                     <button
-                      type="button"
                       className="carousel-nav-btn prev"
-                      aria-label="Previous image"
-                      onClick={handlePrevImage}
-                      style={{
-                        position: 'absolute',
-                        left: 12,
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        background: 'rgba(255,255,255,0.85)',
-                        border: '1px solid var(--border-medium)',
-                        borderRadius: '50%',
-                        width: 36,
-                        height: 36,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                      }}
+                      type="button"
+                      aria-label="Previous view"
+                      onClick={() =>
+                        setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+                      }
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <polyline points="15 18 9 12 15 6" />
                       </svg>
                     </button>
-
                     <button
-                      type="button"
                       className="carousel-nav-btn next"
-                      aria-label="Next image"
-                      onClick={handleNextImage}
-                      style={{
-                        position: 'absolute',
-                        right: 12,
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        background: 'rgba(255,255,255,0.85)',
-                        border: '1px solid var(--border-medium)',
-                        borderRadius: '50%',
-                        width: 36,
-                        height: 36,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                      }}
+                      type="button"
+                      aria-label="Next view"
+                      onClick={() =>
+                        setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+                      }
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <polyline points="9 18 15 12 9 6" />
                       </svg>
                     </button>
-
-                    <span
-                      style={{
-                        position: 'absolute',
-                        bottom: 12,
-                        right: 12,
-                        background: 'rgba(20,20,20,0.65)',
-                        color: '#FFF',
-                        fontSize: '0.6875rem',
-                        padding: '0.2rem 0.55rem',
-                        borderRadius: 2,
-                        letterSpacing: '0.08em',
-                      }}
-                    >
-                      {activeImageIndex + 1} / {images.length}
-                    </span>
+                    <div className="carousel-dots-container">
+                      {images.map((_, idx) => (
+                        <button
+                          key={idx}
+                          className={`carousel-dot ${idx === currentSlide ? 'active' : ''}`}
+                          type="button"
+                          data-index={idx}
+                          aria-label={`View ${idx + 1}`}
+                          onClick={() => setCurrentSlide(idx)}
+                        />
+                      ))}
+                    </div>
                   </>
                 )}
               </div>
 
-              {/* Thumbnail strip */}
+              {/* Thumbnail Strip */}
               {hasMultipleImages && (
-                <div
-                  className="pdp-thumbnails-strip"
-                  style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', flexWrap: 'wrap' }}
-                >
-                  {images.map((imgSrc, idx) => (
+                <div className="pdp-thumbnails-strip" id="pdp-thumbs-strip">
+                  {images.map((src, idx) => (
                     <button
                       key={idx}
                       type="button"
-                      onClick={() => setActiveImageIndex(idx)}
-                      aria-label={`View photo ${idx + 1}`}
-                      style={{
-                        border:
-                          idx === activeImageIndex
-                            ? '1.5px solid var(--ink-primary)'
-                            : '1px solid var(--border-medium)',
-                        padding: 2,
-                        background: 'transparent',
-                        cursor: 'pointer',
-                        borderRadius: 2,
-                        opacity: idx === activeImageIndex ? 1 : 0.65,
-                        transition: 'opacity 0.2s ease, border-color 0.2s ease',
-                      }}
+                      className={`pdp-thumb-btn ${idx === currentSlide ? 'active' : ''}`}
+                      data-index={idx}
+                      aria-label={`Switch to view ${idx + 1}`}
+                      onClick={() => setCurrentSlide(idx)}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={imgSrc}
-                        alt={`Thumbnail ${idx + 1}`}
-                        style={{ width: 68, height: 68, objectFit: 'cover', display: 'block' }}
-                      />
+                      <img src={src} alt={`Thumbnail ${idx + 1}`} />
                     </button>
                   ))}
                 </div>
@@ -266,49 +273,31 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
 
             {/* RIGHT COLUMN: PRODUCT SPECIFICATIONS & CTAS */}
             <div className="pdp-info-col">
-              <div className="pdp-collection-tag">{seriesTag}</div>
-              <h1 className="pdp-title">{product.name}</h1>
-              <div className="pdp-dimensions-tag">{product.dimensions}</div>
-              <p className="pdp-description">
+              <div className="pdp-collection-tag">{collectionTag}</div>
+              <h1 className="pdp-title" id="pdp-title">
+                {product.name}
+              </h1>
+              <div className="pdp-dimensions-tag" id="pdp-dimension">
+                {specDim}
+              </div>
+              <p className="pdp-description" id="pdp-desc">
                 {product.editorialCaption ||
-                  `${collectionName} tableware defined by organic silhouettes and refined contemporary dining aesthetics.`}
+                  (isIvora
+                    ? 'Timeless warm ivora porcelain with refined silhouettes, designed for elegant dining and contemporary hospitality.'
+                    : 'Muted olive-grey tones and rounded, organic silhouettes engineered for contemporary fine dining.')}
               </p>
 
               {/* Technical Specifications Table */}
               <div className="pdp-specs-box">
                 <h3 className="pdp-specs-heading">TECHNICAL SPECIFICATIONS</h3>
-                <table className="modal-specs-table pdp-specs-table">
+                <table className="modal-specs-table pdp-specs-table" id="pdp-specs-table">
                   <tbody>
-                    <tr>
-                      <th>Product Code</th>
-                      <td>{product.code}</td>
-                    </tr>
-                    <tr>
-                      <th>Dimensions</th>
-                      <td>{product.dimensions}</td>
-                    </tr>
-                    {product.specs.capacity && (
-                      <tr>
-                        <th>Capacity</th>
-                        <td>{product.specs.capacity}</td>
+                    {specsList.map((spec, i) => (
+                      <tr key={i}>
+                        <th>{spec.label}</th>
+                        <td>{spec.val}</td>
                       </tr>
-                    )}
-                    <tr>
-                      <th>Category</th>
-                      <td>{product.categoryLabel || product.category}</td>
-                    </tr>
-                    <tr>
-                      <th>Series</th>
-                      <td>{product.specs.series || seriesName}</td>
-                    </tr>
-                    <tr>
-                      <th>Material</th>
-                      <td>High Vitrified European Porcelain</td>
-                    </tr>
-                    <tr>
-                      <th>Finish</th>
-                      <td>{product.specs.finish || defaultFinish}</td>
-                    </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -318,6 +307,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
                 <button
                   type="button"
                   className="btn-primary pdp-btn-enquire"
+                  id="pdp-enquire-btn"
                   onClick={handleEnquire}
                 >
                   ENQUIRE NOW
@@ -325,20 +315,19 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
                 <button
                   type="button"
                   className="btn-secondary pdp-btn-tray"
-                  onClick={handleTrayToggle}
-                  style={{
-                    background: isInTray ? 'var(--bg-porcelain-alt)' : 'transparent',
-                    borderColor: isInTray ? 'var(--tone-gold)' : undefined,
-                    color: isInTray ? 'var(--tone-gold)' : undefined,
-                  }}
+                  id="pdp-add-tray-btn"
+                  onClick={handleAddToTray}
                 >
-                  {isInTray ? '✓ In Specification Tray' : '+ Add to Specification Tray'}
+                  {addedToTray ? '✓ Added to Spec Tray' : '+ Add to Specification Tray'}
                 </button>
               </div>
 
-              <div className="pdp-back-bottom" style={{ marginTop: '2rem' }}>
-                <Link href={collectionUrl} className="pdp-return-link">
-                  ← Return to All 17 {collectionName} Pieces
+              <div className="pdp-back-bottom">
+                <Link
+                  href={`/collections/${product.collection.toLowerCase()}`}
+                  className="pdp-return-link"
+                >
+                  ← Return to All 17 {product.collection} Pieces
                 </Link>
               </div>
             </div>
@@ -346,28 +335,29 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product })
         </div>
       </section>
 
-      {/* MORE PIECES FROM THIS COLLECTION */}
-      <section className="pdp-related-section section-padding" style={{ borderTop: '1px solid var(--border-subtle)' }}>
-        <div className="container">
-          <div className="pdp-related-header" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
-              Curated Portfolio
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', margin: '0.5rem 0' }}>
-              MORE PIECES FROM {collectionName}
-            </h2>
-            <p style={{ color: 'var(--ink-secondary)', fontSize: '0.95rem' }}>
-              Explore coordinating plates, bowls, and platters in the {seriesName}.
-            </p>
-          </div>
+      {/* MORE PIECES FROM COLLECTION */}
+      {relatedProducts.length > 0 && (
+        <section className="pdp-related-section">
+          <div className="container">
+            <div className="pdp-related-header">
+              <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
+                Curated Portfolio
+              </span>
+              <h2>MORE PIECES FROM {product.collection}</h2>
+              <p>
+                Explore coordinating plates, bowls, and platters in the{' '}
+                {isIvora ? 'Timeless Ivora' : 'Natural Earth'} collection.
+              </p>
+            </div>
 
-          <div className="products-grid-catalog olivera-cards-grid">
-            {relatedProducts.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
+            <div className="products-grid-catalog olivera-cards-grid" id="pdp-related-grid">
+              {relatedProducts.map((rel) => (
+                <ProductCard key={rel.id} product={rel} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 };

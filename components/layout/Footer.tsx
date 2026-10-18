@@ -53,10 +53,10 @@ export const Footer: React.FC = () => {
           </Link>
           <span style={{ color: 'var(--border-medium)' }}>•</span>
           <Link
-            href="/collections/ivory"
+            href="/collections/ivora"
             style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
           >
-            IVORY
+            IVORA
           </Link>
           <span style={{ color: 'var(--border-medium)' }}>•</span>
           <Link

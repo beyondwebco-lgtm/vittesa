@@ -3,6 +3,7 @@ import { Collection } from '@/types/product';
 export const COLLECTIONS: Collection[] = [
   {
     id: "olivera",
+    slug: "olivera",
     number: "01",
     layer: "NATURAL EARTH",
     layerNumber: "01",
@@ -13,7 +14,9 @@ export const COLLECTIONS: Collection[] = [
     badge: "Natural Earth Series",
     category: "Natural Earth Series",
     piecesCount: 17,
+    itemCount: 17,
     heroImage: "/assets/catalogue/olivera-editorial-hero.jpg",
+    editorialImage: "/assets/catalogue/olivera-editorial-hero.jpg",
     rangeImage: "/assets/catalogue/olivera-product-range.png",
     galleryImages: [
       "/assets/catalogue/olivera-editorial-hero.jpg",
@@ -24,26 +27,29 @@ export const COLLECTIONS: Collection[] = [
     url: "/collections/olivera/"
   },
   {
-    id: "ivory",
+    id: "ivora",
+    slug: "ivora",
     number: "02",
     layer: "TIMELESS PORCELAIN",
     layerNumber: "02",
-    name: "IVORY",
-    series: "Timeless Ivory Series",
-    tagline: "Warm ivory tones. Refined silhouettes. Pure culinary clarity.",
-    shortDescriptor: "Timeless ivory-toned porcelain for refined dining experiences.",
-    badge: "Timeless Ivory Series",
-    category: "Timeless Ivory Series",
+    name: "IVORA",
+    series: "Timeless Ivora Series",
+    tagline: "Warm ivora tones. Refined silhouettes. Pure culinary clarity.",
+    shortDescriptor: "Timeless ivora-toned porcelain for refined dining experiences.",
+    badge: "Timeless Ivora Series",
+    category: "Timeless Ivora Series",
     piecesCount: 17,
-    heroImage: "/assets/catalogue/ivory-editorial-hero.png",
-    rangeImage: "/assets/catalogue/ivory/dinner plate main.png",
+    itemCount: 17,
+    heroImage: "/assets/catalogue/ivora-editorial-hero.png",
+    editorialImage: "/assets/catalogue/ivora-editorial-hero.png",
+    rangeImage: "/assets/catalogue/ivora/dinner plate main.png",
     galleryImages: [
-      "/assets/catalogue/ivory-editorial-hero.png",
-      "/assets/catalogue/ivory/platters main.png",
-      "/assets/catalogue/ivory/edge plate big main.png"
+      "/assets/catalogue/ivora-editorial-hero.png",
+      "/assets/catalogue/ivora/platters main.png",
+      "/assets/catalogue/ivora/edge plate big main.png"
     ],
-    description: "Timeless ivory-toned porcelain with refined silhouettes, designed for elegant dining and contemporary hospitality.",
-    url: "/collections/ivory/"
+    description: "Timeless ivora-toned porcelain with refined silhouettes, designed for elegant dining and contemporary hospitality.",
+    url: "/collections/ivora/"
   }
 ];
 
@@ -53,5 +59,9 @@ export function getCollections(): Collection[] {
 
 export function getCollectionBySlug(slug: string): Collection | undefined {
   if (!slug) return undefined;
-  return COLLECTIONS.find(c => c.id.toLowerCase() === slug.toLowerCase() || c.name.toLowerCase() === slug.toLowerCase());
+  const s = slug.toLowerCase().trim();
+  if (s === 'ivory' || s === 'ivora') {
+    return COLLECTIONS.find(c => c.id === 'ivora');
+  }
+  return COLLECTIONS.find(c => c.id.toLowerCase() === s || c.name.toLowerCase() === s);
 }
