@@ -75,6 +75,31 @@ export const COLLECTIONS: Collection[] = [
     ],
     description: "Artisan speckled brown vitrified stoneware featuring natural mineral flecks, organic silhouettes, and rich tactile warmth.",
     url: "/collections/speckled-brown/"
+  },
+  {
+    id: "greyborne",
+    slug: "greyborne",
+    number: "04",
+    layer: "REFINED STONEWARE",
+    layerNumber: "04",
+    name: "GREYBORNE",
+    series: "Refined Stoneware Series",
+    tagline: "Architectural slate grey. Velvety matte surface. Refined modern dining.",
+    shortDescriptor: "Architectural mineral slate grey stoneware with refined silhouettes and velvety matte glaze.",
+    badge: "Refined Stoneware Series",
+    category: "Refined Stoneware Series",
+    piecesCount: 25,
+    itemCount: 25,
+    heroImage: "/assets/catalogue/greyborne-editorial-hero.jpg",
+    editorialImage: "/assets/catalogue/greyborne-editorial-hero.jpg",
+    rangeImage: "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.png",
+    galleryImages: [
+      "/assets/catalogue/greyborne-editorial-hero.jpg",
+      "/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.png",
+      "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.png"
+    ],
+    description: "Architectural mineral slate grey stoneware featuring smooth matte surfaces, refined contours, and exceptional hospitality durability.",
+    url: "/collections/greyborne/"
   }
 ];
 
@@ -90,6 +115,9 @@ export function getCollectionBySlug(slug: string): Collection | undefined {
   }
   if (s === 'speckledbrown' || s === 'terraspeckle') {
     return COLLECTIONS.find(c => c.id === 'speckled-brown');
+  }
+  if (s === 'greyborne' || s === 'urbanegrey' || s === 'thegreybornecollection') {
+    return COLLECTIONS.find(c => c.id === 'greyborne');
   }
   return COLLECTIONS.find(
     c =>

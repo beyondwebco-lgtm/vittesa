@@ -78,7 +78,10 @@ export const FeaturedCollectionSection: React.FC = () => {
         </div>
 
         {/* 3. SPECKLED BROWN Collection Showcase */}
-        <div className="olivera-split-layout">
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
           {/* Left: Large Collection Image */}
           <div className="olivera-feature-media">
             <Link href="/collections/speckled-brown" aria-label="Explore SPECKLED BROWN Collection">
@@ -100,6 +103,35 @@ export const FeaturedCollectionSection: React.FC = () => {
             </p>
             <div className="olivera-feature-cta-wrap">
               <Link href="/collections/speckled-brown" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 4. GREYBORNE Collection Showcase */}
+        <div className="olivera-split-layout">
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/greyborne" aria-label="Explore GREYBORNE Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/greyborne-editorial-hero.jpg"
+                alt="GREYBORNE Stoneware Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">GREYBORNE</h2>
+            <p className="olivera-feature-desc">
+              Architectural mineral slate grey stoneware featuring smooth matte surfaces, refined contours, and exceptional hospitality durability.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/greyborne" className="olivera-feature-btn">
                 SHOP NOW
               </Link>
             </div>

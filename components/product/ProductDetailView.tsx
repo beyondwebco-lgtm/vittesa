@@ -87,11 +87,17 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
     product.collection.toUpperCase() === 'SPECKLED BROWN' ||
     product.collectionId === 'speckled-brown' ||
     product.collectionId === 'terra-speckle';
+  const isGreyborne =
+    product.collection.toUpperCase() === 'GREYBORNE' ||
+    product.collectionId === 'greyborne' ||
+    product.collectionId === 'urbane-grey';
 
   const collectionTag = isIvora
     ? '02 — TIMELESS IVORA SERIES • IVORA'
     : isSpeckledBrown
     ? '03 — ARTISAN EARTH SERIES • SPECKLED BROWN'
+    : isGreyborne
+    ? '04 — REFINED STONEWARE SERIES • GREYBORNE'
     : '01 — NATURAL EARTH SERIES • OLIVERA';
 
   const colSlug =
@@ -113,6 +119,8 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
         ? 'IVORA (Timeless Ivora Series)'
         : isSpeckledBrown
         ? 'SPECKLED BROWN (Artisan Earth Series)'
+        : isGreyborne
+        ? 'GREYBORNE (Refined Stoneware Series)'
         : `${product.collection} (Natural Earth Series)`,
     },
     { label: 'Category', val: product.categoryLabel || 'Tableware' },
@@ -135,11 +143,13 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
           ? 'Warm Ivora Matte Glaze'
           : isSpeckledBrown
           ? 'Speckled Brown Mineral Glaze'
+          : isGreyborne
+          ? 'Mineral Slate Grey Satin Glaze'
           : 'Softly Muted Olive-Grey Glaze'),
     },
     {
       label: 'Body Composition',
-      val: isSpeckledBrown
+      val: isSpeckledBrown || isGreyborne
         ? 'High-Density Vitrified Stoneware'
         : 'High-Density European Vitrified Porcelain',
     },

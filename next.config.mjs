@@ -63,6 +63,22 @@ const nextConfig = {
         destination: '/collections/speckled-brown/:slug',
       },
       {
+        source: '/collections/greyborne/index.html',
+        destination: '/collections/greyborne',
+      },
+      {
+        source: '/collections/greyborne/product.html',
+        destination: '/collections/greyborne/product',
+      },
+      {
+        source: '/collections/urbane-grey',
+        destination: '/collections/greyborne',
+      },
+      {
+        source: '/collections/urbane-grey/:slug',
+        destination: '/collections/greyborne/:slug',
+      },
+      {
         source: '/showroom.html',
         destination: '/showroom',
       },

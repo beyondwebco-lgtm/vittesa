@@ -2,17 +2,20 @@ import { Product } from '@/types/product';
 import { OLIVERA_PRODUCTS } from './olivera';
 import { IVORA_PRODUCTS } from './ivora';
 import { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
+import { GREYBORNE_PRODUCTS } from './greyborne';
 
 export { OLIVERA_PRODUCTS } from './olivera';
 export { IVORA_PRODUCTS } from './ivora';
 export { IVORY_PRODUCTS } from './ivory';
 export { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
+export { GREYBORNE_PRODUCTS } from './greyborne';
 
-// Active catalog contains verified OLIVERA, IVORA & SPECKLED BROWN collections (17 + 17 + 17 = 51 verified products)
+// Active catalog contains verified OLIVERA, IVORA, SPECKLED BROWN & GREYBORNE collections (17 + 17 + 17 + 25 = 76 verified products)
 export const ALL_PRODUCTS: Product[] = [
   ...OLIVERA_PRODUCTS,
   ...IVORA_PRODUCTS,
   ...SPECKLED_BROWN_PRODUCTS,
+  ...GREYBORNE_PRODUCTS,
 ];
 
 export function getAllProducts(): Product[] {
@@ -27,6 +30,12 @@ function matchesCollection(col: string, target: string): boolean {
   if (
     (c === 'speckledbrown' || c === 'terraspeckle') &&
     (t === 'speckledbrown' || t === 'terraspeckle')
+  ) {
+    return true;
+  }
+  if (
+    (c === 'greyborne' || c === 'urbanegrey' || c === 'thegreybornecollection') &&
+    (t === 'greyborne' || t === 'urbanegrey' || t === 'thegreybornecollection')
   ) {
     return true;
   }

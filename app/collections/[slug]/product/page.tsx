@@ -22,6 +22,8 @@ export async function generateMetadata({
       ? 'asei7103'
       : sLower === 'speckledbrown' || sLower === 'terraspeckle'
       ? 'assb5101'
+      : sLower === 'greyborne' || sLower === 'urbanegrey'
+      ? 'asgb5101'
       : 'ase07103';
   const targetId = id || queryProd || querySlug || defaultId;
 
@@ -51,6 +53,8 @@ export default async function ProductQueryPage({ params, searchParams }: PDPQuer
       ? 'asei7103'
       : sLower === 'speckledbrown' || sLower === 'terraspeckle'
       ? 'assb5101'
+      : sLower === 'greyborne' || sLower === 'urbanegrey'
+      ? 'asgb5101'
       : 'ase07103';
   const targetId = id || queryProd || querySlug || defaultId;
 
