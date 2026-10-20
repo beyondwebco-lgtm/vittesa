@@ -19,7 +19,19 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
   // Products filtered by collection first to compute category counts
   const collectionScopedProducts = useMemo(() => {
     if (activeCollection === 'all') return products;
-    return products.filter((p) => p.collection.toLowerCase() === activeCollection.toLowerCase());
+    const aCol = activeCollection.toLowerCase().replace(/[\s_-]+/g, '');
+    return products.filter((p) => {
+      const pCol = p.collection.toLowerCase().replace(/[\s_-]+/g, '');
+      if (pCol === aCol) return true;
+      if ((pCol === 'ivora' || pCol === 'ivory') && (aCol === 'ivora' || aCol === 'ivory')) return true;
+      if (
+        (pCol === 'speckledbrown' || pCol === 'terraspeckle') &&
+        (aCol === 'speckledbrown' || aCol === 'terraspeckle')
+      ) {
+        return true;
+      }
+      return false;
+    });
   }, [products, activeCollection]);
 
   const categories = useMemo(() => {
@@ -28,6 +40,7 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
       plates: 0,
       bowls: 0,
       platters: 0,
+      cups: 0,
       accessories: 0,
     };
 
@@ -45,16 +58,22 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
       { key: 'plates', label: `Plates (${counts.plates || 0})` },
       { key: 'bowls', label: `Bowls (${counts.bowls || 0})` },
       { key: 'platters', label: `Platters (${counts.platters || 0})` },
+      { key: 'cups', label: `Cups & Beverage (${counts.cups || 0})` },
       { key: 'accessories', label: `Accessories (${counts.accessories || 0})` },
     ];
   }, [collectionScopedProducts]);
 
   const filteredProducts = useMemo(() => {
+    const aCol = activeCollection.toLowerCase().replace(/[\s_-]+/g, '');
     return products.filter((p) => {
       // 1. Collection Filter
+      const pCol = p.collection.toLowerCase().replace(/[\s_-]+/g, '');
       const matchesCollection =
         activeCollection === 'all' ||
-        p.collection.toLowerCase() === activeCollection.toLowerCase();
+        pCol === aCol ||
+        ((pCol === 'ivora' || pCol === 'ivory') && (aCol === 'ivora' || aCol === 'ivory')) ||
+        ((pCol === 'speckledbrown' || pCol === 'terraspeckle') &&
+          (aCol === 'speckledbrown' || aCol === 'terraspeckle'));
 
       // 2. Category Filter
       const matchesCategory =
@@ -72,6 +91,19 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
       return matchesCollection && matchesCategory && matchesSearch;
     });
   }, [products, activeCollection, activeCategory, searchQuery]);
+
+  const collectionCounts = useMemo(() => {
+    let olivera = 0;
+    let ivora = 0;
+    let speckledBrown = 0;
+    products.forEach((p) => {
+      const c = p.collection.toLowerCase().replace(/[\s_-]+/g, '');
+      if (c === 'olivera') olivera++;
+      else if (c === 'ivora' || c === 'ivory') ivora++;
+      else if (c === 'speckledbrown' || c === 'terraspeckle') speckledBrown++;
+    });
+    return { olivera, ivora, speckledBrown };
+  }, [products]);
 
   return (
     <>
@@ -95,14 +127,21 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
                   className={`filter-chip ${activeCollection === 'olivera' ? 'active' : ''}`}
                   onClick={() => setActiveCollection('olivera')}
                 >
-                  OLIVERA (17)
+                  OLIVERA ({collectionCounts.olivera})
                 </button>
                 <button
                   type="button"
                   className={`filter-chip ${activeCollection === 'ivora' || activeCollection === 'ivory' ? 'active' : ''}`}
                   onClick={() => setActiveCollection('ivora')}
                 >
-                  IVORA (17)
+                  IVORA ({collectionCounts.ivora})
+                </button>
+                <button
+                  type="button"
+                  className={`filter-chip ${activeCollection === 'speckled-brown' ? 'active' : ''}`}
+                  onClick={() => setActiveCollection('speckled-brown')}
+                >
+                  SPECKLED BROWN ({collectionCounts.speckledBrown})
                 </button>
               </div>
             </div>

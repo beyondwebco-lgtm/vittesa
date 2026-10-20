@@ -60,6 +60,13 @@ export const Footer: React.FC = () => {
           </Link>
           <span style={{ color: 'var(--border-medium)' }}>•</span>
           <Link
+            href="/collections/speckled-brown"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            SPECKLED BROWN
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
             href="/showroom"
             style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
           >

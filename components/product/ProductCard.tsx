@@ -18,10 +18,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const hasMultipleImages = images.length > 1;
 
   const colSlug =
-    product.collection.toLowerCase() === 'ivory' ||
+    product.collectionId ||
+    (product.collection.toLowerCase() === 'ivory' ||
     product.collection.toLowerCase() === 'ivora'
       ? 'ivora'
-      : product.collection.toLowerCase();
+      : product.collection.toLowerCase().replace(/\s+/g, '-'));
 
   const productUrl =
     product.slug

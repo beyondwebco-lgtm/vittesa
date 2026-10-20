@@ -50,6 +50,31 @@ export const COLLECTIONS: Collection[] = [
     ],
     description: "Timeless ivora-toned porcelain with refined silhouettes, designed for elegant dining and contemporary hospitality.",
     url: "/collections/ivora/"
+  },
+  {
+    id: "speckled-brown",
+    slug: "speckled-brown",
+    number: "03",
+    layer: "ARTISAN STONEWARE",
+    layerNumber: "03",
+    name: "SPECKLED BROWN",
+    series: "Artisan Earth Series",
+    tagline: "Organic speckling. Tactile warmth. Timeless stoneware character.",
+    shortDescriptor: "Artisan speckled brown stoneware crafted for rustic warmth and contemporary dining.",
+    badge: "Artisan Earth Series",
+    category: "Artisan Earth Series",
+    piecesCount: 17,
+    itemCount: 17,
+    heroImage: "/assets/catalogue/speckled-brown-editorial-hero.png",
+    editorialImage: "/assets/catalogue/speckled-brown-editorial-hero.png",
+    rangeImage: "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.png",
+    galleryImages: [
+      "/assets/catalogue/speckled-brown-editorial-hero.png",
+      "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.png",
+      "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.png"
+    ],
+    description: "Artisan speckled brown vitrified stoneware featuring natural mineral flecks, organic silhouettes, and rich tactile warmth.",
+    url: "/collections/speckled-brown/"
   }
 ];
 
@@ -59,9 +84,17 @@ export function getCollections(): Collection[] {
 
 export function getCollectionBySlug(slug: string): Collection | undefined {
   if (!slug) return undefined;
-  const s = slug.toLowerCase().trim();
+  const s = slug.toLowerCase().trim().replace(/[\s_-]+/g, '');
   if (s === 'ivory' || s === 'ivora') {
     return COLLECTIONS.find(c => c.id === 'ivora');
   }
-  return COLLECTIONS.find(c => c.id.toLowerCase() === s || c.name.toLowerCase() === s);
+  if (s === 'speckledbrown' || s === 'terraspeckle') {
+    return COLLECTIONS.find(c => c.id === 'speckled-brown');
+  }
+  return COLLECTIONS.find(
+    c =>
+      c.id.toLowerCase().replace(/[\s_-]+/g, '') === s ||
+      c.name.toLowerCase().replace(/[\s_-]+/g, '') === s
+  );
 }
+

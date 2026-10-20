@@ -83,9 +83,22 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
   const isIvora =
     product.collection.toUpperCase() === 'IVORA' ||
     product.collection.toUpperCase() === 'IVORY';
+  const isSpeckledBrown =
+    product.collection.toUpperCase() === 'SPECKLED BROWN' ||
+    product.collectionId === 'speckled-brown' ||
+    product.collectionId === 'terra-speckle';
+
   const collectionTag = isIvora
-    ? '01 — TIMELESS IVORA SERIES • IVORA'
-    : '02 — NATURAL EARTH SERIES • OLIVERA';
+    ? '02 — TIMELESS IVORA SERIES • IVORA'
+    : isSpeckledBrown
+    ? '03 — ARTISAN EARTH SERIES • SPECKLED BROWN'
+    : '01 — NATURAL EARTH SERIES • OLIVERA';
+
+  const colSlug =
+    product.collectionId ||
+    (isIvora
+      ? 'ivora'
+      : product.collection.toLowerCase().replace(/\s+/g, '-'));
 
   const specDim =
     product.dimensions ||
@@ -98,6 +111,8 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
       label: 'Collection',
       val: isIvora
         ? 'IVORA (Timeless Ivora Series)'
+        : isSpeckledBrown
+        ? 'SPECKLED BROWN (Artisan Earth Series)'
         : `${product.collection} (Natural Earth Series)`,
     },
     { label: 'Category', val: product.categoryLabel || 'Tableware' },
@@ -116,9 +131,18 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
       label: 'Surface Finish',
       val:
         (product.specs && product.specs.finish) ||
-        (isIvora ? 'Warm Ivora Matte Glaze' : 'Softly Muted Olive-Grey Glaze'),
+        (isIvora
+          ? 'Warm Ivora Matte Glaze'
+          : isSpeckledBrown
+          ? 'Speckled Brown Mineral Glaze'
+          : 'Softly Muted Olive-Grey Glaze'),
     },
-    { label: 'Body Composition', val: 'High-Density European Vitrified Porcelain' },
+    {
+      label: 'Body Composition',
+      val: isSpeckledBrown
+        ? 'High-Density Vitrified Stoneware'
+        : 'High-Density European Vitrified Porcelain',
+    },
     { label: 'Commercial Suitability', val: 'Heavy Hospitality & Industrial Dishwasher Safe' },
     { label: 'Thermal Resistance', val: 'Microwave & Commercial Warming Oven Safe' },
   ];
@@ -130,7 +154,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
         <div className="container">
           <div className="pdp-breadcrumbs-wrap">
             <Link
-              href={`/collections/${product.collection.toLowerCase()}`}
+              href={`/collections/${colSlug}`}
               className="pdp-back-link"
             >
               <svg
@@ -151,7 +175,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
             <div className="pdp-breadcrumbs">
               <Link href="/">Home</Link>
               <span className="sep">/</span>
-              <Link href={`/collections/${product.collection.toLowerCase()}`}>
+              <Link href={`/collections/${colSlug}`}>
                 {product.collection}
               </Link>
               <span className="sep">/</span>

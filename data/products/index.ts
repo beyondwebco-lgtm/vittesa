@@ -1,23 +1,35 @@
 import { Product } from '@/types/product';
 import { OLIVERA_PRODUCTS } from './olivera';
 import { IVORA_PRODUCTS } from './ivora';
+import { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
 
 export { OLIVERA_PRODUCTS } from './olivera';
 export { IVORA_PRODUCTS } from './ivora';
 export { IVORY_PRODUCTS } from './ivory';
+export { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
 
-// Active catalog contains verified OLIVERA & IVORA collections (17 + 17 = 34 verified products)
-export const ALL_PRODUCTS: Product[] = [...OLIVERA_PRODUCTS, ...IVORA_PRODUCTS];
+// Active catalog contains verified OLIVERA, IVORA & SPECKLED BROWN collections (17 + 17 + 17 = 51 verified products)
+export const ALL_PRODUCTS: Product[] = [
+  ...OLIVERA_PRODUCTS,
+  ...IVORA_PRODUCTS,
+  ...SPECKLED_BROWN_PRODUCTS,
+];
 
 export function getAllProducts(): Product[] {
   return ALL_PRODUCTS;
 }
 
 function matchesCollection(col: string, target: string): boolean {
-  const c = col.toLowerCase().trim();
-  const t = target.toLowerCase().trim();
+  const c = col.toLowerCase().trim().replace(/[\s_-]+/g, '');
+  const t = target.toLowerCase().trim().replace(/[\s_-]+/g, '');
   if (c === t) return true;
   if ((c === 'ivora' || c === 'ivory') && (t === 'ivora' || t === 'ivory')) return true;
+  if (
+    (c === 'speckledbrown' || c === 'terraspeckle') &&
+    (t === 'speckledbrown' || t === 'terraspeckle')
+  ) {
+    return true;
+  }
   return false;
 }
 
@@ -65,16 +77,16 @@ export function getProductsByCategory(category: string, collectionSlug?: string)
 }
 
 export function getFeaturedProducts(limit = 8): Product[] {
-  // Curated showcase featuring pieces from both Olivera & Ivora
+  // Curated showcase featuring pieces across Olivera, Ivora & Speckled Brown
   const featuredIds = [
     'ase07103', // Olivera Dinner Plate
     'asei7103', // Ivora Dinner Plate
+    'assb5104', // Speckled Brown Flat Plate 30 cm
     'ase07109', // Olivera Deep Coupe
     'asei7114', // Ivora Edge Plate Big
+    'assb5109', // Speckled Brown Deep Coupe 22.5 cm
     'ase07122', // Olivera Serving Bowl 19 cm
-    'asei7122', // Ivora Serving Bowl 19 cm
-    'ase07153', // Olivera Platter Small
-    'asei7134', // Ivora Creamer
+    'assb5131', // Speckled Brown Barrel Mug 350 ml
   ];
 
   const featured = featuredIds
@@ -88,3 +100,4 @@ export function getFeaturedProducts(limit = 8): Product[] {
 
   return featured.slice(0, limit);
 }
+

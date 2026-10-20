@@ -46,7 +46,10 @@ export const FeaturedCollectionSection: React.FC = () => {
         </div>
 
         {/* 2. IVORA Collection Showcase */}
-        <div className="olivera-split-layout">
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
           {/* Left: Large Collection Image */}
           <div className="olivera-feature-media">
             <Link href="/collections/ivora" aria-label="Explore IVORA Collection">
@@ -68,6 +71,35 @@ export const FeaturedCollectionSection: React.FC = () => {
             </p>
             <div className="olivera-feature-cta-wrap">
               <Link href="/collections/ivora" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. SPECKLED BROWN Collection Showcase */}
+        <div className="olivera-split-layout">
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/speckled-brown" aria-label="Explore SPECKLED BROWN Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/speckled-brown-editorial-hero.png"
+                alt="SPECKLED BROWN Stoneware Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">SPECKLED BROWN</h2>
+            <p className="olivera-feature-desc">
+              Artisan speckled brown vitrified stoneware featuring natural mineral flecks, organic silhouettes, and rich tactile warmth.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/speckled-brown" className="olivera-feature-btn">
                 SHOP NOW
               </Link>
             </div>

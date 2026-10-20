@@ -47,6 +47,22 @@ const nextConfig = {
         destination: '/collections/ivora/product',
       },
       {
+        source: '/collections/speckled-brown/index.html',
+        destination: '/collections/speckled-brown',
+      },
+      {
+        source: '/collections/speckled-brown/product.html',
+        destination: '/collections/speckled-brown/product',
+      },
+      {
+        source: '/collections/terra-speckle',
+        destination: '/collections/speckled-brown',
+      },
+      {
+        source: '/collections/terra-speckle/:slug',
+        destination: '/collections/speckled-brown/:slug',
+      },
+      {
         source: '/showroom.html',
         destination: '/showroom',
       },

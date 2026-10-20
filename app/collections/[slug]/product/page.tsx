@@ -16,8 +16,13 @@ export async function generateMetadata({
 }: PDPQueryProps): Promise<Metadata> {
   const { slug } = await params;
   const { id, product: queryProd, slug: querySlug } = await searchParams;
+  const sLower = slug.toLowerCase().replace(/[\s_-]+/g, '');
   const defaultId =
-    slug.toLowerCase() === 'ivora' || slug.toLowerCase() === 'ivory' ? 'asei7103' : 'ase07103';
+    sLower === 'ivora' || sLower === 'ivory'
+      ? 'asei7103'
+      : sLower === 'speckledbrown' || sLower === 'terraspeckle'
+      ? 'assb5101'
+      : 'ase07103';
   const targetId = id || queryProd || querySlug || defaultId;
 
   const product = getProductById(targetId, slug);
@@ -40,8 +45,13 @@ export async function generateMetadata({
 export default async function ProductQueryPage({ params, searchParams }: PDPQueryProps) {
   const { slug } = await params;
   const { id, product: queryProd, slug: querySlug } = await searchParams;
+  const sLower = slug.toLowerCase().replace(/[\s_-]+/g, '');
   const defaultId =
-    slug.toLowerCase() === 'ivora' || slug.toLowerCase() === 'ivory' ? 'asei7103' : 'ase07103';
+    sLower === 'ivora' || sLower === 'ivory'
+      ? 'asei7103'
+      : sLower === 'speckledbrown' || sLower === 'terraspeckle'
+      ? 'assb5101'
+      : 'ase07103';
   const targetId = id || queryProd || querySlug || defaultId;
 
   let product = getProductById(targetId, slug);

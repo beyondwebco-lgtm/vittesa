@@ -13,13 +13,19 @@ export async function generateStaticParams() {
   const params: { slug: string; id: string }[] = [];
 
   for (const p of products) {
+    const colSlug =
+      p.collectionId ||
+      (p.collection.toLowerCase() === 'ivory' || p.collection.toLowerCase() === 'ivora'
+        ? 'ivora'
+        : p.collection.toLowerCase().replace(/\s+/g, '-'));
+
     params.push({
-      slug: p.collection.toLowerCase(),
+      slug: colSlug,
       id: p.id,
     });
     if (p.slug) {
       params.push({
-        slug: p.collection.toLowerCase(),
+        slug: colSlug,
         id: p.slug,
       });
     }

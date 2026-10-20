@@ -24,7 +24,7 @@ export const FeaturedProductsSection: React.FC = () => {
             Selected for Your Table
           </h2>
           <p style={{ color: 'var(--ink-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-            Explore selected pieces from the OLIVERA and IVORA porcelain collections.
+            Explore selected pieces from the OLIVERA, IVORA, and SPECKLED BROWN tableware collections.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export const FeaturedProductsSection: React.FC = () => {
             className="btn-primary"
             style={{ padding: '0.95rem 2.5rem', fontSize: '0.8125rem' }}
           >
-            VIEW ALL PRODUCTS (34 PIECES) →
+            VIEW ALL PRODUCTS (51 PIECES) →
           </Link>
         </div>
       </div>
