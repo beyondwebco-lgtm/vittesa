@@ -39,3 +39,12 @@ Thumbs.db
 .cache/
 *.bin
 public/extracted/
+.vercel/
+scratch/
+
+# Raw source assets (stored outside repo)
+Ivora Collection/
+speckled brown collection/
+The_Greyborne_Collection_renamed/
+documents/
+

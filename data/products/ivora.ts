@@ -507,5 +507,3 @@ export const IVORA_PRODUCTS: Product[] = [
     editorialCaption: "Graceful 27.5 x 18 cm presentation platter designed for tableside carving and entrée service."
   }
 ];
-
-export const IVORY_PRODUCTS = IVORA_PRODUCTS;

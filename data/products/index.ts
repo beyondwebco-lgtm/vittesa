@@ -6,7 +6,6 @@ import { GREYBORNE_PRODUCTS } from './greyborne';
 
 export { OLIVERA_PRODUCTS } from './olivera';
 export { IVORA_PRODUCTS } from './ivora';
-export { IVORY_PRODUCTS } from './ivory';
 export { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
 export { GREYBORNE_PRODUCTS } from './greyborne';
 
