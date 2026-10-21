@@ -47,10 +47,14 @@ export default function OliveraCollectionPage() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/catalogue/olivera-editorial-hero.jpg"
+              src="/assets/catalogue/olivera-editorial-hero.webp"
+              srcSet="/assets/catalogue/olivera-editorial-hero-800w.webp 800w, /assets/catalogue/olivera-editorial-hero.webp 1600w"
+              sizes="(max-width: 768px) 100vw, 1040px"
               alt="OLIVERA Porcelain Tableware Collection"
               className="olivera-hero-img"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>

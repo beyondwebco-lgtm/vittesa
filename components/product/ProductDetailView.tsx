@@ -218,6 +218,8 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                       alt={`${product.name} (View ${idx + 1})`}
                       className={`carousel-slide ${idx === currentSlide ? 'active' : ''}`}
                       loading={idx === 0 ? 'eager' : 'lazy'}
+                      fetchPriority={idx === 0 ? 'high' : 'auto'}
+                      decoding="async"
                     />
                   ))}
                 </div>
@@ -298,7 +300,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                       onClick={() => setCurrentSlide(idx)}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt={`Thumbnail ${idx + 1}`} />
+                      <img src={src} alt={`Thumbnail ${idx + 1}`} loading="lazy" decoding="async" />
                     </button>
                   ))}
                 </div>

@@ -47,10 +47,14 @@ export default function SpeckledBrownCollectionPage() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/catalogue/speckled-brown-editorial-hero.png"
+              src="/assets/catalogue/speckled-brown-collection.webp"
+              srcSet="/assets/catalogue/speckled-brown-collection-800w.webp 800w, /assets/catalogue/speckled-brown-collection.webp 1600w"
+              sizes="(max-width: 768px) 100vw, 1040px"
               alt="SPECKLED BROWN Stoneware Tableware Collection"
               className="olivera-hero-img"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>

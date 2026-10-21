@@ -78,14 +78,25 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={collection.editorialImage || collection.heroImage || '/assets/catalogue/olivera-editorial-hero.jpg'}
-              alt={`${collection.name} Porcelain Tableware Collection`}
-              className="olivera-hero-img"
-              loading="eager"
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
+            {(() => {
+              const imgSrc = collection.editorialImage || collection.heroImage || '/assets/catalogue/olivera-editorial-hero.webp';
+              const ext = imgSrc.lastIndexOf('.');
+              const base = ext !== -1 ? imgSrc.substring(0, ext) : imgSrc;
+              return (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={imgSrc}
+                  srcSet={`${base}-800w.webp 800w, ${base}.webp 1600w`}
+                  sizes="(max-width: 768px) 100vw, 1040px"
+                  alt={`${collection.name} Porcelain Tableware Collection`}
+                  className="olivera-hero-img"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              );
+            })()}
           </div>
         </div>
       </section>

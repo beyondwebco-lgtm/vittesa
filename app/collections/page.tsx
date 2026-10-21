@@ -37,10 +37,19 @@ export default function CollectionsGatewayPage() {
             >
               <div className="olivera-feature-media">
                 <Link href={`/collections/${col.slug || col.id}`} aria-label={`Explore ${col.name}`}>
-                  <CollectionFadeImage
-                    src={col.editorialImage || col.heroImage}
-                    alt={`${col.name} Porcelain Collection`}
-                  />
+                  {(() => {
+                    const img = col.editorialImage || col.heroImage;
+                    const ext = img.lastIndexOf('.');
+                    const base = ext !== -1 ? img.substring(0, ext) : img;
+                    return (
+                      <CollectionFadeImage
+                        src={img}
+                        srcSet={`${base}-800w.webp 800w, ${base}.webp 1600w`}
+                        sizes="(max-width: 768px) 100vw, 600px"
+                        alt={`${col.name} Porcelain Collection`}
+                      />
+                    );
+                  })()}
                 </Link>
               </div>
 

@@ -52,9 +52,10 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <Link href="/" className="brand-logo-wrap mobile-logo-wrap" aria-label="VITTESA Home" onClick={onClose}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/logo/vittesa-monogram-gold.png"
+              src="/assets/logo/vittesa-monogram-gold.webp"
               alt="VITTESA"
               className="brand-logo-wordmark"
+              decoding="async"
             />
           </Link>
           <button className="btn-close-mobile-nav" aria-label="Close Navigation" onClick={onClose}>

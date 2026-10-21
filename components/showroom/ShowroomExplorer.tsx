@@ -201,8 +201,8 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
 
           {/* Showroom Cards Grid */}
           <div className="showroom-grid products-grid-catalog olivera-cards-grid" id="showroom-grid">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {filteredProducts.map((product, idx) => (
+              <ProductCard key={product.id} product={product} priority={idx < 4} />
             ))}
           </div>
 

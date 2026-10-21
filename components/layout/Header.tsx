@@ -44,9 +44,11 @@ export const Header: React.FC = () => {
             <Link href="/" className="brand-logo-wrap" aria-label="VITTESA Home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/logo/vittesa-monogram-gold.png"
+                src="/assets/logo/vittesa-monogram-gold.webp"
                 alt="VITTESA — Porcelain Maison"
                 className="brand-logo-wordmark"
+                fetchPriority="high"
+                decoding="async"
               />
             </Link>
 

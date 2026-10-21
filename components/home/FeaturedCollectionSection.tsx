@@ -23,10 +23,13 @@ export const FeaturedCollectionSection: React.FC = () => {
             <Link href="/collections/olivera" aria-label="Explore OLIVERA Collection">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/catalogue/olivera-editorial-hero.jpg"
+                src="/assets/catalogue/olivera-editorial-hero.webp"
+                srcSet="/assets/catalogue/olivera-editorial-hero-800w.webp 800w, /assets/catalogue/olivera-editorial-hero.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
                 alt="OLIVERA Porcelain Collection Editorial"
                 className="olivera-feature-img"
                 loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>
@@ -55,10 +58,13 @@ export const FeaturedCollectionSection: React.FC = () => {
             <Link href="/collections/ivora" aria-label="Explore IVORA Collection">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/catalogue/ivora-editorial-hero.png"
+                src="/assets/catalogue/ivora-editorial-hero.webp"
+                srcSet="/assets/catalogue/ivora-editorial-hero-800w.webp 800w, /assets/catalogue/ivora-editorial-hero.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
                 alt="IVORA Porcelain Tableware Collection Editorial"
                 className="olivera-feature-img"
                 loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>
@@ -87,10 +93,13 @@ export const FeaturedCollectionSection: React.FC = () => {
             <Link href="/collections/speckled-brown" aria-label="Explore SPECKLED BROWN Collection">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/catalogue/speckled-brown-editorial-hero.png"
+                src="/assets/catalogue/speckled-brown-collection.webp"
+                srcSet="/assets/catalogue/speckled-brown-collection-800w.webp 800w, /assets/catalogue/speckled-brown-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
                 alt="SPECKLED BROWN Stoneware Tableware Collection Editorial"
                 className="olivera-feature-img"
                 loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>
@@ -116,10 +125,13 @@ export const FeaturedCollectionSection: React.FC = () => {
             <Link href="/collections/greyborne" aria-label="Explore GREYBORNE Collection">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/catalogue/greyborne-editorial-hero.jpg"
+                src="/assets/catalogue/greyborne-collection.webp"
+                srcSet="/assets/catalogue/greyborne-collection-800w.webp 800w, /assets/catalogue/greyborne-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
                 alt="GREYBORNE Stoneware Tableware Collection Editorial"
                 className="olivera-feature-img"
                 loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>

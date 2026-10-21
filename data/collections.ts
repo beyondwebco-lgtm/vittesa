@@ -15,13 +15,13 @@ export const COLLECTIONS: Collection[] = [
     category: "Natural Earth Series",
     piecesCount: 17,
     itemCount: 17,
-    heroImage: "/assets/catalogue/olivera-editorial-hero.jpg",
-    editorialImage: "/assets/catalogue/olivera-editorial-hero.jpg",
-    rangeImage: "/assets/catalogue/olivera-product-range.png",
+    heroImage: "/assets/catalogue/olivera-editorial-hero.webp",
+    editorialImage: "/assets/catalogue/olivera-editorial-hero.webp",
+    rangeImage: "/assets/catalogue/olivera-product-range.webp",
     galleryImages: [
-      "/assets/catalogue/olivera-editorial-hero.jpg",
-      "/assets/catalogue/olivera/olivera-showcase-tabletop.jpeg",
-      "/assets/catalogue/olivera/olivera-showcase-bowls.jpeg"
+      "/assets/catalogue/olivera-editorial-hero.webp",
+      "/assets/catalogue/olivera/olivera-showcase-tabletop.webp",
+      "/assets/catalogue/olivera/olivera-showcase-bowls.webp"
     ],
     description: "Softly muted olive-grey porcelain with rounded, organic silhouettes crafted for contemporary dining.",
     url: "/collections/olivera/"
@@ -40,13 +40,13 @@ export const COLLECTIONS: Collection[] = [
     category: "Timeless Ivora Series",
     piecesCount: 17,
     itemCount: 17,
-    heroImage: "/assets/catalogue/ivora-editorial-hero.png",
-    editorialImage: "/assets/catalogue/ivora-editorial-hero.png",
-    rangeImage: "/assets/catalogue/ivora/dinner plate main.png",
+    heroImage: "/assets/catalogue/ivora-editorial-hero.webp",
+    editorialImage: "/assets/catalogue/ivora-editorial-hero.webp",
+    rangeImage: "/assets/catalogue/ivora/dinner plate main.webp",
     galleryImages: [
-      "/assets/catalogue/ivora-editorial-hero.png",
-      "/assets/catalogue/ivora/platters main.png",
-      "/assets/catalogue/ivora/edge plate big main.png"
+      "/assets/catalogue/ivora-editorial-hero.webp",
+      "/assets/catalogue/ivora/platters main.webp",
+      "/assets/catalogue/ivora/edge plate big main.webp"
     ],
     description: "Timeless ivora-toned porcelain with refined silhouettes, designed for elegant dining and contemporary hospitality.",
     url: "/collections/ivora/"
@@ -65,13 +65,13 @@ export const COLLECTIONS: Collection[] = [
     category: "Artisan Earth Series",
     piecesCount: 17,
     itemCount: 17,
-    heroImage: "/assets/catalogue/speckled-brown-editorial-hero.png",
-    editorialImage: "/assets/catalogue/speckled-brown-editorial-hero.png",
-    rangeImage: "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.png",
+    heroImage: "/assets/catalogue/speckled-brown-collection.webp",
+    editorialImage: "/assets/catalogue/speckled-brown-collection.webp",
+    rangeImage: "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.webp",
     galleryImages: [
-      "/assets/catalogue/speckled-brown-editorial-hero.png",
-      "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.png"
+      "/assets/catalogue/speckled-brown-collection.webp",
+      "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.webp"
     ],
     description: "Artisan speckled brown vitrified stoneware featuring natural mineral flecks, organic silhouettes, and rich tactile warmth.",
     url: "/collections/speckled-brown/"
@@ -90,13 +90,13 @@ export const COLLECTIONS: Collection[] = [
     category: "Refined Stoneware Series",
     piecesCount: 25,
     itemCount: 25,
-    heroImage: "/assets/catalogue/greyborne-editorial-hero.jpg",
-    editorialImage: "/assets/catalogue/greyborne-editorial-hero.jpg",
-    rangeImage: "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.png",
+    heroImage: "/assets/catalogue/greyborne-collection.webp",
+    editorialImage: "/assets/catalogue/greyborne-collection.webp",
+    rangeImage: "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.webp",
     galleryImages: [
-      "/assets/catalogue/greyborne-editorial-hero.jpg",
-      "/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.png",
-      "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.png"
+      "/assets/catalogue/greyborne-collection.webp",
+      "/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.webp"
     ],
     description: "Architectural mineral slate grey stoneware featuring smooth matte surfaces, refined contours, and exceptional hospitality durability.",
     url: "/collections/greyborne/"

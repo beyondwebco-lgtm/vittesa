@@ -30,10 +30,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Plate 20 CM 27 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Plate 20 CM 27 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Plate 20 CM 27 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Plate 20 CM 27 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Plate 20 CM 27 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Plate 20 CM 27 CM - Lifestyle.webp",
     "editorialCaption": "Foundational dining duo with organic mineral speckling and understated artisanal warmth."
   },
   {
@@ -59,10 +59,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.webp",
     "editorialCaption": "Artisanal plate for rustic dining, handmade pastas, and farm-to-table salads."
   },
   {
@@ -88,10 +88,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Edge Plate 20.5 CM 25.5 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Edge Plate 20.5 CM 25.5 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Edge Plate 20.5 CM 25.5 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Edge Plate 20.5 CM 25.5 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Edge Plate 20.5 CM 25.5 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Edge Plate 20.5 CM 25.5 CM - Lifestyle.webp",
     "editorialCaption": "Architectural vertical rim edge plates with warm contrasting lip."
   },
   {
@@ -117,10 +117,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Elipse Plate 18 CM 23 CM 28 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Elipse Plate 18 CM 23 CM 28 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Elipse Plate 18 CM 23 CM 28 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Elipse Plate 18 CM 23 CM 28 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Elipse Plate 18 CM 23 CM 28 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Elipse Plate 18 CM 23 CM 28 CM - Lifestyle.webp",
     "editorialCaption": "Soft elliptical silhouette plates ranging from side appetizer to main course."
   },
   {
@@ -147,10 +147,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Footed Bowl 14.5 CM 550 ML, 15 CM 850 ML - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Footed Bowl 14.5 CM 550 ML, 15 CM 850 ML - Studio.png"
+      "/assets/catalogue/speckled-brown/Footed Bowl 14.5 CM 550 ML, 15 CM 850 ML - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Footed Bowl 14.5 CM 550 ML, 15 CM 850 ML - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Footed Bowl 14.5 CM 550 ML, 15 CM 850 ML - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Footed Bowl 14.5 CM 550 ML, 15 CM 850 ML - Lifestyle.webp",
     "editorialCaption": "Artisanal footed bowls with elevated base for ramen, noodles, and broths."
   },
   {
@@ -176,10 +176,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/V Bowl 16 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/V Bowl 16 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/V Bowl 16 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/V Bowl 16 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/V Bowl 16 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/V Bowl 16 CM - Lifestyle.webp",
     "editorialCaption": "Tapered conical V-profile hospitality bowl for composed salads and grains."
   },
   {
@@ -205,10 +205,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Elipse Bowl 16 CM 18 CM 22 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Elipse Bowl 16 CM 18 CM 22 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Elipse Bowl 16 CM 18 CM 22 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Elipse Bowl 16 CM 18 CM 22 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Elipse Bowl 16 CM 18 CM 22 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Elipse Bowl 16 CM 18 CM 22 CM - Lifestyle.webp",
     "editorialCaption": "Organic elliptical nesting bowls for dynamic table styling."
   },
   {
@@ -234,10 +234,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Single) - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Single) - Studio.png"
+      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Single) - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Single) - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Single) - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Single) - Lifestyle.webp",
     "editorialCaption": "Deep coupe with elevated curving rim, crafted for contemporary pasta, risotto, and grain bowls."
   },
   {
@@ -264,10 +264,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Pair) - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Pair) - Studio.png"
+      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Pair) - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Pair) - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Pair) - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Pair) - Lifestyle.webp",
     "editorialCaption": "Curated pair of 22.5 cm deep coupes for shared dining and couple course services."
   },
   {
@@ -293,10 +293,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Bowls Dinner 9.5 CM Katori 9 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Bowls Dinner 9.5 CM Katori 9 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Bowls Dinner 9.5 CM Katori 9 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Bowls Dinner 9.5 CM Katori 9 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Bowls Dinner 9.5 CM Katori 9 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Bowls Dinner 9.5 CM Katori 9 CM - Lifestyle.webp",
     "editorialCaption": "Essential companion bowls for side portions, condiments, and traditional service."
   },
   {
@@ -322,10 +322,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Soup Bowl 325 ML - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Soup Bowl 325 ML - Studio.png"
+      "/assets/catalogue/speckled-brown/Soup Bowl 325 ML - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Soup Bowl 325 ML - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Soup Bowl 325 ML - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Soup Bowl 325 ML - Lifestyle.webp",
     "editorialCaption": "Classic 325 ml soup bowl with gentle rim taper and earthy speckled glaze."
   },
   {
@@ -350,10 +350,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Soup Spoon - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Soup Spoon - Studio.png"
+      "/assets/catalogue/speckled-brown/Soup Spoon - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Soup Spoon - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Soup Spoon - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Soup Spoon - Lifestyle.webp",
     "editorialCaption": "Handcrafted stoneware soup spoon designed for broths and Asian dining services."
   },
   {
@@ -379,10 +379,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.webp",
     "editorialCaption": "Expansive 30 cm flat statement platter for chef tasting courses and fine dining presentations."
   },
   {
@@ -409,10 +409,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Barista Cup 250 ML Saucer 16 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Barista Cup 250 ML Saucer 16 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Barista Cup 250 ML Saucer 16 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Barista Cup 250 ML Saucer 16 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Barista Cup 250 ML Saucer 16 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Barista Cup 250 ML Saucer 16 CM - Lifestyle.webp",
     "editorialCaption": "Artisanal specialty coffee cup with warm tactile glaze and matching 16 cm saucer."
   },
   {
@@ -439,10 +439,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Expresso Cup 110 ML Saucer 12.5 CM - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Expresso Cup 110 ML Saucer 12.5 CM - Studio.png"
+      "/assets/catalogue/speckled-brown/Expresso Cup 110 ML Saucer 12.5 CM - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Expresso Cup 110 ML Saucer 12.5 CM - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Expresso Cup 110 ML Saucer 12.5 CM - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Expresso Cup 110 ML Saucer 12.5 CM - Lifestyle.webp",
     "editorialCaption": "110 ml espresso cup with organic speckled finish and companion saucer."
   },
   {
@@ -468,10 +468,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Barrel Mug 350 ML - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Barrel Mug 350 ML - Studio.png"
+      "/assets/catalogue/speckled-brown/Barrel Mug 350 ML - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Barrel Mug 350 ML - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Barrel Mug 350 ML - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Barrel Mug 350 ML - Lifestyle.webp",
     "editorialCaption": "Generous 350 ml comfort barrel mug with organic speckled finish."
   },
   {
@@ -497,10 +497,10 @@ export const SPECKLED_BROWN_PRODUCTS: Product[] = [
       "series": "Artisan Earth Series"
     },
     "images": [
-      "/assets/catalogue/speckled-brown/Tea Pot 685 ML - Lifestyle.png",
-      "/assets/catalogue/speckled-brown/Tea Pot 685 ML - Studio.png"
+      "/assets/catalogue/speckled-brown/Tea Pot 685 ML - Lifestyle.webp",
+      "/assets/catalogue/speckled-brown/Tea Pot 685 ML - Studio.webp"
     ],
-    "image": "/assets/catalogue/speckled-brown/Tea Pot 685 ML - Lifestyle.png",
+    "image": "/assets/catalogue/speckled-brown/Tea Pot 685 ML - Lifestyle.webp",
     "editorialCaption": "Artisanal ceramic teapot with precision drip-free spout and ergonomic handle."
   }
 ];

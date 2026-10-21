@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     'Discover OLIVERA by VITTESA — considered European-style porcelain tableware defined by softly muted olive-grey tones and organic silhouettes.',
   icons: {
-    icon: '/assets/logo/vittesa-monogram-emblem.png',
+    icon: '/assets/logo/vittesa-monogram-emblem.webp',
   },
 };
 
@@ -37,6 +37,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${plusJakarta.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/hero/sunlit-artisan-stoneware-table-setting.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/hero/sunlit-artisan-stoneware-table-setting-800w.webp"
+          type="image/webp"
+          media="(max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/logo/vittesa-monogram-gold.webp"
+          type="image/webp"
+        />
+      </head>
       <body className="olivera-showroom-home">
         <AnnouncementBar />
         <Header />

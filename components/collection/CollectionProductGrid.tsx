@@ -63,8 +63,8 @@ export const CollectionProductGrid: React.FC<CollectionProductGridProps> = ({ pr
 
         {/* Product Cards Grid */}
         <div className="products-grid-catalog olivera-cards-grid" id="collection-products-grid">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {filteredProducts.map((product, idx) => (
+            <ProductCard key={product.id} product={product} priority={idx < 4} />
           ))}
         </div>
       </div>

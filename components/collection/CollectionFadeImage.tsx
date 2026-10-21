@@ -6,12 +6,16 @@ interface CollectionFadeImageProps {
   src: string;
   alt: string;
   className?: string;
+  srcSet?: string;
+  sizes?: string;
 }
 
 export const CollectionFadeImage: React.FC<CollectionFadeImageProps> = ({
   src,
   alt,
   className = 'olivera-feature-img',
+  srcSet,
+  sizes,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement | null>(null);
@@ -36,10 +40,13 @@ export const CollectionFadeImage: React.FC<CollectionFadeImageProps> = ({
       <img
         ref={imgRef}
         src={src}
+        srcSet={srcSet}
+        sizes={sizes}
         alt={alt}
         className={`${className} collection-fade-img ${isLoaded ? 'is-loaded' : ''}`}
         onLoad={() => setIsLoaded(true)}
         loading="lazy"
+        decoding="async"
       />
     </>
   );

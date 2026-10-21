@@ -29,10 +29,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/dinner plate main.png",
-      "/assets/catalogue/ivora/dinner plate.png"
+      "/assets/catalogue/ivora/dinner plate main.webp",
+      "/assets/catalogue/ivora/dinner plate.webp"
     ],
-    image: "/assets/catalogue/ivora/dinner plate main.png",
+    image: "/assets/catalogue/ivora/dinner plate main.webp",
     editorialCaption: "Generous 27 cm dining canvas with architectural low rim in warm ivora mineral glaze."
   },
   {
@@ -58,10 +58,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/saladplate 21 cm main.png",
-      "/assets/catalogue/ivora/salad plate.png"
+      "/assets/catalogue/ivora/saladplate 21 cm main.webp",
+      "/assets/catalogue/ivora/salad plate.webp"
     ],
-    image: "/assets/catalogue/ivora/saladplate 21 cm main.png",
+    image: "/assets/catalogue/ivora/saladplate 21 cm main.webp",
     editorialCaption: "Balanced 21 cm plate for appetizer, salad, or dessert course presentations."
   },
   {
@@ -87,10 +87,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/deep coupe main.png",
-      "/assets/catalogue/ivora/deep coupe.png"
+      "/assets/catalogue/ivora/deep coupe main.webp",
+      "/assets/catalogue/ivora/deep coupe.webp"
     ],
-    image: "/assets/catalogue/ivora/deep coupe main.png",
+    image: "/assets/catalogue/ivora/deep coupe main.webp",
     editorialCaption: "Organic 23 cm coupe depth engineered for sauced compositions and contemporary pasta."
   },
   {
@@ -116,10 +116,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/edge plate big main.png",
-      "/assets/catalogue/ivora/edge plate big.png"
+      "/assets/catalogue/ivora/edge plate big main.webp",
+      "/assets/catalogue/ivora/edge plate big.webp"
     ],
-    image: "/assets/catalogue/ivora/edge plate big main.png",
+    image: "/assets/catalogue/ivora/edge plate big main.webp",
     editorialCaption: "Clean 26 cm flat canvas with distinct vertical rim for geometric table architecture."
   },
   {
@@ -145,10 +145,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/edge plate small main.png",
-      "/assets/catalogue/ivora/edge plate small.png"
+      "/assets/catalogue/ivora/edge plate small main.webp",
+      "/assets/catalogue/ivora/edge plate small.webp"
     ],
-    image: "/assets/catalogue/ivora/edge plate small main.png",
+    image: "/assets/catalogue/ivora/edge plate small main.webp",
     editorialCaption: "Compact 20 cm edge plate ideal for bread service, entremets, and small plates."
   },
   {
@@ -174,10 +174,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/hi wall appetizer plate main.png",
-      "/assets/catalogue/ivora/hi wall appetizer plate.png"
+      "/assets/catalogue/ivora/hi wall appetizer plate main.webp",
+      "/assets/catalogue/ivora/hi wall appetizer plate.webp"
     ],
-    image: "/assets/catalogue/ivora/hi wall appetizer plate main.png",
+    image: "/assets/catalogue/ivora/hi wall appetizer plate main.webp",
     editorialCaption: "Petite 13 cm dish with pronounced vertical containment for amuse-bouche and tasting courses."
   },
   {
@@ -204,10 +204,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/serving bowl 19cm main.png",
-      "/assets/catalogue/ivora/serving bowl 19cm.png"
+      "/assets/catalogue/ivora/serving bowl 19cm main.webp",
+      "/assets/catalogue/ivora/serving bowl 19cm.webp"
     ],
-    image: "/assets/catalogue/ivora/serving bowl 19cm main.png",
+    image: "/assets/catalogue/ivora/serving bowl 19cm main.webp",
     editorialCaption: "Substantial 950 ml capacity serving bowl suited for shared centerpieces and family-style hospitality."
   },
   {
@@ -234,10 +234,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/serving bowl 15cm main.png",
-      "/assets/catalogue/ivora/serving bowl 15cm.png"
+      "/assets/catalogue/ivora/serving bowl 15cm main.webp",
+      "/assets/catalogue/ivora/serving bowl 15cm.webp"
     ],
-    image: "/assets/catalogue/ivora/serving bowl 15cm main.png",
+    image: "/assets/catalogue/ivora/serving bowl 15cm main.webp",
     editorialCaption: "Versatile 590 ml vessel for grains, side preparations, and individual culinary dishes."
   },
   {
@@ -264,10 +264,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/edge bowl 620 mlmain.png",
-      "/assets/catalogue/ivora/edgebowl 620ml.png"
+      "/assets/catalogue/ivora/edge bowl 620 mlmain.webp",
+      "/assets/catalogue/ivora/edgebowl 620ml.webp"
     ],
-    image: "/assets/catalogue/ivora/edge bowl 620 mlmain.png",
+    image: "/assets/catalogue/ivora/edge bowl 620 mlmain.webp",
     editorialCaption: "Low profile shallow bowl featuring distinctive architectural perimeter walls and generous base."
   },
   {
@@ -294,10 +294,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/edge bowl main 570ml.png",
-      "/assets/catalogue/ivora/edge bowl 570 ml.png"
+      "/assets/catalogue/ivora/edge bowl main 570ml.webp",
+      "/assets/catalogue/ivora/edge bowl 570 ml.webp"
     ],
-    image: "/assets/catalogue/ivora/edge bowl main 570ml.png",
+    image: "/assets/catalogue/ivora/edge bowl main 570ml.webp",
     editorialCaption: "Deep vertical-walled vessel designed for hot broths, grain bowls, and breakfast service."
   },
   {
@@ -324,10 +324,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/soup bowl main.png",
-      "/assets/catalogue/ivora/soup bowl.png"
+      "/assets/catalogue/ivora/soup bowl main.webp",
+      "/assets/catalogue/ivora/soup bowl.webp"
     ],
-    image: "/assets/catalogue/ivora/soup bowl main.png",
+    image: "/assets/catalogue/ivora/soup bowl main.webp",
     editorialCaption: "Classic 287 ml soup bowl with tactile warmth, balanced volume, and smooth interior contour."
   },
   {
@@ -354,10 +354,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/katori main.png",
-      "/assets/catalogue/ivora/katori.png"
+      "/assets/catalogue/ivora/katori main.webp",
+      "/assets/catalogue/ivora/katori.webp"
     ],
-    image: "/assets/catalogue/ivora/katori main.png",
+    image: "/assets/catalogue/ivora/katori main.webp",
     editorialCaption: "Traditional multi-course katori proportioned for curries, lentils, dal, and accompaniments."
   },
   {
@@ -384,10 +384,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/dip bowl main.png",
-      "/assets/catalogue/ivora/dip bowl.png"
+      "/assets/catalogue/ivora/dip bowl main.webp",
+      "/assets/catalogue/ivora/dip bowl.webp"
     ],
-    image: "/assets/catalogue/ivora/dip bowl main.png",
+    image: "/assets/catalogue/ivora/dip bowl main.webp",
     editorialCaption: "Delicate 42 ml condiment dish for infused oils, artisanal salts, and reduction sauces."
   },
   {
@@ -413,10 +413,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/chip pot main.png",
-      "/assets/catalogue/ivora/chip pot.png"
+      "/assets/catalogue/ivora/chip pot main.webp",
+      "/assets/catalogue/ivora/chip pot.webp"
     ],
-    image: "/assets/catalogue/ivora/chip pot main.png",
+    image: "/assets/catalogue/ivora/chip pot main.webp",
     editorialCaption: "Distinctive 400 ml table accessory for fries, crisps, grissini, and curated garnish presentation."
   },
   {
@@ -442,10 +442,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/creamer main.png",
-      "/assets/catalogue/ivora/creamer.png"
+      "/assets/catalogue/ivora/creamer main.webp",
+      "/assets/catalogue/ivora/creamer.webp"
     ],
-    image: "/assets/catalogue/ivora/creamer main.png",
+    image: "/assets/catalogue/ivora/creamer main.webp",
     editorialCaption: "Sculpted 220 ml milk and sauce creamer with ergonomic pour spout and refined handleless grip."
   },
   {
@@ -471,10 +471,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/platters main.png",
-      "/assets/catalogue/ivora/platters.png"
+      "/assets/catalogue/ivora/platters main.webp",
+      "/assets/catalogue/ivora/platters.webp"
     ],
-    image: "/assets/catalogue/ivora/platters main.png",
+    image: "/assets/catalogue/ivora/platters main.webp",
     editorialCaption: "Compact 22 x 15 cm sharing platter for charcuterie, appetizers, and individual seafood courses."
   },
   {
@@ -500,10 +500,10 @@ export const IVORA_PRODUCTS: Product[] = [
       series: "Timeless Ivora Series"
     },
     images: [
-      "/assets/catalogue/ivora/platters main.png",
-      "/assets/catalogue/ivora/platters.png"
+      "/assets/catalogue/ivora/platters main.webp",
+      "/assets/catalogue/ivora/platters.webp"
     ],
-    image: "/assets/catalogue/ivora/platters main.png",
+    image: "/assets/catalogue/ivora/platters main.webp",
     editorialCaption: "Graceful 27.5 x 18 cm presentation platter designed for tableside carving and entrée service."
   }
 ];

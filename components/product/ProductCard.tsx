@@ -7,9 +7,10 @@ import { Product } from '@/types/product';
 
 interface ProductCardProps {
   product: Product;
+  priority?: boolean;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) => {
   const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -66,7 +67,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               src={imgSrc}
               alt={`${product.name} (View ${idx + 1})`}
               className={`carousel-slide ${idx === currentSlide ? 'active' : ''}`}
-              loading={idx === 0 ? 'eager' : 'lazy'}
+              loading={priority && idx === 0 ? 'eager' : 'lazy'}
+              fetchPriority={priority && idx === 0 ? 'high' : 'auto'}
+              decoding="async"
             />
           ))}
         </div>

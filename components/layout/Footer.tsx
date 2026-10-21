@@ -12,9 +12,11 @@ export const Footer: React.FC = () => {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/logo/vittesa-monogram-gold.png"
+            src="/assets/logo/vittesa-monogram-gold.webp"
             alt="VITTESA"
             className="footer-brand-wordmark"
+            loading="lazy"
+            decoding="async"
             style={{ margin: '0 auto' }}
           />
         </Link>

@@ -26,10 +26,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/plate-20-27cm_lifestyle.png",
-      "/assets/catalogue/greyborne/plate-20-27cm_studio.png"
+      "/assets/catalogue/greyborne/plate-20-27cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/plate-20-27cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/plate-20-27cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/plate-20-27cm_lifestyle.webp",
     editorialCaption: "Foundational dining pair in mineral slate grey with architectural low rim."
   },
   {
@@ -51,10 +51,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.png",
-      "/assets/catalogue/greyborne/flat-plate-30cm_studio.png"
+      "/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/flat-plate-30cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.webp",
     editorialCaption: "Expansive 30 cm flat statement platter for chef tasting menus and fine dining."
   },
   {
@@ -76,10 +76,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.png",
-      "/assets/catalogue/greyborne/pasta-plate-27cm_studio.png"
+      "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/pasta-plate-27cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.webp",
     editorialCaption: "Deep-center pasta plate framing colorful handmade pastas and risottos."
   },
   {
@@ -101,10 +101,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/edge-plate-20.5-25.5cm_lifestyle.png",
-      "/assets/catalogue/greyborne/edge-plate-20.5-25.5cm_studio.png"
+      "/assets/catalogue/greyborne/edge-plate-20.5-25.5cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/edge-plate-20.5-25.5cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/edge-plate-20.5-25.5cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/edge-plate-20.5-25.5cm_lifestyle.webp",
     editorialCaption: "Straight-sided edge plates with minimalist vertical rims and tactile slate glaze."
   },
   {
@@ -126,10 +126,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/elipse-plate-18-23-28cm_lifestyle.png",
-      "/assets/catalogue/greyborne/elipse-plate-18-23-28cm_studio.png"
+      "/assets/catalogue/greyborne/elipse-plate-18-23-28cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/elipse-plate-18-23-28cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/elipse-plate-18-23-28cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/elipse-plate-18-23-28cm_lifestyle.webp",
     editorialCaption: "Soft elliptical plates from appetizer course to generous entrée canvas."
   },
   {
@@ -151,10 +151,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/deep-coupe-22.5cm_lifestyle.png",
-      "/assets/catalogue/greyborne/deep-coupe-22.5cm_studio.png"
+      "/assets/catalogue/greyborne/deep-coupe-22.5cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/deep-coupe-22.5cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/deep-coupe-22.5cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/deep-coupe-22.5cm_lifestyle.webp",
     editorialCaption: "Curving deep coupe bowl designed for contemporary sauced presentations."
   },
   {
@@ -176,10 +176,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/banquet-bowl-22cm_lifestyle.png",
-      "/assets/catalogue/greyborne/banquet-bowl-22cm_studio.png"
+      "/assets/catalogue/greyborne/banquet-bowl-22cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/banquet-bowl-22cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/banquet-bowl-22cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/banquet-bowl-22cm_lifestyle.webp",
     editorialCaption: "Medium banquet sharing bowl with wide opening and understated mineral tones."
   },
   {
@@ -201,10 +201,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/banquet-bowl-29.5cm_lifestyle.png",
-      "/assets/catalogue/greyborne/banquet-bowl-29.5cm_studio.png"
+      "/assets/catalogue/greyborne/banquet-bowl-29.5cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/banquet-bowl-29.5cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/banquet-bowl-29.5cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/banquet-bowl-29.5cm_lifestyle.webp",
     editorialCaption: "Grand 29.5 cm centerpiece banquet bowl for family-style table services."
   },
   {
@@ -226,10 +226,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/soup-bowl-325ml_lifestyle.png",
-      "/assets/catalogue/greyborne/soup-bowl-325ml_studio.png"
+      "/assets/catalogue/greyborne/soup-bowl-325ml_lifestyle.webp",
+      "/assets/catalogue/greyborne/soup-bowl-325ml_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/soup-bowl-325ml_lifestyle.png",
+    image: "/assets/catalogue/greyborne/soup-bowl-325ml_lifestyle.webp",
     editorialCaption: "Classic 325 ml soup and consommé bowl in tactile mineral slate grey."
   },
   {
@@ -252,10 +252,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/footed-bowl-14.5cm-550ml-15cm-850ml_lifestyle.png",
-      "/assets/catalogue/greyborne/footed-bowl-14.5cm-550ml-15cm-850ml_studio.png"
+      "/assets/catalogue/greyborne/footed-bowl-14.5cm-550ml-15cm-850ml_lifestyle.webp",
+      "/assets/catalogue/greyborne/footed-bowl-14.5cm-550ml-15cm-850ml_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/footed-bowl-14.5cm-550ml-15cm-850ml_lifestyle.png",
+    image: "/assets/catalogue/greyborne/footed-bowl-14.5cm-550ml-15cm-850ml_lifestyle.webp",
     editorialCaption: "Elevated footed bowls designed for noodle dishes, broths, and ramen."
   },
   {
@@ -277,10 +277,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/v-bowl-16cm_lifestyle.png",
-      "/assets/catalogue/greyborne/v-bowl-16cm_studio.png"
+      "/assets/catalogue/greyborne/v-bowl-16cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/v-bowl-16cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/v-bowl-16cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/v-bowl-16cm_lifestyle.webp",
     editorialCaption: "Conical V-profile hospitality bowl crafted for layered grain salads."
   },
   {
@@ -302,10 +302,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/bowls-dinner-9.5cm-katori-9cm_lifestyle.png",
-      "/assets/catalogue/greyborne/bowls-dinner-9.5cm-katori-9cm_studio.png"
+      "/assets/catalogue/greyborne/bowls-dinner-9.5cm-katori-9cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/bowls-dinner-9.5cm-katori-9cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/bowls-dinner-9.5cm-katori-9cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/bowls-dinner-9.5cm-katori-9cm_lifestyle.webp",
     editorialCaption: "Versatile companion bowls for condiments, sauces, and tasting side servings."
   },
   {
@@ -327,10 +327,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/elipse-bowl-16-18-22cm_lifestyle.png",
-      "/assets/catalogue/greyborne/elipse-bowl-16-18-22cm_studio.png"
+      "/assets/catalogue/greyborne/elipse-bowl-16-18-22cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/elipse-bowl-16-18-22cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/elipse-bowl-16-18-22cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/elipse-bowl-16-18-22cm_lifestyle.webp",
     editorialCaption: "Nesting elliptical bowls providing asymmetric flair on hospitality tabletops."
   },
   {
@@ -352,10 +352,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/barrel-mug-350ml_lifestyle.png",
-      "/assets/catalogue/greyborne/barrel-mug-350ml_studio.png"
+      "/assets/catalogue/greyborne/barrel-mug-350ml_lifestyle.webp",
+      "/assets/catalogue/greyborne/barrel-mug-350ml_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/barrel-mug-350ml_lifestyle.png",
+    image: "/assets/catalogue/greyborne/barrel-mug-350ml_lifestyle.webp",
     editorialCaption: "Comfort-grip 350 ml barrel mug in mineral slate satin glaze."
   },
   {
@@ -378,10 +378,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/barista-cup-250ml-saucer-16cm_lifestyle.png",
-      "/assets/catalogue/greyborne/barista-cup-250ml-saucer-16cm_studio.png"
+      "/assets/catalogue/greyborne/barista-cup-250ml-saucer-16cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/barista-cup-250ml-saucer-16cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/barista-cup-250ml-saucer-16cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/barista-cup-250ml-saucer-16cm_lifestyle.webp",
     editorialCaption: "Artisanal barista cappuccino cup with matching 16 cm saucer."
   },
   {
@@ -404,10 +404,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/expresso-cup-110ml-saucer-12.5cm_lifestyle.png",
-      "/assets/catalogue/greyborne/expresso-cup-110ml-saucer-12.5cm_studio.png"
+      "/assets/catalogue/greyborne/expresso-cup-110ml-saucer-12.5cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/expresso-cup-110ml-saucer-12.5cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/expresso-cup-110ml-saucer-12.5cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/expresso-cup-110ml-saucer-12.5cm_lifestyle.webp",
     editorialCaption: "110 ml single and double espresso cup with companion saucer."
   },
   {
@@ -429,10 +429,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/tea-pot-685ml_lifestyle.png",
-      "/assets/catalogue/greyborne/tea-pot-685ml_studio.png"
+      "/assets/catalogue/greyborne/tea-pot-685ml_lifestyle.webp",
+      "/assets/catalogue/greyborne/tea-pot-685ml_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/tea-pot-685ml_lifestyle.png",
+    image: "/assets/catalogue/greyborne/tea-pot-685ml_lifestyle.webp",
     editorialCaption: "Contemporary stoneware teapot with precision spout and balanced handle."
   },
   {
@@ -454,10 +454,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/rectangular-platter-29x15cm_lifestyle.png",
-      "/assets/catalogue/greyborne/rectangular-platter-29x15cm_studio.png"
+      "/assets/catalogue/greyborne/rectangular-platter-29x15cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/rectangular-platter-29x15cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/rectangular-platter-29x15cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/rectangular-platter-29x15cm_lifestyle.webp",
     editorialCaption: "Sleek rectangular platter for canapés, sushi, and charcuterie."
   },
   {
@@ -479,10 +479,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/elipse-platter-32cm_lifestyle.png",
-      "/assets/catalogue/greyborne/elipse-platter-32cm_studio.png"
+      "/assets/catalogue/greyborne/elipse-platter-32cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/elipse-platter-32cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/elipse-platter-32cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/elipse-platter-32cm_lifestyle.webp",
     editorialCaption: "32 cm statement serving platter featuring sweeping elliptical contours."
   },
   {
@@ -504,10 +504,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/elipse-serving-plate-27cm_lifestyle.png",
-      "/assets/catalogue/greyborne/elipse-serving-plate-27cm_studio.png"
+      "/assets/catalogue/greyborne/elipse-serving-plate-27cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/elipse-serving-plate-27cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/elipse-serving-plate-27cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/elipse-serving-plate-27cm_lifestyle.webp",
     editorialCaption: "Balanced 27 cm serving plate with organic curved rim."
   },
   {
@@ -529,10 +529,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/fluid-platter-21x11-29x21cm_lifestyle.png",
-      "/assets/catalogue/greyborne/fluid-platter-21x11-29x21cm_studio.png"
+      "/assets/catalogue/greyborne/fluid-platter-21x11-29x21cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/fluid-platter-21x11-29x21cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/fluid-platter-21x11-29x21cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/fluid-platter-21x11-29x21cm_lifestyle.webp",
     editorialCaption: "Modern fluid platters with sculptural soft-corner edges."
   },
   {
@@ -554,10 +554,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/oval-platter-26-30cm_lifestyle.png",
-      "/assets/catalogue/greyborne/oval-platter-26-30cm_studio.png"
+      "/assets/catalogue/greyborne/oval-platter-26-30cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/oval-platter-26-30cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/oval-platter-26-30cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/oval-platter-26-30cm_lifestyle.webp",
     editorialCaption: "Timeless oval platters engineered for shared roasts and whole-fish presentations."
   },
   {
@@ -579,10 +579,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/round-dip-bowl-6cm_lifestyle.png",
-      "/assets/catalogue/greyborne/round-dip-bowl-6cm_studio.png"
+      "/assets/catalogue/greyborne/round-dip-bowl-6cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/round-dip-bowl-6cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/round-dip-bowl-6cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/round-dip-bowl-6cm_lifestyle.webp",
     editorialCaption: "Petite 6 cm round ramekin for dipping oils, herb salts, and clarified butter."
   },
   {
@@ -604,10 +604,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/taper-dip-bowl-7cm_lifestyle.png",
-      "/assets/catalogue/greyborne/taper-dip-bowl-7cm_studio.png"
+      "/assets/catalogue/greyborne/taper-dip-bowl-7cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/taper-dip-bowl-7cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/taper-dip-bowl-7cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/taper-dip-bowl-7cm_lifestyle.webp",
     editorialCaption: "7 cm conical dip bowl with fluted silhouette."
   },
   {
@@ -629,10 +629,10 @@ export const GREYBORNE_PRODUCTS: Product[] = [
       series: "Refined Stoneware Series"
     },
     images: [
-      "/assets/catalogue/greyborne/soup-spoon-16cm_lifestyle.png",
-      "/assets/catalogue/greyborne/soup-spoon-16cm_studio.png"
+      "/assets/catalogue/greyborne/soup-spoon-16cm_lifestyle.webp",
+      "/assets/catalogue/greyborne/soup-spoon-16cm_studio.webp"
     ],
-    image: "/assets/catalogue/greyborne/soup-spoon-16cm_lifestyle.png",
+    image: "/assets/catalogue/greyborne/soup-spoon-16cm_lifestyle.webp",
     editorialCaption: "Handcrafted 16 cm stoneware soup spoon for ramen, Asian cuisine, and broths."
   }
 ];

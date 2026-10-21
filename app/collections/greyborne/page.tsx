@@ -47,10 +47,14 @@ export default function GreyborneCollectionPage() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/catalogue/greyborne-editorial-hero.jpg"
+              src="/assets/catalogue/greyborne-collection.webp"
+              srcSet="/assets/catalogue/greyborne-collection-800w.webp 800w, /assets/catalogue/greyborne-collection.webp 1600w"
+              sizes="(max-width: 768px) 100vw, 1040px"
               alt="GREYBORNE Stoneware Tableware Collection"
               className="olivera-hero-img"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
