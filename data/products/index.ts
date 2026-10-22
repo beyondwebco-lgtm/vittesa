@@ -3,18 +3,24 @@ import { OLIVERA_PRODUCTS } from './olivera';
 import { IVORA_PRODUCTS } from './ivora';
 import { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
 import { GREYBORNE_PRODUCTS } from './greyborne';
+import { MODERN_SAGE_GREEN_PRODUCTS } from './modern-sage-green';
+import { TERRANE_PRODUCTS } from './terrane';
 
 export { OLIVERA_PRODUCTS } from './olivera';
 export { IVORA_PRODUCTS } from './ivora';
 export { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
 export { GREYBORNE_PRODUCTS } from './greyborne';
+export { MODERN_SAGE_GREEN_PRODUCTS } from './modern-sage-green';
+export { TERRANE_PRODUCTS } from './terrane';
 
-// Active catalog contains verified OLIVERA, IVORA, SPECKLED BROWN & GREYBORNE collections (17 + 17 + 17 + 25 = 76 verified products)
+// Active catalog contains verified OLIVERA, IVORA, SPECKLED BROWN, GREYBORNE, MODERN SAGE GREEN & TERRANE collections (17 + 17 + 17 + 25 + 15 + 16 = 107 verified products)
 export const ALL_PRODUCTS: Product[] = [
   ...OLIVERA_PRODUCTS,
   ...IVORA_PRODUCTS,
   ...SPECKLED_BROWN_PRODUCTS,
   ...GREYBORNE_PRODUCTS,
+  ...MODERN_SAGE_GREEN_PRODUCTS,
+  ...TERRANE_PRODUCTS,
 ];
 
 export function getAllProducts(): Product[] {
@@ -35,6 +41,18 @@ function matchesCollection(col: string, target: string): boolean {
   if (
     (c === 'greyborne' || c === 'urbanegrey' || c === 'thegreybornecollection') &&
     (t === 'greyborne' || t === 'urbanegrey' || t === 'thegreybornecollection')
+  ) {
+    return true;
+  }
+  if (
+    (c === 'modernsagegreen' || c === 'sagegreen' || c === 'themodernsagegreencollection') &&
+    (t === 'modernsagegreen' || t === 'sagegreen' || t === 'themodernsagegreencollection')
+  ) {
+    return true;
+  }
+  if (
+    (c === 'terrane' || c === 'theterranecollection') &&
+    (t === 'terrane' || t === 'theterranecollection')
   ) {
     return true;
   }

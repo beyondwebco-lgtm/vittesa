@@ -119,7 +119,10 @@ export const FeaturedCollectionSection: React.FC = () => {
         </div>
 
         {/* 4. GREYBORNE Collection Showcase */}
-        <div className="olivera-split-layout">
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
           {/* Left: Large Collection Image */}
           <div className="olivera-feature-media">
             <Link href="/collections/greyborne" aria-label="Explore GREYBORNE Collection">
@@ -144,6 +147,73 @@ export const FeaturedCollectionSection: React.FC = () => {
             </p>
             <div className="olivera-feature-cta-wrap">
               <Link href="/collections/greyborne" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 5. MODERN SAGE GREEN Collection Showcase */}
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/modern-sage-green" aria-label="Explore MODERN SAGE GREEN Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/modern-sage-green-collection.webp"
+                srcSet="/assets/catalogue/modern-sage-green-collection-800w.webp 800w, /assets/catalogue/modern-sage-green-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
+                alt="MODERN SAGE GREEN Porcelain Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">MODERN SAGE GREEN</h2>
+            <p className="olivera-feature-desc">
+              Subtle modern sage green porcelain with soft satin surfaces, balanced profiles, and calm contemporary hospitality presence.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/modern-sage-green" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 6. TERRANE Collection Showcase */}
+        <div className="olivera-split-layout">
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/terrane" aria-label="Explore TERRANE Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/terrane-collection.webp"
+                srcSet="/assets/catalogue/terrane-collection-800w.webp 800w, /assets/catalogue/terrane-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
+                alt="TERRANE Mineral Earth Porcelain Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">TERRANE</h2>
+            <p className="olivera-feature-desc">
+              Raw earthy mineral-toned vitrified porcelain crafted with sculpted profiles, hand-accented rims, and organic tactile presence.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/terrane" className="olivera-feature-btn">
                 SHOP NOW
               </Link>
             </div>

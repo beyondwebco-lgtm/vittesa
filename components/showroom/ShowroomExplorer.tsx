@@ -81,7 +81,11 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
         ((pCol === 'speckledbrown' || pCol === 'terraspeckle') &&
           (aCol === 'speckledbrown' || aCol === 'terraspeckle')) ||
         ((pCol === 'greyborne' || pCol === 'thegreybornecollection' || pCol === 'urbanegrey') &&
-          (aCol === 'greyborne' || aCol === 'thegreybornecollection' || aCol === 'urbanegrey'));
+          (aCol === 'greyborne' || aCol === 'thegreybornecollection' || aCol === 'urbanegrey')) ||
+        ((pCol === 'modernsagegreen' || pCol === 'sagegreen' || pCol === 'themodernsagegreencollection') &&
+          (aCol === 'modernsagegreen' || aCol === 'sagegreen' || aCol === 'themodernsagegreencollection')) ||
+        ((pCol === 'terrane' || pCol === 'theterranecollection') &&
+          (aCol === 'terrane' || aCol === 'theterranecollection'));
 
       // 2. Category Filter
       const matchesCategory =
@@ -105,14 +109,18 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
     let ivora = 0;
     let speckledBrown = 0;
     let greyborne = 0;
+    let modernSageGreen = 0;
+    let terrane = 0;
     products.forEach((p) => {
       const c = p.collection.toLowerCase().replace(/[\s_-]+/g, '');
       if (c === 'olivera') olivera++;
       else if (c === 'ivora' || c === 'ivory') ivora++;
       else if (c === 'speckledbrown' || c === 'terraspeckle') speckledBrown++;
       else if (c === 'greyborne' || c === 'thegreybornecollection' || c === 'urbanegrey') greyborne++;
+      else if (c === 'modernsagegreen' || c === 'sagegreen' || c === 'themodernsagegreencollection') modernSageGreen++;
+      else if (c === 'terrane' || c === 'theterranecollection') terrane++;
     });
-    return { olivera, ivora, speckledBrown, greyborne };
+    return { olivera, ivora, speckledBrown, greyborne, modernSageGreen, terrane };
   }, [products]);
 
   return (
@@ -159,6 +167,20 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
                   onClick={() => setActiveCollection('greyborne')}
                 >
                   GREYBORNE ({collectionCounts.greyborne})
+                </button>
+                <button
+                  type="button"
+                  className={`filter-chip ${activeCollection === 'modern-sage-green' ? 'active' : ''}`}
+                  onClick={() => setActiveCollection('modern-sage-green')}
+                >
+                  MODERN SAGE GREEN ({collectionCounts.modernSageGreen})
+                </button>
+                <button
+                  type="button"
+                  className={`filter-chip ${activeCollection === 'terrane' ? 'active' : ''}`}
+                  onClick={() => setActiveCollection('terrane')}
+                >
+                  TERRANE ({collectionCounts.terrane})
                 </button>
               </div>
             </div>

@@ -79,6 +79,38 @@ const nextConfig = {
         destination: '/collections/greyborne/:slug',
       },
       {
+        source: '/collections/modern-sage-green/index.html',
+        destination: '/collections/modern-sage-green',
+      },
+      {
+        source: '/collections/modern-sage-green/product.html',
+        destination: '/collections/modern-sage-green/product',
+      },
+      {
+        source: '/collections/sage-green',
+        destination: '/collections/modern-sage-green',
+      },
+      {
+        source: '/collections/sage-green/:slug',
+        destination: '/collections/modern-sage-green/:slug',
+      },
+      {
+        source: '/collections/terrane/index.html',
+        destination: '/collections/terrane',
+      },
+      {
+        source: '/collections/terrane/product.html',
+        destination: '/collections/terrane/product',
+      },
+      {
+        source: '/collections/the-terrane-collection',
+        destination: '/collections/terrane',
+      },
+      {
+        source: '/collections/the-terrane-collection/:slug',
+        destination: '/collections/terrane/:slug',
+      },
+      {
         source: '/showroom.html',
         destination: '/showroom',
       },

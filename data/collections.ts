@@ -100,6 +100,56 @@ export const COLLECTIONS: Collection[] = [
     ],
     description: "Architectural mineral slate grey stoneware featuring smooth matte surfaces, refined contours, and exceptional hospitality durability.",
     url: "/collections/greyborne/"
+  },
+  {
+    id: "modern-sage-green",
+    slug: "modern-sage-green",
+    number: "05",
+    layer: "SAGE BOTANICAL",
+    layerNumber: "05",
+    name: "MODERN SAGE GREEN",
+    series: "Modern Botanical Series",
+    tagline: "Subtle sage tones. Contemporary contours. Serene dining clarity.",
+    shortDescriptor: "Contemporary sage green porcelain with understated earthy elegance and velvety satin surfaces.",
+    badge: "Modern Botanical Series",
+    category: "Modern Botanical Series",
+    piecesCount: 15,
+    itemCount: 15,
+    heroImage: "/assets/catalogue/modern-sage-green-collection.webp",
+    editorialImage: "/assets/catalogue/modern-sage-green-collection.webp",
+    rangeImage: "/assets/catalogue/modern-sage-green/plates/dinner-plate-27cm_lifestyle-pair.webp",
+    galleryImages: [
+      "/assets/catalogue/modern-sage-green-collection.webp",
+      "/assets/catalogue/modern-sage-green/plates/dinner-plate-27cm_lifestyle-pair.webp",
+      "/assets/catalogue/modern-sage-green/bowls/deep-coupe-23cm_lifestyle.webp"
+    ],
+    description: "Subtle modern sage green porcelain with soft satin surfaces, balanced profiles, and calm contemporary hospitality presence.",
+    url: "/collections/modern-sage-green/"
+  },
+  {
+    id: "terrane",
+    slug: "terrane",
+    number: "06",
+    layer: "MINERAL EARTH",
+    layerNumber: "06",
+    name: "TERRANE",
+    series: "Mineral Earth Series",
+    tagline: "Raw mineral tones. Sculpted profiles. Grounded earthy sophistication.",
+    shortDescriptor: "Sculpted mineral-earth porcelain with rich organic character and hand-accented contours.",
+    badge: "Mineral Earth Series",
+    category: "Mineral Earth Series",
+    piecesCount: 16,
+    itemCount: 16,
+    heroImage: "/assets/catalogue/terrane-collection.webp",
+    editorialImage: "/assets/catalogue/terrane-collection.webp",
+    rangeImage: "/assets/catalogue/terrane/plates/dinner-plate-27cm_lifestyle.webp",
+    galleryImages: [
+      "/assets/catalogue/terrane-collection.webp",
+      "/assets/catalogue/terrane/plates/dinner-plate-27cm_lifestyle.webp",
+      "/assets/catalogue/terrane/platters/platters-22x15-27.5x18-33.5x22cm_lifestyle.webp"
+    ],
+    description: "Raw earthy mineral-toned vitrified porcelain crafted with sculpted profiles, hand-accented rims, and organic tactile presence.",
+    url: "/collections/terrane/"
   }
 ];
 
@@ -118,6 +168,12 @@ export function getCollectionBySlug(slug: string): Collection | undefined {
   }
   if (s === 'greyborne' || s === 'urbanegrey' || s === 'thegreybornecollection') {
     return COLLECTIONS.find(c => c.id === 'greyborne');
+  }
+  if (s === 'modernsagegreen' || s === 'sagegreen' || s === 'themodernsagegreencollection') {
+    return COLLECTIONS.find(c => c.id === 'modern-sage-green');
+  }
+  if (s === 'terrane' || s === 'theterranecollection') {
+    return COLLECTIONS.find(c => c.id === 'terrane');
   }
   return COLLECTIONS.find(
     c =>

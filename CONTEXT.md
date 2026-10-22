@@ -2,7 +2,7 @@
 
 > **Single Source of Truth** for the VITTESA luxury hospitality porcelain portfolio web application.  
 > Architecture: **Next.js 16 (App Router) + React 19 + TypeScript + Zustand + Turbopack**, deployed on **Vercel**.  
-> Active Catalogue: **4 verified collections, 76 total pieces** (OLIVERA 17, IVORA 17, SPECKLED BROWN 17, GREYBORNE 25).
+> Active Catalogue: **6 verified collections, 107 total pieces** (OLIVERA 17, IVORA 17, SPECKLED BROWN 17, GREYBORNE 25, MODERN SAGE GREEN 15, TERRANE 16).
 
 ---
 
@@ -11,7 +11,7 @@
 - **Brand:** VITTESA — Luxury Hospitality Porcelain & Stoneware Maison
 - **Positioning:** High-end hospitality, fine dining, and bespoke architectural tableware portfolio and specification platform.
 - **Core User Journeys:**
-  1. **Brand Discovery & Curation:** Editorial-grade visual showcase across all 4 tableware collections.
+  1. **Brand Discovery & Curation:** Editorial-grade visual showcase across all 6 tableware collections.
   2. **Specification & Inspection:** Interactive 360/multi-angle photographic viewports with exact dimensions, capacities, and glazes.
   3. **Specification Tray & Export:** Client specification tray (via Zustand `trayStore`) allowing hospitality operators to compile sample requests and export branded PDF specification sheets (powered by `pdf-lib`).
   4. **Direct B2B Enquiry:** Integrated enquiry modal pre-filled with specified piece references and collections.
@@ -26,11 +26,11 @@
 - **State Management:** Zustand 5.0.15 (Tray store `store/trayStore.ts` with `localStorage` persistence)
 - **Styling:** Custom Vanilla CSS design system (`app/globals.css`), luxury typography (Cormorant Garamond, Montserrat, Outfit), responsive layouts, luxury gold accents.
 - **Document Generation:** `pdf-lib` (`lib/pdf-generator.ts`) for on-demand PDF specification exports.
-- **Hosting / CDN:** Vercel (Production builds generate 148 static and dynamic SSG routes).
+- **Hosting / CDN:** Vercel (Production builds generate static and dynamic SSG routes).
 
 ---
 
-## 3. Active Collections Summary (76 Products)
+## 3. Active Collections Summary (107 Products)
 
 | Collection | Category / Series | Pieces | Hero Descriptor | Route |
 | :--- | :--- | :--- | :--- | :--- |
@@ -38,6 +38,8 @@
 | **IVORA** | Timeless Ivora Series | 17 | Warm ivora-toned pure porcelain for refined fine dining. | `/collections/ivora` |
 | **SPECKLED BROWN** | Artisan Earth Series | 17 | Vitrified stoneware with natural mineral flecks and tactile warmth. | `/collections/speckled-brown` |
 | **GREYBORNE** | Refined Stoneware Series | 25 | Architectural mineral slate grey with a velvety matte surface. | `/collections/greyborne` |
+| **MODERN SAGE GREEN** | Modern Botanical Series | 15 | Subtle sage green porcelain with understated earthy elegance and satin finish. | `/collections/modern-sage-green` |
+| **TERRANE** | Mineral Earth Series | 16 | Raw mineral earth porcelain with sculpted profiles and hand-accented contours. | `/collections/terrane` |
 
 ---
 
@@ -139,15 +141,55 @@
 | `asgb5161` | `ASGB5161` | Artisan Soup Spoon 16 cm | Accessories | 16 cm | Ergonomic Ceramic Spoon in Slate Grey | `/assets/catalogue/greyborne/soup-spoon-16cm_lifestyle.png` | [Link](/collections/greyborne/soup-spoon-16cm) |
 
 
+### 4.5 MODERN SAGE GREEN Collection (15 Pieces)
+| ID | Code | Name | Category | Dimensions | Capacity / Specs | Primary Image | PDP Route |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `asms5101` | `ASMS5101` | Dinner Plate 27 cm | Plates | 27 cm | Subtle Sage Green Satin Glaze | `/assets/catalogue/modern-sage-green/plates/dinner-plate-27cm_lifestyle-pair.webp` | [Link](/collections/modern-sage-green/dinner-plate-27cm) |
+| `asms5102` | `ASMS5102` | Side Plate 20 cm | Plates | 20 cm | Subtle Sage Green Satin Glaze | `/assets/catalogue/modern-sage-green/plates/side-plate-20cm_lifestyle.webp` | [Link](/collections/modern-sage-green/side-plate-20cm) |
+| `asms5103` | `ASMS5103` | Edge Plate Big 25.5 cm | Plates | 25.5 cm | Architectural Vertical Rim | `/assets/catalogue/modern-sage-green/plates/edge-plate-big-25.5cm_lifestyle.webp` | [Link](/collections/modern-sage-green/edge-plate-big-25-5cm) |
+| `asms5104` | `ASMS5104` | Edge Plate Small 20 cm | Plates | 20 cm | Architectural Vertical Rim | `/assets/catalogue/modern-sage-green/plates/edge-plate-small-20cm_lifestyle.webp` | [Link](/collections/modern-sage-green/edge-plate-small-20cm) |
+| `asms5105` | `ASMS5105` | Deep Coupe 23 cm | Bowls | 23 cm | Curved Deep Coupe Profile | `/assets/catalogue/modern-sage-green/bowls/deep-coupe-23cm_lifestyle.webp` | [Link](/collections/modern-sage-green/deep-coupe-23cm) |
+| `asms5106` | `ASMS5106` | Deep Coupe Small 20 cm | Bowls | 20 cm | Curved Deep Coupe Profile | `/assets/catalogue/modern-sage-green/bowls/deep-coupe-small-20cm_lifestyle.webp` | [Link](/collections/modern-sage-green/deep-coupe-small-20cm) |
+| `asms5107` | `ASMS5107` | Service Bowl 18.2 cm | Bowls | 18.2 cm | 850 ml | `/assets/catalogue/modern-sage-green/bowls/service-bowl-18.2cm-850ml_lifestyle.webp` | [Link](/collections/modern-sage-green/service-bowl-18-2cm) |
+| `asms5108` | `ASMS5108` | Service Bowl 15.5 cm | Bowls | 15.5 cm | 600 ml | `/assets/catalogue/modern-sage-green/bowls/service-bowl-15.5cm-600ml_lifestyle.webp` | [Link](/collections/modern-sage-green/service-bowl-15-5cm) |
+| `asms5109` | `ASMS5109` | Soup Bowl 11.5 cm | Bowls | 11.5 cm | 325 ml | `/assets/catalogue/modern-sage-green/bowls/soup-bowl-11.5cm-325ml_lifestyle.webp` | [Link](/collections/modern-sage-green/soup-bowl-11-5cm) |
+| `asms5110` | `ASMS5110` | Studio Bowl 12 cm | Bowls | 12 cm | Organic Studio Bowl Profile | `/assets/catalogue/modern-sage-green/bowls/studio-bowl-12cm_lifestyle.webp` | [Link](/collections/modern-sage-green/studio-bowl-12cm) |
+| `asms5111` | `ASMS5111` | Katori Bowl 10 cm | Bowls | 10 cm | 190 ml | `/assets/catalogue/modern-sage-green/bowls/katori-10cm-190ml_lifestyle.webp` | [Link](/collections/modern-sage-green/katori-10cm) |
+| `asms5112` | `ASMS5112` | Dip Bowl 8 cm | Bowls | 8 cm | Petite Dip Dish | `/assets/catalogue/modern-sage-green/bowls/dip-bowl-8cm_lifestyle.webp` | [Link](/collections/modern-sage-green/dip-bowl-8cm) |
+| `asms5113` | `ASMS5113` | Oval Platter 28 × 19 cm | Platters | 28 × 19 cm | Elongated Oval Surface | `/assets/catalogue/modern-sage-green/platters/oval-platter-28x19cm_lifestyle.webp` | [Link](/collections/modern-sage-green/oval-platter-28x19cm) |
+| `asms5114` | `ASMS5114` | Oval Platter 25 × 14 cm | Platters | 25 × 14 cm | Sleek Oval Silhouette | `/assets/catalogue/modern-sage-green/platters/oval-platter-25x14cm_lifestyle.webp` | [Link](/collections/modern-sage-green/oval-platter-25x14cm) |
+| `asms5115` | `ASMS5115` | Tea Cup & Saucer | Cups & Beverage | Cup 255 ml, Saucer 14.9 cm | 255 ml | `/assets/catalogue/modern-sage-green/cups-saucers/tea-cup-255ml-saucer-14.9cm_lifestyle.webp` | [Link](/collections/modern-sage-green/tea-cup-saucer) |
+
+
+### 4.6 TERRANE Collection (16 Pieces)
+| ID | Code | Name | Category | Dimensions | Capacity / Specs | Primary Image | PDP Route |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `astr5101` | `ASTR5101` | Dinner Plate 27 cm | Plates | 27 cm | Mineral Earth Glaze with Sculpted Contrast Rim | `/assets/catalogue/terrane/plates/dinner-plate-27cm_lifestyle.webp` | [Link](/collections/terrane/dinner-plate-27cm) |
+| `astr5102` | `ASTR5102` | Salad Plate 21 cm | Plates | 21 cm | Mineral Earth Glaze with Tactile Rim | `/assets/catalogue/terrane/plates/salad-plate-21cm_lifestyle.webp` | [Link](/collections/terrane/salad-plate-21cm) |
+| `astr5103` | `ASTR5103` | Edge Plate Big 26 cm | Plates | 26 cm | Architectural Vertical Rim | `/assets/catalogue/terrane/plates/edge-plate-big-26cm_lifestyle.webp` | [Link](/collections/terrane/edge-plate-big-26cm) |
+| `astr5104` | `ASTR5104` | Edge Plate Small 20 cm | Plates | 20 cm | Architectural Vertical Rim | `/assets/catalogue/terrane/plates/edge-plate-small-20cm_lifestyle.webp` | [Link](/collections/terrane/edge-plate-small-20cm) |
+| `astr5105` | `ASTR5105` | Hi-Wall Appetizer Plate 13 cm | Plates | 13 cm | High-Walled Appetizer Dish | `/assets/catalogue/terrane/plates/hi-wall-appetizer-plate-13cm_lifestyle.webp` | [Link](/collections/terrane/hi-wall-appetizer-plate-13cm) |
+| `astr5106` | `ASTR5106` | Deep Coupe 23 cm | Bowls | 23 cm | Curved Deep Coupe Silhouette | `/assets/catalogue/terrane/bowls/deep-coupe-23cm_lifestyle.webp` | [Link](/collections/terrane/deep-coupe-23cm) |
+| `astr5107` | `ASTR5107` | Serving Bowl 19 cm | Bowls | 19 cm | 950 ml | `/assets/catalogue/terrane/bowls/serving-bowl-19cm-950ml_lifestyle.webp` | [Link](/collections/terrane/serving-bowl-19cm) |
+| `astr5108` | `ASTR5108` | Serving Bowl 15 cm | Bowls | 15 cm | 590 ml | `/assets/catalogue/terrane/bowls/serving-bowl-15cm-590ml_lifestyle.webp` | [Link](/collections/terrane/serving-bowl-15cm) |
+| `astr5109` | `ASTR5109` | Edge Bowl 20 cm | Bowls | 20 cm × 4.2 cm | 620 ml | `/assets/catalogue/terrane/bowls/edge-bowl-20x4.2cm-620ml_lifestyle.webp` | [Link](/collections/terrane/edge-bowl-20cm) |
+| `astr5110` | `ASTR5110` | Edge Bowl 13 cm | Bowls | 13 cm × 6.5 cm | 570 ml | `/assets/catalogue/terrane/bowls/edge-bowl-13x6.5cm-570ml_lifestyle.webp` | [Link](/collections/terrane/edge-bowl-13cm) |
+| `astr5111` | `ASTR5111` | Soup Bowl 11.5 cm | Bowls | 11.5 cm | 287 ml | `/assets/catalogue/terrane/bowls/soup-bowl-11.5cm-287ml_lifestyle.webp` | [Link](/collections/terrane/soup-bowl-11-5cm) |
+| `astr5112` | `ASTR5112` | Katori Bowl 9.5 cm | Bowls | 9.5 cm | 190 ml | `/assets/catalogue/terrane/bowls/katori-9.5cm-190ml_lifestyle.webp` | [Link](/collections/terrane/katori-9-5cm) |
+| `astr5113` | `ASTR5113` | Dip Bowl 7.5 cm | Bowls | 7.5 cm | 42 ml | `/assets/catalogue/terrane/bowls/dip-bowl-7.5cm-42ml_lifestyle.webp` | [Link](/collections/terrane/dip-bowl-7-5cm) |
+| `astr5114` | `ASTR5114` | Chip Pot 400 ml | Accessories | 400 ml | 400 ml | `/assets/catalogue/terrane/accessories/chip-pot-400ml_lifestyle.webp` | [Link](/collections/terrane/chip-pot-400ml) |
+| `astr5115` | `ASTR5115` | Creamer 220 ml | Accessories | 220 ml | 220 ml | `/assets/catalogue/terrane/accessories/creamer-220ml_lifestyle.webp` | [Link](/collections/terrane/creamer-220ml) |
+| `astr5116` | `ASTR5116` | Platter Range | Platters & Serving | 22 cm, 27.5 cm & 33.5 cm | Rectangular Presentation Canvas | `/assets/catalogue/terrane/platters/platters-22x15-27.5x18-33.5x22cm_lifestyle.webp` | [Link](/collections/terrane/platters-range) |
+
 ---
 
 ## 5. Site Architecture & Route Inventory
 
-### 5.1 Route Map (148 Static & Dynamic Routes)
-- `/` — Editorial brand homepage (Hero, Curated Showcase, About, Contact).
-- `/collections` — Collection gateway featuring all 4 active tableware lines.
-- `/showroom` — Universal product showroom with filter pills (All, Olivera, Ivora, Speckled Brown, Greyborne) and search.
-- `/collections/[slug]` & Dedicated Routes — Collection showcase pages (`olivera`, `ivora`, `speckled-brown`, `greyborne`).
+### 5.1 Route Map (Static & Dynamic SSG Routes)
+- `/` — Editorial brand homepage (Hero, Curated Showcase across all 6 collections, About, Contact).
+- `/collections` — Collection gateway featuring all 6 active tableware lines.
+- `/showroom` — Universal product showroom with filter pills (All, Olivera, Ivora, Speckled Brown, Greyborne, Modern Sage Green, Terrane) and search.
+- `/collections/[slug]` & Dedicated Routes — Collection showcase pages (`olivera`, `ivora`, `speckled-brown`, `greyborne`, `modern-sage-green`, `terrane`).
 - `/collections/[slug]/[id]` & `/collections/[slug]/product?id=...` — Dynamic Product Detail Pages (PDP) supporting dual lookup (code/id or slug).
 - `/documents/vittesa-catalogue.pdf` — Official digital brand catalogue PDF download.
 
@@ -156,7 +198,7 @@
 - **Actions:** Specification Tray Drawer trigger with live badge counter.
 - **Announcement Bar:**
   1. *"BULK & WHOLESALE ENQUIRIES WELCOME"*
-  2. *"DISCOVER THE OLIVERA, IVORA, SPECKLED BROWN & GREYBORNE COLLECTIONS"*
+  2. *"DISCOVER OLIVERA, IVORA, SPECKLED BROWN, GREYBORNE, MODERN SAGE GREEN & TERRANE"*
   3. *"CONTACT US FOR INTERNATIONAL SHIPPING OPTIONS"*
 
 ---
@@ -183,17 +225,19 @@ vittesa/
 │   ├── showroom/            # ShowroomExplorer, FilterPills
 │   └── tray/                # SpecificationTrayDrawer, EnquiryModal
 ├── data/
-│   ├── collections.ts       # Collection definitions & metadata
+│   ├── collections.ts       # Collection definitions & metadata (6 collections)
 │   └── products/            # Individual collection data files & index
 │       ├── greyborne.ts     # 25 products
 │       ├── ivora.ts         # 17 products
+│       ├── modern-sage-green.ts # 15 products
 │       ├── olivera.ts       # 17 products
 │       ├── speckled-brown.ts# 17 products
-│       └── index.ts         # Unified ALL_PRODUCTS & accessor functions
+│       ├── terrane.ts       # 16 products
+│       └── index.ts         # Unified ALL_PRODUCTS (107 products) & accessor functions
 ├── lib/                     # PDF specification generator
 ├── public/
 │   ├── assets/
-│   │   ├── catalogue/       # Active collection photographic assets
+│   │   ├── catalogue/       # Active collection photographic assets (all 6 collections)
 │   │   ├── hero/            # Editorial hero imagery
 │   │   └── logo/            # Vector and high-res brand marks
 │   ├── documents/           # Official catalogue PDF
@@ -222,3 +266,4 @@ vittesa/
 | **2026-10-17** | **IVORA Collection Integration:** Added 17-piece IVORA porcelain line with dedicated routes, assets, and PDPs. | `data/products/ivora.ts`, `app/collections/ivora/` | 60 routes compiled successfully. |
 | **2026-10-19** | **SPECKLED BROWN & GREYBORNE Integration:** Integrated SPECKLED BROWN (17 pieces) and GREYBORNE (25 pieces), completing 4 active collections (76 total pieces). | `data/products/speckled-brown.ts`, `data/products/greyborne.ts` | 148 routes compiled successfully. |
 | **2026-10-21** | **Repository Cleanup & Organization:** Removed 371 redundant files (~327 MB) including raw root duplicates, legacy Vite layer, dead dependencies (`gsap`, `pngjs`, `vite`), and obsolete assets. Rewrote `CONTEXT.md` to reflect actual 4 collections. | `.gitignore`, `package.json`, `data/products/`, `public/`, `CONTEXT.md` | 148 routes verified identical, `tsc` 0 errors, build clean. |
+| **2026-10-22** | **Root Directory Cleanup & 2 New Collections (MODERN SAGE GREEN & TERRANE):** Cleaned Level 1 directory and public root of all loose image clutter, safely preserving all assets in `public/assets/logo/`, `catalogue/`, and `hero/`. Added MODERN SAGE GREEN (15 pieces) and TERRANE (16 pieces) to catalogue, showroom filters, home showcase, and dynamic SSG routing, expanding catalogue to 6 collections and 107 verified products. | `data/products/modern-sage-green.ts`, `data/products/terrane.ts`, `data/products/index.ts`, `data/collections.ts`, `components/showroom/ShowroomExplorer.tsx`, `components/home/FeaturedCollectionSection.tsx`, `components/layout/AnnouncementBar.tsx`, `next.config.mjs`, `CONTEXT.md` | `npx tsc --noEmit` passing with 0 errors. |
