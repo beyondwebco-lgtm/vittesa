@@ -295,7 +295,16 @@
   color: rgba(244, 244, 245, 0.72);
 }
 
-.magic-bento__card[data-image] .magic-bento__title,
+.magic-bento__card[data-image] .magic-bento__title {
+  color: #ffffff;
+  font-family: var(--font-serif, 'Cinzel', 'Playfair Display', serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
 .magic-bento__card[data-image] .magic-bento__icon {
   color: #f4f4f5;
 }
