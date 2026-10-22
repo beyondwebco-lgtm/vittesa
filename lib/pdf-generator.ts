@@ -61,7 +61,7 @@ export async function generateSpecificationPdf(items: TrayItem[]): Promise<Uint8
   y -= 25;
 
   if (items.length === 0) {
-    page.drawText('No items currently in project specification tray.', {
+    page.drawText('No items currently in cart.', {
       x: 50,
       y,
       size: 10,

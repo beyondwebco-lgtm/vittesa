@@ -75,19 +75,19 @@ export const SpecificationTrayDrawer: React.FC = () => {
         id="spec-tray"
         role="dialog"
         aria-modal="true"
-        aria-label="Project Specification Tray"
+        aria-label="Cart"
         style={{
           zIndex: 9999,
         }}
       >
         <div className="tray-header">
           <div>
-            <h3>Project Specification</h3>
+            <h3>Your Cart</h3>
             <p style={{ fontSize: '0.75rem', color: 'var(--ink-muted)', marginTop: '2px' }}>
-              Curated Tableware Schedule ({activeItems.length} {activeItems.length === 1 ? 'item' : 'items'})
+              Selected Tableware Items ({activeItems.length} {activeItems.length === 1 ? 'item' : 'items'})
             </p>
           </div>
-          <button className="btn-close-tray" aria-label="Close Tray" onClick={closeTray}>
+          <button className="btn-close-tray" aria-label="Close Cart" onClick={closeTray}>
             ✕
           </button>
         </div>
@@ -96,10 +96,10 @@ export const SpecificationTrayDrawer: React.FC = () => {
           {activeItems.length === 0 ? (
             <div id="tray-empty" className="tray-empty-state" style={{ display: 'block' }}>
               <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
-                Your Tray is Empty
+                Your Cart is Empty
               </p>
               <p style={{ fontSize: '0.8125rem' }}>
-                Select items from OLIVERA or IVORA to compile your project specification schedule.
+                Explore collections to add items to your cart.
               </p>
             </div>
           ) : (

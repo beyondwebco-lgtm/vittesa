@@ -200,7 +200,7 @@ function ProductDetailContent() {
                     color: isInTray ? 'var(--tone-gold)' : undefined,
                   }}
                 >
-                  {isInTray ? '✓ In Specification Tray' : '+ Add to Specification Tray'}
+                  {isInTray ? '✓ In Cart' : '+ Add to Cart'}
                 </button>
               </div>
 

@@ -108,9 +108,9 @@ export const Header: React.FC = () => {
                     color: 'var(--ink-primary)',
                     borderRadius: '2px',
                   }}
-                  aria-label={`View Specification Tray (${trayCount} pieces)`}
+                  aria-label={`View Cart (${trayCount} items)`}
                 >
-                  <span>Tray</span>
+                  <span>Cart</span>
                   <span
                     className="tray-badge"
                     style={{

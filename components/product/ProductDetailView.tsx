@@ -354,7 +354,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                   id="pdp-add-tray-btn"
                   onClick={handleAddToTray}
                 >
-                  {addedToTray ? '✓ Added to Spec Tray' : '+ Add to Specification Tray'}
+                  {addedToTray ? '✓ Added to Cart' : '+ Add to Cart'}
                 </button>
               </div>
 

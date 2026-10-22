@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
-import { FeaturedCollectionSection } from '@/components/home/FeaturedCollectionSection';
+import VittesaGallery from '@/components/home/VittesaGallery';
 import { FeaturedProductsSection } from '@/components/home/FeaturedProductsSection';
 import { AboutSection } from '@/components/home/AboutSection';
 import { TrustSection } from '@/components/home/TrustSection';
@@ -13,8 +13,8 @@ export default function HomePage() {
       {/* 3. Hero Section */}
       <HeroSection />
 
-      {/* 4. Featured OLIVERA Collection */}
-      <FeaturedCollectionSection />
+      {/* 4. Featured Collections Bento Grid */}
+      <VittesaGallery />
 
       {/* 5. Featured Products Grid (Curated 8-Piece) */}
       <FeaturedProductsSection />

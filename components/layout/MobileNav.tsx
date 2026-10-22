@@ -119,7 +119,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                 borderRadius: '2px',
               }}
             >
-              <span>SPECIFICATION TRAY</span>
+              <span>CART</span>
               <span
                 style={{
                   background: 'var(--tone-gold)',
