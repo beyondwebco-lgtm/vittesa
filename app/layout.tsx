@@ -24,7 +24,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'VITTESA — Porcelain Maison | Beautifully Made for the Art of Dining',
   description:
-    'Discover OLIVERA by VITTESA — considered European-style porcelain tableware defined by softly muted olive-grey tones and organic silhouettes.',
+    'Discover OLIVERA by VITTESA — considered porcelain tableware defined by softly muted olive-grey tones and organic silhouettes.',
   icons: {
     icon: '/assets/logo/vittesa-monogram-emblem.webp',
   },

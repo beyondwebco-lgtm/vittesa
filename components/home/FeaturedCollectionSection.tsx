@@ -189,7 +189,10 @@ export const FeaturedCollectionSection: React.FC = () => {
         </div>
 
         {/* 6. TERRANE Collection Showcase */}
-        <div className="olivera-split-layout">
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
           {/* Left: Large Collection Image */}
           <div className="olivera-feature-media">
             <Link href="/collections/terrane" aria-label="Explore TERRANE Collection">
@@ -214,6 +217,108 @@ export const FeaturedCollectionSection: React.FC = () => {
             </p>
             <div className="olivera-feature-cta-wrap">
               <Link href="/collections/terrane" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 7. MODERN PINK Collection Showcase */}
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/modern-pink" aria-label="Explore MODERN PINK Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/modern-pink-collection.webp"
+                srcSet="/assets/catalogue/modern-pink-collection-800w.webp 800w, /assets/catalogue/modern-pink-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
+                alt="MODERN PINK Porcelain Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">MODERN PINK</h2>
+            <p className="olivera-feature-desc">
+              Delicate modern blush pink porcelain featuring smooth satin surfaces, balanced architectural profiles, and serene contemporary dining elegance.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/modern-pink" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 8. MODERN BROWN Collection Showcase */}
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/modern-brown" aria-label="Explore MODERN BROWN Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/modern-brown-collection.webp"
+                srcSet="/assets/catalogue/modern-brown-collection-800w.webp 800w, /assets/catalogue/modern-brown-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
+                alt="MODERN BROWN Warm Earth Porcelain Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">MODERN BROWN</h2>
+            <p className="olivera-feature-desc">
+              Rich modern brown porcelain featuring velvety matte surfaces, organic depth, and grounded contemporary hospitality presence.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/modern-brown" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 9. MODERN BLACK Collection Showcase */}
+        <div className="olivera-split-layout">
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/modern-black" aria-label="Explore MODERN BLACK Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/modern-black-collection.webp"
+                srcSet="/assets/catalogue/modern-black-collection-800w.webp 800w, /assets/catalogue/modern-black-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
+                alt="MODERN BLACK Architectural Noir Porcelain Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">MODERN BLACK</h2>
+            <p className="olivera-feature-desc">
+              Dramatic architectural matte black porcelain offering velvety satin sheen, high-contrast framing, and prestigious modern tabletop presence.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/modern-black" className="olivera-feature-btn">
                 SHOP NOW
               </Link>
             </div>

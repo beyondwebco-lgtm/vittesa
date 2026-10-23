@@ -150,6 +150,81 @@ export const COLLECTIONS: Collection[] = [
     ],
     description: "Raw earthy mineral-toned vitrified porcelain crafted with sculpted profiles, hand-accented rims, and organic tactile presence.",
     url: "/collections/terrane/"
+  },
+  {
+    id: "modern-pink",
+    slug: "modern-pink",
+    number: "07",
+    layer: "MODERN BLUSH",
+    layerNumber: "07",
+    name: "MODERN PINK",
+    series: "Modern Blush Series",
+    tagline: "Delicate blush tones. Sculpted contours. Gentle contemporary grace.",
+    shortDescriptor: "Contemporary soft rose-blush porcelain with subtle satin surfaces and refined contours.",
+    badge: "Modern Blush Series",
+    category: "Modern Blush Series",
+    piecesCount: 25,
+    itemCount: 25,
+    heroImage: "/assets/catalogue/modern-pink-collection.webp",
+    editorialImage: "/assets/catalogue/modern-pink-collection.webp",
+    rangeImage: "/assets/catalogue/modern-pink/plate-20-27cm_lifestyle.webp",
+    galleryImages: [
+      "/assets/catalogue/modern-pink-collection.webp",
+      "/assets/catalogue/modern-pink/plate-20-27cm_lifestyle.webp",
+      "/assets/catalogue/modern-pink/pasta-plate-27cm_lifestyle.webp"
+    ],
+    description: "Delicate modern blush pink porcelain featuring smooth satin surfaces, balanced architectural profiles, and serene contemporary dining elegance.",
+    url: "/collections/modern-pink/"
+  },
+  {
+    id: "modern-brown",
+    slug: "modern-brown",
+    number: "08",
+    layer: "WARM EARTH",
+    layerNumber: "08",
+    name: "MODERN BROWN",
+    series: "Modern Earth Series",
+    tagline: "Deep roasted earth. Velvet matte finish. Warm modern presence.",
+    shortDescriptor: "Contemporary warm earth brown porcelain with tactile depth and architectural contours.",
+    badge: "Modern Earth Series",
+    category: "Modern Earth Series",
+    piecesCount: 15,
+    itemCount: 15,
+    heroImage: "/assets/catalogue/modern-brown-collection.webp",
+    editorialImage: "/assets/catalogue/modern-brown-collection.webp",
+    rangeImage: "/assets/catalogue/modern-brown/dinner-plate-27cm_lifestyle.webp",
+    galleryImages: [
+      "/assets/catalogue/modern-brown-collection.webp",
+      "/assets/catalogue/modern-brown/dinner-plate-27cm_lifestyle.webp",
+      "/assets/catalogue/modern-brown/deep-coupe-23cm_lifestyle.webp"
+    ],
+    description: "Rich modern brown porcelain featuring velvety matte surfaces, organic depth, and grounded contemporary hospitality presence.",
+    url: "/collections/modern-brown/"
+  },
+  {
+    id: "modern-black",
+    slug: "modern-black",
+    number: "09",
+    layer: "NOIR ARCHITECTURAL",
+    layerNumber: "09",
+    name: "MODERN BLACK",
+    series: "Modern Noir Series",
+    tagline: "Architectural deep noir. Velvety satin sheen. Dramatic culinary staging.",
+    shortDescriptor: "Architectural modern black porcelain with velvety matte finish and striking silhouette.",
+    badge: "Modern Noir Series",
+    category: "Modern Noir Series",
+    piecesCount: 15,
+    itemCount: 15,
+    heroImage: "/assets/catalogue/modern-black-collection.webp",
+    editorialImage: "/assets/catalogue/modern-black-collection.webp",
+    rangeImage: "/assets/catalogue/modern-black/dinner-plate-27cm_lifestyle.webp",
+    galleryImages: [
+      "/assets/catalogue/modern-black-collection.webp",
+      "/assets/catalogue/modern-black/dinner-plate-27cm_lifestyle.webp",
+      "/assets/catalogue/modern-black/edge-plate-big-25.5cm_lifestyle.webp"
+    ],
+    description: "Dramatic architectural matte black porcelain offering velvety satin sheen, high-contrast framing, and prestigious modern tabletop presence.",
+    url: "/collections/modern-black/"
   }
 ];
 
@@ -174,6 +249,15 @@ export function getCollectionBySlug(slug: string): Collection | undefined {
   }
   if (s === 'terrane' || s === 'theterranecollection') {
     return COLLECTIONS.find(c => c.id === 'terrane');
+  }
+  if (s === 'modernpink' || s === 'themodernpinkcollection' || s === 'pink') {
+    return COLLECTIONS.find(c => c.id === 'modern-pink');
+  }
+  if (s === 'modernbrown' || s === 'themodernbrowncollection' || s === 'brown') {
+    return COLLECTIONS.find(c => c.id === 'modern-brown');
+  }
+  if (s === 'modernblack' || s === 'themodernblackcollection' || s === 'black') {
+    return COLLECTIONS.find(c => c.id === 'modern-black');
   }
   return COLLECTIONS.find(
     c =>

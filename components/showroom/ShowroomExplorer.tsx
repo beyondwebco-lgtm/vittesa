@@ -85,7 +85,13 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
         ((pCol === 'modernsagegreen' || pCol === 'sagegreen' || pCol === 'themodernsagegreencollection') &&
           (aCol === 'modernsagegreen' || aCol === 'sagegreen' || aCol === 'themodernsagegreencollection')) ||
         ((pCol === 'terrane' || pCol === 'theterranecollection') &&
-          (aCol === 'terrane' || aCol === 'theterranecollection'));
+          (aCol === 'terrane' || aCol === 'theterranecollection')) ||
+        ((pCol === 'modernpink' || pCol === 'themodernpinkcollection' || pCol === 'pink') &&
+          (aCol === 'modernpink' || aCol === 'themodernpinkcollection' || aCol === 'pink')) ||
+        ((pCol === 'modernbrown' || pCol === 'themodernbrowncollection' || pCol === 'brown') &&
+          (aCol === 'modernbrown' || aCol === 'themodernbrowncollection' || aCol === 'brown')) ||
+        ((pCol === 'modernblack' || pCol === 'themodernblackcollection' || pCol === 'black') &&
+          (aCol === 'modernblack' || aCol === 'themodernblackcollection' || aCol === 'black'));
 
       // 2. Category Filter
       const matchesCategory =
@@ -111,6 +117,9 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
     let greyborne = 0;
     let modernSageGreen = 0;
     let terrane = 0;
+    let modernPink = 0;
+    let modernBrown = 0;
+    let modernBlack = 0;
     products.forEach((p) => {
       const c = p.collection.toLowerCase().replace(/[\s_-]+/g, '');
       if (c === 'olivera') olivera++;
@@ -119,8 +128,11 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
       else if (c === 'greyborne' || c === 'thegreybornecollection' || c === 'urbanegrey') greyborne++;
       else if (c === 'modernsagegreen' || c === 'sagegreen' || c === 'themodernsagegreencollection') modernSageGreen++;
       else if (c === 'terrane' || c === 'theterranecollection') terrane++;
+      else if (c === 'modernpink' || c === 'themodernpinkcollection' || c === 'pink') modernPink++;
+      else if (c === 'modernbrown' || c === 'themodernbrowncollection' || c === 'brown') modernBrown++;
+      else if (c === 'modernblack' || c === 'themodernblackcollection' || c === 'black') modernBlack++;
     });
-    return { olivera, ivora, speckledBrown, greyborne, modernSageGreen, terrane };
+    return { olivera, ivora, speckledBrown, greyborne, modernSageGreen, terrane, modernPink, modernBrown, modernBlack };
   }, [products]);
 
   return (
@@ -181,6 +193,27 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
                   onClick={() => setActiveCollection('terrane')}
                 >
                   TERRANE ({collectionCounts.terrane})
+                </button>
+                <button
+                  type="button"
+                  className={`filter-chip ${activeCollection === 'modern-pink' ? 'active' : ''}`}
+                  onClick={() => setActiveCollection('modern-pink')}
+                >
+                  MODERN PINK ({collectionCounts.modernPink})
+                </button>
+                <button
+                  type="button"
+                  className={`filter-chip ${activeCollection === 'modern-brown' ? 'active' : ''}`}
+                  onClick={() => setActiveCollection('modern-brown')}
+                >
+                  MODERN BROWN ({collectionCounts.modernBrown})
+                </button>
+                <button
+                  type="button"
+                  className={`filter-chip ${activeCollection === 'modern-black' ? 'active' : ''}`}
+                  onClick={() => setActiveCollection('modern-black')}
+                >
+                  MODERN BLACK ({collectionCounts.modernBlack})
                 </button>
               </div>
             </div>

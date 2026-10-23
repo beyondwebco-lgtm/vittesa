@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             lineHeight: 1.6,
           }}
         >
-          European-Style Premium Hospitality Porcelain. Dedicated to refined tabletop presentations.
+          Premium Hospitality Porcelain. Dedicated to refined tabletop presentations.
         </p>
 
         <div
@@ -73,6 +73,41 @@ export const Footer: React.FC = () => {
             style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
           >
             GREYBORNE
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/collections/modern-sage-green"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            MODERN SAGE GREEN
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/collections/terrane"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            TERRANE
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/collections/modern-pink"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            MODERN PINK
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/collections/modern-brown"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            MODERN BROWN
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/collections/modern-black"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            MODERN BLACK
           </Link>
           <span style={{ color: 'var(--border-medium)' }}>•</span>
           <Link

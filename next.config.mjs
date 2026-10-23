@@ -111,6 +111,30 @@ const nextConfig = {
         destination: '/collections/terrane/:slug',
       },
       {
+        source: '/collections/the-modern-pink-collection',
+        destination: '/collections/modern-pink',
+      },
+      {
+        source: '/collections/the-modern-pink-collection/:slug',
+        destination: '/collections/modern-pink/:slug',
+      },
+      {
+        source: '/collections/the-modern-brown-collection',
+        destination: '/collections/modern-brown',
+      },
+      {
+        source: '/collections/the-modern-brown-collection/:slug',
+        destination: '/collections/modern-brown/:slug',
+      },
+      {
+        source: '/collections/the-modern-black-collection',
+        destination: '/collections/modern-black',
+      },
+      {
+        source: '/collections/the-modern-black-collection/:slug',
+        destination: '/collections/modern-black/:slug',
+      },
+      {
         source: '/showroom.html',
         destination: '/showroom',
       },

@@ -5,6 +5,9 @@ import { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
 import { GREYBORNE_PRODUCTS } from './greyborne';
 import { MODERN_SAGE_GREEN_PRODUCTS } from './modern-sage-green';
 import { TERRANE_PRODUCTS } from './terrane';
+import { MODERN_PINK_PRODUCTS } from './modern-pink';
+import { MODERN_BROWN_PRODUCTS } from './modern-brown';
+import { MODERN_BLACK_PRODUCTS } from './modern-black';
 
 export { OLIVERA_PRODUCTS } from './olivera';
 export { IVORA_PRODUCTS } from './ivora';
@@ -12,8 +15,11 @@ export { SPECKLED_BROWN_PRODUCTS } from './speckled-brown';
 export { GREYBORNE_PRODUCTS } from './greyborne';
 export { MODERN_SAGE_GREEN_PRODUCTS } from './modern-sage-green';
 export { TERRANE_PRODUCTS } from './terrane';
+export { MODERN_PINK_PRODUCTS } from './modern-pink';
+export { MODERN_BROWN_PRODUCTS } from './modern-brown';
+export { MODERN_BLACK_PRODUCTS } from './modern-black';
 
-// Active catalog contains verified OLIVERA, IVORA, SPECKLED BROWN, GREYBORNE, MODERN SAGE GREEN & TERRANE collections (17 + 17 + 17 + 25 + 15 + 16 = 107 verified products)
+// Active catalog contains verified OLIVERA, IVORA, SPECKLED BROWN, GREYBORNE, MODERN SAGE GREEN, TERRANE, MODERN PINK, MODERN BROWN & MODERN BLACK collections (17 + 17 + 17 + 25 + 15 + 16 + 25 + 15 + 15 = 162 verified products)
 export const ALL_PRODUCTS: Product[] = [
   ...OLIVERA_PRODUCTS,
   ...IVORA_PRODUCTS,
@@ -21,6 +27,9 @@ export const ALL_PRODUCTS: Product[] = [
   ...GREYBORNE_PRODUCTS,
   ...MODERN_SAGE_GREEN_PRODUCTS,
   ...TERRANE_PRODUCTS,
+  ...MODERN_PINK_PRODUCTS,
+  ...MODERN_BROWN_PRODUCTS,
+  ...MODERN_BLACK_PRODUCTS,
 ];
 
 export function getAllProducts(): Product[] {
@@ -53,6 +62,24 @@ function matchesCollection(col: string, target: string): boolean {
   if (
     (c === 'terrane' || c === 'theterranecollection') &&
     (t === 'terrane' || t === 'theterranecollection')
+  ) {
+    return true;
+  }
+  if (
+    (c === 'modernpink' || c === 'themodernpinkcollection' || c === 'pink') &&
+    (t === 'modernpink' || t === 'themodernpinkcollection' || t === 'pink')
+  ) {
+    return true;
+  }
+  if (
+    (c === 'modernbrown' || c === 'themodernbrowncollection' || c === 'brown') &&
+    (t === 'modernbrown' || t === 'themodernbrowncollection' || t === 'brown')
+  ) {
+    return true;
+  }
+  if (
+    (c === 'modernblack' || c === 'themodernblackcollection' || c === 'black') &&
+    (t === 'modernblack' || t === 'themodernblackcollection' || t === 'black')
   ) {
     return true;
   }

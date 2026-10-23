@@ -41,9 +41,25 @@ const ITEMS = [
     id: 'terrane',
     title: 'TERRANE',
     image: '/images/terrane.jpg',
-    href: 'https://vittesa.vercel.app/collections/terrane',
-    colSpan: 4,
-    rowSpan: 1
+    href: 'https://vittesa.vercel.app/collections/terrane'
+  },
+  {
+    id: 'modern-pink',
+    title: 'MODERN PINK',
+    image: '/images/modern-pink.jpg',
+    href: 'https://vittesa.vercel.app/collections/modern-pink'
+  },
+  {
+    id: 'modern-brown',
+    title: 'MODERN BROWN',
+    image: '/images/modern-brown.jpg',
+    href: 'https://vittesa.vercel.app/collections/modern-brown'
+  },
+  {
+    id: 'modern-black',
+    title: 'MODERN BLACK',
+    image: '/images/modern-black.jpg',
+    href: 'https://vittesa.vercel.app/collections/modern-black'
   }
 ].map(item => ({ ...item, target: '_blank', rel: 'noopener noreferrer' }));
 

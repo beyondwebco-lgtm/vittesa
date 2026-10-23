@@ -8,7 +8,7 @@ import { CollectionFadeImage } from '@/components/collection/CollectionFadeImage
 export const metadata: Metadata = {
   title: 'Collections | VITTESA Porcelain Maison',
   description:
-    'Explore VITTESA European porcelain tableware collections, crafted for fine dining, boutique hospitality, and luxury table settings.',
+    'Explore VITTESA porcelain tableware collections, crafted for fine dining, boutique hospitality, and luxury table settings.',
 };
 
 export default function CollectionsGatewayPage() {
