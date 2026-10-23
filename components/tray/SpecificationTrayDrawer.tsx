@@ -39,7 +39,7 @@ export const SpecificationTrayDrawer: React.FC = () => {
   const handleTransferToEnquiry = () => {
     closeTray();
     const itemLines = activeItems
-      .map((i) => `• ${i.name} (${i.code}) — ${i.dimensions || 'Standard'}`)
+      .map((i) => `• ${i.name} — ${i.dimensions || 'Standard'}`)
       .join('\n');
     const note = `Specification Schedule Request (${activeItems.length} items):\n${itemLines}\n\nPlease provide quotation and sample availability for the selected tableware schedule.`;
 

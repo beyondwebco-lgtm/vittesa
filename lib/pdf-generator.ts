@@ -70,10 +70,9 @@ export async function generateSpecificationPdf(items: TrayItem[]): Promise<Uint8
     });
   } else {
     // Table Header
-    page.drawText('CODE', { x: 50, y, size: 9, font: fontBold, color: primaryColor });
-    page.drawText('PRODUCT NAME', { x: 130, y, size: 9, font: fontBold, color: primaryColor });
-    page.drawText('COLLECTION', { x: 310, y, size: 9, font: fontBold, color: primaryColor });
-    page.drawText('DIMENSIONS / SPEC', { x: 430, y, size: 9, font: fontBold, color: primaryColor });
+    page.drawText('PRODUCT NAME', { x: 50, y, size: 9, font: fontBold, color: primaryColor });
+    page.drawText('COLLECTION', { x: 260, y, size: 9, font: fontBold, color: primaryColor });
+    page.drawText('DIMENSIONS / SPEC', { x: 420, y, size: 9, font: fontBold, color: primaryColor });
 
     y -= 10;
     page.drawLine({
@@ -91,16 +90,8 @@ export async function generateSpecificationPdf(items: TrayItem[]): Promise<Uint8
         y = height - 50;
       }
 
-      page.drawText(item.code || 'ASE-00', {
-        x: 50,
-        y,
-        size: 9,
-        font: fontRegular,
-        color: mutedColor,
-      });
-
       page.drawText(item.name, {
-        x: 130,
+        x: 50,
         y,
         size: 9,
         font: fontBold,
@@ -108,7 +99,7 @@ export async function generateSpecificationPdf(items: TrayItem[]): Promise<Uint8
       });
 
       page.drawText(item.collection || 'OLIVERA', {
-        x: 310,
+        x: 260,
         y,
         size: 9,
         font: fontRegular,
@@ -116,7 +107,7 @@ export async function generateSpecificationPdf(items: TrayItem[]): Promise<Uint8
       });
 
       page.drawText(item.dimensions || 'Standard', {
-        x: 430,
+        x: 420,
         y,
         size: 9,
         font: fontRegular,
@@ -143,7 +134,7 @@ export async function generateSpecificationPdf(items: TrayItem[]): Promise<Uint8
     color: rgb(0.85, 0.85, 0.85),
   });
 
-  page.drawText('VITTESA — High Vitrified European Porcelain Tableware | enquiries@vittesa.com', {
+  page.drawText('VITTESA — High Vitrified Porcelain Tableware | enquiries@vittesa.com', {
     x: 50,
     y: footerY,
     size: 8,

@@ -210,7 +210,7 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
                   type="text"
                   id="showroom-search"
                   className="search-input"
-                  placeholder="Search pieces by name, dimensions, or code..."
+                  placeholder="Search pieces by name or dimensions..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />

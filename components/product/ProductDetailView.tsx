@@ -76,7 +76,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
   const handleEnquire = () => {
     openEnquiryModal(
       `${product.collection} — ${product.name}`,
-      `I am interested in acquiring specifications and pricing for ${product.collection} ${product.name} (Code: ${product.code || product.id}, Dimensions: ${product.dimensions}).\n\nProject / Quantity details:`
+      `I am interested in acquiring specifications and pricing for ${product.collection} ${product.name} (Dimensions: ${product.dimensions}).\n\nProject / Quantity details:`
     );
   };
 
@@ -151,7 +151,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
       label: 'Body Composition',
       val: isSpeckledBrown || isGreyborne
         ? 'High-Density Vitrified Stoneware'
-        : 'High-Density European Vitrified Porcelain',
+        : 'High-Density Vitrified Porcelain',
     },
     { label: 'Commercial Suitability', val: 'Heavy Hospitality & Industrial Dishwasher Safe' },
     { label: 'Thermal Resistance', val: 'Microwave & Commercial Warming Oven Safe' },

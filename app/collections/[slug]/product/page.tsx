@@ -40,7 +40,7 @@ export async function generateMetadata({
     title: `${product.name} — ${product.collection} | VITTESA Porcelain`,
     description:
       product.editorialCaption ||
-      `Authentic European hospitality porcelain specifications for ${product.name} from VITTESA ${product.collection} collection.`,
+      `Authentic hospitality porcelain specifications for ${product.name} from VITTESA ${product.collection} collection.`,
   };
 }
 
