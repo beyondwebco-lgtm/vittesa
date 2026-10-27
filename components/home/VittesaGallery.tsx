@@ -9,65 +9,65 @@ const ITEMS = [
     id: 'olivera',
     title: 'OLIVERA',
     image: '/images/olivera.jpg',
-    href: 'https://vittesa.vercel.app/collections/olivera',
-    colSpan: 2,
-    rowSpan: 2
+    href: '/collections/olivera',
+    colSpan: 2
   },
   {
     id: 'ivora',
     title: 'IVORA',
     image: '/images/ivora.jpg',
-    href: 'https://vittesa.vercel.app/collections/ivora'
+    href: '/collections/ivora'
   },
   {
     id: 'speckled-brown',
     title: 'SPECKLED BROWN',
     image: '/images/speckled-brown.jpg',
-    href: 'https://vittesa.vercel.app/collections/speckled-brown'
+    href: '/collections/speckled-brown'
   },
   {
     id: 'greyborne',
     title: 'GREYBORNE',
     image: '/images/greyborne.jpg',
-    href: 'https://vittesa.vercel.app/collections/greyborne'
+    href: '/collections/greyborne'
   },
   {
     id: 'modern-sage-green',
     title: 'MODERN SAGE GREEN',
     image: '/images/modern-sage-green.jpg',
-    href: 'https://vittesa.vercel.app/collections/modern-sage-green'
+    href: '/collections/modern-sage-green'
   },
   {
     id: 'terrane',
     title: 'TERRANE',
     image: '/images/terrane.jpg',
-    href: 'https://vittesa.vercel.app/collections/terrane'
+    href: '/collections/terrane'
   },
   {
     id: 'modern-pink',
     title: 'MODERN PINK',
     image: '/images/modern-pink.jpg',
-    href: 'https://vittesa.vercel.app/collections/modern-pink'
+    href: '/collections/modern-pink'
   },
   {
     id: 'modern-brown',
     title: 'MODERN BROWN',
     image: '/images/modern-brown.jpg',
-    href: 'https://vittesa.vercel.app/collections/modern-brown'
+    href: '/collections/modern-brown'
   },
   {
     id: 'modern-black',
     title: 'MODERN BLACK',
     image: '/images/modern-black.jpg',
-    href: 'https://vittesa.vercel.app/collections/modern-black'
+    href: '/collections/modern-black'
   },
   {
     id: 'auren',
     title: 'AUREN',
     image: '/images/auren.jpg',
-    href: 'https://vittesa.vercel.app/collections/auren'
+    href: '/collections/auren',
+    colSpan: 2
   }
-].map(item => ({ ...item, target: '_blank', rel: 'noopener noreferrer' }));
+];
 
 export default function VittesaGallery() {
   return (

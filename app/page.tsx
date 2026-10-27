@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
 import VittesaGallery from '@/components/home/VittesaGallery';
-import { FeaturedProductsSection } from '@/components/home/FeaturedProductsSection';
 import { AboutSection } from '@/components/home/AboutSection';
 import { TrustSection } from '@/components/home/TrustSection';
 import { BulkBannerSection } from '@/components/home/BulkBannerSection';
@@ -16,10 +15,7 @@ export default function HomePage() {
       {/* 4. Featured Collections Bento Grid */}
       <VittesaGallery />
 
-      {/* 5. Featured Products Grid (Curated 8-Piece) */}
-      <FeaturedProductsSection />
-
-      {/* 6. Brand Introduction */}
+      {/* 5. Brand Introduction */}
       <AboutSection />
 
       {/* 7. Trust & Commitment Section */}
