@@ -91,7 +91,9 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
         ((pCol === 'modernbrown' || pCol === 'themodernbrowncollection' || pCol === 'brown') &&
           (aCol === 'modernbrown' || aCol === 'themodernbrowncollection' || aCol === 'brown')) ||
         ((pCol === 'modernblack' || pCol === 'themodernblackcollection' || pCol === 'black') &&
-          (aCol === 'modernblack' || aCol === 'themodernblackcollection' || aCol === 'black'));
+          (aCol === 'modernblack' || aCol === 'themodernblackcollection' || aCol === 'black')) ||
+        ((pCol === 'auren' || pCol === 'theaurencollection') &&
+          (aCol === 'auren' || aCol === 'theaurencollection'));
 
       // 2. Category Filter
       const matchesCategory =
@@ -120,6 +122,7 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
     let modernPink = 0;
     let modernBrown = 0;
     let modernBlack = 0;
+    let auren = 0;
     products.forEach((p) => {
       const c = p.collection.toLowerCase().replace(/[\s_-]+/g, '');
       if (c === 'olivera') olivera++;
@@ -131,8 +134,9 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
       else if (c === 'modernpink' || c === 'themodernpinkcollection' || c === 'pink') modernPink++;
       else if (c === 'modernbrown' || c === 'themodernbrowncollection' || c === 'brown') modernBrown++;
       else if (c === 'modernblack' || c === 'themodernblackcollection' || c === 'black') modernBlack++;
+      else if (c === 'auren' || c === 'theaurencollection') auren++;
     });
-    return { olivera, ivora, speckledBrown, greyborne, modernSageGreen, terrane, modernPink, modernBrown, modernBlack };
+    return { olivera, ivora, speckledBrown, greyborne, modernSageGreen, terrane, modernPink, modernBrown, modernBlack, auren };
   }, [products]);
 
   return (
@@ -214,6 +218,13 @@ export const ShowroomExplorer: React.FC<ShowroomExplorerProps> = ({ products }) 
                   onClick={() => setActiveCollection('modern-black')}
                 >
                   MODERN BLACK ({collectionCounts.modernBlack})
+                </button>
+                <button
+                  type="button"
+                  className={`filter-chip ${activeCollection === 'auren' ? 'active' : ''}`}
+                  onClick={() => setActiveCollection('auren')}
+                >
+                  AUREN ({collectionCounts.auren})
                 </button>
               </div>
             </div>

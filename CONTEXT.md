@@ -2,7 +2,7 @@
 
 > **Single Source of Truth** for the VITTESA luxury hospitality porcelain portfolio web application.  
 > Architecture: **Next.js 16 (App Router) + React 19 + TypeScript + Zustand + Turbopack**, deployed on **Vercel**.  
-> Active Catalogue: **9 verified collections, 162 total pieces** (OLIVERA 17, IVORA 17, SPECKLED BROWN 17, GREYBORNE 25, MODERN SAGE GREEN 15, TERRANE 16, MODERN PINK 25, MODERN BROWN 15, MODERN BLACK 15).
+> Active Catalogue: **10 verified collections, 186 total pieces** (OLIVERA 17, IVORA 17, SPECKLED BROWN 17, GREYBORNE 25, MODERN SAGE GREEN 15, TERRANE 16, MODERN PINK 25, MODERN BROWN 15, MODERN BLACK 15, AUREN 24).
 
 ---
 
@@ -11,7 +11,7 @@
 - **Brand:** VITTESA — Luxury Hospitality Porcelain & Stoneware Maison
 - **Positioning:** High-end hospitality, fine dining, and bespoke architectural tableware portfolio and specification platform.
 - **Core User Journeys:**
-  1. **Brand Discovery & Curation:** Editorial-grade visual showcase across all 9 tableware collections.
+  1. **Brand Discovery & Curation:** Editorial-grade visual showcase across all 10 tableware collections.
   2. **Specification & Inspection:** Interactive 360/multi-angle photographic viewports with exact dimensions, capacities, and glazes.
   3. **Specification Tray & Export:** Client specification tray (via Zustand `trayStore`) allowing hospitality operators to compile sample requests and export branded PDF specification sheets (powered by `pdf-lib`).
   4. **Direct B2B Enquiry:** Integrated enquiry modal pre-filled with specified piece references and collections.
@@ -30,7 +30,7 @@
 
 ---
 
-## 3. Active Collections Summary (162 Products)
+## 3. Active Collections Summary (186 Products)
 
 | Collection | Category / Series | Pieces | Hero Descriptor | Route |
 | :--- | :--- | :--- | :--- | :--- |
@@ -43,6 +43,7 @@
 | **MODERN PINK** | Modern Blush Series | 25 | Contemporary soft rose-blush porcelain with subtle satin surfaces and refined contours. | `/collections/modern-pink` |
 | **MODERN BROWN** | Modern Earth Series | 15 | Contemporary warm earth brown porcelain with tactile depth and architectural contours. | `/collections/modern-brown` |
 | **MODERN BLACK** | Modern Noir Series | 15 | Architectural modern black porcelain with velvety matte finish and striking silhouette. | `/collections/modern-black` |
+| **AUREN** | Mediterranean Azure Series | 24 | Vibrant Mediterranean azure porcelain with subtle mineral speckles and warm hand-accented bronze rims. | `/collections/auren` |
 
 ---
 
@@ -271,3 +272,4 @@ vittesa/
 | **2026-10-21** | **Repository Cleanup & Organization:** Removed 371 redundant files (~327 MB) including raw root duplicates, legacy Vite layer, dead dependencies (`gsap`, `pngjs`, `vite`), and obsolete assets. Rewrote `CONTEXT.md` to reflect actual 4 collections. | `.gitignore`, `package.json`, `data/products/`, `public/`, `CONTEXT.md` | 148 routes verified identical, `tsc` 0 errors, build clean. |
 | **2026-10-22** | **Root Directory Cleanup & 2 New Collections (MODERN SAGE GREEN & TERRANE):** Cleaned Level 1 directory and public root of all loose image clutter, safely preserving all assets in `public/assets/logo/`, `catalogue/`, and `hero/`. Added MODERN SAGE GREEN (15 pieces) and TERRANE (16 pieces) to catalogue, showroom filters, home showcase, and dynamic SSG routing, expanding catalogue to 6 collections and 107 verified products. | `data/products/modern-sage-green.ts`, `data/products/terrane.ts`, `data/products/index.ts`, `data/collections.ts`, `components/showroom/ShowroomExplorer.tsx`, `components/home/FeaturedCollectionSection.tsx`, `components/layout/AnnouncementBar.tsx`, `next.config.mjs`, `CONTEXT.md` | `npx tsc --noEmit` passing with 0 errors. |
 | **2026-10-23** | **Addition of 3 New Collections (MODERN PINK, MODERN BROWN, MODERN BLACK):** Integrated MODERN PINK (25 pieces), MODERN BROWN (15 pieces), and MODERN BLACK (15 pieces), complete with optimized WebP/responsive media pipelines, specifications, category filters, Bento gallery integration, home showcase cards, and dynamic SSG routes, expanding active catalogue from 6 to 9 collections and 162 total verified pieces. | `data/products/modern-pink.ts`, `data/products/modern-brown.ts`, `data/products/modern-black.ts`, `data/products/index.ts`, `data/collections.ts`, `components/showroom/ShowroomExplorer.tsx`, `components/home/FeaturedCollectionSection.tsx`, `components/home/VittesaGallery.tsx`, `components/layout/AnnouncementBar.tsx`, `components/layout/Footer.tsx`, `next.config.mjs`, `CONTEXT.md` | `npx tsc --noEmit` and `npm run build` passing with 325 static routes generated. |
+| **2026-10-27** | **Addition of AUREN Collection (24 Pieces):** Integrated AUREN collection (24 pieces) in Mediterranean Azure reactive glaze with hand-accented bronze rims, complete with optimized WebP/responsive media pipelines, specifications, category filters, Bento gallery integration, home showcase cards, and dynamic SSG routes, expanding active catalogue to 10 collections and 186 total verified pieces. | `data/products/auren.ts`, `data/products/index.ts`, `data/collections.ts`, `components/showroom/ShowroomExplorer.tsx`, `components/home/FeaturedCollectionSection.tsx`, `components/home/VittesaGallery.tsx`, `components/layout/AnnouncementBar.tsx`, `components/layout/Footer.tsx`, `next.config.mjs`, `CONTEXT.md` | Verified TypeScript and Next.js build. |

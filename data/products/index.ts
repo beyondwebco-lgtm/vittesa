@@ -8,6 +8,7 @@ import { TERRANE_PRODUCTS } from './terrane';
 import { MODERN_PINK_PRODUCTS } from './modern-pink';
 import { MODERN_BROWN_PRODUCTS } from './modern-brown';
 import { MODERN_BLACK_PRODUCTS } from './modern-black';
+import { AUREN_PRODUCTS } from './auren';
 
 export { OLIVERA_PRODUCTS } from './olivera';
 export { IVORA_PRODUCTS } from './ivora';
@@ -18,8 +19,9 @@ export { TERRANE_PRODUCTS } from './terrane';
 export { MODERN_PINK_PRODUCTS } from './modern-pink';
 export { MODERN_BROWN_PRODUCTS } from './modern-brown';
 export { MODERN_BLACK_PRODUCTS } from './modern-black';
+export { AUREN_PRODUCTS } from './auren';
 
-// Active catalog contains verified OLIVERA, IVORA, SPECKLED BROWN, GREYBORNE, MODERN SAGE GREEN, TERRANE, MODERN PINK, MODERN BROWN & MODERN BLACK collections (17 + 17 + 17 + 25 + 15 + 16 + 25 + 15 + 15 = 162 verified products)
+// Active catalog contains verified OLIVERA, IVORA, SPECKLED BROWN, GREYBORNE, MODERN SAGE GREEN, TERRANE, MODERN PINK, MODERN BROWN, MODERN BLACK & AUREN collections (17 + 17 + 17 + 25 + 15 + 16 + 25 + 15 + 15 + 24 = 186 verified products)
 export const ALL_PRODUCTS: Product[] = [
   ...OLIVERA_PRODUCTS,
   ...IVORA_PRODUCTS,
@@ -30,6 +32,7 @@ export const ALL_PRODUCTS: Product[] = [
   ...MODERN_PINK_PRODUCTS,
   ...MODERN_BROWN_PRODUCTS,
   ...MODERN_BLACK_PRODUCTS,
+  ...AUREN_PRODUCTS,
 ];
 
 export function getAllProducts(): Product[] {
@@ -80,6 +83,12 @@ function matchesCollection(col: string, target: string): boolean {
   if (
     (c === 'modernblack' || c === 'themodernblackcollection' || c === 'black') &&
     (t === 'modernblack' || t === 'themodernblackcollection' || t === 'black')
+  ) {
+    return true;
+  }
+  if (
+    (c === 'auren' || c === 'theaurencollection') &&
+    (t === 'auren' || t === 'theaurencollection')
   ) {
     return true;
   }

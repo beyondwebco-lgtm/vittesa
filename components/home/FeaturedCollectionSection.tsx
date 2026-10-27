@@ -294,7 +294,10 @@ export const FeaturedCollectionSection: React.FC = () => {
         </div>
 
         {/* 9. MODERN BLACK Collection Showcase */}
-        <div className="olivera-split-layout">
+        <div
+          className="olivera-split-layout"
+          style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}
+        >
           {/* Left: Large Collection Image */}
           <div className="olivera-feature-media">
             <Link href="/collections/modern-black" aria-label="Explore MODERN BLACK Collection">
@@ -319,6 +322,38 @@ export const FeaturedCollectionSection: React.FC = () => {
             </p>
             <div className="olivera-feature-cta-wrap">
               <Link href="/collections/modern-black" className="olivera-feature-btn">
+                SHOP NOW
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 10. AUREN Collection Showcase */}
+        <div className="olivera-split-layout">
+          {/* Left: Large Collection Image */}
+          <div className="olivera-feature-media">
+            <Link href="/collections/auren" aria-label="Explore AUREN Collection">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/catalogue/auren-collection.webp"
+                srcSet="/assets/catalogue/auren-collection-800w.webp 800w, /assets/catalogue/auren-collection.webp 1600w"
+                sizes="(max-width: 768px) 100vw, 600px"
+                alt="AUREN Mediterranean Azure Porcelain Tableware Collection Editorial"
+                className="olivera-feature-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+          </div>
+
+          {/* Right: Minimal Text Content */}
+          <div className="olivera-feature-info">
+            <h2 className="olivera-feature-title">AUREN</h2>
+            <p className="olivera-feature-desc">
+              Vibrant Mediterranean azure porcelain featuring delicate mineral speckles, organic reactive glaze dynamics, and warm hand-accented bronze rims.
+            </p>
+            <div className="olivera-feature-cta-wrap">
+              <Link href="/collections/auren" className="olivera-feature-btn">
                 SHOP NOW
               </Link>
             </div>

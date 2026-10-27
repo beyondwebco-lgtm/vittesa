@@ -60,6 +60,12 @@ const ITEMS = [
     title: 'MODERN BLACK',
     image: '/images/modern-black.jpg',
     href: 'https://vittesa.vercel.app/collections/modern-black'
+  },
+  {
+    id: 'auren',
+    title: 'AUREN',
+    image: '/images/auren.jpg',
+    href: 'https://vittesa.vercel.app/collections/auren'
   }
 ].map(item => ({ ...item, target: '_blank', rel: 'noopener noreferrer' }));
 

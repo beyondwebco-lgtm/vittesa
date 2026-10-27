@@ -225,6 +225,31 @@ export const COLLECTIONS: Collection[] = [
     ],
     description: "Dramatic architectural matte black porcelain offering velvety satin sheen, high-contrast framing, and prestigious modern tabletop presence.",
     url: "/collections/modern-black/"
+  },
+  {
+    id: "auren",
+    slug: "auren",
+    number: "10",
+    layer: "MEDITERRANEAN AZURE",
+    layerNumber: "10",
+    name: "AUREN",
+    series: "Mediterranean Azure Series",
+    tagline: "Vibrant Mediterranean azure. Hand-accented bronze rims. Coastal culinary clarity.",
+    shortDescriptor: "Mediterranean azure porcelain with subtle mineral speckles and warm hand-accented bronze rims.",
+    badge: "Mediterranean Azure Series",
+    category: "Mediterranean Azure Series",
+    piecesCount: 24,
+    itemCount: 24,
+    heroImage: "/assets/catalogue/auren-collection.webp",
+    editorialImage: "/assets/catalogue/auren-collection.webp",
+    rangeImage: "/assets/catalogue/auren/plate-20-27cm_lifestyle.webp",
+    galleryImages: [
+      "/assets/catalogue/auren-collection.webp",
+      "/assets/catalogue/auren/plate-20-27cm_lifestyle.webp",
+      "/assets/catalogue/auren/pasta-plate-27cm_lifestyle.webp"
+    ],
+    description: "Vibrant Mediterranean azure porcelain featuring delicate mineral speckles, organic reactive glaze dynamics, and warm hand-accented bronze rims crafted for evocative contemporary dining.",
+    url: "/collections/auren/"
   }
 ];
 
@@ -258,6 +283,9 @@ export function getCollectionBySlug(slug: string): Collection | undefined {
   }
   if (s === 'modernblack' || s === 'themodernblackcollection' || s === 'black') {
     return COLLECTIONS.find(c => c.id === 'modern-black');
+  }
+  if (s === 'auren' || s === 'theaurencollection') {
+    return COLLECTIONS.find(c => c.id === 'auren');
   }
   return COLLECTIONS.find(
     c =>

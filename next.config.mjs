@@ -135,6 +135,14 @@ const nextConfig = {
         destination: '/collections/modern-black/:slug',
       },
       {
+        source: '/collections/the-auren-collection',
+        destination: '/collections/auren',
+      },
+      {
+        source: '/collections/the-auren-collection/:slug',
+        destination: '/collections/auren/:slug',
+      },
+      {
         source: '/showroom.html',
         destination: '/showroom',
       },
