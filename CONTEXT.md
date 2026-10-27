@@ -74,75 +74,75 @@
 ### 4.2 IVORA Collection (17 Pieces)
 | ID | Code | Name | Category | Dimensions | Capacity / Specs | Primary Image | PDP Route |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `asei7103` | `ASEI7103` | Dinner Plate | Plates | 27 cm | Warm Ivora Matte Glaze with Sand Textured Rim | `/assets/catalogue/ivora/dinner plate main.png` | [Link](/collections/ivora/dinner-plate) |
-| `asei7101` | `ASEI7101` | Salad Plate | Plates | 21 cm | Warm Ivora Matte Glaze with Sand Rim | `/assets/catalogue/ivora/saladplate 21 cm main.png` | [Link](/collections/ivora/salad-plate) |
-| `asei7109` | `ASEI7109` | Deep Coupe | Plates | 23 cm | Warm Ivora Matte Glaze | `/assets/catalogue/ivora/deep coupe main.png` | [Link](/collections/ivora/deep-coupe) |
-| `asei7114` | `ASEI7114` | Edge Plate Big | Plates | 26 cm | Warm Ivora Glaze with Sculpted Straight Edge | `/assets/catalogue/ivora/edge plate big main.png` | [Link](/collections/ivora/edge-plate-big) |
-| `asei7112` | `ASEI7112` | Edge Plate Small | Plates | 20 cm | Warm Ivora Glaze with Sculpted Edge | `/assets/catalogue/ivora/edge plate small main.png` | [Link](/collections/ivora/edge-plate-small) |
-| `asei7111` | `ASEI7111` | Hi-Wall Appetizer Plate | Plates | 13 cm | Warm Ivora Matte Glaze | `/assets/catalogue/ivora/hi wall appetizer plate main.png` | [Link](/collections/ivora/hi-wall-appetizer-plate) |
-| `asei7122` | `ASEI7122` | Serving Bowl 19 cm | Bowls | 19 cm | 950 ml | 950 ml | `/assets/catalogue/ivora/serving bowl 19cm main.png` | [Link](/collections/ivora/serving-bowl-19cm) |
-| `asei7121` | `ASEI7121` | Serving Bowl 15 cm | Bowls | 15 cm | 590 ml | 590 ml | `/assets/catalogue/ivora/serving bowl 15cm main.png` | [Link](/collections/ivora/serving-bowl-15cm) |
-| `asei7124` | `ASEI7124` | Edge Bowl 20 cm | Bowls | 20 cm x 4.2 cm | 620 ml | 620 ml | `/assets/catalogue/ivora/edge bowl 620 mlmain.png` | [Link](/collections/ivora/edge-bowl-20cm) |
-| `asei7123` | `ASEI7123` | Edge Bowl 13 cm | Bowls | 13 cm x 6.5 cm | 570 ml | 570 ml | `/assets/catalogue/ivora/edge bowl main 570ml.png` | [Link](/collections/ivora/edge-bowl-13cm) |
-| `asei7164` | `ASEI7164` | Soup Bowl | Bowls | 11.5 cm | 287 ml | 287 ml | `/assets/catalogue/ivora/soup bowl main.png` | [Link](/collections/ivora/soup-bowl) |
-| `asei7163` | `ASEI7163` | Katori Bowl | Bowls | 9.5 cm | 190 ml | 190 ml | `/assets/catalogue/ivora/katori main.png` | [Link](/collections/ivora/katori-bowl) |
-| `asei7161` | `ASEI7161` | Dip Bowl | Bowls | 7.5 cm | 42 ml | 42 ml | `/assets/catalogue/ivora/dip bowl main.png` | [Link](/collections/ivora/dip-bowl) |
-| `asei7115` | `ASEI7115` | Chip Pot | Accessories | 400 ml | 400 ml | `/assets/catalogue/ivora/chip pot main.png` | [Link](/collections/ivora/chip-pot) |
-| `asei7134` | `ASEI7134` | Creamer | Accessories | 220 ml | 220 ml | `/assets/catalogue/ivora/creamer main.png` | [Link](/collections/ivora/creamer) |
-| `asei7153` | `ASEI7153` | Platter Small | Platters & Serving | 22 cm x 15 cm | Warm Ivora Matte Glaze | `/assets/catalogue/ivora/platters main.png` | [Link](/collections/ivora/platter-small) |
-| `asei7154` | `ASEI7154` | Platter Medium | Platters & Serving | 27.5 cm x 18 cm | Warm Ivora Matte Glaze | `/assets/catalogue/ivora/platters main.png` | [Link](/collections/ivora/platter-medium) |
+| `asei7103` | `ASEI7103` | Dinner Plate | Plates | 27 cm | Warm Ivora Matte Glaze with Sand Textured Rim | `.webp` | [Link](/collections/ivora/dinner-plate) |
+| `asei7101` | `ASEI7101` | Salad Plate | Plates | 21 cm | Warm Ivora Matte Glaze with Sand Rim | `.webp` | [Link](/collections/ivora/salad-plate) |
+| `asei7109` | `ASEI7109` | Deep Coupe | Plates | 23 cm | Warm Ivora Matte Glaze | `.webp` | [Link](/collections/ivora/deep-coupe) |
+| `asei7114` | `ASEI7114` | Edge Plate Big | Plates | 26 cm | Warm Ivora Glaze with Sculpted Straight Edge | `.webp` | [Link](/collections/ivora/edge-plate-big) |
+| `asei7112` | `ASEI7112` | Edge Plate Small | Plates | 20 cm | Warm Ivora Glaze with Sculpted Edge | `.webp` | [Link](/collections/ivora/edge-plate-small) |
+| `asei7111` | `ASEI7111` | Hi-Wall Appetizer Plate | Plates | 13 cm | Warm Ivora Matte Glaze | `.webp` | [Link](/collections/ivora/hi-wall-appetizer-plate) |
+| `asei7122` | `ASEI7122` | Serving Bowl 19 cm | Bowls | 19 cm | 950 ml | 950 ml | `.webp` | [Link](/collections/ivora/serving-bowl-19cm) |
+| `asei7121` | `ASEI7121` | Serving Bowl 15 cm | Bowls | 15 cm | 590 ml | 590 ml | `.webp` | [Link](/collections/ivora/serving-bowl-15cm) |
+| `asei7124` | `ASEI7124` | Edge Bowl 20 cm | Bowls | 20 cm x 4.2 cm | 620 ml | 620 ml | `.webp` | [Link](/collections/ivora/edge-bowl-20cm) |
+| `asei7123` | `ASEI7123` | Edge Bowl 13 cm | Bowls | 13 cm x 6.5 cm | 570 ml | 570 ml | `.webp` | [Link](/collections/ivora/edge-bowl-13cm) |
+| `asei7164` | `ASEI7164` | Soup Bowl | Bowls | 11.5 cm | 287 ml | 287 ml | `.webp` | [Link](/collections/ivora/soup-bowl) |
+| `asei7163` | `ASEI7163` | Katori Bowl | Bowls | 9.5 cm | 190 ml | 190 ml | `.webp` | [Link](/collections/ivora/katori-bowl) |
+| `asei7161` | `ASEI7161` | Dip Bowl | Bowls | 7.5 cm | 42 ml | 42 ml | `.webp` | [Link](/collections/ivora/dip-bowl) |
+| `asei7115` | `ASEI7115` | Chip Pot | Accessories | 400 ml | 400 ml | `.webp` | [Link](/collections/ivora/chip-pot) |
+| `asei7134` | `ASEI7134` | Creamer | Accessories | 220 ml | 220 ml | `.webp` | [Link](/collections/ivora/creamer) |
+| `asei7153` | `ASEI7153` | Platter Small | Platters & Serving | 22 cm x 15 cm | Warm Ivora Matte Glaze | `.webp` | [Link](/collections/ivora/platter-small) |
+| `asei7154` | `ASEI7154` | Platter Medium | Platters & Serving | 27.5 cm x 18 cm | Warm Ivora Matte Glaze | `.webp` | [Link](/collections/ivora/platter-medium) |
 
 
 ### 4.3 SPECKLED BROWN Collection (17 Pieces)
 | ID | Code | Name | Category | Dimensions | Capacity / Specs | Primary Image | PDP Route |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `assb5101` | `ASSB5101` | Dinner Plate 27 cm & Side Plate 20 cm | Plates | 20 cm & 27 cm | Organic Speckled Brown, Warm Neutral Clay Character | `/assets/catalogue/speckled-brown/Plate 20 CM 27 CM - Lifestyle.png` | [Link](/collections/speckled-brown/dinner-side-plate) |
-| `assb5105` | `ASSB5105` | Pasta Plate 27 cm | Plates | 27 cm | Curved Rim Glaze with Earthy Mineral Character | `/assets/catalogue/speckled-brown/Pasta Plate 27 CM - Lifestyle.png` | [Link](/collections/speckled-brown/pasta-plate) |
-| `assb5112` | `ASSB5112` | Edge Plate 20.5 cm & 25.5 cm | Plates | 20.5 cm & 25.5 cm | Architectural Vertical Rim with Warm Contrast Edge | `/assets/catalogue/speckled-brown/Edge Plate 20.5 CM 25.5 CM - Lifestyle.png` | [Link](/collections/speckled-brown/edge-plate) |
-| `assb5141` | `ASSB5141` | Elipse Plate 18 cm, 23 cm & 28 cm | Plates | 18 cm, 23 cm, 28 cm | Soft Elliptical Silhouette with Mineral Speckling | `/assets/catalogue/speckled-brown/Elipse Plate 18 CM 23 CM 28 CM - Lifestyle.png` | [Link](/collections/speckled-brown/elipse-plate) |
-| `assb5121` | `ASSB5121` | Footed Bowl 14.5 cm & 15 cm | Bowls | 14.5 cm (550 ml) & 15 cm (850 ml) | 550 ml / 850 ml | `/assets/catalogue/speckled-brown/Footed Bowl 14.5 CM 550 ML, 15 CM 850 ML - Lifestyle.png` | [Link](/collections/speckled-brown/footed-bowl) |
-| `assb5123` | `ASSB5123` | 'V' Bowl 16 cm | Bowls | 16 cm | Conical V-Profile with Contrast Lip | `/assets/catalogue/speckled-brown/V Bowl 16 CM - Lifestyle.png` | [Link](/collections/speckled-brown/v-bowl) |
-| `assb5126` | `ASSB5126` | Elipse Bowl 16 cm, 18 cm & 22 cm | Bowls | 16 cm, 18 cm, 22 cm | Organic Elliptical Profile with Speckled Finish | `/assets/catalogue/speckled-brown/Elipse Bowl 16 CM 18 CM 22 CM - Lifestyle.png` | [Link](/collections/speckled-brown/elipse-bowl) |
-| `assb5109` | `ASSB5109` | Deep Coupe 22.5 cm | Bowls | 22.5 cm | Elevated Curving Rim with Earthy Speckled Glaze | `/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Single) - Lifestyle.png` | [Link](/collections/speckled-brown/deep-coupe) |
-| `assb5109-pair` | `ASSB5109-P` | Deep Coupe 22.5 cm (Pair) | Bowls | 22.5 cm (Pair) | Speckled Brown Glaze with Hand-Finished Rim | `/assets/catalogue/speckled-brown/Deep Coupe 22.5 CM (Pair) - Lifestyle.png` | [Link](/collections/speckled-brown/deep-coupe-pair) |
-| `assb5125` | `ASSB5125` | Dinner Bowls 9.5 cm & Katori 9 cm | Bowls | 9 cm & 9.5 cm | Speckled Brown Mineral Glaze | `/assets/catalogue/speckled-brown/Bowls Dinner 9.5 CM Katori 9 CM - Lifestyle.png` | [Link](/collections/speckled-brown/bowls-dinner-katori) |
-| `assb5120` | `ASSB5120` | Soup Bowl 325 ml | Bowls | 325 ml | 325 ml | `/assets/catalogue/speckled-brown/Soup Bowl 325 ML - Lifestyle.png` | [Link](/collections/speckled-brown/soup-bowl) |
-| `assb5161` | `ASSB5161` | Artisan Soup Spoon | Accessories | Hospitality Standard | Speckled Brown Mineral Glaze | `/assets/catalogue/speckled-brown/Soup Spoon - Lifestyle.png` | [Link](/collections/speckled-brown/soup-spoon) |
-| `assb5104` | `ASSB5104` | Flat Plate 30 cm | Plates | 30 cm | Expansive Statement Surface with Tactile Mineral Speckles | `/assets/catalogue/speckled-brown/Flat Plate 30 CM - Lifestyle.png` | [Link](/collections/speckled-brown/flat-plate) |
-| `assb5132` | `ASSB5132` | Barista Cup 250 ml & Saucer 16 cm | Cups & Beverage | 250 ml (Saucer 16 cm) | 250 ml | `/assets/catalogue/speckled-brown/Barista Cup 250 ML Saucer 16 CM - Lifestyle.png` | [Link](/collections/speckled-brown/barista-cup-saucer) |
-| `assb5136` | `ASSB5136` | Expresso Cup 110 ml & Saucer 12.5 cm | Cups & Beverage | 110 ml (Saucer 12.5 cm) | 110 ml | `/assets/catalogue/speckled-brown/Expresso Cup 110 ML Saucer 12.5 CM - Lifestyle.png` | [Link](/collections/speckled-brown/expresso-cup-saucer) |
-| `assb5131` | `ASSB5131` | Barrel Mug 350 ml | Cups & Beverage | 350 ml | 350 ml | `/assets/catalogue/speckled-brown/Barrel Mug 350 ML - Lifestyle.png` | [Link](/collections/speckled-brown/barrel-mug) |
-| `assb5135` | `ASSB5135` | Tea Pot 685 ml | Accessories | 685 ml | 685 ml | `/assets/catalogue/speckled-brown/Tea Pot 685 ML - Lifestyle.png` | [Link](/collections/speckled-brown/tea-pot) |
+| `assb5101` | `ASSB5101` | Dinner Plate 27 cm & Side Plate 20 cm | Plates | 20 cm & 27 cm | Organic Speckled Brown, Warm Neutral Clay Character | `.webp` | [Link](/collections/speckled-brown/dinner-side-plate) |
+| `assb5105` | `ASSB5105` | Pasta Plate 27 cm | Plates | 27 cm | Curved Rim Glaze with Earthy Mineral Character | `.webp` | [Link](/collections/speckled-brown/pasta-plate) |
+| `assb5112` | `ASSB5112` | Edge Plate 20.5 cm & 25.5 cm | Plates | 20.5 cm & 25.5 cm | Architectural Vertical Rim with Warm Contrast Edge | `.webp` | [Link](/collections/speckled-brown/edge-plate) |
+| `assb5141` | `ASSB5141` | Elipse Plate 18 cm, 23 cm & 28 cm | Plates | 18 cm, 23 cm, 28 cm | Soft Elliptical Silhouette with Mineral Speckling | `.webp` | [Link](/collections/speckled-brown/elipse-plate) |
+| `assb5121` | `ASSB5121` | Footed Bowl 14.5 cm & 15 cm | Bowls | 14.5 cm (550 ml) & 15 cm (850 ml) | 550 ml / 850 ml | `.webp` | [Link](/collections/speckled-brown/footed-bowl) |
+| `assb5123` | `ASSB5123` | 'V' Bowl 16 cm | Bowls | 16 cm | Conical V-Profile with Contrast Lip | `.webp` | [Link](/collections/speckled-brown/v-bowl) |
+| `assb5126` | `ASSB5126` | Elipse Bowl 16 cm, 18 cm & 22 cm | Bowls | 16 cm, 18 cm, 22 cm | Organic Elliptical Profile with Speckled Finish | `.webp` | [Link](/collections/speckled-brown/elipse-bowl) |
+| `assb5109` | `ASSB5109` | Deep Coupe 22.5 cm | Bowls | 22.5 cm | Elevated Curving Rim with Earthy Speckled Glaze | `.webp` | [Link](/collections/speckled-brown/deep-coupe) |
+| `assb5109-pair` | `ASSB5109-P` | Deep Coupe 22.5 cm (Pair) | Bowls | 22.5 cm (Pair) | Speckled Brown Glaze with Hand-Finished Rim | `.webp` | [Link](/collections/speckled-brown/deep-coupe-pair) |
+| `assb5125` | `ASSB5125` | Dinner Bowls 9.5 cm & Katori 9 cm | Bowls | 9 cm & 9.5 cm | Speckled Brown Mineral Glaze | `.webp` | [Link](/collections/speckled-brown/bowls-dinner-katori) |
+| `assb5120` | `ASSB5120` | Soup Bowl 325 ml | Bowls | 325 ml | 325 ml | `.webp` | [Link](/collections/speckled-brown/soup-bowl) |
+| `assb5161` | `ASSB5161` | Artisan Soup Spoon | Accessories | Hospitality Standard | Speckled Brown Mineral Glaze | `.webp` | [Link](/collections/speckled-brown/soup-spoon) |
+| `assb5104` | `ASSB5104` | Flat Plate 30 cm | Plates | 30 cm | Expansive Statement Surface with Tactile Mineral Speckles | `.webp` | [Link](/collections/speckled-brown/flat-plate) |
+| `assb5132` | `ASSB5132` | Barista Cup 250 ml & Saucer 16 cm | Cups & Beverage | 250 ml (Saucer 16 cm) | 250 ml | `.webp` | [Link](/collections/speckled-brown/barista-cup-saucer) |
+| `assb5136` | `ASSB5136` | Expresso Cup 110 ml & Saucer 12.5 cm | Cups & Beverage | 110 ml (Saucer 12.5 cm) | 110 ml | `.webp` | [Link](/collections/speckled-brown/expresso-cup-saucer) |
+| `assb5131` | `ASSB5131` | Barrel Mug 350 ml | Cups & Beverage | 350 ml | 350 ml | `.webp` | [Link](/collections/speckled-brown/barrel-mug) |
+| `assb5135` | `ASSB5135` | Tea Pot 685 ml | Accessories | 685 ml | 685 ml | `.webp` | [Link](/collections/speckled-brown/tea-pot) |
 
 
 ### 4.4 GREYBORNE Collection (25 Pieces)
 | ID | Code | Name | Category | Dimensions | Capacity / Specs | Primary Image | PDP Route |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `asgb5101` | `ASGB5101` | Dinner Plate 27 cm & Side Plate 20 cm | Plates | 20 cm & 27 cm | Mineral Slate Grey Satin Glaze, Contrast Edge | `/assets/catalogue/greyborne/plate-20-27cm_lifestyle.png` | [Link](/collections/greyborne/dinner-side-plate) |
-| `asgb5104` | `ASGB5104` | Flat Plate 30 cm | Plates | 30 cm | Expansive 30 cm Tasting Surface in Slate Grey | `/assets/catalogue/greyborne/flat-plate-30cm_lifestyle.png` | [Link](/collections/greyborne/flat-plate-30cm) |
-| `asgb5105` | `ASGB5105` | Pasta Plate 27 cm | Plates | 27 cm | Wide Rim Pasta Cavity in Slate Grey | `/assets/catalogue/greyborne/pasta-plate-27cm_lifestyle.png` | [Link](/collections/greyborne/pasta-plate-27cm) |
-| `asgb5112` | `ASGB5112` | Edge Plate 20.5 cm & 25.5 cm | Plates | 20.5 cm & 25.5 cm | Architectural Vertical Rim in Slate Grey | `/assets/catalogue/greyborne/edge-plate-20.5-25.5cm_lifestyle.png` | [Link](/collections/greyborne/edge-plate) |
-| `asgb5141` | `ASGB5141` | Elipse Plate 18 cm, 23 cm & 28 cm | Plates | 18 cm, 23 cm, 28 cm | Organic Elliptical Plate Silhouette in Slate Grey | `/assets/catalogue/greyborne/elipse-plate-18-23-28cm_lifestyle.png` | [Link](/collections/greyborne/elipse-plate) |
-| `asgb5109` | `ASGB5109` | Deep Coupe 22.5 cm | Bowls | 22.5 cm | Curving Deep Coupe Rim in Slate Grey | `/assets/catalogue/greyborne/deep-coupe-22.5cm_lifestyle.png` | [Link](/collections/greyborne/deep-coupe) |
-| `asgb5171` | `ASGB5171` | Banquet Bowl 22 cm | Bowls | 22 cm | Mineral Slate Grey Satin Glaze | `/assets/catalogue/greyborne/banquet-bowl-22cm_lifestyle.png` | [Link](/collections/greyborne/banquet-bowl-22cm) |
-| `asgb5172` | `ASGB5172` | Banquet Bowl 29.5 cm | Bowls | 29.5 cm | Mineral Slate Grey Satin Glaze | `/assets/catalogue/greyborne/banquet-bowl-29.5cm_lifestyle.png` | [Link](/collections/greyborne/banquet-bowl-29-5cm) |
-| `asgb5120` | `ASGB5120` | Soup Bowl 325 ml | Bowls | 325 ml | 325 ml | `/assets/catalogue/greyborne/soup-bowl-325ml_lifestyle.png` | [Link](/collections/greyborne/soup-bowl-325ml) |
-| `asgb5121` | `ASGB5121` | Footed Bowl 14.5 cm (550 ml) & 15 cm (850 ml) | Bowls | 14.5 cm (550 ml) & 15 cm (850 ml) | 550 ml / 850 ml | `/assets/catalogue/greyborne/footed-bowl-14.5cm-550ml-15cm-850ml_lifestyle.png` | [Link](/collections/greyborne/footed-bowl) |
-| `asgb5123` | `ASGB5123` | 'V' Bowl 16 cm | Bowls | 16 cm | Conical V-Profile in Slate Grey | `/assets/catalogue/greyborne/v-bowl-16cm_lifestyle.png` | [Link](/collections/greyborne/v-bowl-16cm) |
-| `asgb5125` | `ASGB5125` | Dinner Bowls 9.5 cm & Katori 9 cm | Bowls | 9 cm & 9.5 cm | Mineral Slate Grey Glaze | `/assets/catalogue/greyborne/bowls-dinner-9.5cm-katori-9cm_lifestyle.png` | [Link](/collections/greyborne/dinner-bowls-katori) |
-| `asgb5126` | `ASGB5126` | Elipse Bowl 16 cm, 18 cm & 22 cm | Bowls | 16 cm, 18 cm, 22 cm | Organic Elliptical Profile in Slate Grey | `/assets/catalogue/greyborne/elipse-bowl-16-18-22cm_lifestyle.png` | [Link](/collections/greyborne/elipse-bowl) |
-| `asgb5131` | `ASGB5131` | Barrel Mug 350 ml | Cups & Beverage | 350 ml | 350 ml | `/assets/catalogue/greyborne/barrel-mug-350ml_lifestyle.png` | [Link](/collections/greyborne/barrel-mug) |
-| `asgb5132` | `ASGB5132` | Barista Cup 250 ml & Saucer 16 cm | Cups & Beverage | 250 ml (Saucer 16 cm) | 250 ml | `/assets/catalogue/greyborne/barista-cup-250ml-saucer-16cm_lifestyle.png` | [Link](/collections/greyborne/barista-cup-saucer) |
-| `asgb5136` | `ASGB5136` | Expresso Cup 110 ml & Saucer 12.5 cm | Cups & Beverage | 110 ml (Saucer 12.5 cm) | 110 ml | `/assets/catalogue/greyborne/expresso-cup-110ml-saucer-12.5cm_lifestyle.png` | [Link](/collections/greyborne/expresso-cup-saucer) |
-| `asgb5135` | `ASGB5135` | Tea Pot 685 ml | Accessories | 685 ml | 685 ml | `/assets/catalogue/greyborne/tea-pot-685ml_lifestyle.png` | [Link](/collections/greyborne/tea-pot) |
-| `asgb5151` | `ASGB5151` | Rectangular Platter 29 × 15 cm | Platters & Serving | 29 × 15 cm | Rectangular Hospitality Serving Platter in Slate Grey | `/assets/catalogue/greyborne/rectangular-platter-29x15cm_lifestyle.png` | [Link](/collections/greyborne/rectangular-platter) |
-| `asgb5153` | `ASGB5153` | Elipse Platter 32 cm | Platters & Serving | 32 cm | Statement Elliptical Serving Platter in Slate Grey | `/assets/catalogue/greyborne/elipse-platter-32cm_lifestyle.png` | [Link](/collections/greyborne/elipse-platter-32cm) |
-| `asgb5154` | `ASGB5154` | Elipse Serving Plate 27 cm | Platters & Serving | 27 cm | Organic Elliptical Service Canvas | `/assets/catalogue/greyborne/elipse-serving-plate-27cm_lifestyle.png` | [Link](/collections/greyborne/elipse-serving-plate-27cm) |
-| `asgb5155` | `ASGB5155` | Fluid Platter 21 × 11 cm & 29 × 21 cm | Platters & Serving | 21 × 11 cm & 29 × 21 cm | Fluid Asymmetric Rim in Slate Grey | `/assets/catalogue/greyborne/fluid-platter-21x11-29x21cm_lifestyle.png` | [Link](/collections/greyborne/fluid-platter) |
-| `asgb5156` | `ASGB5156` | Oval Platter 26 cm & 30 cm | Platters & Serving | 26 cm & 30 cm | Classic Hospitality Oval Platter in Slate Grey | `/assets/catalogue/greyborne/oval-platter-26-30cm_lifestyle.png` | [Link](/collections/greyborne/oval-platter) |
-| `asgb5127` | `ASGB5127` | Round Dip Bowl 6 cm | Accessories | 6 cm | Petite Round Condiment & Dip Dish in Slate Grey | `/assets/catalogue/greyborne/round-dip-bowl-6cm_lifestyle.png` | [Link](/collections/greyborne/round-dip-bowl-6cm) |
-| `asgb5128` | `ASGB5128` | Taper Dip Bowl 7 cm | Accessories | 7 cm | Conical Tapered Dip Dish in Slate Grey | `/assets/catalogue/greyborne/taper-dip-bowl-7cm_lifestyle.png` | [Link](/collections/greyborne/taper-dip-bowl-7cm) |
-| `asgb5161` | `ASGB5161` | Artisan Soup Spoon 16 cm | Accessories | 16 cm | Ergonomic Ceramic Spoon in Slate Grey | `/assets/catalogue/greyborne/soup-spoon-16cm_lifestyle.png` | [Link](/collections/greyborne/soup-spoon-16cm) |
+| `asgb5101` | `ASGB5101` | Dinner Plate 27 cm & Side Plate 20 cm | Plates | 20 cm & 27 cm | Mineral Slate Grey Satin Glaze, Contrast Edge | `.webp` | [Link](/collections/greyborne/dinner-side-plate) |
+| `asgb5104` | `ASGB5104` | Flat Plate 30 cm | Plates | 30 cm | Expansive 30 cm Tasting Surface in Slate Grey | `.webp` | [Link](/collections/greyborne/flat-plate-30cm) |
+| `asgb5105` | `ASGB5105` | Pasta Plate 27 cm | Plates | 27 cm | Wide Rim Pasta Cavity in Slate Grey | `.webp` | [Link](/collections/greyborne/pasta-plate-27cm) |
+| `asgb5112` | `ASGB5112` | Edge Plate 20.5 cm & 25.5 cm | Plates | 20.5 cm & 25.5 cm | Architectural Vertical Rim in Slate Grey | `.webp` | [Link](/collections/greyborne/edge-plate) |
+| `asgb5141` | `ASGB5141` | Elipse Plate 18 cm, 23 cm & 28 cm | Plates | 18 cm, 23 cm, 28 cm | Organic Elliptical Plate Silhouette in Slate Grey | `.webp` | [Link](/collections/greyborne/elipse-plate) |
+| `asgb5109` | `ASGB5109` | Deep Coupe 22.5 cm | Bowls | 22.5 cm | Curving Deep Coupe Rim in Slate Grey | `.webp` | [Link](/collections/greyborne/deep-coupe) |
+| `asgb5171` | `ASGB5171` | Banquet Bowl 22 cm | Bowls | 22 cm | Mineral Slate Grey Satin Glaze | `.webp` | [Link](/collections/greyborne/banquet-bowl-22cm) |
+| `asgb5172` | `ASGB5172` | Banquet Bowl 29.5 cm | Bowls | 29.5 cm | Mineral Slate Grey Satin Glaze | `.webp` | [Link](/collections/greyborne/banquet-bowl-29-5cm) |
+| `asgb5120` | `ASGB5120` | Soup Bowl 325 ml | Bowls | 325 ml | 325 ml | `.webp` | [Link](/collections/greyborne/soup-bowl-325ml) |
+| `asgb5121` | `ASGB5121` | Footed Bowl 14.5 cm (550 ml) & 15 cm (850 ml) | Bowls | 14.5 cm (550 ml) & 15 cm (850 ml) | 550 ml / 850 ml | `.webp` | [Link](/collections/greyborne/footed-bowl) |
+| `asgb5123` | `ASGB5123` | 'V' Bowl 16 cm | Bowls | 16 cm | Conical V-Profile in Slate Grey | `.webp` | [Link](/collections/greyborne/v-bowl-16cm) |
+| `asgb5125` | `ASGB5125` | Dinner Bowls 9.5 cm & Katori 9 cm | Bowls | 9 cm & 9.5 cm | Mineral Slate Grey Glaze | `.webp` | [Link](/collections/greyborne/dinner-bowls-katori) |
+| `asgb5126` | `ASGB5126` | Elipse Bowl 16 cm, 18 cm & 22 cm | Bowls | 16 cm, 18 cm, 22 cm | Organic Elliptical Profile in Slate Grey | `.webp` | [Link](/collections/greyborne/elipse-bowl) |
+| `asgb5131` | `ASGB5131` | Barrel Mug 350 ml | Cups & Beverage | 350 ml | 350 ml | `.webp` | [Link](/collections/greyborne/barrel-mug) |
+| `asgb5132` | `ASGB5132` | Barista Cup 250 ml & Saucer 16 cm | Cups & Beverage | 250 ml (Saucer 16 cm) | 250 ml | `.webp` | [Link](/collections/greyborne/barista-cup-saucer) |
+| `asgb5136` | `ASGB5136` | Expresso Cup 110 ml & Saucer 12.5 cm | Cups & Beverage | 110 ml (Saucer 12.5 cm) | 110 ml | `.webp` | [Link](/collections/greyborne/expresso-cup-saucer) |
+| `asgb5135` | `ASGB5135` | Tea Pot 685 ml | Accessories | 685 ml | 685 ml | `.webp` | [Link](/collections/greyborne/tea-pot) |
+| `asgb5151` | `ASGB5151` | Rectangular Platter 29 × 15 cm | Platters & Serving | 29 × 15 cm | Rectangular Hospitality Serving Platter in Slate Grey | `.webp` | [Link](/collections/greyborne/rectangular-platter) |
+| `asgb5153` | `ASGB5153` | Elipse Platter 32 cm | Platters & Serving | 32 cm | Statement Elliptical Serving Platter in Slate Grey | `.webp` | [Link](/collections/greyborne/elipse-platter-32cm) |
+| `asgb5154` | `ASGB5154` | Elipse Serving Plate 27 cm | Platters & Serving | 27 cm | Organic Elliptical Service Canvas | `.webp` | [Link](/collections/greyborne/elipse-serving-plate-27cm) |
+| `asgb5155` | `ASGB5155` | Fluid Platter 21 × 11 cm & 29 × 21 cm | Platters & Serving | 21 × 11 cm & 29 × 21 cm | Fluid Asymmetric Rim in Slate Grey | `.webp` | [Link](/collections/greyborne/fluid-platter) |
+| `asgb5156` | `ASGB5156` | Oval Platter 26 cm & 30 cm | Platters & Serving | 26 cm & 30 cm | Classic Hospitality Oval Platter in Slate Grey | `.webp` | [Link](/collections/greyborne/oval-platter) |
+| `asgb5127` | `ASGB5127` | Round Dip Bowl 6 cm | Accessories | 6 cm | Petite Round Condiment & Dip Dish in Slate Grey | `.webp` | [Link](/collections/greyborne/round-dip-bowl-6cm) |
+| `asgb5128` | `ASGB5128` | Taper Dip Bowl 7 cm | Accessories | 7 cm | Conical Tapered Dip Dish in Slate Grey | `.webp` | [Link](/collections/greyborne/taper-dip-bowl-7cm) |
+| `asgb5161` | `ASGB5161` | Artisan Soup Spoon 16 cm | Accessories | 16 cm | Ergonomic Ceramic Spoon in Slate Grey | `.webp` | [Link](/collections/greyborne/soup-spoon-16cm) |
 
 
 ### 4.5 MODERN SAGE GREEN Collection (15 Pieces)
@@ -273,3 +273,4 @@ vittesa/
 | **2026-10-22** | **Root Directory Cleanup & 2 New Collections (MODERN SAGE GREEN & TERRANE):** Cleaned Level 1 directory and public root of all loose image clutter, safely preserving all assets in `public/assets/logo/`, `catalogue/`, and `hero/`. Added MODERN SAGE GREEN (15 pieces) and TERRANE (16 pieces) to catalogue, showroom filters, home showcase, and dynamic SSG routing, expanding catalogue to 6 collections and 107 verified products. | `data/products/modern-sage-green.ts`, `data/products/terrane.ts`, `data/products/index.ts`, `data/collections.ts`, `components/showroom/ShowroomExplorer.tsx`, `components/home/FeaturedCollectionSection.tsx`, `components/layout/AnnouncementBar.tsx`, `next.config.mjs`, `CONTEXT.md` | `npx tsc --noEmit` passing with 0 errors. |
 | **2026-10-23** | **Addition of 3 New Collections (MODERN PINK, MODERN BROWN, MODERN BLACK):** Integrated MODERN PINK (25 pieces), MODERN BROWN (15 pieces), and MODERN BLACK (15 pieces), complete with optimized WebP/responsive media pipelines, specifications, category filters, Bento gallery integration, home showcase cards, and dynamic SSG routes, expanding active catalogue from 6 to 9 collections and 162 total verified pieces. | `data/products/modern-pink.ts`, `data/products/modern-brown.ts`, `data/products/modern-black.ts`, `data/products/index.ts`, `data/collections.ts`, `components/showroom/ShowroomExplorer.tsx`, `components/home/FeaturedCollectionSection.tsx`, `components/home/VittesaGallery.tsx`, `components/layout/AnnouncementBar.tsx`, `components/layout/Footer.tsx`, `next.config.mjs`, `CONTEXT.md` | `npx tsc --noEmit` and `npm run build` passing with 325 static routes generated. |
 | **2026-10-27** | **Addition of AUREN Collection (24 Pieces):** Integrated AUREN collection (24 pieces) in Mediterranean Azure reactive glaze with hand-accented bronze rims, complete with optimized WebP/responsive media pipelines, specifications, category filters, Bento gallery integration, home showcase cards, and dynamic SSG routes, expanding active catalogue to 10 collections and 186 total verified pieces. | `data/products/auren.ts`, `data/products/index.ts`, `data/collections.ts`, `components/showroom/ShowroomExplorer.tsx`, `components/home/FeaturedCollectionSection.tsx`, `components/home/VittesaGallery.tsx`, `components/layout/AnnouncementBar.tsx`, `components/layout/Footer.tsx`, `next.config.mjs`, `CONTEXT.md` | Verified TypeScript and Next.js build. |
+| **2026-10-27** | **Asset Optimization & Repository Size Reduction:** Purged 431 redundant unreferenced raw PNGs and legacy files from `public/` (~648 MB freed in Git repository, -91% size reduction) and removed raw root collection folders and legacy `dist` (~450 MB local freed), leaving exclusively high-performance WebP and referenced imagery. | `public/assets/`, `.gitignore`, `CONTEXT.md` | `npx tsc --noEmit` and `npm run build` passing cleanly with 374 SSG routes. |
