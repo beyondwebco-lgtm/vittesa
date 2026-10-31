@@ -1156,7 +1156,9 @@ const MagicBento = ({
         const body = (
           <>
             {entry.image && <img className="magic-bento__image" src={entry.image} alt="" draggable={false} />}
-            {entry.image && <span className="magic-bento__scrim" />}
+            {entry.image && (entry.title || entry.description || entry.label || entry.content) && (
+              <span className="magic-bento__scrim" />
+            )}
             {enableSpotlight && <span className="magic-bento__light" />}
             {enableStars && (
               <canvas

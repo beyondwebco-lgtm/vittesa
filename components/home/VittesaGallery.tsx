@@ -6,66 +6,34 @@ import MagicBento from './MagicBento';
 // Put images in /public/images/ (or change paths).
 const ITEMS = [
   {
-    id: 'olivera',
-    title: 'OLIVERA',
-    image: '/images/olivera.jpg',
-    href: '/collections/olivera',
-    colSpan: 2
+    id: 'bento-1',
+    image: '/images/bento-1.jpg',
+    colSpan: 2,
+    rowSpan: 2
   },
   {
-    id: 'ivora',
-    title: 'IVORA',
-    image: '/images/ivora.jpg',
-    href: '/collections/ivora'
+    id: 'bento-2',
+    image: '/images/bento-2.jpg',
+    colSpan: 1,
+    rowSpan: 1
   },
   {
-    id: 'speckled-brown',
-    title: 'SPECKLED BROWN',
-    image: '/images/speckled-brown.jpg',
-    href: '/collections/speckled-brown'
+    id: 'bento-3',
+    image: '/images/bento-3.jpg',
+    colSpan: 1,
+    rowSpan: 1
   },
   {
-    id: 'greyborne',
-    title: 'GREYBORNE',
-    image: '/images/greyborne.jpg',
-    href: '/collections/greyborne'
+    id: 'bento-4',
+    image: '/images/bento-4.jpg',
+    colSpan: 1,
+    rowSpan: 1
   },
   {
-    id: 'modern-sage-green',
-    title: 'MODERN SAGE GREEN',
-    image: '/images/modern-sage-green.jpg',
-    href: '/collections/modern-sage-green'
-  },
-  {
-    id: 'terrane',
-    title: 'TERRANE',
-    image: '/images/terrane.jpg',
-    href: '/collections/terrane'
-  },
-  {
-    id: 'modern-pink',
-    title: 'MODERN PINK',
-    image: '/images/modern-pink.jpg',
-    href: '/collections/modern-pink'
-  },
-  {
-    id: 'modern-brown',
-    title: 'MODERN BROWN',
-    image: '/images/modern-brown.jpg',
-    href: '/collections/modern-brown'
-  },
-  {
-    id: 'modern-black',
-    title: 'MODERN BLACK',
-    image: '/images/modern-black.jpg',
-    href: '/collections/modern-black'
-  },
-  {
-    id: 'auren',
-    title: 'AUREN',
-    image: '/images/auren.jpg',
-    href: '/collections/auren',
-    colSpan: 2
+    id: 'bento-5',
+    image: '/images/bento-5.jpg',
+    colSpan: 1,
+    rowSpan: 1
   }
 ];
 
