@@ -16,13 +16,33 @@ export default function CollectionsGatewayPage() {
 
   return (
     <>
-      <h1 className="sr-only">VITTESA Tableware Collections</h1>
-
       <section
         className="featured-collection-section section-padding"
         style={{ paddingTop: 'clamp(2.5rem, 5vw, 4.5rem)' }}
       >
         <div className="container">
+          <div
+            style={{
+              textAlign: 'center',
+              maxWidth: '820px',
+              margin: '0 auto clamp(2.5rem, 4vw, 3.5rem) auto',
+            }}
+          >
+            <h1
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(2.25rem, 4.5vw, 3.5rem)',
+                fontWeight: 400,
+                letterSpacing: '0.02em',
+                lineHeight: 1.2,
+                color: 'var(--ink-primary)',
+                margin: 0,
+              }}
+            >
+              VITTESA Tableware Collections
+            </h1>
+          </div>
+
           {collections.map((col) => (
             <div
               key={col.id}
