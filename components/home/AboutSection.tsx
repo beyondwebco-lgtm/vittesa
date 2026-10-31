@@ -44,8 +44,8 @@ export const AboutSection: React.FC = () => {
           <div className="about-media-col">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/catalogue/about-us.webp"
-              alt="Serene Earth-Toned Ceramic Table Setting — VITTESA Porcelain Maison"
+              src="/assets/catalogue/about-vittesa.jpg"
+              alt="Thoughtfully Chosen Porcelain — VITTESA Porcelain Maison"
               loading="lazy"
               decoding="async"
             />
