@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
@@ -20,6 +20,13 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: '--font-sans',
   display: 'swap',
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#181716',
+};
 
 export const metadata: Metadata = {
   title: 'VITTESA — Porcelain Maison | Beautifully Made for the Art of Dining',

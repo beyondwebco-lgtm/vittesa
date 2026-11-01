@@ -140,6 +140,7 @@ export const EnquiryModal: React.FC = () => {
                   type="text"
                   id="modal-enq-name"
                   name="name"
+                  autoComplete="name"
                   className="form-input"
                   placeholder="Your full name"
                   required
@@ -149,7 +150,8 @@ export const EnquiryModal: React.FC = () => {
                     width: '100%',
                     padding: '0.75rem',
                     border: '1px solid var(--border-medium)',
-                    fontSize: '0.875rem',
+                    fontSize: '1rem',
+                    minHeight: '44px',
                   }}
                 />
               </div>
@@ -170,6 +172,8 @@ export const EnquiryModal: React.FC = () => {
                 </label>
                 <input
                   type="email"
+                  inputMode="email"
+                  autoComplete="email"
                   id="modal-enq-email"
                   name="email"
                   className="form-input"
@@ -181,7 +185,8 @@ export const EnquiryModal: React.FC = () => {
                     width: '100%',
                     padding: '0.75rem',
                     border: '1px solid var(--border-medium)',
-                    fontSize: '0.875rem',
+                    fontSize: '1rem',
+                    minHeight: '44px',
                   }}
                 />
               </div>
@@ -204,6 +209,7 @@ export const EnquiryModal: React.FC = () => {
                   type="text"
                   id="modal-enq-property"
                   name="property"
+                  autoComplete="organization"
                   className="form-input"
                   placeholder="e.g. Grand Horizon Hotel"
                   value={property}
@@ -212,7 +218,8 @@ export const EnquiryModal: React.FC = () => {
                     width: '100%',
                     padding: '0.75rem',
                     border: '1px solid var(--border-medium)',
-                    fontSize: '0.875rem',
+                    fontSize: '1rem',
+                    minHeight: '44px',
                   }}
                 />
               </div>
@@ -244,7 +251,7 @@ export const EnquiryModal: React.FC = () => {
                     width: '100%',
                     padding: '0.75rem',
                     border: '1px solid var(--border-medium)',
-                    fontSize: '0.875rem',
+                    fontSize: '1rem',
                   }}
                 />
               </div>
@@ -255,6 +262,7 @@ export const EnquiryModal: React.FC = () => {
                 className="btn-primary"
                 style={{
                   width: '100%',
+                  minHeight: '44px',
                   background: 'var(--ink-primary)',
                   color: '#FFF',
                   padding: '0.85rem',

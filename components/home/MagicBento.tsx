@@ -1206,7 +1206,7 @@ const MagicBento = ({
             className="magic-bento__cell"
             style={{
               gridColumn: `span ${Math.min(span, Math.max(1, Math.round(entry.colSpan ?? 1)))}`,
-              gridRow: `span ${Math.max(1, Math.round(entry.rowSpan ?? 1))}`
+              gridRow: span === 1 ? 'span 1' : `span ${Math.max(1, Math.round(entry.rowSpan ?? 1))}`
             }}
           >
             {entry.href ? (

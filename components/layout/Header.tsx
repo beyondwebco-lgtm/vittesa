@@ -21,6 +21,10 @@ export const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    setMobileNavOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 40) {
         setIsScrolled(true);

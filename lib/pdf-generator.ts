@@ -146,12 +146,25 @@ export async function generateSpecificationPdf(items: TrayItem[]): Promise<Uint8
 }
 
 export function downloadSpecificationPdf(items: TrayItem[], filename = 'vittesa-specification-schedule.pdf') {
-  generateSpecificationPdf(items).then((pdfBytes) => {
-    const blob = new Blob([pdfBytes as unknown as BlobPart], { type: 'application/pdf' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = filename;
-    link.click();
-    URL.revokeObjectURL(link.href);
-  });
+  generateSpecificationPdf(items)
+    .then((pdfBytes) => {
+      const blob = new Blob([pdfBytes as unknown as BlobPart], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Delay revoke so iOS Safari and mobile Chrome have time to process the file stream
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+      }, 10000);
+    })
+    .catch((err) => {
+      console.error('PDF generation error:', err);
+    });
 }

@@ -119,6 +119,22 @@ export const SpecificationTrayDrawer: React.FC = () => {
                     className="tray-item-remove"
                     onClick={() => removeFromTray(item.id)}
                     title="Remove piece"
+                    aria-label={`Remove ${item.name}`}
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      minWidth: '44px',
+                      minHeight: '44px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      color: 'var(--ink-muted)',
+                      fontSize: '1rem',
+                      flexShrink: 0,
+                    }}
                   >
                     ✕
                   </button>
@@ -142,6 +158,7 @@ export const SpecificationTrayDrawer: React.FC = () => {
                 border: '1px solid var(--border-medium)',
                 background: 'transparent',
                 cursor: 'pointer',
+                minHeight: '44px',
               }}
             >
               ↓ Download PDF Schedule
@@ -159,6 +176,7 @@ export const SpecificationTrayDrawer: React.FC = () => {
               color: '#FFF',
               width: '100%',
               textAlign: 'center',
+              minHeight: '44px',
               opacity: activeItems.length === 0 ? 0.5 : 1,
               cursor: activeItems.length === 0 ? 'not-allowed' : 'pointer',
             }}

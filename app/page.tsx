@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
-import VittesaGallery from '@/components/home/VittesaGallery';
 import { AboutSection } from '@/components/home/AboutSection';
+import VittesaGallery from '@/components/home/VittesaGallery';
 import { TrustSection } from '@/components/home/TrustSection';
 import { BulkBannerSection } from '@/components/home/BulkBannerSection';
 import { ContactSection } from '@/components/home/ContactSection';
@@ -12,11 +12,11 @@ export default function HomePage() {
       {/* 3. Hero Section */}
       <HeroSection />
 
+      {/* About VITTESA */}
+      <AboutSection />
+
       {/* 4. Featured Collections Bento Grid */}
       <VittesaGallery />
-
-      {/* 5. Brand Introduction */}
-      <AboutSection />
 
       {/* 7. Trust & Commitment Section */}
       <TrustSection />
