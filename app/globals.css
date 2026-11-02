@@ -307,7 +307,7 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .brand-logo-wordmark {
-  height: clamp(30px, 2.8vw, 36px);
+  height: clamp(40px, 4vw, 52px);
   width: auto;
   max-width: 220px;
   display: block;
@@ -326,7 +326,7 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .footer-brand-wordmark {
-  height: 32px;
+  height: clamp(40px, 4vw, 50px);
   width: auto;
   max-width: 200px;
   display: block;
@@ -2994,7 +2994,7 @@ h1, h2, h3, h4, .serif-title {
     letter-spacing: 0.11em;
   }
   .brand-logo-wordmark {
-    height: 32px;
+    height: 44px;
   }
   .brand-logo-text {
     font-size: 1.55rem;
@@ -3024,7 +3024,7 @@ h1, h2, h3, h4, .serif-title {
   }
 
   .brand-logo-wordmark {
-    height: 28px;
+    height: 40px;
     max-width: 180px;
   }
 
@@ -3211,7 +3211,7 @@ h1, h2, h3, h4, .serif-title {
   }
 
   .brand-logo-wordmark {
-    height: 25px;
+    height: 36px;
     max-width: 155px;
   }
 
@@ -3273,7 +3273,7 @@ h1, h2, h3, h4, .serif-title {
   }
 
   .brand-logo-wordmark {
-    height: 22px;
+    height: 32px;
     max-width: 135px;
   }
 
@@ -3381,7 +3381,7 @@ h1, h2, h3, h4, .serif-title {
 }
 
 .mobile-nav-header .brand-logo-wordmark {
-  height: 26px;
+  height: 40px;
   max-width: 170px;
 }
 
