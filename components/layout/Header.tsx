@@ -85,6 +85,14 @@ export const Header: React.FC = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    href="/corporate-credentials"
+                    className={`nav-link ${pathname === '/corporate-credentials' ? 'active' : ''}`}
+                  >
+                    Corporate Credentials
+                  </Link>
+                </li>
+                <li>
                   <Link href="/#contact" className="nav-link">
                     Contact
                   </Link>

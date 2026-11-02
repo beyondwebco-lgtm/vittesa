@@ -372,7 +372,7 @@ h1, h2, h3, h4, .serif-title {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: clamp(0.75rem, 1.4vw, 1.85rem);
+  gap: clamp(0.6rem, 1.2vw, 1.5rem);
   margin: 0;
   padding: 0;
   flex-wrap: nowrap;
@@ -384,8 +384,8 @@ h1, h2, h3, h4, .serif-title {
 
 .nav-link {
   display: inline-block;
-  font-size: clamp(0.6875rem, 0.75vw, 0.75rem);
-  letter-spacing: 0.13em;
+  font-size: clamp(0.65rem, 0.72vw, 0.75rem);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--ink-secondary);
@@ -2987,11 +2987,11 @@ h1, h2, h3, h4, .serif-title {
    ========================================================================== */
 @media (max-width: 1200px) {
   .nav-links {
-    gap: clamp(0.6rem, 1.1vw, 1.25rem);
+    gap: clamp(0.45rem, 0.9vw, 0.95rem);
   }
   .nav-link {
-    font-size: 0.7rem;
-    letter-spacing: 0.11em;
+    font-size: 0.65rem;
+    letter-spacing: 0.09em;
   }
   .brand-logo-wordmark {
     height: 44px;

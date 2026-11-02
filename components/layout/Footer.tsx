@@ -128,6 +128,13 @@ export const Footer: React.FC = () => {
             About
           </Link>
           <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <Link
+            href="/corporate-credentials"
+            style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}
+          >
+            Corporate Credentials
+          </Link>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
           <Link href="/#contact" style={{ color: 'var(--ink-primary)', textDecoration: 'none' }}>
             Contact
           </Link>

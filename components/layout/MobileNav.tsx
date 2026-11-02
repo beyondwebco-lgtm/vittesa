@@ -86,8 +86,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               </Link>
             </li>
             <li>
+              <Link href="/corporate-credentials" onClick={onClose}>
+                <span className="nav-num">05</span> Corporate Credentials
+              </Link>
+            </li>
+            <li>
               <Link href="/#contact" onClick={onClose}>
-                <span className="nav-num">05</span> Contact
+                <span className="nav-num">06</span> Contact
               </Link>
             </li>
           </ul>
