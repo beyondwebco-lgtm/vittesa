@@ -141,19 +141,23 @@ export const Footer: React.FC = () => {
           }}
         >
           <a
-            href="mailto:enquiries@vittesa.com"
+            href="mailto:ruthikabhimrao@gmail.com"
             style={{ color: 'inherit', textDecoration: 'none' }}
           >
-            enquiries@vittesa.com
-          </a>{' '}
-          • <span>+44 20 7946 0892</span>
+            ruthikabhimrao@gmail.com
+          </a>
         </div>
 
         <div
           className="footer-minimal-copy"
-          style={{ fontSize: '0.6875rem', color: 'var(--ink-muted)' }}
+          style={{
+            fontSize: '0.75rem',
+            color: 'var(--ink-muted)',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+          }}
         >
-          © 2026 VITTESA. All rights reserved.
+          VITTESA PRIVATE LIMITED · INDIA
         </div>
       </div>
     </footer>

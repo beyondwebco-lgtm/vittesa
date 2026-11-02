@@ -8,17 +8,16 @@ export const BulkBannerSection: React.FC = () => {
         <div className="bulk-banner-card">
           <div className="bulk-banner-content">
             <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
-              Trade &amp; Hospitality
+              FOR HOSPITALITY &amp; TRADE
             </span>
-            <h2 className="bulk-banner-title">Looking for Bulk or Wholesale Orders?</h2>
+            <h2 className="bulk-banner-title">Let&apos;s Build the Right Tableware Solution.</h2>
             <p className="bulk-banner-desc">
-              Contact VITTESA to discuss product requirements, quantities, and available shipping
-              options.
+              Whether you represent a hotel, restaurant, resort or distribution business, connect with VITTESA to discuss your product and commercial requirements.
             </p>
           </div>
           <div className="bulk-banner-cta">
             <Link href="/#contact" className="btn-primary bulk-banner-btn" id="bulk-banner-cta-btn">
-              ENQUIRE ABOUT BULK ORDERS
+              DISCUSS YOUR REQUIREMENTS →
             </Link>
           </div>
         </div>

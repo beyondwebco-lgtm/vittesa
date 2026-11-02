@@ -13,17 +13,18 @@ export const TrustSection: React.FC = () => {
           }}
         >
           <span className="eyebrow" style={{ color: 'var(--tone-gold)' }}>
-            Our Commitment
+            OUR APPROACH
           </span>
           <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', margin: '0.5rem 0 0.75rem' }}>
-            Chosen with Care.
+            Designed for Hospitality.
           </h2>
           <p style={{ color: 'var(--ink-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-            Refined porcelain tableware supported by direct advisory and attentive service.
+            Commercial porcelain tableware supported by considered design, product expertise and dependable business coordination.
           </p>
         </div>
 
         <div className="trust-grid">
+          {/* Card 1 — Product Expertise */}
           <div className="trust-card">
             <div className="trust-card-icon" aria-hidden="true">
               <svg
@@ -41,13 +42,13 @@ export const TrustSection: React.FC = () => {
                 <path d="M12 8h.01" />
               </svg>
             </div>
-            <h3 className="trust-card-title">Product Enquiries Welcome</h3>
+            <h3 className="trust-card-title">Product Expertise</h3>
             <p className="trust-card-desc">
-              Dedicated guidance on individual piece selections, tabletop dimensions, and technical
-              porcelain specifications.
+              Guidance on collections, product specifications, dimensions, finishes and application requirements across hospitality settings.
             </p>
           </div>
 
+          {/* Card 2 — Commercial & Trade Enquiries */}
           <div className="trust-card">
             <div className="trust-card-icon" aria-hidden="true">
               <svg
@@ -64,13 +65,13 @@ export const TrustSection: React.FC = () => {
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
               </svg>
             </div>
-            <h3 className="trust-card-title">Bulk &amp; Wholesale Enquiries</h3>
+            <h3 className="trust-card-title">Commercial &amp; Trade Enquiries</h3>
             <p className="trust-card-desc">
-              Flexible order volumes and bespoke quotation schedules for hospitality, boutique
-              dining, and trade projects.
+              Tailored quotations and coordinated supply arrangements for hotels, restaurants, resorts, catering businesses and distributors.
             </p>
           </div>
 
+          {/* Card 3 — International Export Support */}
           <div className="trust-card">
             <div className="trust-card-icon" aria-hidden="true">
               <svg
@@ -88,10 +89,9 @@ export const TrustSection: React.FC = () => {
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
             </div>
-            <h3 className="trust-card-title">International Shipping Options — Contact Us</h3>
+            <h3 className="trust-card-title">International Export Support</h3>
             <p className="trust-card-desc">
-              Direct consultation on available international freight, delivery destinations, and
-              logistics options.
+              Guidance on export requirements, shipping arrangements, destination coordination and delivery planning.
             </p>
           </div>
         </div>

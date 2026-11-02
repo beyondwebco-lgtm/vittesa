@@ -3,213 +3,171 @@
 import React, { useState } from 'react';
 
 export const ContactSection: React.FC = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [company, setCompany] = useState('');
-  const [phone, setPhone] = useState('');
-  const [enquiryType, setEnquiryType] = useState('general');
-  const [notes, setNotes] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [businessEmail, setBusinessEmail] = useState('');
+  const [requirements, setRequirements] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!fullName.trim() || !companyName.trim() || !businessEmail.trim()) {
+      return;
+    }
+
     setIsSubmitting(true);
 
     setTimeout(() => {
+      // Log submitted payload with updated field names
+      if (typeof window !== 'undefined') {
+        console.log('Enquiry transmitted:', {
+          fullName,
+          companyName,
+          businessEmail,
+          requirements,
+        });
+      }
       setIsSubmitting(false);
       setSubmitted(true);
-      setName('');
-      setEmail('');
-      setCompany('');
-      setPhone('');
-      setNotes('');
+      setFullName('');
+      setCompanyName('');
+      setBusinessEmail('');
+      setRequirements('');
     }, 700);
   };
 
   return (
     <section className="contact-section section-padding" id="contact">
       <div className="container">
-        <div className="contact-layout">
-          {/* Left Column: Business Details */}
-          <div className="contact-sidebar">
-            <span className="eyebrow">Direct Desk</span>
-            <h2>How Can We Help?</h2>
-            <p
-              style={{
-                fontSize: '1rem',
-                lineHeight: 1.6,
-                color: 'var(--ink-secondary)',
-                margin: '1rem 0 1.75rem',
-              }}
-            >
-              Ask us about OLIVERA or IVORA products, bulk orders, or shipping options.
-            </p>
+        {/* 1. Section Header */}
+        <div className="contact-section-header">
+          <span className="eyebrow contact-section-eyebrow">B2B ENQUIRIES</span>
+          <h2 className="contact-section-heading">Let&apos;s Discuss Your Requirements.</h2>
+          <p className="contact-section-desc">
+            Connect with VITTESA for commercial porcelain tableware, contract manufacturing and international supply requirements.
+          </p>
+        </div>
 
-            <div className="contact-details-list">
-              <div className="contact-detail-block">
-                <span>Direct Enquiries</span>
-                <strong>
-                  <a
-                    href="mailto:enquiries@vittesa.com"
-                    style={{ color: 'inherit', textDecoration: 'none' }}
-                  >
-                    enquiries@vittesa.com
-                  </a>
-                </strong>
+        <div className="contact-layout">
+          {/* 2. Contact Information Column */}
+          <div className="contact-info-col">
+            <div className="contact-info-cards">
+              <div className="contact-info-card">
+                <span className="contact-info-label">GENERAL ENQUIRIES</span>
+                <a
+                  href="mailto:ruthikabhimrao@gmail.com"
+                  className="contact-info-link"
+                >
+                  ruthikabhimrao@gmail.com
+                </a>
               </div>
-              <div className="contact-detail-block">
-                <span>Telephone</span>
-                <strong>+44 20 7946 0892</strong>
+
+              <div className="contact-info-card">
+                <span className="contact-info-label">INTERNATIONAL BUSINESS</span>
+                <p className="contact-info-text">
+                  Export enquiries, distribution partnerships and commercial supply.
+                </p>
               </div>
-              <div className="contact-detail-block">
-                <span>Showroom Support</span>
-                <strong>Physical sample boxes, quotation schedules, and shipping consultations</strong>
+
+              <div className="contact-info-card">
+                <span className="contact-info-label">PRODUCT ENQUIRIES</span>
+                <p className="contact-info-text">
+                  Collections, specifications, samples and customised requirements.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Streamlined Enquiry Form */}
+          {/* 3. Enquiry Form Column */}
           <div className="enquiry-form-card">
             {submitted ? (
-              <div
-                style={{
-                  padding: '2rem 1.5rem',
-                  textAlign: 'center',
-                  background: 'rgba(122, 129, 110, 0.1)',
-                  border: '1px solid var(--border-medium)',
-                  borderRadius: '4px',
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '1.5rem',
-                    marginBottom: '0.5rem',
-                    color: 'var(--ink-primary)',
-                  }}
-                >
-                  Request Received
+              <div className="enquiry-success-state">
+                <div className="enquiry-success-icon" aria-hidden="true">
+                  ✓
                 </div>
-                <p
-                  style={{
-                    fontSize: '0.875rem',
-                    color: 'var(--ink-secondary)',
-                    lineHeight: 1.6,
-                    marginBottom: '1rem',
-                  }}
-                >
-                  Thank you. Your enquiry has been received. Our team will contact you promptly with
-                  sample and procurement details.
+                <h3 className="enquiry-success-title">Request Received</h3>
+                <p className="enquiry-success-desc">
+                  Thank you. Your enquiry has been received. Our team will get in touch.
                 </p>
                 <button
                   type="button"
-                  className="btn-primary"
+                  className="btn-primary enquiry-btn-reset"
                   onClick={() => setSubmitted(false)}
-                  style={{ fontSize: '0.75rem', padding: '0.6rem 1.5rem' }}
                 >
-                  Send Another Message
+                  Send Another Enquiry
                 </button>
               </div>
             ) : (
-              <form id="b2b-enquiry-form" onSubmit={handleSubmit}>
-                <input type="hidden" name="collection" value="OLIVERA" />
-
-                <div className="form-grid-2">
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="enq-name">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="enq-name"
-                      name="name"
-                      className="form-input"
-                      placeholder="Your full name"
-                      required
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="enq-email">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="enq-email"
-                      name="email"
-                      className="form-input"
-                      placeholder="name@company.com"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-grid-2">
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="enq-company">
-                      Company Name (Optional)
-                    </label>
-                    <input
-                      type="text"
-                      id="enq-company"
-                      name="company"
-                      className="form-input"
-                      placeholder="e.g. Grand Horizon Hotel"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="enq-phone">
-                      Phone Number (Optional)
-                    </label>
-                    <input
-                      type="tel"
-                      id="enq-phone"
-                      name="phone"
-                      className="form-input"
-                      placeholder="+44 20 0000 0000"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
+              <form id="b2b-enquiry-form" onSubmit={handleSubmit} noValidate={false}>
+                <div className="enquiry-form-header">
+                  <h3 className="enquiry-form-title">Send Us an Enquiry</h3>
+                  <p className="enquiry-form-desc">
+                    Tell us about your business and requirements. Our team will get in touch.
+                  </p>
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="enq-type">
-                    Enquiry Type (Optional)
+                  <label className="form-label" htmlFor="contact-full-name">
+                    FULL NAME *
                   </label>
-                  <select
-                    id="enq-type"
-                    name="enquiryType"
-                    className="form-select"
-                    value={enquiryType}
-                    onChange={(e) => setEnquiryType(e.target.value)}
-                  >
-                    <option value="general">General Enquiry</option>
-                    <option value="product">Product Order / Specification</option>
-                    <option value="bulk">Bulk / Wholesale Enquiry</option>
-                    <option value="samples">Sample Box Request</option>
-                  </select>
+                  <input
+                    type="text"
+                    id="contact-full-name"
+                    name="fullName"
+                    className="form-input"
+                    placeholder="Your full name"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                  />
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="enquiry-notes">
-                    Message *
+                  <label className="form-label" htmlFor="contact-company-name">
+                    COMPANY NAME *
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-company-name"
+                    name="companyName"
+                    className="form-input"
+                    placeholder="Your company name"
+                    required
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label" htmlFor="contact-business-email">
+                    BUSINESS EMAIL *
+                  </label>
+                  <input
+                    type="email"
+                    id="contact-business-email"
+                    name="businessEmail"
+                    className="form-input"
+                    placeholder="Your business email"
+                    required
+                    value={businessEmail}
+                    onChange={(e) => setBusinessEmail(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label" htmlFor="contact-requirements">
+                    YOUR REQUIREMENTS
                   </label>
                   <textarea
-                    id="enquiry-notes"
-                    name="notes"
+                    id="contact-requirements"
+                    name="requirements"
                     className="form-textarea"
                     rows={4}
-                    placeholder="Ask us about OLIVERA or IVORA products, bulk orders, or shipping options..."
-                    required
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
+                    placeholder="Tell us about your enquiry..."
+                    value={requirements}
+                    onChange={(e) => setRequirements(e.target.value)}
                   />
                 </div>
 
@@ -217,16 +175,9 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary"
-                    style={{
-                      backgroundColor: 'var(--ink-primary)',
-                      color: '#FFF',
-                      width: '100%',
-                      opacity: isSubmitting ? 0.7 : 1,
-                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    }}
+                    className="btn-primary btn-submit-enquiry"
                   >
-                    {isSubmitting ? 'Transmitting Specification Request...' : 'SEND ENQUIRY'}
+                    {isSubmitting ? 'TRANSMITTING ENQUIRY...' : 'SEND ENQUIRY'}
                   </button>
                 </div>
               </form>
