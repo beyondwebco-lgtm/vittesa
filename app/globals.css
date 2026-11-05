@@ -6085,6 +6085,45 @@ h1, h2, h3, h4, .serif-title {
   padding: clamp(1.75rem, 3.5vw, 2.75rem);
 }
 
+.credentials-profile-link,
+.credentials-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink-primary, #181716);
+  text-decoration: none;
+  background: var(--bg-porcelain, #FBFBF9);
+  padding: 0.55rem 0.95rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-medium, #D5D1CB);
+  transition: all 0.2s ease;
+  word-break: break-all;
+  width: fit-content;
+}
+
+.credentials-profile-link:hover,
+.credentials-contact-link:hover {
+  background: #FFFFFF;
+  border-color: var(--tone-gold, #9E7B3B);
+  color: var(--tone-gold, #9E7B3B);
+  box-shadow: 0 2px 8px rgba(158, 123, 59, 0.12);
+  transform: translateY(-1px);
+}
+
+.credentials-whatsapp-link {
+  color: #128C7E;
+  border-color: rgba(18, 140, 126, 0.35);
+  background: rgba(18, 140, 126, 0.04);
+}
+
+.credentials-whatsapp-link:hover {
+  color: #075E54;
+  border-color: #128C7E;
+  background: rgba(18, 140, 126, 0.08);
+}
+
 .credentials-profile-card {
   background: #FFFFFF;
   border: 1px solid var(--border-subtle, #EAE6DE);

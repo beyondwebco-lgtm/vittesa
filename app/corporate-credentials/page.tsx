@@ -134,26 +134,16 @@ export default function CorporateCredentialsPage() {
                   <span className="credentials-badge">Registered Office</span>
                 </div>
                 <div className="credentials-value-row">
-                  <span className="credentials-placeholder-tag">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.75"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    [Headquarters Office Address — To be updated]
+                  <span
+                    className="credentials-value"
+                    style={{ fontSize: '0.975rem', fontWeight: 500, lineHeight: 1.5 }}
+                  >
+                    KITEZ, Building No. 51/2384-58, Thrissur, Kerala, India, 680004
                   </span>
+                  <CopyButton text="KITEZ, Building No. 51/2384-58, Thrissur, Kerala, India, 680004" />
                 </div>
                 <span className="credentials-subtext">
-                  Official registered facility and corporate headquarters address
+                  Official corporate headquarters and registered administrative facility
                 </span>
               </div>
             </div>
@@ -208,9 +198,30 @@ export default function CorporateCredentialsPage() {
                 </div>
 
                 <div>
-                  <span className="credentials-placeholder-tag">
-                    [Director LinkedIn Profile — To be updated]
-                  </span>
+                  <a
+                    href="https://www.linkedin.com/in/ruthika-b-ba1b91290"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="credentials-profile-link"
+                    title="Open Director LinkedIn Profile in a new tab"
+                  >
+                    <span>linkedin.com/in/ruthika-b-ba1b91290</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
                 </div>
 
                 <span className="credentials-subtext">
@@ -247,9 +258,30 @@ export default function CorporateCredentialsPage() {
                 </div>
 
                 <div>
-                  <span className="credentials-placeholder-tag">
-                    [VITTESA – LinkedIn Company Page — To be updated]
-                  </span>
+                  <a
+                    href="https://www.linkedin.com/company/vittesa-hospitality/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="credentials-profile-link"
+                    title="Open VITTESA LinkedIn Company Page in a new tab"
+                  >
+                    <span>linkedin.com/company/vittesa-hospitality</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
                 </div>
 
                 <span className="credentials-subtext">
@@ -306,10 +338,50 @@ export default function CorporateCredentialsPage() {
                   </div>
                 </div>
 
-                <div style={{ marginBottom: '0.5rem' }}>
-                  <span className="credentials-placeholder-tag">
-                    [Business Enquiries – Email — To be updated]
-                  </span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', marginBottom: '0.5rem' }}>
+                  <a
+                    href="mailto:ruthikabhimrao@gmail.com"
+                    className="credentials-contact-link"
+                    title="Send email to ruthikabhimrao@gmail.com"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>ruthikabhimrao@gmail.com</span>
+                  </a>
+
+                  <a
+                    href="mailto:bhimraomohitee@gmail.com"
+                    className="credentials-contact-link"
+                    title="Send email to bhimraomohitee@gmail.com"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>bhimraomohitee@gmail.com</span>
+                  </a>
                 </div>
 
                 <span className="credentials-subtext">
@@ -345,9 +417,31 @@ export default function CorporateCredentialsPage() {
                 </div>
 
                 <div style={{ marginBottom: '0.5rem' }}>
-                  <span className="credentials-placeholder-tag">
-                    [Business Enquiries – WhatsApp — To be updated]
-                  </span>
+                  <a
+                    href="https://wa.me/918129796216"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="credentials-contact-link credentials-whatsapp-link"
+                    title="Direct WhatsApp chat with VITTESA Trade Advisory"
+                  >
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                    <span>+91 8129796216</span>
+                    <span className="credentials-badge" style={{ marginLeft: '0.35rem' }}>
+                      Start Chat →
+                    </span>
+                  </a>
                 </div>
 
                 <span className="credentials-subtext">
