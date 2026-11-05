@@ -5852,3 +5852,286 @@ h1, h2, h3, h4, .serif-title {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   CORPORATE CREDENTIALS PAGE
+   ========================================================================== */
+.credentials-page {
+  background-color: var(--bg-surface, #FFFFFF);
+  min-height: calc(100dvh - var(--header-height, 80px));
+  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+}
+
+.credentials-hero {
+  padding-top: clamp(2.75rem, 5vw, 4rem);
+  padding-bottom: clamp(2.25rem, 4vw, 3.5rem);
+  background-color: var(--bg-porcelain-alt, #FAF8F5);
+  border-bottom: 1px solid var(--border-subtle, #EAE6DE);
+  margin-bottom: clamp(2.5rem, 4.5vw, 4rem);
+}
+
+.credentials-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted, #7A7873);
+  margin-bottom: 1.25rem;
+}
+
+.credentials-breadcrumb a {
+  color: var(--ink-secondary, #4A4641);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.credentials-breadcrumb a:hover {
+  color: var(--tone-gold, #9E7B3B);
+}
+
+.credentials-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink-primary, #181716);
+  margin: 0 0 0.85rem;
+}
+
+.credentials-hero-desc {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--ink-secondary, #4A4641);
+  max-width: 720px;
+  margin: 0;
+}
+
+.credentials-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.75rem, 4.5vw, 3.75rem);
+}
+
+.credentials-divider {
+  border: none;
+  border-top: 1px solid var(--border-subtle, #EAE6DE);
+  margin: 0;
+}
+
+.credentials-section {
+  position: relative;
+}
+
+.credentials-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.credentials-section-eyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tone-gold, #9E7B3B);
+  margin-bottom: 0.4rem;
+}
+
+.credentials-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 2.75vw, 2.25rem);
+  font-weight: 400;
+  color: var(--ink-primary, #181716);
+  line-height: 1.2;
+  margin: 0 0 0.45rem;
+}
+
+.credentials-section-desc {
+  font-size: 0.9375rem;
+  color: var(--ink-secondary, #4A4641);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.credentials-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.credentials-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle, #EAE6DE);
+  border-radius: 8px;
+  padding: 1.5rem 1.65rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.credentials-card:hover {
+  border-color: var(--border-medium, #D5D1CB);
+  box-shadow: 0 4px 18px rgba(24, 23, 22, 0.04);
+}
+
+.credentials-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.credentials-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.credentials-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--tone-gold, #9E7B3B);
+}
+
+.credentials-badge {
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  font-weight: 600;
+  background: rgba(158, 123, 59, 0.08);
+  color: var(--tone-gold, #9E7B3B);
+  border: 1px solid rgba(158, 123, 59, 0.2);
+}
+
+.credentials-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.credentials-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ink-primary, #181716);
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.credentials-value.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.04em;
+  font-size: 1.0625rem;
+}
+
+.credentials-subtext {
+  font-size: 0.8125rem;
+  color: var(--ink-muted, #7A7873);
+  margin-top: 0.45rem;
+  line-height: 1.4;
+}
+
+.credentials-placeholder-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-style: italic;
+  color: var(--ink-muted, #7A7873);
+  font-size: 0.9375rem;
+  background: var(--bg-porcelain, #FBFBF9);
+  padding: 0.55rem 0.95rem;
+  border-radius: 4px;
+  border: 1px dashed var(--border-medium, #D5D1CB);
+  width: fit-content;
+}
+
+.credentials-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: transparent;
+  color: var(--ink-secondary, #4A4641);
+  border: 1px solid var(--border-medium, #D5D1CB);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.credentials-copy-btn:hover {
+  background: var(--ink-primary, #181716);
+  color: #FFFFFF;
+  border-color: var(--ink-primary, #181716);
+}
+
+.credentials-profiles-container {
+  background: var(--bg-porcelain, #FBFBF9);
+  border: 1px solid var(--border-subtle, #EAE6DE);
+  border-radius: 10px;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.credentials-profile-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle, #EAE6DE);
+  border-radius: 8px;
+  padding: 1.5rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.credentials-profile-card:hover {
+  border-color: var(--border-medium, #D5D1CB);
+  box-shadow: 0 4px 18px rgba(24, 23, 22, 0.04);
+}
+
+.credentials-icon-wrap {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(158, 123, 59, 0.08);
+  border-radius: 6px;
+  color: var(--tone-gold, #9E7B3B);
+  flex-shrink: 0;
+}
+
+.credentials-contact-container {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle, #EAE6DE);
+  border-radius: 10px;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+@media (max-width: 768px) {
+  .credentials-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .credentials-card {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .credentials-profiles-container,
+  .credentials-contact-container {
+    padding: 1.25rem 1.15rem;
+  }
+}
