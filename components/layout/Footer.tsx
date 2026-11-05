@@ -145,6 +145,11 @@ export const Footer: React.FC = () => {
             fontSize: '0.75rem',
             color: 'var(--ink-secondary)',
             marginBottom: '1.25rem',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '0.85rem',
+            flexWrap: 'wrap',
           }}
         >
           <a
@@ -152,6 +157,13 @@ export const Footer: React.FC = () => {
             style={{ color: 'inherit', textDecoration: 'none' }}
           >
             ruthikabhimrao@gmail.com
+          </a>
+          <span style={{ color: 'var(--border-medium)' }}>•</span>
+          <a
+            href="mailto:bhimraomohitee@gmail.com"
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
+            bhimraomohitee@gmail.com
           </a>
         </div>
 

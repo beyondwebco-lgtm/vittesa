@@ -7,8 +7,29 @@ export const ContactSection: React.FC = () => {
   const [companyName, setCompanyName] = useState('');
   const [businessEmail, setBusinessEmail] = useState('');
   const [requirements, setRequirements] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [emailLaunched, setEmailLaunched] = useState(false);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  const copyToClipboard = async (text: string, fieldId: string) => {
+    try {
+      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else if (typeof document !== 'undefined') {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopiedField(fieldId);
+      setTimeout(() => setCopiedField(null), 2000);
+    } catch (err) {
+      console.warn('Clipboard copy failed:', err);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,25 +38,27 @@ export const ContactSection: React.FC = () => {
       return;
     }
 
-    setIsSubmitting(true);
+    const recipients = 'ruthikabhimrao@gmail.com,bhimraomohitee@gmail.com';
+    const subject = `VITTESA Tableware Enquiry — ${companyName.trim() || fullName.trim()}`;
+    const body = `VITTESA Commercial Tableware Enquiry
+----------------------------------------
+Full Name: ${fullName.trim()}
+Company Name: ${companyName.trim()}
+Business Email: ${businessEmail.trim()}
 
-    setTimeout(() => {
-      // Log submitted payload with updated field names
-      if (typeof window !== 'undefined') {
-        console.log('Enquiry transmitted:', {
-          fullName,
-          companyName,
-          businessEmail,
-          requirements,
-        });
-      }
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFullName('');
-      setCompanyName('');
-      setBusinessEmail('');
-      setRequirements('');
-    }, 700);
+Requirements:
+${requirements.trim() || 'General enquiry / specifications'}
+----------------------------------------`;
+
+    const mailtoUrl = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Open user's default email client with prefilled details
+    if (typeof window !== 'undefined') {
+      window.location.href = mailtoUrl;
+    }
+
+    // Set feedback state without replacing the form
+    setEmailLaunched(true);
   };
 
   return (
@@ -56,12 +79,22 @@ export const ContactSection: React.FC = () => {
             <div className="contact-info-cards">
               <div className="contact-info-card">
                 <span className="contact-info-label">GENERAL ENQUIRIES</span>
-                <a
-                  href="mailto:ruthikabhimrao@gmail.com"
-                  className="contact-info-link"
-                >
-                  ruthikabhimrao@gmail.com
-                </a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                  <a
+                    href="mailto:ruthikabhimrao@gmail.com"
+                    className="contact-info-link"
+                    title="Send email to ruthikabhimrao@gmail.com"
+                  >
+                    ruthikabhimrao@gmail.com
+                  </a>
+                  <a
+                    href="mailto:bhimraomohitee@gmail.com"
+                    className="contact-info-link"
+                    title="Send email to bhimraomohitee@gmail.com"
+                  >
+                    bhimraomohitee@gmail.com
+                  </a>
+                </div>
               </div>
 
               <div className="contact-info-card">
@@ -82,106 +115,207 @@ export const ContactSection: React.FC = () => {
 
           {/* 3. Enquiry Form Column */}
           <div className="enquiry-form-card">
-            {submitted ? (
-              <div className="enquiry-success-state">
-                <div className="enquiry-success-icon" aria-hidden="true">
-                  ✓
-                </div>
-                <h3 className="enquiry-success-title">Request Received</h3>
-                <p className="enquiry-success-desc">
-                  Thank you. Your enquiry has been received. Our team will get in touch.
+            <form id="b2b-enquiry-form" onSubmit={handleSubmit} noValidate={false}>
+              <div className="enquiry-form-header">
+                <h3 className="enquiry-form-title">Send Us an Enquiry</h3>
+                <p className="enquiry-form-desc">
+                  Tell us about your business and requirements. Clicking send will open your default email application prefilled with your enquiry.
                 </p>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-full-name">
+                  FULL NAME *
+                </label>
+                <input
+                  type="text"
+                  id="contact-full-name"
+                  name="fullName"
+                  className="form-input"
+                  placeholder="Your full name"
+                  required
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-company-name">
+                  COMPANY NAME *
+                </label>
+                <input
+                  type="text"
+                  id="contact-company-name"
+                  name="companyName"
+                  className="form-input"
+                  placeholder="Your company name"
+                  required
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-business-email">
+                  BUSINESS EMAIL *
+                </label>
+                <input
+                  type="email"
+                  id="contact-business-email"
+                  name="businessEmail"
+                  className="form-input"
+                  placeholder="Your business email"
+                  required
+                  value={businessEmail}
+                  onChange={(e) => setBusinessEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-requirements">
+                  YOUR REQUIREMENTS
+                </label>
+                <textarea
+                  id="contact-requirements"
+                  name="requirements"
+                  className="form-textarea"
+                  rows={4}
+                  placeholder="Tell us about your enquiry..."
+                  value={requirements}
+                  onChange={(e) => setRequirements(e.target.value)}
+                />
+              </div>
+
+              <div className="form-submit-row">
                 <button
-                  type="button"
-                  className="btn-primary enquiry-btn-reset"
-                  onClick={() => setSubmitted(false)}
+                  type="submit"
+                  className="btn-primary btn-submit-enquiry"
                 >
-                  Send Another Enquiry
+                  SEND ENQUIRY
                 </button>
               </div>
-            ) : (
-              <form id="b2b-enquiry-form" onSubmit={handleSubmit} noValidate={false}>
-                <div className="enquiry-form-header">
-                  <h3 className="enquiry-form-title">Send Us an Enquiry</h3>
-                  <p className="enquiry-form-desc">
-                    Tell us about your business and requirements. Our team will get in touch.
-                  </p>
-                </div>
 
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-full-name">
-                    FULL NAME *
-                  </label>
-                  <input
-                    type="text"
-                    id="contact-full-name"
-                    name="fullName"
-                    className="form-input"
-                    placeholder="Your full name"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-company-name">
-                    COMPANY NAME *
-                  </label>
-                  <input
-                    type="text"
-                    id="contact-company-name"
-                    name="companyName"
-                    className="form-input"
-                    placeholder="Your company name"
-                    required
-                    value={companyName}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-business-email">
-                    BUSINESS EMAIL *
-                  </label>
-                  <input
-                    type="email"
-                    id="contact-business-email"
-                    name="businessEmail"
-                    className="form-input"
-                    placeholder="Your business email"
-                    required
-                    value={businessEmail}
-                    onChange={(e) => setBusinessEmail(e.target.value)}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-requirements">
-                    YOUR REQUIREMENTS
-                  </label>
-                  <textarea
-                    id="contact-requirements"
-                    name="requirements"
-                    className="form-textarea"
-                    rows={4}
-                    placeholder="Tell us about your enquiry..."
-                    value={requirements}
-                    onChange={(e) => setRequirements(e.target.value)}
-                  />
-                </div>
-
-                <div className="form-submit-row">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-primary btn-submit-enquiry"
+              {/* Email App Status & Copy Fallback Notice */}
+              {emailLaunched && (
+                <div
+                  className="enquiry-email-fallback-notice"
+                  style={{
+                    marginTop: '1.25rem',
+                    padding: '1.15rem 1.25rem',
+                    backgroundColor: 'var(--bg-porcelain, #FBFBF9)',
+                    border: '1px solid var(--border-medium, #D5D1CB)',
+                    borderRadius: '6px',
+                    fontSize: '0.875rem',
+                    lineHeight: 1.5,
+                    color: 'var(--ink-secondary, #4A4641)',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      marginBottom: '0.5rem',
+                      fontWeight: 600,
+                      color: 'var(--ink-primary)',
+                    }}
                   >
-                    {isSubmitting ? 'TRANSMITTING ENQUIRY...' : 'SEND ENQUIRY'}
-                  </button>
+                    <span style={{ color: 'var(--tone-gold, #9E7B3B)' }}>✉</span>
+                    <span>Opening your email client...</span>
+                  </div>
+                  <p style={{ margin: '0 0 0.75rem 0' }}>
+                    Please click <strong>Send</strong> in your email application to dispatch the enquiry to our team.
+                  </p>
+                  <div
+                    style={{
+                      borderTop: '1px solid var(--border-subtle, #EAE6DE)',
+                      paddingTop: '0.75rem',
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: 'block',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        color: 'var(--ink-muted)',
+                        marginBottom: '0.45rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.08em',
+                      }}
+                    >
+                      Email app didn&apos;t open? Send directly or copy recipients:
+                    </span>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          gap: '0.5rem',
+                          background: '#FFFFFF',
+                          padding: '0.35rem 0.65rem',
+                          borderRadius: '4px',
+                          border: '1px solid var(--border-subtle, #EAE6DE)',
+                        }}
+                      >
+                        <a
+                          href="mailto:ruthikabhimrao@gmail.com"
+                          style={{
+                            color: 'var(--ink-primary)',
+                            fontWeight: 500,
+                            textDecoration: 'none',
+                            fontSize: '0.85rem',
+                          }}
+                        >
+                          ruthikabhimrao@gmail.com
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => copyToClipboard('ruthikabhimrao@gmail.com', 'email1')}
+                          className="credentials-copy-btn"
+                          aria-label="Copy ruthikabhimrao@gmail.com"
+                        >
+                          {copiedField === 'email1' ? 'Copied' : 'Copy'}
+                        </button>
+                      </div>
+
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          gap: '0.5rem',
+                          background: '#FFFFFF',
+                          padding: '0.35rem 0.65rem',
+                          borderRadius: '4px',
+                          border: '1px solid var(--border-subtle, #EAE6DE)',
+                        }}
+                      >
+                        <a
+                          href="mailto:bhimraomohitee@gmail.com"
+                          style={{
+                            color: 'var(--ink-primary)',
+                            fontWeight: 500,
+                            textDecoration: 'none',
+                            fontSize: '0.85rem',
+                          }}
+                        >
+                          bhimraomohitee@gmail.com
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => copyToClipboard('bhimraomohitee@gmail.com', 'email2')}
+                          className="credentials-copy-btn"
+                          aria-label="Copy bhimraomohitee@gmail.com"
+                        >
+                          {copiedField === 'email2' ? 'Copied' : 'Copy'}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </form>
-            )}
+              )}
+            </form>
           </div>
         </div>
       </div>
