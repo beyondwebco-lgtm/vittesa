@@ -8,6 +8,8 @@ export const ContactSection: React.FC = () => {
   const [businessEmail, setBusinessEmail] = useState('');
   const [requirements, setRequirements] = useState('');
   const [emailLaunched, setEmailLaunched] = useState(false);
+  const [lastMailtoUrl, setLastMailtoUrl] = useState('');
+  const [lastGmailUrl, setLastGmailUrl] = useState('');
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const copyToClipboard = async (text: string, fieldId: string) => {
@@ -31,6 +33,24 @@ export const ContactSection: React.FC = () => {
     }
   };
 
+  const triggerMailApp = (url: string) => {
+    if (typeof window === 'undefined') return;
+    try {
+      const link = document.createElement('a');
+      link.href = url;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(() => {
+        if (link.parentNode) {
+          link.parentNode.removeChild(link);
+        }
+      }, 300);
+    } catch {
+      window.location.href = url;
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -38,26 +58,41 @@ export const ContactSection: React.FC = () => {
       return;
     }
 
-    const recipients = 'ruthikabhimrao@gmail.com,bhimraomohitee@gmail.com';
+    const primaryRecipient = 'ruthikabhimrao@gmail.com';
+    const ccRecipient = 'bhimraomohitee@gmail.com';
     const subject = `VITTESA Tableware Enquiry — ${companyName.trim() || fullName.trim()}`;
     const body = `VITTESA Commercial Tableware Enquiry
-----------------------------------------
-Full Name: ${fullName.trim()}
-Company Name: ${companyName.trim()}
-Business Email: ${businessEmail.trim()}
+========================================
+
+Full Name:
+${fullName.trim()}
+
+Company Name:
+${companyName.trim()}
+
+Business Email:
+${businessEmail.trim()}
 
 Requirements:
-${requirements.trim() || 'General enquiry / specifications'}
-----------------------------------------`;
+${requirements.trim() || 'General tableware inquiry & product specifications'}
 
-    const mailtoUrl = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+========================================`;
 
-    // Open user's default email client with prefilled details
-    if (typeof window !== 'undefined') {
-      window.location.href = mailtoUrl;
-    }
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
 
-    // Set feedback state without replacing the form
+    // mailto with standard ?cc= ensures 100% compatibility across Outlook, Windows Mail, Apple Mail, and mobile clients
+    const mailtoUrl = `mailto:${primaryRecipient}?cc=${ccRecipient}&subject=${encodedSubject}&body=${encodedBody}`;
+    
+    // Direct Gmail Web compose link for visitors using browser webmail
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${primaryRecipient}&cc=${ccRecipient}&su=${encodedSubject}&body=${encodedBody}`;
+
+    setLastMailtoUrl(mailtoUrl);
+    setLastGmailUrl(gmailUrl);
+
+    // Trigger default OS email application immediately
+    triggerMailApp(mailtoUrl);
+
     setEmailLaunched(true);
   };
 
@@ -119,7 +154,7 @@ ${requirements.trim() || 'General enquiry / specifications'}
               <div className="enquiry-form-header">
                 <h3 className="enquiry-form-title">Send Us an Enquiry</h3>
                 <p className="enquiry-form-desc">
-                  Tell us about your business and requirements. Clicking send will open your default email application prefilled with your enquiry.
+                  Tell us about your business and requirements. Submitting opens your default email application prefilled with your enquiry details.
                 </p>
               </div>
 
@@ -195,18 +230,18 @@ ${requirements.trim() || 'General enquiry / specifications'}
                 </button>
               </div>
 
-              {/* Email App Status & Copy Fallback Notice */}
+              {/* Status helper & webmail fallback */}
               {emailLaunched && (
                 <div
                   className="enquiry-email-fallback-notice"
                   style={{
                     marginTop: '1.25rem',
-                    padding: '1.15rem 1.25rem',
+                    padding: '1.25rem 1.35rem',
                     backgroundColor: 'var(--bg-porcelain, #FBFBF9)',
                     border: '1px solid var(--border-medium, #D5D1CB)',
-                    borderRadius: '6px',
+                    borderRadius: '8px',
                     fontSize: '0.875rem',
-                    lineHeight: 1.5,
+                    lineHeight: 1.55,
                     color: 'var(--ink-secondary, #4A4641)',
                   }}
                 >
@@ -218,18 +253,50 @@ ${requirements.trim() || 'General enquiry / specifications'}
                       marginBottom: '0.5rem',
                       fontWeight: 600,
                       color: 'var(--ink-primary)',
+                      fontSize: '0.9375rem',
                     }}
                   >
-                    <span style={{ color: 'var(--tone-gold, #9E7B3B)' }}>✉</span>
-                    <span>Opening your email client...</span>
+                    <span style={{ color: 'var(--tone-gold, #9E7B3B)', fontSize: '1.1rem' }}>✉</span>
+                    <span>Default email application launched!</span>
                   </div>
-                  <p style={{ margin: '0 0 0.75rem 0' }}>
-                    Please click <strong>Send</strong> in your email application to dispatch the enquiry to our team.
+                  <p style={{ margin: '0 0 0.85rem 0' }}>
+                    Your email client should now be open with your enquiry prefilled. Please review and click <strong>Send</strong> in your mail app.
                   </p>
+
+                  {/* Direct Action Buttons */}
+                  <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                    <button
+                      type="button"
+                      onClick={() => triggerMailApp(lastMailtoUrl)}
+                      className="credentials-copy-btn"
+                      style={{ padding: '0.45rem 0.85rem', fontSize: '0.75rem', background: '#FFFFFF' }}
+                    >
+                      Re-open Mail App
+                    </button>
+                    {lastGmailUrl && (
+                      <a
+                        href={lastGmailUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="credentials-copy-btn"
+                        style={{
+                          padding: '0.45rem 0.85rem',
+                          fontSize: '0.75rem',
+                          background: 'var(--ink-primary, #181716)',
+                          color: '#FFFFFF',
+                          borderColor: 'var(--ink-primary, #181716)',
+                          textDecoration: 'none',
+                        }}
+                      >
+                        Open in Gmail (Web) ↗
+                      </a>
+                    )}
+                  </div>
+
                   <div
                     style={{
                       borderTop: '1px solid var(--border-subtle, #EAE6DE)',
-                      paddingTop: '0.75rem',
+                      paddingTop: '0.85rem',
                     }}
                   >
                     <span
@@ -243,7 +310,7 @@ ${requirements.trim() || 'General enquiry / specifications'}
                         letterSpacing: '0.08em',
                       }}
                     >
-                      Email app didn&apos;t open? Send directly or copy recipients:
+                      Direct recipient addresses:
                     </span>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                       <div
@@ -253,7 +320,7 @@ ${requirements.trim() || 'General enquiry / specifications'}
                           justifyContent: 'space-between',
                           gap: '0.5rem',
                           background: '#FFFFFF',
-                          padding: '0.35rem 0.65rem',
+                          padding: '0.4rem 0.75rem',
                           borderRadius: '4px',
                           border: '1px solid var(--border-subtle, #EAE6DE)',
                         }}
@@ -264,7 +331,7 @@ ${requirements.trim() || 'General enquiry / specifications'}
                             color: 'var(--ink-primary)',
                             fontWeight: 500,
                             textDecoration: 'none',
-                            fontSize: '0.85rem',
+                            fontSize: '0.875rem',
                           }}
                         >
                           ruthikabhimrao@gmail.com
@@ -286,7 +353,7 @@ ${requirements.trim() || 'General enquiry / specifications'}
                           justifyContent: 'space-between',
                           gap: '0.5rem',
                           background: '#FFFFFF',
-                          padding: '0.35rem 0.65rem',
+                          padding: '0.4rem 0.75rem',
                           borderRadius: '4px',
                           border: '1px solid var(--border-subtle, #EAE6DE)',
                         }}
@@ -297,7 +364,7 @@ ${requirements.trim() || 'General enquiry / specifications'}
                             color: 'var(--ink-primary)',
                             fontWeight: 500,
                             textDecoration: 'none',
-                            fontSize: '0.85rem',
+                            fontSize: '0.875rem',
                           }}
                         >
                           bhimraomohitee@gmail.com

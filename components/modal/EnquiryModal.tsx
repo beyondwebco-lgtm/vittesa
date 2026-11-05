@@ -11,6 +11,8 @@ export const EnquiryModal: React.FC = () => {
   const [property, setProperty] = useState('');
   const [notes, setNotes] = useState('');
   const [emailLaunched, setEmailLaunched] = useState(false);
+  const [lastMailtoUrl, setLastMailtoUrl] = useState('');
+  const [lastGmailUrl, setLastGmailUrl] = useState('');
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const copyToClipboard = async (text: string, fieldId: string) => {
@@ -34,10 +36,30 @@ export const EnquiryModal: React.FC = () => {
     }
   };
 
+  const triggerMailApp = (url: string) => {
+    if (typeof window === 'undefined') return;
+    try {
+      const link = document.createElement('a');
+      link.href = url;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(() => {
+        if (link.parentNode) {
+          link.parentNode.removeChild(link);
+        }
+      }, 300);
+    } catch {
+      window.location.href = url;
+    }
+  };
+
   useEffect(() => {
     if (isOpen) {
       setNotes(initialNotes);
       setEmailLaunched(false);
+      setLastMailtoUrl('');
+      setLastGmailUrl('');
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -63,7 +85,8 @@ export const EnquiryModal: React.FC = () => {
       return;
     }
 
-    const recipients = 'ruthikabhimrao@gmail.com,bhimraomohitee@gmail.com';
+    const primaryRecipient = 'ruthikabhimrao@gmail.com';
+    const ccRecipient = 'bhimraomohitee@gmail.com';
     const emailSubject = `VITTESA Specification Enquiry: ${subject || 'Tableware'} — ${property.trim() || name.trim()}`;
     const emailBody = `VITTESA Product & Trade Enquiry
 ----------------------------------------
@@ -76,11 +99,17 @@ Specifications & Requirements:
 ${notes.trim()}
 ----------------------------------------`;
 
-    const mailtoUrl = `mailto:${recipients}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    const encodedSubject = encodeURIComponent(emailSubject);
+    const encodedBody = encodeURIComponent(emailBody);
 
-    if (typeof window !== 'undefined') {
-      window.location.href = mailtoUrl;
-    }
+    const mailtoUrl = `mailto:${primaryRecipient}?cc=${ccRecipient}&subject=${encodedSubject}&body=${encodedBody}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${primaryRecipient}&cc=${ccRecipient}&su=${encodedSubject}&body=${encodedBody}`;
+
+    setLastMailtoUrl(mailtoUrl);
+    setLastGmailUrl(gmailUrl);
+
+    // Reliably trigger default OS mail application
+    triggerMailApp(mailtoUrl);
 
     setEmailLaunched(true);
   };
@@ -304,8 +333,35 @@ ${notes.trim()}
                 <span>Opening your email client...</span>
               </div>
               <p style={{ margin: '0 0 0.65rem 0' }}>
-                Please review and click <strong>Send</strong> in your email app.
+                Your enquiry details have been prefilled. Please review and click <strong>Send</strong> in your email app.
               </p>
+
+              {(lastMailtoUrl || lastGmailUrl) && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                  {lastMailtoUrl && (
+                    <button
+                      type="button"
+                      onClick={() => triggerMailApp(lastMailtoUrl)}
+                      className="credentials-copy-btn"
+                      style={{ padding: '0.35rem 0.65rem', fontSize: '0.75rem', fontWeight: 600 }}
+                    >
+                      ↻ Re-open in Mail App
+                    </button>
+                  )}
+                  {lastGmailUrl && (
+                    <a
+                      href={lastGmailUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="credentials-copy-btn"
+                      style={{ padding: '0.35rem 0.65rem', fontSize: '0.75rem', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                      Open in Gmail (Web) ↗
+                    </a>
+                  )}
+                </div>
+              )}
+
               <div style={{ borderTop: '1px solid var(--border-subtle, #EAE6DE)', paddingTop: '0.5rem' }}>
                 <span
                   style={{
